@@ -201,6 +201,102 @@
         return /iphone|ipod|ipad|Macintosh/i.test(navigator.userAgent.toLowerCase());
     }
 
+    /**
+     * LocalStorage 
+    */
+    const LocalStorage = {
+        get(name) {
+            let user = JSON.parse(localStorage.getItem('user')) || {};
+            return user[name] || ''
+        },
+        set(name, value) {
+            if (!name) return
+            let user = JSON.parse(localStorage.getItem('user')) || {};
+            user[name] = value
+            localStorage.setItem('user', JSON.stringify(user));
+        },
+        remove(name) {
+            let user = JSON.parse(localStorage.getItem('user')) || {};
+            user[name] && delete user[name]
+            localStorage.setItem(user, JSON.stringify(user));
+        },
+        clear() {
+            localStorage.clear();
+        },
+    }
+
+    /**
+     * 节流
+     * @param {*} func 执行函数
+     * @param {*} delay 节流时间,毫秒
+    */
+    let throttle = function (func, delay) {
+        let timer = null
+        return function () {
+            if (!timer) {
+                timer = setTimeout(() => {
+                    func.apply(this, arguments)
+                    // 或者直接 func()
+                    timer = null
+                }, delay)
+            }
+        }
+    }
+
+    /**
+     * 防抖
+    */
+    let debounce = function (fn, wait) {
+        let timeout = null
+        return function () {
+            if (timeout !== null) clearTimeout(timeout)// 如果多次触发将上次记录延迟清除掉
+            timeout = setTimeout(() => {
+                fn.apply(this, arguments)
+                // 或者直接 fn()
+                timeout = null
+            }, wait)
+        }
+    }
+
+    /**
+     * 获取 url 后面通过?传参的参数
+     * @param {String} name
+    */
+    let getQueryString = function (name) {
+        const reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')
+        const url = window.location.href
+        const search = url.substring(url.lastIndexOf('?') + 1)
+        const r = search.match(reg)
+        if (r != null) return unescape(r[2])
+        return null
+    }
+
+    /**
+     * 根据url地址下载
+    */
+    let download = function(url) {
+        var isChrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+        var isSafari = navigator.userAgent.toLowerCase().indexOf('safari') > -1;
+        if (isChrome || isSafari) {
+            var link = document.createElement('a');
+            link.href = url;
+            if (link.download !== undefined) {
+                var fileName = url.substring(url.lastIndexOf('/') + 1, url.length);
+                link.download = fileName;
+            }
+            if (document.createEvent) {
+                var e = document.createEvent('MouseEvents');
+                e.initEvent('click', true, true);
+                link.dispatchEvent(e);
+                return true;
+            }
+        }
+        if (url.indexOf('?') === -1) {
+            url += '?download';
+        }
+        window.open(url, '_self');
+        return true;
+    }
 
 
 
@@ -208,6 +304,7 @@
 
     return {
         getUrlParam,                // 获取地址栏参数
+        getQueryString,             // 获取 url 后面通过?传参的参数
         gNameToCapitalize,
         toFullScreen,               // 全屏
         exitFullscreen,             // 退出全屏
@@ -220,5 +317,9 @@
         getPageViewHeight,          // 获取页面可视高度
         isAndroidMobileDevice,      // 判断是否安卓移动设备访问
         isAppleMobileDevice,        // 判断是否苹果移动设备访问()
+        throttle,                   // 截流
+        debounce,                   // 防抖
+        download,                   // 根据url地址下载
+        LocalStorage,
     }
 })()

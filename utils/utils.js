@@ -274,7 +274,7 @@
     /**
      * 根据url地址下载
     */
-    let download = function(url) {
+    let download = function (url) {
         var isChrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
         var isSafari = navigator.userAgent.toLowerCase().indexOf('safari') > -1;
         if (isChrome || isSafari) {
@@ -298,6 +298,21 @@
         return true;
     }
 
+    /**
+     * 使用match方法实现模糊查询
+     * @param  {Array}  list     进行查询的数组
+     * @param  {String} keyWord  查询的关键词
+     * @return {Array}           查询的结果
+    */
+    let fuzzyQuery = function (list, keyWord) {
+        var arr = [];
+        for (var i = 0; i < list.length; i++) {
+            if (list[i].name.match(keyWord) != null) {
+                arr.push(list[i]);
+            }
+        }
+        return arr;
+    }
 
 
 
@@ -305,7 +320,7 @@
     return {
         getUrlParam,                // 获取地址栏参数
         getQueryString,             // 获取 url 后面通过?传参的参数
-        gNameToCapitalize,
+        gNameToCapitalize,          // 首字母转大写
         toFullScreen,               // 全屏
         exitFullscreen,             // 退出全屏
         guid,                       // 生成一个唯一的guid 
@@ -320,6 +335,7 @@
         throttle,                   // 截流
         debounce,                   // 防抖
         download,                   // 根据url地址下载
+        fuzzyQuery,                 // 使用match方法实现模糊查询
         LocalStorage,
     }
 })()

@@ -39,7 +39,7 @@
             }
 
             const error = () => reject('出错了')
-
+            // 方法用来获取设备当前位置  需要https
             navigator.geolocation.getCurrentPosition(success, error, {
                 enableHighAcuracy,  // 指示浏览器获取高精度的位置，默认为false
                 timeout,  // 指定获取地理位置的超时时间，默认不限时，单位为毫秒

@@ -1,24 +1,6 @@
 !(function () {
 
     /**
-     * 获取地址栏参数
-    */
-    let getUrlParam = function (url) {
-        var temp1 = url.split('?');
-        var pram = temp1[1];
-        var keyValue = pram.split('&');
-        var obj = {};
-        for (var i = 0; i < keyValue.length; i++) {
-            var item = keyValue[i].split('=');
-            var key = item[0];
-            var value = item[1];
-            obj[key] = value;
-        }
-
-        return obj;
-    }
-
-    /**
      * 字符串首位是字母转大写
     */
     let gNameToCapitalize = (gname) => {
@@ -314,6 +296,43 @@
         return arr;
     }
 
+    /**
+     * 获取url参数 返回一个{}
+    */
+    let getUrlParam = function () {
+        let url = document.location.toString();
+        let arrObj = url.split("?");
+        let params = Object.create(null)
+        if (arrObj.length > 1) {
+            arrObj = arrObj[1].split("&");
+            arrObj.forEach(item => {
+                item = item.split("=");
+                params[item[0]] = item[1]
+            })
+        }
+        return params;
+    }
+
+    /**
+     * Performance.timing：利用Performance.timing进行性能分析
+    */
+    let performanceAnalysis = function () {
+        setTimeout(function () {
+            let t = performance.timing
+            console.log('DNS查询耗时 ：' + (t.domainLookupEnd - t.domainLookupStart).toFixed(0))
+            console.log('TCP链接耗时 ：' + (t.connectEnd - t.connectStart).toFixed(0))
+            console.log('request请求耗时 ：' + (t.responseEnd - t.responseStart).toFixed(0))
+            console.log('解析dom树耗时 ：' + (t.domComplete - t.domInteractive).toFixed(0))
+            console.log('白屏时间 ：' + (t.responseStart - t.navigationStart).toFixed(0))
+            console.log('domready时间 ：' + (t.domContentLoadedEventEnd - t.navigationStart).toFixed(0))
+            console.log('onload时间 ：' + (t.loadEventEnd - t.navigationStart).toFixed(0))
+
+            if (t = performance.memory) {
+                console.log('js内存使用占比 ：' + (t.usedJSHeapSize / t.totalJSHeapSize * 100).toFixed(2) + '%')
+            }
+        })
+    }
+
 
 
 
@@ -336,6 +355,7 @@
         debounce,                   // 防抖
         download,                   // 根据url地址下载
         fuzzyQuery,                 // 使用match方法实现模糊查询
+        performanceAnalysis,        // 性能分析
         LocalStorage,               // 封装本地存储方法
     }
 })()

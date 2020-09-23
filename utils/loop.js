@@ -35,6 +35,6 @@
     return {
         arrayUnique,               // 利用ES6 Set去重数组
         arrayNonRepeatfy,          // 利用Map数据结构去重
-        aLineUnique,                // 一行代码数组去重
+        aLineUnique,               // 一行代码数组去重
     }
 })()

@@ -336,6 +336,6 @@
         debounce,                   // 防抖
         download,                   // 根据url地址下载
         fuzzyQuery,                 // 使用match方法实现模糊查询
-        LocalStorage,
+        LocalStorage,               // 封装本地存储方法
     }
 })()

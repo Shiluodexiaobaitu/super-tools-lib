@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="./loaders.min.css" type="text/css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #container {
+            font-size: 12px;
+            color: #c0c0c0;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100vw;
+            overflow-y: auto;
+            height: 100vh;
+            background-color: #17607D;
+        }
+
+        .vbox {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 140px;
+            height: 140px;
+        }
+
+        .vbox>div {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="vbox">
+            ball-pulse
+            <div class="ball-pulse">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            ball-grid-pulse
+            <div class="ball-grid-pulse">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            ball-clip-rotate
+            <div class="ball-clip-rotate">
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            ball-clip-rotate-pulse
+            <div class="ball-clip-rotate-pulse">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            square-spin
+            <div class="square-spin">
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            ball-clip-rotate-multiple
+            <div class="ball-clip-rotate-multiple">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            ball-pulse-rise
+            <div class="ball-pulse-rise">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            ball-rotate
+            <div class="ball-rotate">
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            cube-transition
+            <div class="cube-transition">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            ball-zig-zag
+            <div class="ball-zig-zag">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            ball-zig-zag-deflect
+            <div class="ball-zig-zag-deflect">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            ball-triangle-path
+            <div class="ball-triangle-path">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            ball-scale
+            <div class="ball-scale">
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            line-scale
+            <div class="line-scale">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            line-scale-party
+            <div class="line-scale-party">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            ball-scale-multiple
+            <div class="ball-scale-multiple">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            ball-scale-multiple
+            <div class="ball-pulse-sync">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            ball-beat
+            <div class="ball-beat">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            line-scale-pulse-out
+            <div class="line-scale-pulse-out">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            line-scale-pulse-out-rapid
+            <div class="line-scale-pulse-out-rapid">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            ball-scale-ripple
+            <div class="ball-scale-ripple">
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            ball-scale-ripple-multiple
+            <div class="ball-scale-ripple-multiple">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            ball-spin-fade-loader
+            <div class="ball-spin-fade-loader">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            line-spin-fade-loader
+            <div class="line-spin-fade-loader">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            triangle-skew-spin
+            <div class="triangle-skew-spin">
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            pacman
+            <div class="pacman">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            ball-grid-beat
+            <div class="ball-grid-beat">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            semi-circle-spin
+            <div class="semi-circle-spin">
+                <div></div>
+            </div>
+        </div>
+        <div class="vbox">
+            ball-scale-random
+            <div class="ball-scale-random">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

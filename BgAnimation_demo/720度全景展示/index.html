@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>three.js css3d - panorama</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        body {
+            background-color: #000000;
+            margin: 0;
+            cursor: move;
+            overflow: hidden;
+        }
+        .surface { width: 1026px; height: 1026px; background-size: cover; position: absolute; }
+        .surface .bg { position: absolute; width: 1026px; height: 1026px; }
+		
+		.m{
+	width: 200px;
+	padding: 20px;
+	position: fixed;
+	z-index: 999;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+    </style>
+</head>
+<body>
+<div class="m">720度全景展示</div>
+<div>
+    <div id="surface_0" class="surface">
+        <img class="bg" src="images/posx.jpg" alt="">
+    </div>
+    <div id="surface_1" class="surface">
+        <img class="bg" src="images/negx.jpg" alt="">
+    </div>
+    <div id="surface_2" class="surface">
+        <img class="bg" src="images/posy.jpg" alt="">
+    </div>
+    <div id="surface_3" class="surface">
+        <img class="bg" src="images/negy.jpg" alt="">
+    </div>
+    <div id="surface_4" class="surface">
+        <img class="bg" src="images/posz.jpg" alt="">
+    </div>
+    <div id="surface_5" class="surface">
+        <img class="bg" src="images/negz.jpg" alt="">
+    </div>
+</div>
+<script src="js/three.min.js"></script>
+<script src="js/CSS3DRenderer.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

@@ -21,12 +21,17 @@
     /**
      * url正则
     */
-    let urlReg = function(url) {
+    let urlReg = function (url) {
         //URL正则
         var urlP = /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
         //输出 true
         urlP.test(url)
     }
+
+    /**
+     * 密码正则
+    */  
+    //    /^[0-9A-Za-z]{4,20}$/    数字 / 字母 / 数字和字母组合
 
 
     return {

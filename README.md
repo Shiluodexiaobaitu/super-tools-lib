@@ -25,6 +25,7 @@
 - download,                   // 根据url地址下载
 - fuzzyQuery,                 // 使用match方法实现模糊查询
 - LocalStorage,               // 封装本地存储方法
+- getOffset                   // 获取一个元素距离浏览器左上角的偏移量
 
 ### 正则
 - verificationCP,         // 身份证号正则

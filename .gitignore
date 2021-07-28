@@ -2,4 +2,6 @@
 # 忽略根目录dist文件夹
 /dist
 
+/node_modules
+
 /dist1

@@ -1,10 +1,11 @@
 {
-  "name": "@shiluodexiaobaitu/zcutils",
+  "name": "@shiluodexiaobaitu/utils",
   "version": "1.0.0",
   "description": "### map - lonLatToMercator,       // 经纬度转墨卡托 - mercatorToLonlat,       // 墨卡托转经纬度 - getPosition,            // H5 获取地理位置",
   "main": "lib/zcutils.js",
   "scripts": {
-    "build": "NODE_ENV=production rollup -c",
+    "build": "rollup --config rollup.config.prod.js",
+    "dev": "rollup --config rollup.config.dev.js -w",
     "build-w": "rollup -c -w",
     "test": "node test/test.js",
     "pretest": "npm run build"
@@ -38,5 +39,9 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "devDependencies": {
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-serve": "^1.1.0"
+  }
 }

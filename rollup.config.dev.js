@@ -12,8 +12,8 @@ export default [
         input: 'src/index.js',
         external: ['ms'],
         output: {
-            file: './lib/zcutils.js',
-            name: 'zcutils',
+            file: './lib/super-tools.js',
+            name: 'super-tools',
             sourcemap: true,
             format: 'umd',
         },

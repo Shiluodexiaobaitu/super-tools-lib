@@ -8,7 +8,6 @@ import dom from './dom';
 import array from './array';
 
 const zcutils = {
-    log: (s) => { console.log(s) }, 
     validate,
     ...string,
     ...tools,

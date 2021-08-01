@@ -1,7 +1,7 @@
 /**
   * 字符串首位是字母转大写
 */
-const gNameToCapitalize = (gname) => {
+const initialToCapitali = (gname) => {
     let pattern = new RegExp('[A-Za-z]+');
     let str = gname.substr(0, 1);
     if (pattern.test(str)) {
@@ -30,7 +30,7 @@ let repeat = (str, n) => {
 }
 
 const string = {
-    gNameToCapitalize,
+    initialToCapitali,
     repeat
 };
 export default string;

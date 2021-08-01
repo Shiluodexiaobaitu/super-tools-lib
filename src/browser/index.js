@@ -100,11 +100,23 @@ const getPosition = (
 //     })
 //     .catch(err => console.log(err))
 
+/**
+ * 禁止/开启：右键、选择、复制
+*/
+const winCopy = (flag) => {
+    ['contextmenu', 'selectstart', 'copy'].forEach(function (ev) {
+        document.addEventListener(ev, function (event) {
+            return event.returnValue = flag
+        })
+    });
+}
+
 const browser = {
     toFullScreen,
     exitFullscreen,
     LocalStorage,
-    getPosition
+    getPosition,
+    winCopy
 }
 
 export default browser;

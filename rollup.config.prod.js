@@ -11,9 +11,7 @@ export default [
         input: 'src/index.js',
         external: ['ms'],
         output: [
-            // { file: './lib/tool.cjs.js', name: 'ss.js', format: 'cjs' },
-            // { file: './lib/time.esm.js', name: 'ss1.js', format: 'es' },
-            { file: './lib/zcutils.js', name: 'ss.2js', format: 'umd' }
+            { file: './lib/super-tools.js', name: 'super-tools', format: 'umd' }
         ],
         plugins: [
             resolve(),  // 这样 Rollup 能找到 `ms`

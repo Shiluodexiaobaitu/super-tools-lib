@@ -1,8 +1,8 @@
 {
-  "name": "@shiluodexiaobaitu/utils",
+  "name": "super-tools-lib",
   "version": "1.0.0",
   "description": "### map - lonLatToMercator,       // 经纬度转墨卡托 - mercatorToLonlat,       // 墨卡托转经纬度 - getPosition,            // H5 获取地理位置",
-  "main": "lib/zcutils.js",
+  "main": "lib/super-tools.js",
   "scripts": {
     "build": "rollup --config rollup.config.prod.js",
     "dev": "rollup --config rollup.config.dev.js -w",

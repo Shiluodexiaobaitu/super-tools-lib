@@ -10,6 +10,11 @@ of
 
 import { guid } from 'super-tools-lib';
 guid()
+
+of
+
+const superToolsLib = require('super-tools-lib');
+superToolsLib.guid();
 ```
 
 ### map

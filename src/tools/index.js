@@ -2,7 +2,7 @@
  * 生成一个唯一的guid
  * @return {string}
 */
-let guid = function () {
+const guid = function () {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
         var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
         return v.toString(16);
@@ -13,7 +13,7 @@ let guid = function () {
  * 文件的Base64编码，
  * @param {则需要FileReader。FileReader类型实现的是一种异步文件读取机制。可以把FileReader想象成XMLHttpRequest，区别只是它读取的是文件系统，而不是远程服务器。}
 */
-function getFileBase64(file, cb) {
+const getFileBase64 = (file, cb) => {
     if (!file) throw new Error('Error! no param "file"(getFileBase64()).');
 
     let reader = new FileReader();
@@ -31,14 +31,14 @@ function getFileBase64(file, cb) {
 /**
  * 判断是否安卓移动设备访问
 */
-let isAndroidMobileDevice = function () {
+const isAndroidMobileDevice = function () {
     return /android/i.test(navigator.userAgent.toLowerCase());
 }
 
 /**
  * 判断是否苹果移动设备访问
 */
-let isAppleMobileDevice = function () {
+const isAppleMobileDevice = function () {
     return /iphone|ipod|ipad|Macintosh/i.test(navigator.userAgent.toLowerCase());
 }
 
@@ -47,7 +47,7 @@ let isAppleMobileDevice = function () {
  * @param {*} func 执行函数
  * @param {*} delay 节流时间,毫秒
 */
-let throttle = function (func, delay) {
+const throttle = function (func, delay) {
     let timer = null
     return function () {
         if (!timer) {
@@ -63,7 +63,7 @@ let throttle = function (func, delay) {
 /**
  * 防抖
 */
-let debounce = function (fn, wait) {
+const debounce = function (fn, wait) {
     let timeout = null
     return function () {
         if (timeout !== null) clearTimeout(timeout)// 如果多次触发将上次记录延迟清除掉
@@ -78,7 +78,7 @@ let debounce = function (fn, wait) {
 /**
   * 根据url地址下载
 */
-let fileDownload = function (url) {
+const fileDownload = function (url) {
     var isChrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
     var isSafari = navigator.userAgent.toLowerCase().indexOf('safari') > -1;
     if (isChrome || isSafari) {
@@ -108,7 +108,7 @@ let fileDownload = function (url) {
  * @param  {String} keyWord  查询的关键词
  * @return {Array}           查询的结果
 */
-let fuzzyQuery = function (list, keyWord) {
+const fuzzyQuery = function (list, keyWord) {
     var arr = [];
     for (var i = 0; i < list.length; i++) {
         if (list[i].name.match(keyWord) != null) {
@@ -121,7 +121,7 @@ let fuzzyQuery = function (list, keyWord) {
 /**
  * 获取url参数 返回一个{}
 */
-let getUrlParam = function () {
+const getUrlParam = function () {
     let url = document.location.toString();
     let arrObj = url.split('?');
     let params = Object.create(null)
@@ -138,7 +138,7 @@ let getUrlParam = function () {
 /**
  * 获取cookie值
 */
-let getCookie = function (name) {
+const getCookie = function (name) {
     var arr = document.cookie.match(new RegExp('(^| )' + name + '=([^;]*)(;|$)'));
     if (arr != null) return unescape(arr[2]);
     return null;
@@ -164,6 +164,16 @@ const colorHex = (color) => {
     return strHex;
 }
 
+/**
+ * 计算vh / vw转px
+*/
+export const viewportToPixels = (value) => {
+    var parts = value.match(/([0-9\.]+)(vh|vw)/)
+    var q = Number(parts[1])
+    var side = window[['innerHeight', 'innerWidth'][['vh', 'vw'].indexOf(parts[2])]]
+    return side * (q / 100)
+}
+
 const tools = {
     guid,
     getFileBase64,
@@ -175,7 +185,8 @@ const tools = {
     fuzzyQuery,
     getUrlParam,
     getCookie,
-    colorHex
+    colorHex,
+    viewportToPixels
 }
 
 export default tools;

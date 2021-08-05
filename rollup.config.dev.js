@@ -5,6 +5,7 @@ import { terser } from 'rollup-plugin-terser';
 import { eslint } from 'rollup-plugin-eslint';
 import serve from 'rollup-plugin-serve';
 import livereload from 'rollup-plugin-livereload';
+import json from '@rollup/plugin-json';
 
 
 export default [
@@ -12,12 +13,14 @@ export default [
         input: 'src/index.js',
         external: ['ms'],
         output: {
-            file: './lib/super-tools.js',
-            name: 'super-tools',
-            sourcemap: true,
+            file: './lib/super-tools-lib.js',
+            name: 'superToolsLib',
+            // sourcemap: true,
             format: 'umd',
+            exports: 'default',
         },
         plugins: [
+            json(),
             resolve(),  // 这样 Rollup 能找到 `ms`
             commonjs(), // 这样 Rollup 能转换 `ms` 为一个ES模块
             eslint({

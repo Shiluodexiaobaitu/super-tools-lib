@@ -1,3 +1,5 @@
+import { version } from '../package.json';
+
 import string from './string';
 import tools from './tools';
 import browser from './browser';
@@ -7,7 +9,7 @@ import validate from './reg';
 import dom from './dom';
 import array from './array';
 
-const zcutils = {
+const superToolsLib = {
     validate,
     ...string,
     ...tools,
@@ -17,5 +19,6 @@ const zcutils = {
     ...dom,
     ...array
 }
+superToolsLib.version = version;
 
-export default zcutils;
+export default superToolsLib;

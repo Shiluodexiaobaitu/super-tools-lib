@@ -9,7 +9,7 @@ import validate from './reg';
 import dom from './dom';
 import array from './array';
 
-const superToolsLib = {
+const superToolsLib: any = {
     validate,
     ...string,
     ...tools,

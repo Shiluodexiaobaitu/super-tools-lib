@@ -5,6 +5,14 @@ module.exports = {
         "node": true
     },
     // "extends": "eslint:recommended",
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "extends": [
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly",
@@ -15,13 +23,11 @@ module.exports = {
         "sourceType": "module"
     },
     "rules": {
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
+        "linebreak-style": [0 ,"error", "windows"], 
         "quotes": [
             "error",
             "single"
-        ]
+        ],
+        "@typescript-eslint/explicit-module-boundary-types": "off"
     }
 };

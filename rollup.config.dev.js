@@ -6,11 +6,13 @@ import { eslint } from 'rollup-plugin-eslint';
 import serve from 'rollup-plugin-serve';
 import livereload from 'rollup-plugin-livereload';
 import json from '@rollup/plugin-json';
+import typescript from 'rollup-plugin-typescript2';
+import tslint from "rollup-plugin-tslint";
 
 
 export default [
     {
-        input: 'src/index.js',
+        input: 'src/index.ts',
         external: ['ms'],
         output: {
             file: './lib/super-tools-lib.js',
@@ -20,6 +22,8 @@ export default [
             exports: 'default',
         },
         plugins: [
+            // tslint(),
+            typescript(),
             json(),
             resolve(),  // 这样 Rollup 能找到 `ms`
             commonjs(), // 这样 Rollup 能转换 `ms` 为一个ES模块

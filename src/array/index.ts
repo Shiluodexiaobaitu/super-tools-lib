@@ -1,7 +1,7 @@
 /**
   * 数组去重复 利用ES6 Set去重（ES6中最常用）
  */
-let arrayUnique = function (arr) {
+const arrayUnique = (arr: Array<any>): Array<any> => {
     return Array.from(new Set(arr))
     // var arr = [1,1,'true','true',true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,'NaN', 0, 0, 'a', 'a',{},{}];
 }
@@ -9,9 +9,9 @@ let arrayUnique = function (arr) {
 /**
  * 利用Map数据结构去重
 */
-let arrayNonRepeatfy = function (arr) {
-    let map = new Map();
-    let array = new Array();  // 数组用于返回结果
+const arrayNonRepeatfy = (arr: Array<any>): Array<any> => {
+    const map = new Map();
+    const array = [];  // 数组用于返回结果
     for (let i = 0; i < arr.length; i++) {
         if (map.has(arr[i])) {  // 如果有该key值
             map.set(arr[i], true);
@@ -26,7 +26,7 @@ let arrayNonRepeatfy = function (arr) {
 /**
  * 一行代码数组去重复
 */
-let aLineUnique = function (arr) {
+const aLineUnique = (arr: Array<any>): Array<any> => {
     return [...new Set(arr)]
 }
 

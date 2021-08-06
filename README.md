@@ -34,6 +34,8 @@ superToolsLib.guid();
 - getUrlParam             // 获取url参数
 - getCookie               // 获取cookie值
 - colorHex                // RGB颜色转16进制
+- viewportToPixels        // 计算vh / vw转px
+- noRefdelUrlParam        // 无刷新去除url参数
 
 ### 字符串方法
 - initialToCapitali       // 字符串首位是字母转大写

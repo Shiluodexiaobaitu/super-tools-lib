@@ -1,7 +1,7 @@
 /**
  * 获取一个元素距离浏览器左上角的偏移量
 */
-let getOffset = function (ele) {
+const getOffset = function (ele:any): any {
     let left = ele.offsetLeft // 左偏移
     let top = ele.offsetTop // 上偏移
     let parent = ele.offsetParent

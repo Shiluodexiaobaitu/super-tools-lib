@@ -1,14 +1,16 @@
 {
   "name": "super-tools-lib",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "### map - lonLatToMercator,       // 经纬度转墨卡托 - mercatorToLonlat,       // 墨卡托转经纬度 - getPosition,            // H5 获取地理位置",
   "main": "lib/super-tools-lib.js",
-  "types": "lib/index.d.ts",
+  "types": "lib/src/index.d.ts",
   "scripts": {
     "build": "rollup --config rollup.config.prod.js",
     "dev": "rollup --config rollup.config.dev.js -w",
     "build-w": "rollup -c -w",
-    "test": "node test/test.js",
+    "test": "jest",
+    "test:w": "jest --watchAll",
+    "test:c": "jest --coverage",
     "pretest": "npm run build",
     "lint": "eslint --fix"
   },
@@ -48,12 +50,15 @@
   ],
   "devDependencies": {
     "@babel/preset-typescript": "^7.15.0",
+    "@types/jest": "^26.0.24",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",
     "eslint": "^7.32.0",
+    "jest": "^27.0.6",
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-serve": "^1.1.0",
     "rollup-plugin-tslint": "^0.2.2",
+    "ts-jest": "^27.0.4",
     "tslib": "^2.3.0",
     "typescript": "^4.3.5"
   }

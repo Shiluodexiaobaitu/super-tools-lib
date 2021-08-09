@@ -183,7 +183,7 @@ export const viewportToPixels = (value: string) => {
 /**
  * 无刷新去除url参数
 */
-const noRefdelUrlParam = (ref:string):string => {
+const noRefdelUrlParam = (ref: string): string => {
     const url = window.location.href;
     // 若是不包括此参数
     if (url.indexOf(ref) == -1) {
@@ -206,7 +206,7 @@ const noRefdelUrlParam = (ref:string):string => {
         arr_param.splice(index, 1);
         // return base + "?" + arr_param.join('&');
         window.history.pushState({}, '0', base + '?' + arr_param.join('&'));
-        return  base + '?' + arr_param.join('&')
+        return base + '?' + arr_param.join('&')
     }
 }
 

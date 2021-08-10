@@ -1,9 +1,10 @@
 /**
  * Performance.timing：利用Performance.timing进行性能分析
 */
-const performanceAnalysis = function () {
-    setTimeout(function () {
-        let t = performance.timing
+const performanceAnalysis = (): void => {
+    const per: any = window.performance;
+    setTimeout(function (): void {
+        const t: any = per.timing
         console.log('DNS查询耗时 ：' + (t.domainLookupEnd - t.domainLookupStart).toFixed(0))
         console.log('TCP链接耗时 ：' + (t.connectEnd - t.connectStart).toFixed(0))
         console.log('request请求耗时 ：' + (t.responseEnd - t.responseStart).toFixed(0))
@@ -12,7 +13,7 @@ const performanceAnalysis = function () {
         console.log('domready时间 ：' + (t.domContentLoadedEventEnd - t.navigationStart).toFixed(0))
         console.log('onload时间 ：' + (t.loadEventEnd - t.navigationStart).toFixed(0))
 
-        if (t == performance.memory) {
+        if (t == per.memory) {
             console.log('js内存使用占比 ：' + (t.usedJSHeapSize / t.totalJSHeapSize * 100).toFixed(2) + '%')
         }
     })

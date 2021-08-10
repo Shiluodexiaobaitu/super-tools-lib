@@ -1,13 +1,13 @@
 /**
   * 字符串首位是字母转大写
 */
-const initialToCapitali = (gname) => {
-    let pattern = new RegExp('[A-Za-z]+');
-    let str = gname.substr(0, 1);
+const initialToCapitali = (gname: string): string => {
+    const pattern = new RegExp('[A-Za-z]+');
+    const str = gname.substr(0, 1);
     if (pattern.test(str)) {
         return `${str.toUpperCase()}${gname.substr(1)}`
     } else {
-        let str1 = gname.substr(-1);
+        const str1 = gname.substr(-1);
         return `${gname.substr(0, gname.length - 1)}${str1.toUpperCase()}`
     }
 }
@@ -19,7 +19,7 @@ const initialToCapitali = (gname) => {
 * @example
 * loadImg(url).then(console.log('加载完成')).catch(err => {console.log(err)})
 */
-let repeat = (str, n) => {
+const repeat = (str: string, n: number): string => {
     let res = ''
     while (n) {
         if (n % 2 === 1) res += str

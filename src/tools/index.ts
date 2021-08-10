@@ -77,6 +77,7 @@ const debounce = function (fn: Function, wait: number): Function {
 
 /**
   * 根据url地址下载
+  * @param {string} url 下载地址
 */
 const fileDownload = function (url: string): boolean {
     const isChrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
@@ -105,13 +106,14 @@ const fileDownload = function (url: string): boolean {
 /**
  * 使用match方法实现模糊查询
  * @param  {Array}  list     进行查询的数组
+ * @param  {Array}  key     进行查询的数组的字段
  * @param  {String} keyWord  查询的关键词
  * @return {Array}           查询的结果
 */
-const fuzzyQuery = function (list: Array<any>, keyWord: String): Array<any> {
+const fuzzyQuery = function (list: Array<any>, key: string, keyWord: String): Array<any> {
     const arr = [];
     for (let i = 0; i < list.length; i++) {
-        if (list[i].name.match(keyWord) != null) {
+        if (list[i][key].match(keyWord) !== null) {
             arr.push(list[i]);
         }
     }
@@ -167,7 +169,7 @@ const colorHex = (color: string): string => {
 /**
  * 计算vh / vw转px
 // */
-export const viewportToPixels = (value: string) => {
+const viewportToPixels = (value: string) => {
     const parts: any = value.match(/([0-9\.]+)(vh|vw)/)
     const q = Number(parts[1])
     let side = 0

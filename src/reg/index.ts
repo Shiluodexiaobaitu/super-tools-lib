@@ -24,6 +24,12 @@ const reg: Object = {
     chinese_numeric_letters: /^[a-zA-Z0-9\u4e00-\u9fa5]+$/,
 };
 
-export default function validate(key, value) {
+function validate(key:string, value:string):boolean {
     return new RegExp(reg[`${key}`]).test(value);
 }
+
+const regular = {
+    validate
+}
+
+export default regular;

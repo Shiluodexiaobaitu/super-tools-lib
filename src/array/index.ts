@@ -1,7 +1,7 @@
 /**
   * 数组去重复 利用ES6 Set去重（ES6中最常用）
  */
-const arrayUnique = (arr: Array<any>): Array<any> => {
+export const arrayUnique = (arr: Array<any>): Array<any> => {
     return Array.from(new Set(arr))
     // var arr = [1,1,'true','true',true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,'NaN', 0, 0, 'a', 'a',{},{}];
 }
@@ -9,7 +9,7 @@ const arrayUnique = (arr: Array<any>): Array<any> => {
 /**
  * 利用Map数据结构去重
 */
-const arrayNonRepeatfy = (arr: Array<any>): Array<any> => {
+export const arrayNonRepeatfy = (arr: Array<any>): Array<any> => {
     const map = new Map();
     const array = [];  // 数组用于返回结果
     for (let i = 0; i < arr.length; i++) {
@@ -26,7 +26,7 @@ const arrayNonRepeatfy = (arr: Array<any>): Array<any> => {
 /**
  * 一行代码数组去重复
 */
-const aLineUnique = (arr: Array<any>): Array<any> => {
+export const aLineUnique = (arr: Array<any>): Array<any> => {
     return [...new Set(arr)]
 }
 

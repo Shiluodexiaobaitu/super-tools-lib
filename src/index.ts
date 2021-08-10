@@ -5,12 +5,13 @@ import tools from './tools';
 import browser from './browser';
 import performance from './performance';
 import map from './map';
-import validate from './reg';
+import regular from './reg';
 import dom from './dom';
 import array from './array';
-
-const superToolsLib: any = {
-    validate,
+ 
+const superToolsLib = {
+    version: version,
+    ...regular,
     ...string,
     ...tools,
     ...browser,
@@ -19,6 +20,5 @@ const superToolsLib: any = {
     ...dom,
     ...array
 }
-superToolsLib.version = version;
 
 export default superToolsLib;

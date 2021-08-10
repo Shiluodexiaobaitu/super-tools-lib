@@ -1,4 +1,3 @@
-export declare const viewportToPixels: (value: string) => number;
 declare const tools: {
     guid: () => string;
     getFileBase64: (file: File, cb: Function) => void;
@@ -7,7 +6,7 @@ declare const tools: {
     throttle: (func: Function, delay: number) => Function;
     debounce: (fn: Function, wait: number) => Function;
     fileDownload: (url: string) => boolean;
-    fuzzyQuery: (list: Array<any>, keyWord: String) => Array<any>;
+    fuzzyQuery: (list: Array<any>, key: string, keyWord: String) => Array<any>;
     getUrlParam: () => Object;
     getCookie: (name: string) => string;
     colorHex: (color: string) => string;

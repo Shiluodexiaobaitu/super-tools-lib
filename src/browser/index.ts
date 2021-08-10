@@ -48,22 +48,22 @@ const exitFullscreen = (): void => {
  * LocalStorage 
 */
 const LocalStorage = {
-    get(name: string) {
-        const user = JSON.parse(localStorage.getItem('user')) || {};
-        return user[name] || ''
+    get(user: string, name: string): string {
+        const mapStorage = JSON.parse(localStorage.getItem(user)) || {};
+        return mapStorage[name] || ''
     },
-    set(name: string, value: string) {
+    set(user: string, name: string, value: string): void {
         if (!name) return
-        const user = JSON.parse(localStorage.getItem('user')) || {};
-        user[name] = value
-        localStorage.setItem('user', JSON.stringify(user));
+        const mapStorage = JSON.parse(localStorage.getItem(user)) || {};
+        mapStorage[name] = value
+        localStorage.setItem(user, JSON.stringify(mapStorage));
     },
-    remove(name: string) {
-        const user = JSON.parse(localStorage.getItem('user')) || {};
-        user[name] && delete user[name]
-        localStorage.setItem(user, JSON.stringify(user));
+    remove(user: string, name: string): void {
+        const mapStorage = JSON.parse(localStorage.getItem(user)) || {};
+        mapStorage[name] && delete mapStorage[name]
+        localStorage.setItem(user, JSON.stringify(mapStorage));
     },
-    clear() {
+    clear(): void {
         localStorage.clear();
     },
 }

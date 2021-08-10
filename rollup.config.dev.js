@@ -7,7 +7,7 @@ import serve from 'rollup-plugin-serve';
 import livereload from 'rollup-plugin-livereload';
 import json from '@rollup/plugin-json';
 import typescript from 'rollup-plugin-typescript2';
-import tslint from "rollup-plugin-tslint";
+// import tslint from "rollup-plugin-tslint";
 
 
 export default [

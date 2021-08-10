@@ -1,6 +1,6 @@
 {
   "name": "super-tools-lib",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "description": "### map - lonLatToMercator,       // 经纬度转墨卡托 - mercatorToLonlat,       // 墨卡托转经纬度 - getPosition,            // H5 获取地理位置",
   "main": "lib/super-tools-lib.js",
   "types": "lib/src/index.d.ts",
@@ -46,7 +46,8 @@
     "rollup-plugin-typescript2": "^0.30.0"
   },
   "files": [
-    "dist"
+    "lib/super-tools-lib.js",
+    "lib/src/index.d.ts"
   ],
   "devDependencies": {
     "@babel/preset-typescript": "^7.15.0",

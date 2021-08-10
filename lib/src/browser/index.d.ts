@@ -7,9 +7,9 @@ declare const browser: {
     toFullScreen: () => void;
     exitFullscreen: () => void;
     LocalStorage: {
-        get(name: string): any;
-        set(name: string, value: string): void;
-        remove(name: string): void;
+        get(user: string, name: string): string;
+        set(user: string, name: string, value: string): void;
+        remove(user: string, name: string): void;
         clear(): void;
     };
     getPosition: (timeout?: number, maximumAge?: number) => Promise<unknown>;

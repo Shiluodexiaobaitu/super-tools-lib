@@ -29,8 +29,16 @@ const repeat = (str: string, n: number): string => {
     return res
 }
 
+/**
+ * 去除字符串首尾空格
+*/
+const trim = (str:string):string => {
+    return str.replace(/^\s+(.*?)\s+$/g, '$1');
+}
+
 const string = {
     initialToCapitali,
-    repeat
+    repeat,
+    trim
 };
 export default string;

@@ -14,5 +14,7 @@ declare const browser: {
     };
     getPosition: (timeout?: number, maximumAge?: number) => Promise<unknown>;
     winCopy: (flag: any) => void;
+    print: (id: string, src: string) => void;
+    setVibration: () => void;
 };
 export default browser;

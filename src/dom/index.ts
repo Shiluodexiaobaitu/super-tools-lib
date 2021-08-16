@@ -1,7 +1,8 @@
 /**
  * 获取一个元素距离浏览器左上角的偏移量
+ * @param {ele} dom元素
 */
-const getOffset = function (ele:any): any {
+const getOffset = function (ele: any): any {
     let left = ele.offsetLeft // 左偏移
     let top = ele.offsetTop // 上偏移
     let parent = ele.offsetParent
@@ -18,8 +19,45 @@ const getOffset = function (ele:any): any {
     }
 }
 
+/**
+ * 抖动函数
+ * @param {ele} 抖动的dom元素
+ * @param {attr} 抖动的方向 left top
+ * @param {cb} 抖动的完成回调
+ * @param {rate} 抖动次数
+ * @param {time} 每次抖动需要的时间
+*/
+const shaking = ({ ele, attr, cb, rate = 20, time = 50 }: { ele: any, attr: string, cb: Function, time?: number, rate?: number }): void => {
+
+    function getStyle(ele, attr) {
+        if (ele.currentStyle) {
+            return ele.currentStyle[attr];
+        } else {
+            return window.getComputedStyle(ele)[attr];
+        }
+    }
+    const pos = parseInt(getStyle(ele, attr));
+    const arr = [];
+    let timer = null;
+    let num = 0;
+    for (let i = rate; i > 0; i -= 2) {
+        arr.push(i, -i);
+    }
+    arr.push(0);
+    clearInterval(timer);
+    timer = setInterval(function () {
+        ele.style[attr] = pos + arr[num] + 'px';
+        num++;
+        if (num === arr.length) {
+            clearInterval(timer);
+            cb && cb();
+        }
+    }, time);
+}
+
 const dom = {
-    getOffset
+    getOffset,
+    shaking
 }
 
 export default dom

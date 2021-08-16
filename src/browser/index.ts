@@ -115,12 +115,44 @@ const winCopy = (flag) => {
     });
 }
 
+/**
+ * 打印屏幕
+*/
+const print = (id: string, src: string) => {
+    //const el = document.getElementById(id);
+    const iframe: any = document.createElement('IFRAME');
+    let doc = null;
+    iframe.setAttribute('style', 'position:absolute;width:100%;height:100%;left:0;top:0;');
+    document.body.appendChild(iframe);
+    doc = iframe.contentWindow.document;
+    const img = new Image();
+    img.src = src;
+    doc.body.appendChild(img);
+    // 引入打印的专有CSS样式，根据实际修改
+    // doc.write('<LINK rel="stylesheet" type="text/css" href="css/print.css">');
+    //doc.write(img);
+    doc.close();
+    // 获取iframe的焦点，从iframe开始打印
+    iframe.contentWindow.focus();
+    iframe.contentWindow.print();
+    if (navigator.userAgent.indexOf('MSIE') > 0) {
+        document.body.removeChild(iframe);
+    }
+}
+
+const setVibration = () => {
+    window.navigator.vibrate([100,30,100,30,100,200,200,30,200,30,200,200,100,30,100,30,100])
+
+}
+
 const browser = {
     toFullScreen,
     exitFullscreen,
     LocalStorage,
     getPosition,
-    winCopy
+    winCopy,
+    print,
+    setVibration
 }
 
 export default browser;

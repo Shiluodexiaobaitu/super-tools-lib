@@ -96,6 +96,7 @@ validate(key,value)
 - isFunction
 - isObject
 - isNumber
+- isWeiXin // 判断是否在微信中打开
 
 ### file 文件操作
 

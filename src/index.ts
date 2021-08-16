@@ -30,3 +30,5 @@ const superToolsLib = {
 }
 
 export default superToolsLib;
+
+// export declare const

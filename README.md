@@ -22,6 +22,7 @@ superToolsLib.guid();
 - lonLatToMercator, // 经纬度转墨卡托
 - mercatorToLonlat, // 墨卡托转经纬度
 - getDistance, // 获取两个高德坐标的距离
+- calcDistance // 计算经纬度两个坐标得距离
 
 ### utils
 
@@ -81,12 +82,17 @@ validate(key,value)
 - getPosition // H5 获取地理位置
 - winCopy // 禁止/开启：右键、选择、复制
 - print // 打印屏幕
+- copy // 复制文本
 
 ### 数组方法
 
 - arrayUnique, // 利用 ES6 Set 去重数组
 - arrayNonRepeatfy, // 利用 Map 数据结构去重
 - aLineUnique, // 一行代码数组去重
+
+### 对象方法
+
+- cloneDeep // 返回传入对象的一个深度克隆的副本对象
 
 ### 类型判断
 

@@ -141,8 +141,31 @@ const print = (id: string, src: string) => {
 }
 
 const setVibration = () => {
-    window.navigator.vibrate([100,30,100,30,100,200,200,30,200,30,200,200,100,30,100,30,100])
+    window.navigator.vibrate([100, 30, 100, 30, 100, 200, 200, 30, 200, 30, 200, 200, 100, 30, 100, 30, 100])
+}
 
+/**
+ * 复制文本
+*/
+const copy = (str: string): void => {
+    const el = document.createElement('textarea');
+    el.value = str;
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    el.style.top = '-9999px';
+    document.body.appendChild(el);
+    const selected =
+        document.getSelection().rangeCount > 0
+            ? document.getSelection().getRangeAt(0)
+            : false;
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    if (selected) {
+        document.getSelection().removeAllRanges();
+        document.getSelection().addRange(selected);
+    }
 }
 
 const browser = {
@@ -152,7 +175,8 @@ const browser = {
     getPosition,
     winCopy,
     print,
-    setVibration
+    setVibration,
+    copy
 }
 
 export default browser;

@@ -16,19 +16,20 @@
 <body>
     <script src='./lib/super-tools-lib.js'></script>
     <div>super-tools-lib</div>
-    <div id="ele" style="width: 100px;height: 100px;background-color: red; position: relative; top: 300px;left: 300px;">
+    <div id="ele"
+        style="width: 100px;height: 100px;background-color: pink; position: relative; top: 300px;left: 300px;">
     </div>
 
     <script>
-        window.dom = document.getElementById('ele')
-        ele.onclick = function () {
-            if (window.navigator.vibrate)
-                window.navigator.vibrate([200, 100, 200]);
-            else alert("你的浏览器不支持调用手机震动");
-            let offset = superToolsLib.setVibration();
+        superToolsLib.vConsole();
+        superToolsLib.orient();
+        // for(let i = 0; i < 3; i++){
+        //     console.log('test',{a:22,sd:1})
+        // }
 
-        }
-
+        // ele.onclick = function(e){
+        //     console.log('e',e,window)
+        // }
     </script>
 </body>
 

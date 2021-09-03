@@ -11,7 +11,9 @@ import array from './array';
 import object from './object';
 import typeJudgment from './typeJudgment';
 import file from './file';
+import vconsole from './console';
 import request from './request';
+import mobile from './mobile';
 
 const superToolsLib = {
     version: version,
@@ -26,7 +28,9 @@ const superToolsLib = {
     ...object,
     ...typeJudgment,
     ...file,
-    ...request
+    ...request,
+    ...vconsole,
+    ...mobile
 }
 
 export default superToolsLib;

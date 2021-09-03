@@ -20,6 +20,23 @@ const getDistance = (endLat: number, endLon: number, startLat: number, startLon:
     return parseInt(`${s}`, 10)
 }
 
+/**
+ * 计算经纬度
+ * calcDistance(116.95400,39.95400,116.95300,39.95300)
+ * 返回值为距离 单位千米(KM)
+ */
+const calcDistance = (lat1, lng1, lat2, lng2) => {
+    const radLat1 = lat1 * Math.PI / 180.0;
+    const radLat2 = lat2 * Math.PI / 180.0;
+    const a = radLat1 - radLat2;
+    const b = lng1 * Math.PI / 180.0 - lng2 * Math.PI / 180.0;
+    let s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2) + Math.cos(radLat1) * Math.cos(radLat2) * Math.pow(Math.sin(
+        b / 2), 2)));
+    s = s * 6378.137;
+    s = Math.round(s * 10000) / 10000;
+    return s //  
+}
+
 // 经纬度转墨卡托
 const lonLatToMercator = (lonLat: { lon: number, lat: number }): any => {
     const mercator = { x: 0, y: 0 };
@@ -40,6 +57,7 @@ const mercatorToLonlat = (mercator: { x: number, y: number }): any => {
 
 const map = {
     getDistance,
+    calcDistance,
     lonLatToMercator,
     mercatorToLonlat
 }

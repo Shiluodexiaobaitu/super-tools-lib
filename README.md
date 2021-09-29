@@ -39,6 +39,7 @@ superToolsLib.guid();
 - colorHex // RGB 颜色转 16 进制
 - viewportToPixels // 计算 vh / vw 转 px
 - noRefdelUrlParam // 无刷新去除 url 参数
+- vconsole //移动端查看log
 
 ### 字符串方法
 
@@ -64,6 +65,7 @@ validate(key,value)
 - email // 邮箱
 - website // 网址
 - mobile // 手机号
+- cname //校验中文名，包含校验少数民族名字
 
 ### 性能监控
 

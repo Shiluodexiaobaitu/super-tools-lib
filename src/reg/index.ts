@@ -24,7 +24,9 @@ const reg: Object = {
     chinese_numeric_letters: /^[a-zA-Z0-9\u4e00-\u9fa5]+$/,
     
     // 密码强度正则，最少6位，包括至少1个大写字母，1个小写字母，1个数字，1个特殊字符
-    strong_password: /^.*(?=.{6,})(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*? ]).*$/
+    strong_password: /^.*(?=.{6,})(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*? ]).*$/,
+    //校验中文姓名
+    cname: /^[\u4e00-\u9fa5]+(·[\u4e00-\u9fa5]+)*$/,
 };
 
 function validate(key: string, value: string): boolean {

@@ -66,7 +66,6 @@ export declare const initialToCapitali: (gname: string) => string;
 export declare const trim: (str: string) => string;
 export declare const validate: (key: string, value: string) => boolean;
 
-
 declare const superToolsLib: {
     orient: () => void;
     vConsole: () => void;

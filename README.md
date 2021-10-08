@@ -65,7 +65,9 @@ validate(key,value)
 - email // 邮箱
 - website // 网址
 - mobile // 手机号
-- cname //校验中文名，包含校验少数民族名字
+- cname //校验中文名 包含校验少数民族名字
+- ename //校验英文名 每一个单词首字母都是大写
+- ip //校验IP地址
 
 ### 性能监控
 
@@ -109,3 +111,4 @@ validate(key,value)
 ### file 文件操作
 
 - downBlob // 下载二进制流文件
+- exportExcel // table表格格式 导出Excel

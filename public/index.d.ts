@@ -65,3 +65,4 @@ export declare const noRefdelUrlParam: (ref: string) => string;
 export declare const initialToCapitali: (gname: string) => string;
 export declare const trim: (str: string) => string;
 export declare const validate: (key: string, value: string) => boolean;
+export declare const exportExcel: (column: any[], dataSource: any[], fileName?: string) => void;

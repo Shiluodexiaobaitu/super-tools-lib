@@ -22,9 +22,18 @@ const reg: Object = {
     numeric_letters: /^[0-9a-zA-Z]{0,40}$/g,
     //数字，字母，汉字，任意组合
     chinese_numeric_letters: /^[a-zA-Z0-9\u4e00-\u9fa5]+$/,
+    
+    // 密码强度正则，最少6位，包括至少1个大写字母，1个小写字母，1个数字，1个特殊字符
+    strong_password: /^.*(?=.{6,})(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*? ]).*$/,
+    //校验中文姓名
+    cname: /^[\u4e00-\u9fa5]+(·[\u4e00-\u9fa5]+)*$/,
+    //校验英文名 每一个单词首字母都是大写
+    ename: /^[A-Z][a-z]*(\s[A-Z][a-z]*)*$/,
+    //校验IP地址
+    ip: /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/,
 };
 
-function validate(key:string, value:string):boolean {
+function validate(key: string, value: string): boolean {
     return new RegExp(reg[`${key}`]).test(value);
 }
 

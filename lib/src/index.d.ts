@@ -1,3 +1,5 @@
+export declare const orient: () => void;
+export declare const vConsole: () => void;
 export declare const socket: ({ url }: {
     url: string;
 }) => any;
@@ -10,6 +12,7 @@ export declare const isObject: (obj: any) => boolean;
 export declare const isNumber: (num: any) => boolean;
 export declare const isWeiXin: () => boolean;
 export declare const repeat: (obj: any) => void;
+export declare const cloneDeep: (obj: any) => any;
 export declare const arrayUnique: (arr: any[]) => any[];
 export declare const arrayNonRepeatfy: (arr: any[]) => any[];
 export declare const aLineUnique: (arr: any[]) => any[];
@@ -22,6 +25,7 @@ export declare const shaking: ({ ele, attr, cb, rate, time }: {
     rate?: number;
 }) => void;
 export declare const getDistance: (endLat: number, endLon: number, startLat: number, startLon: number) => number;
+export declare const calcDistance: (lat1: any, lng1: any, lat2: any, lng2: any) => number;
 export declare const lonLatToMercator: (lonLat: {
     lon: number;
     lat: number;
@@ -31,6 +35,7 @@ export declare const mercatorToLonlat: (mercator: {
     y: number;
 }) => any;
 export declare const performanceAnalysis: () => void;
+export declare const getPerformanceTiming: () => any;
 export declare const toFullScreen: () => void;
 export declare const exitFullscreen: () => void;
 export declare const LocalStorage: {
@@ -43,6 +48,7 @@ export declare const getPosition: (timeout?: number, maximumAge?: number) => Pro
 export declare const winCopy: (flag: any) => void;
 export declare const print: (id: string, src: string) => void;
 export declare const setVibration: () => void;
+export declare const copy: (str: string) => void;
 export declare const guid: () => string;
 export declare const getFileBase64: (file: File, cb: Function) => void;
 export declare const isAndroidMobileDevice: () => boolean;
@@ -59,13 +65,16 @@ export declare const noRefdelUrlParam: (ref: string) => string;
 export declare const initialToCapitali: (gname: string) => string;
 export declare const trim: (str: string) => string;
 export declare const validate: (key: string, value: string) => boolean;
-export declare const version: string;
+export declare const exportExcel: (column: any[], dataSource: any[], fileName?: string) => void;
 
 declare const superToolsLib: {
+    orient: () => void;
+    vConsole: () => void;
     socket: ({ url }: {
         url: string;
     }) => any;
     downBlob: (data: any, fileName: string) => void;
+    exportExcel: (column: any[], dataSource: any[], fileName?: string) => void;
     isBase64: (base64: any) => boolean;
     isArray: (arr: any) => boolean;
     isString: (str: any) => boolean;
@@ -74,6 +83,7 @@ declare const superToolsLib: {
     isNumber: (num: any) => boolean;
     isWeiXin: () => boolean;
     repeat: (obj: any) => void;
+    cloneDeep: (obj: any) => any;
     arrayUnique: (arr: any[]) => any[];
     arrayNonRepeatfy: (arr: any[]) => any[];
     aLineUnique: (arr: any[]) => any[];
@@ -86,6 +96,7 @@ declare const superToolsLib: {
         rate?: number;
     }) => void;
     getDistance: (endLat: number, endLon: number, startLat: number, startLon: number) => number;
+    calcDistance: (lat1: any, lng1: any, lat2: any, lng2: any) => number;
     lonLatToMercator: (lonLat: {
         lon: number;
         lat: number;
@@ -95,6 +106,7 @@ declare const superToolsLib: {
         y: number;
     }) => any;
     performanceAnalysis: () => void;
+    getPerformanceTiming: () => any;
     toFullScreen: () => void;
     exitFullscreen: () => void;
     LocalStorage: {
@@ -107,6 +119,7 @@ declare const superToolsLib: {
     winCopy: (flag: any) => void;
     print: (id: string, src: string) => void;
     setVibration: () => void;
+    copy: (str: string) => void;
     guid: () => string;
     getFileBase64: (file: File, cb: Function) => void;
     isAndroidMobileDevice: () => boolean;

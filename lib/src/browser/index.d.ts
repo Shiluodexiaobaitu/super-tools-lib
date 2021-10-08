@@ -16,5 +16,6 @@ declare const browser: {
     winCopy: (flag: any) => void;
     print: (id: string, src: string) => void;
     setVibration: () => void;
+    copy: (str: string) => void;
 };
 export default browser;

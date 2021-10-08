@@ -22,6 +22,7 @@ superToolsLib.guid();
 - lonLatToMercator, // 经纬度转墨卡托
 - mercatorToLonlat, // 墨卡托转经纬度
 - getDistance, // 获取两个高德坐标的距离
+- calcDistance // 计算经纬度两个坐标得距离
 
 ### utils
 
@@ -38,6 +39,7 @@ superToolsLib.guid();
 - colorHex // RGB 颜色转 16 进制
 - viewportToPixels // 计算 vh / vw 转 px
 - noRefdelUrlParam // 无刷新去除 url 参数
+- vconsole //移动端查看log
 
 ### 字符串方法
 
@@ -63,6 +65,9 @@ validate(key,value)
 - email // 邮箱
 - website // 网址
 - mobile // 手机号
+- cname //校验中文名 包含校验少数民族名字
+- ename //校验英文名 每一个单词首字母都是大写
+- ip //校验IP地址
 
 ### 性能监控
 
@@ -81,12 +86,17 @@ validate(key,value)
 - getPosition // H5 获取地理位置
 - winCopy // 禁止/开启：右键、选择、复制
 - print // 打印屏幕
+- copy // 复制文本
 
 ### 数组方法
 
 - arrayUnique, // 利用 ES6 Set 去重数组
 - arrayNonRepeatfy, // 利用 Map 数据结构去重
 - aLineUnique, // 一行代码数组去重
+
+### 对象方法
+
+- cloneDeep // 返回传入对象的一个深度克隆的副本对象
 
 ### 类型判断
 
@@ -101,3 +111,4 @@ validate(key,value)
 ### file 文件操作
 
 - downBlob // 下载二进制流文件
+- exportExcel // table表格格式 导出Excel

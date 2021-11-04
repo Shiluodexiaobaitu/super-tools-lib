@@ -1,3 +1,5 @@
+//测试
+
 /**
  * 生成一个唯一的guid
  * @return {string}

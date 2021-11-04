@@ -55,9 +55,22 @@ const shaking = ({ ele, attr, cb, rate = 20, time = 50 }: { ele: any, attr: stri
     }, time);
 }
 
+/**
+ * 阻止冒泡事件
+*/
+export const stopPropagation = (e) => { 
+    e = e || window.event; 
+    if(e.stopPropagation) {    // W3C阻止冒泡方法 
+        e.stopPropagation(); 
+    } else { 
+        e.cancelBubble = true; // IE阻止冒泡方法 
+    } 
+} 
+
 const dom = {
     getOffset,
-    shaking
+    shaking,
+    stopPropagation
 }
 
 export default dom

@@ -214,6 +214,74 @@ const noRefdelUrlParam = (ref: string): string => {
     }
 }
 
+/**
+ * 根据身份证号获取年龄
+*/
+const getAge = (id: string) => {
+    // 1、先判断身份证号的正确性
+    // 2、判断是否在世
+    const year = id.substr(6, 4)
+    const month = id.substr(10, 2)
+    const day = id.substr(12, 2)
+
+    const timeBrth = new Date(`${year}/${month}/${day}`).getTime()
+    const timeNow = new Date().getTime()
+    const longTime = timeNow - timeBrth
+    const days = longTime / (1 * 24 * 60 * 60 * 1000)
+
+    let result = ''
+    if (days < 31) {
+        result = parseInt(`${days}`) + '天'
+    } else if (days < 365) {
+        result = `${parseInt(`${days / 30}`)}月${parseInt(`${days % 30}`)}天`
+    } else {
+        result = `${parseInt(`${days / 365}`)}岁${parseInt(`${days % 365 / 30}`)}月${parseInt(`${days % 365 % 30}`)}天`
+    }
+    return result
+}
+
+/**
+ * 根据身份证号获取性别
+*/
+const getSex = (id: string) => {
+    // 1、先判断身份证号的正确性
+    const sex = Number(id.substr(16, 1))
+    return sex % 2 ? '男' : '女'
+}
+
+/**
+ * 数字转化为大写金额
+*/
+const digitUppercase = (n: number): string => {
+    const fraction = ['角', '分'];
+    const digit = [
+        '零', '壹', '贰', '叁', '肆',
+        '伍', '陆', '柒', '捌', '玖'
+    ];
+    const unit = [
+        ['元', '万', '亿'],
+        ['', '拾', '佰', '仟']
+    ];
+    n = Math.abs(n);
+    let s = '';
+    for (let i = 0; i < fraction.length; i++) {
+        s += (digit[Math.floor(n * 10 * Math.pow(10, i)) % 10] + fraction[i]).replace(/零./, '');
+    }
+    s = s || '整';
+    n = Math.floor(n);
+    for (let i = 0; i < unit[0].length && n > 0; i++) {
+        let p = '';
+        for (let j = 0; j < unit[1].length && n > 0; j++) {
+            p = digit[n % 10] + unit[1][j] + p;
+            n = Math.floor(n / 10);
+        }
+        s = p.replace(/(零.)*零$/, '').replace(/^$/, '零') + unit[0][i] + s;
+    }
+    return s.replace(/(零.)*零元/, '元')
+        .replace(/(零.)+/g, '零')
+        .replace(/^整$/, '零元整');
+};
+
 const tools = {
     guid,
     getFileBase64,
@@ -227,7 +295,10 @@ const tools = {
     getCookie,
     colorHex,
     viewportToPixels,
-    noRefdelUrlParam
+    noRefdelUrlParam,
+    getAge,
+    getSex,
+    digitUppercase
 }
 
 export default tools;

@@ -40,12 +40,21 @@ superToolsLib.guid();
 - viewportToPixels // 计算 vh / vw 转 px
 - noRefdelUrlParam // 无刷新去除 url 参数
 - vconsole //移动端查看log
+- getAge // 根据身份证号获取年龄
+- getSex // 根据身份证号获取性别
+- digitUppercase //数字转化为大写金额
 
 ### 字符串方法
 
 - initialToCapitali // 字符串首位是字母转大写
 - repeat // 传入字符串，和重复次数，返回结果字符串
 - trim // 去除字符串首尾空格
+
+### 时间
+- dateFormater //格式化时间
+```
+dateFormater('YYYY-MM-DD HH:mm:ss')
+```
 
 ### 正则
 
@@ -68,6 +77,8 @@ validate(key,value)
 - cname //校验中文名 包含校验少数民族名字
 - ename //校验英文名 每一个单词首字母都是大写
 - ip //校验IP地址
+- ipv4 // 校验ipv4地址
+- color16Reg // 16进制颜色校验
 
 ### 性能监控
 
@@ -77,6 +88,7 @@ validate(key,value)
 
 - getOffset // 获取一个元素距离浏览器左上角的偏移量
 - shaking // 抖动
+- stopPropagation //阻止冒泡事件
 
 ### 浏览器
 
@@ -96,7 +108,7 @@ validate(key,value)
 
 ### 对象方法
 
-- cloneDeep // 返回传入对象的一个深度克隆的副本对象
+- deepClone // 返回传入对象的一个深度克隆的副本对象
 
 ### 类型判断
 

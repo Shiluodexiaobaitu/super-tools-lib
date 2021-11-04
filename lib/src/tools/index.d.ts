@@ -12,5 +12,8 @@ declare const tools: {
     colorHex: (color: string) => string;
     viewportToPixels: (value: string) => number;
     noRefdelUrlParam: (ref: string) => string;
+    getAge: (id: string) => string;
+    getSex: (id: string) => "男" | "女";
+    digitUppercase: (n: number) => string;
 };
 export default tools;

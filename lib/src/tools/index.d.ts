@@ -1,3 +1,5 @@
+export declare const hexToRgba: (str: string, alpa: number) => string;
+export declare const rgbaToHex: (color: any) => string;
 declare const tools: {
     guid: () => string;
     getFileBase64: (file: File, cb: Function) => void;
@@ -15,5 +17,7 @@ declare const tools: {
     getAge: (id: string) => string;
     getSex: (id: string) => "男" | "女";
     digitUppercase: (n: number) => string;
+    hexToRgba: (str: string, alpa: number) => string;
+    rgbaToHex: (color: any) => string;
 };
 export default tools;

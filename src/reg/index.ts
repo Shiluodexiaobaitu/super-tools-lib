@@ -34,6 +34,8 @@ const reg: Object = {
     ipv4: /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/,
     //16进制颜色校验
     color16Reg: /^#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/,
+    //校验mac地址是否正确
+    mac: /^[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}$/
 };
 
 function validate(key: string, value: string): boolean {

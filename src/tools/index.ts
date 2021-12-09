@@ -169,6 +169,53 @@ const colorHex = (color: string): string => {
 }
 
 /**
+ * 16进制颜色转RGBA
+ * @param {str} 16进制颜色值
+ * @param {alpa} 
+ * @return {string}
+*/
+export const hexToRgba = (str: string, alpa: number): string => {
+    alpa = alpa === undefined ? 1 : alpa;
+    if (!str) return;
+    let color = str.toLowerCase();
+    const pattern = /^#([0-9|a-f]{3}|[0-9|a-f]{6})$/;
+    if (color && pattern.test(color)) {
+        if (color.length === 4) {
+            // 将三位转换为六位
+            color = '#' + color[1] + color[1] + color[2] + color[2] + color[3] + color[3];
+        }
+        //处理六位的颜色值
+        const colorNew = [];
+        for (let i = 1; i < 7; i += 2) {
+            colorNew.push(parseInt('0x' + color.slice(i, i + 2)));
+        }
+        colorNew.push(alpa);
+
+        return 'rgba(' + colorNew.join(',') + ')';
+    }
+    return color;
+}
+
+/**
+ * rgba颜色转16进制
+*/
+export const rgbaToHex = (color): string => {
+    const values = color
+        .replace(/rgba?\(/, '')
+        .replace(/\)/, '')
+        .replace(/[\s+]/g, '')
+        .split(',');
+    const a = parseFloat(values[3] || 1),
+        r = Math.floor(a * parseInt(values[0]) + (1 - a) * 255),
+        g = Math.floor(a * parseInt(values[1]) + (1 - a) * 255),
+        b = Math.floor(a * parseInt(values[2]) + (1 - a) * 255);
+    return '#' +
+        ('0' + r.toString(16)).slice(-2) +
+        ('0' + g.toString(16)).slice(-2) +
+        ('0' + b.toString(16)).slice(-2);
+}
+
+/**
  * 计算vh / vw转px
 // */
 const viewportToPixels = (value: string) => {
@@ -298,7 +345,9 @@ const tools = {
     noRefdelUrlParam,
     getAge,
     getSex,
-    digitUppercase
+    digitUppercase,
+    hexToRgba,
+    rgbaToHex
 }
 
 export default tools;

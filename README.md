@@ -37,6 +37,8 @@ superToolsLib.guid();
 - getUrlParam // 获取 url 参数
 - getCookie // 获取 cookie 值
 - colorHex // RGB 颜色转 16 进制
+- hexToRgba // 16进制颜色转RGBA
+- rgbaToHex // rgba颜色转16进制
 - viewportToPixels // 计算 vh / vw 转 px
 - noRefdelUrlParam // 无刷新去除 url 参数
 - vconsole //移动端查看log
@@ -79,6 +81,7 @@ validate(key,value)
 - ip //校验IP地址
 - ipv4 // 校验ipv4地址
 - color16Reg // 16进制颜色校验
+- mac //校验mac地址
 
 ### 性能监控
 
@@ -99,6 +102,7 @@ validate(key,value)
 - winCopy // 禁止/开启：右键、选择、复制
 - print // 打印屏幕
 - copy // 复制文本
+- scrollToTop // 平滑滚动到页面顶部
 
 ### 数组方法
 
@@ -109,6 +113,10 @@ validate(key,value)
 ### 对象方法
 
 - deepClone // 返回传入对象的一个深度克隆的副本对象
+
+### 计算
+
+- smallRounding // 小数从第几位取整
 
 ### 类型判断
 

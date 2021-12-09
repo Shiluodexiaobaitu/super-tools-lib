@@ -1,4 +1,5 @@
 declare const superToolsLib: {
+    smallRounding: (num: number, place: number) => number;
     dateFormater: (formater: string, time?: number) => string;
     orient: () => void;
     vConsole: () => void;
@@ -53,6 +54,7 @@ declare const superToolsLib: {
     print: (id: string, src: string) => void;
     setVibration: () => void;
     copy: (str: string) => void;
+    scrollToTop: () => void;
     guid: () => string;
     getFileBase64: (file: File, cb: Function) => void;
     isAndroidMobileDevice: () => boolean;
@@ -69,6 +71,8 @@ declare const superToolsLib: {
     getAge: (id: string) => string;
     getSex: (id: string) => "男" | "女";
     digitUppercase: (n: number) => string;
+    hexToRgba: (str: string, alpa: number) => string;
+    rgbaToHex: (color: any) => string;
     initialToCapitali: (gname: string) => string;
     trim: (str: string) => string;
     validate: (key: string, value: string) => boolean;

@@ -15,6 +15,7 @@ import vconsole from './console';
 import request from './request';
 import mobile from './mobile';
 import data from './date';
+import count from './count';
 
 const superToolsLib = {
     version: version,
@@ -32,7 +33,8 @@ const superToolsLib = {
     ...request,
     ...vconsole,
     ...mobile,
-    ...data
+    ...data,
+    ...count
 }
 
 export default superToolsLib;

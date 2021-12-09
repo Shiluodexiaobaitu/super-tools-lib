@@ -119,10 +119,10 @@ const winCopy = (flag) => {
  * 打印屏幕
 */
 const print = (id: string, src: string) => {
-    //const el = document.getElementById(id);
+    const el = document.getElementById(id);
     const iframe: any = document.createElement('IFRAME');
     let doc = null;
-    iframe.setAttribute('style', 'position:absolute;width:100%;height:100%;left:0;top:0;');
+    iframe.setAttribute('style', 'position:fixed;width:100%;height:100%;left:0;top:0;');
     document.body.appendChild(iframe);
     doc = iframe.contentWindow.document;
     const img = new Image();
@@ -131,7 +131,8 @@ const print = (id: string, src: string) => {
     // 引入打印的专有CSS样式，根据实际修改
     // doc.write('<LINK rel="stylesheet" type="text/css" href="css/print.css">');
     //doc.write(img);
-    doc.close();
+    doc.close(el);
+    doc.write(img)
     // 获取iframe的焦点，从iframe开始打印
     iframe.contentWindow.focus();
     iframe.contentWindow.print();
@@ -168,6 +169,17 @@ const copy = (str: string): void => {
     }
 }
 
+/**
+ * 平滑滚动到页面顶部
+*/
+const scrollToTop = () => {
+    const c = document.documentElement.scrollTop || document.body.scrollTop
+    if (c > 0) {
+        window.requestAnimationFrame(scrollToTop)
+        window.scrollTo(0, c - c / 8)
+    }
+}
+
 const browser = {
     toFullScreen,
     exitFullscreen,
@@ -176,7 +188,8 @@ const browser = {
     winCopy,
     print,
     setVibration,
-    copy
+    copy,
+    scrollToTop
 }
 
 export default browser;

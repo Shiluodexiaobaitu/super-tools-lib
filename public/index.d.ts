@@ -1,3 +1,97 @@
+declare const superToolsLib: {
+    smallRounding: (num: number, place: number) => number;
+    dateFormater: (formater: string, time?: number) => string;
+    orient: () => void;
+    vConsole: () => void;
+    socket: ({ url }: {
+        url: string;
+    }) => any;
+    downBlob: (data: any, fileName: string) => void;
+    exportExcel: (column: any[], dataSource: any[], fileName?: string) => void;
+    isBase64: (base64: any) => boolean;
+    isArray: (arr: any) => boolean;
+    isString: (str: any) => boolean;
+    isFunction: (fn: any) => boolean;
+    isObject: (obj: any) => boolean;
+    isNumber: (num: any) => boolean;
+    isWeiXin: () => boolean;
+    repeat: (obj: any) => void;
+    deepClone: (obj: any, hash?: WeakMap<object, any>) => any;
+    arrayUnique: (arr: any[]) => any[];
+    arrayNonRepeatfy: (arr: any[]) => any[];
+    aLineUnique: (arr: any[]) => any[];
+    getOffset: (ele: any) => any;
+    shaking: ({ ele, attr, cb, rate, time }: {
+        ele: any;
+        attr: string;
+        cb: Function;
+        time?: number;
+        rate?: number;
+    }) => void;
+    stopPropagation: (e: any) => void;
+    getDistance: (endLat: number, endLon: number, startLat: number, startLon: number) => number;
+    calcDistance: (lat1: any, lng1: any, lat2: any, lng2: any) => number;
+    lonLatToMercator: (lonLat: {
+        lon: number;
+        lat: number;
+    }) => any;
+    mercatorToLonlat: (mercator: {
+        x: number;
+        y: number;
+    }) => any;
+    performanceAnalysis: () => void;
+    getPerformanceTiming: () => any;
+    toFullScreen: () => void;
+    exitFullscreen: () => void;
+    LocalStorage: {
+        get(user: string, name: string): string;
+        set(user: string, name: string, value: string): void;
+        remove(user: string, name: string): void;
+        clear(): void;
+    };
+    getPosition: (timeout?: number, maximumAge?: number) => Promise<unknown>;
+    winCopy: (flag: any) => void;
+    print: (id: string, src: string) => void;
+    setVibration: () => void;
+    copy: (str: string) => void;
+    scrollToTop: () => void;
+    guid: () => string;
+    getFileBase64: (file: File, cb: Function) => void;
+    isAndroidMobileDevice: () => boolean;
+    isAppleMobileDevice: () => boolean;
+    throttle: (func: Function, delay: number) => Function;
+    debounce: (fn: Function, wait: number) => Function;
+    fileDownload: (url: string) => boolean;
+    fuzzyQuery: (list: any[], key: string, keyWord: String) => any[];
+    getUrlParam: () => Object;
+    getCookie: (name: string) => string;
+    colorHex: (color: string) => string;
+    viewportToPixels: (value: string) => number;
+    noRefdelUrlParam: (ref: string) => string;
+    getAge: (id: string) => string;
+    getSex: (id: string) => "男" | "女";
+    digitUppercase: (n: number) => string;
+    hexToRgba: (str: string, alpa: number) => string;
+    rgbaToHex: (color: any) => string;
+    initialToCapitali: (gname: string) => string;
+    trim: (str: string) => string;
+    validate: (key: string, value: string) => boolean;
+    version: string;
+};
+export default superToolsLib;
+
+export declare const smallRounding: (num: number, place: number) => number;
+export declare const dateFormater: (formater: string, time?: number) => string;
+export declare const deepClone: (obj: any, hash?: WeakMap<object, any>) => any;
+export declare const stopPropagation: (e: any) => void;
+export declare const scrollToTop: () => void;
+export declare const getAge: (id: string) => string;
+export declare const getSex: (id: string) => "男" | "女";
+export declare const digitUppercase: (n: number) => string;
+export declare const hexToRgba: (str: string, alpa: number) => string;
+export declare const rgbaToHex: (color: any) => string;
+export declare const version: string;
+
 export declare const orient: () => void;
 export declare const vConsole: () => void;
 export declare const socket: ({ url }: {
@@ -66,3 +160,4 @@ export declare const initialToCapitali: (gname: string) => string;
 export declare const trim: (str: string) => string;
 export declare const validate: (key: string, value: string) => boolean;
 export declare const exportExcel: (column: any[], dataSource: any[], fileName?: string) => void;
+

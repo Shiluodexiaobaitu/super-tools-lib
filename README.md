@@ -45,6 +45,8 @@ superToolsLib.guid();
 - getAge // 根据身份证号获取年龄
 - getSex // 根据身份证号获取性别
 - digitUppercase //数字转化为大写金额
+- injectScript // 动态引入js
+- sinogToLetter //  汉字转字母
 
 ### 字符串方法
 

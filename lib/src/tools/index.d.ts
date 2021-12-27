@@ -1,5 +1,7 @@
 export declare const hexToRgba: (str: string, alpa: number) => string;
 export declare const rgbaToHex: (color: any) => string;
+export declare const injectScript: (src: string) => void;
+export declare const sinogToLetter: (str: string) => string;
 declare const tools: {
     guid: () => string;
     getFileBase64: (file: File, cb: Function) => void;
@@ -19,5 +21,7 @@ declare const tools: {
     digitUppercase: (n: number) => string;
     hexToRgba: (str: string, alpa: number) => string;
     rgbaToHex: (color: any) => string;
+    injectScript: (src: string) => void;
+    sinogToLetter: (str: string) => string;
 };
 export default tools;

@@ -1,4 +1,5 @@
 declare const superToolsLib: {
+    shuffle: (arr: any[]) => any[];
     smallRounding: (num: number, place: number) => number;
     dateFormater: (formater: string, time?: number) => string;
     orient: () => void;
@@ -73,6 +74,8 @@ declare const superToolsLib: {
     digitUppercase: (n: number) => string;
     hexToRgba: (str: string, alpa: number) => string;
     rgbaToHex: (color: any) => string;
+    injectScript: (src: string) => void;
+    sinogToLetter: (str: string) => string;
     initialToCapitali: (gname: string) => string;
     trim: (str: string) => string;
     validate: (key: string, value: string) => boolean;
@@ -80,6 +83,9 @@ declare const superToolsLib: {
 };
 export default superToolsLib;
 
+export declare const injectScript: (src: string) => void;
+export declare const sinogToLetter: (str: string) => string;
+export declare const shuffle: (arr: any[]) => any[];
 export declare const smallRounding: (num: number, place: number) => number;
 export declare const dateFormater: (formater: string, time?: number) => string;
 export declare const deepClone: (obj: any, hash?: WeakMap<object, any>) => any;
@@ -160,4 +166,3 @@ export declare const initialToCapitali: (gname: string) => string;
 export declare const trim: (str: string) => string;
 export declare const validate: (key: string, value: string) => boolean;
 export declare const exportExcel: (column: any[], dataSource: any[], fileName?: string) => void;
-

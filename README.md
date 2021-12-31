@@ -37,16 +37,16 @@ superToolsLib.guid();
 - getUrlParam // 获取 url 参数
 - getCookie // 获取 cookie 值
 - colorHex // RGB 颜色转 16 进制
-- hexToRgba // 16进制颜色转RGBA
-- rgbaToHex // rgba颜色转16进制
+- hexToRgba // 16 进制颜色转 RGBA
+- rgbaToHex // rgba 颜色转 16 进制
 - viewportToPixels // 计算 vh / vw 转 px
 - noRefdelUrlParam // 无刷新去除 url 参数
-- vconsole //移动端查看log
+- vconsole //移动端查看 log
 - getAge // 根据身份证号获取年龄
 - getSex // 根据身份证号获取性别
 - digitUppercase //数字转化为大写金额
-- injectScript // 动态引入js
-- sinogToLetter //  汉字转字母
+- injectScript // 动态引入 js
+- sinogToLetter // 汉字转字母
 
 ### 字符串方法
 
@@ -55,7 +55,9 @@ superToolsLib.guid();
 - trim // 去除字符串首尾空格
 
 ### 时间
+
 - dateFormater //格式化时间
+
 ```
 dateFormater('YYYY-MM-DD HH:mm:ss')
 ```
@@ -80,10 +82,10 @@ validate(key,value)
 - mobile // 手机号
 - cname //校验中文名 包含校验少数民族名字
 - ename //校验英文名 每一个单词首字母都是大写
-- ip //校验IP地址
-- ipv4 // 校验ipv4地址
-- color16Reg // 16进制颜色校验
-- mac //校验mac地址
+- ip //校验 IP 地址
+- ipv4 // 校验 ipv4 地址
+- color16Reg // 16 进制颜色校验
+- mac //校验 mac 地址
 
 ### 性能监控
 
@@ -94,6 +96,10 @@ validate(key,value)
 - getOffset // 获取一个元素距离浏览器左上角的偏移量
 - shaking // 抖动
 - stopPropagation //阻止冒泡事件
+- hasClass, //检测类名
+- addClass, //添加类名
+- removeClass, //删除类名
+- replaceClass //替换类名
 
 ### 浏览器
 
@@ -133,4 +139,4 @@ validate(key,value)
 ### file 文件操作
 
 - downBlob // 下载二进制流文件
-- exportExcel // table表格格式 导出Excel
+- exportExcel // table 表格格式 导出 Excel

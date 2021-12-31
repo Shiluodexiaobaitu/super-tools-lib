@@ -57,20 +57,70 @@ const shaking = ({ ele, attr, cb, rate = 20, time = 50 }: { ele: any, attr: stri
 
 /**
  * 阻止冒泡事件
-*/
-export const stopPropagation = (e) => { 
-    e = e || window.event; 
-    if(e.stopPropagation) {    // W3C阻止冒泡方法 
-        e.stopPropagation(); 
-    } else { 
+ * @param e 
+ */
+export const stopPropagation = (e) => {
+    e = e || window.event;
+    if (e.stopPropagation) {    // W3C阻止冒泡方法 
+        e.stopPropagation();
+    } else {
         e.cancelBubble = true; // IE阻止冒泡方法 
-    } 
-} 
+    }
+}
+
+/**
+ * 检测类名
+ * @param ele dom
+ * @param name 类名
+ * @returns {boolean}
+ */
+const hasClass = (ele: HTMLElement, name: string) => {
+    return ele.className.match(new RegExp('(\\s|^)' + name + '(\\s|$)'));
+}
+
+/**
+ * @description: 添加类名
+ * @param {*} ele
+ * @param {*} name
+ * @return {*}
+ */
+const addClass = (ele: HTMLElement, name: string) => {
+    if (!hasClass(ele, name)) ele.className += '' + name;
+}
+
+/**
+ * @description: 删除类名
+ * @param {*} ele
+ * @param {*} name
+ * @return {*}
+ */
+const removeClass = (ele: HTMLElement, name: string) => {
+    if (hasClass(ele, name)) {
+        const reg = new RegExp('(\\s|^)' + name + '(\\s|$)');
+        ele.className = ele.className.replace(reg, '');
+    }
+}
+
+/**
+ * @description: 替换类名
+ * @param {*} ele
+ * @param {*} newName
+ * @param {*} oldName
+ * @return {*}
+ */
+const replaceClass = (ele:HTMLElement, newName:string, oldName:string) => {
+    removeClass(ele, oldName);
+    addClass(ele, newName);
+}
 
 const dom = {
     getOffset,
     shaking,
-    stopPropagation
+    stopPropagation,
+    hasClass,
+    addClass,
+    removeClass,
+    replaceClass
 }
 
 export default dom

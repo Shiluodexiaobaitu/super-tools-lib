@@ -331,7 +331,7 @@ const digitUppercase = (n: number): string => {
 
 /**
  * 动态引入js
-*/
+*/ 
 export const injectScript = (src: string) => {
     const s = document.createElement('script');
     s.type = 'text/javascript';

@@ -9,5 +9,9 @@ declare const dom: {
         rate?: number;
     }) => void;
     stopPropagation: (e: any) => void;
+    hasClass: (ele: HTMLElement, name: string) => RegExpMatchArray;
+    addClass: (ele: HTMLElement, name: string) => void;
+    removeClass: (ele: HTMLElement, name: string) => void;
+    replaceClass: (ele: HTMLElement, newName: string, oldName: string) => void;
 };
 export default dom;

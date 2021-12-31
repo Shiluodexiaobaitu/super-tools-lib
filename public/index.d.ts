@@ -1,3 +1,11 @@
+interface Ajax {
+    constructor(options: any);
+    send(callback: Function, error: Function): void;
+    set url(url: any);
+    get url(): any;
+}
+
+
 declare const superToolsLib: {
     shuffle: (arr: any[]) => any[];
     smallRounding: (num: number, place: number) => number;
@@ -7,6 +15,7 @@ declare const superToolsLib: {
     socket: ({ url }: {
         url: string;
     }) => any;
+    Ajax: Ajax;
     downBlob: (data: any, fileName: string) => void;
     exportExcel: (column: any[], dataSource: any[], fileName?: string) => void;
     isBase64: (base64: any) => boolean;
@@ -30,6 +39,10 @@ declare const superToolsLib: {
         rate?: number;
     }) => void;
     stopPropagation: (e: any) => void;
+    hasClass: (ele: HTMLElement, name: string) => RegExpMatchArray;
+    addClass: (ele: HTMLElement, name: string) => void;
+    removeClass: (ele: HTMLElement, name: string) => void;
+    replaceClass: (ele: HTMLElement, newName: string, oldName: string) => void;
     getDistance: (endLat: number, endLon: number, startLat: number, startLon: number) => number;
     calcDistance: (lat1: any, lng1: any, lat2: any, lng2: any) => number;
     lonLatToMercator: (lonLat: {
@@ -83,6 +96,11 @@ declare const superToolsLib: {
 };
 export default superToolsLib;
 
+export declare const hasClass: (ele: HTMLElement, name: string) => RegExpMatchArray;
+export declare const addClass: (ele: HTMLElement, name: string) => void;
+export declare const removeClass: (ele: HTMLElement, name: string) => void;
+export declare const replaceClass: (ele: HTMLElement, newName: string, oldName: string) => void;
+export declare const Ajax: Ajax;
 export declare const injectScript: (src: string) => void;
 export declare const sinogToLetter: (str: string) => string;
 export declare const shuffle: (arr: any[]) => any[];

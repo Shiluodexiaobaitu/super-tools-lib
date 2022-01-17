@@ -1,3 +1,12 @@
+/*
+ * @Author: zhangce
+ * @Date: 2021-08-10 15:07:24
+ * @LastEditors: zhangce
+ * @LastEditTime: 2022-01-17 10:36:45
+ * @Description: 
+ */
+import { bubbleSort } from './_sort'
+
 /**
   * 数组去重复 利用ES6 Set去重（ES6中最常用）
  */
@@ -33,7 +42,8 @@ export const aLineUnique = (arr: Array<any>): Array<any> => {
 const array = {
     arrayUnique,
     arrayNonRepeatfy,
-    aLineUnique
+    aLineUnique,
+    bubbleSort
 }
 
 export default array;

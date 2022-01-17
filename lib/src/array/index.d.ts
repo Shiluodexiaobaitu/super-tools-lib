@@ -5,5 +5,6 @@ declare const array: {
     arrayUnique: (arr: Array<any>) => Array<any>;
     arrayNonRepeatfy: (arr: Array<any>) => Array<any>;
     aLineUnique: (arr: Array<any>) => Array<any>;
+    bubbleSort: (arr: any) => any;
 };
 export default array;

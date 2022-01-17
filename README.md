@@ -54,9 +54,17 @@ superToolsLib.guid();
 - repeat // 传入字符串，和重复次数，返回结果字符串
 - trim // 去除字符串首尾空格
 
+### number
+- accAdd //浮点数加法运算
+- accSub //浮点数减法运算
+- accMul //浮点数乘法运算
+- accDiv //浮点数除法运算
+
 ### 时间
 
 - dateFormater //格式化时间
+- formatPassTime // 格式化${startTime}距现在的已过时间(距离传入的时间经多了多久)
+- formatRemainTime // 格式化现在距${endTime}的剩余时间
 
 ```
 dateFormater('YYYY-MM-DD HH:mm:ss')
@@ -100,6 +108,7 @@ validate(key,value)
 - addClass, //添加类名
 - removeClass, //删除类名
 - replaceClass //替换类名
+- numberRoll //数字滚动封装，滚动到指定的数字
 
 ### 浏览器
 
@@ -111,6 +120,7 @@ validate(key,value)
 - print // 打印屏幕
 - copy // 复制文本
 - scrollToTop // 平滑滚动到页面顶部
+- userBrowser //返回当前浏览器是什么类型的浏览器
 
 ### 数组方法
 
@@ -121,6 +131,7 @@ validate(key,value)
 ### 对象方法
 
 - deepClone // 返回传入对象的一个深度克隆的副本对象
+- stringfyQueryString // 对象序列化
 
 ### 计算
 
@@ -135,6 +146,16 @@ validate(key,value)
 - isObject
 - isNumber
 - isWeiXin // 判断是否在微信中打开
+- isSupportWebP // 判断浏览器是否支持webP格式图片
+- returnType // 返回类型
+- isPromise // 是否Promise对象
+- isSymbol 
+- isError
+- isRegExp
+- isDate
+- isUndefined
+- isNull
+- 
 
 ### file 文件操作
 

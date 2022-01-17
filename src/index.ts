@@ -1,3 +1,10 @@
+/*
+ * @Author: zhangce
+ * @Date: 2021-11-04 17:11:40
+ * @LastEditors: zhangce
+ * @LastEditTime: 2022-01-14 17:54:26
+ * @Description: 
+ */
 import { version } from '../package.json';
 
 import string from './string';
@@ -17,6 +24,7 @@ import mobile from './mobile';
 import data from './date';
 import count from './count';
 import algorithm from './algorithm';
+import _number from './number';
 
 const superToolsLib = {
     version: version,
@@ -36,7 +44,8 @@ const superToolsLib = {
     ...mobile,
     ...data,
     ...count,
-    ...algorithm
+    ...algorithm,
+    ..._number
 }
 
 export default superToolsLib;

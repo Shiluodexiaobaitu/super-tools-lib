@@ -1,3 +1,10 @@
+<!--
+ * @Author: zhangce
+ * @Date: 2021-10-08 14:15:34
+ * @LastEditors: zhangce
+ * @LastEditTime: 2022-01-17 10:01:50
+ * @Description: 
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,8 +35,16 @@
         //     console.log('test',{a:22,sd:1})
         // }
 
-        console.log('AAA',superToolsLib.sinogToLetter('张策'))
-      
+        console.log('AAA', superToolsLib.sinogToLetter('张策'))
+
+
+        console.time('deepClone');
+        // let obj2 = superToolsLib.deepClone(obj1);
+        console.log('++', 0.3+0.19098)
+        console.log('++1', superToolsLib.accAdd(0.3,0.19098))
+        console.timeEnd('deepClone');
+
+
         ele.onclick = function (e) {
 
             superToolsLib.exportExcel([

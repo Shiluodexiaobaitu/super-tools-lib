@@ -1,3 +1,10 @@
+/*
+ * @Author: zhangce
+ * @Date: 2021-10-08 14:15:34
+ * @LastEditors: zhangce
+ * @LastEditTime: 2022-01-12 16:35:06
+ * @Description: 
+ */
 // import resolve from 'rollup-plugin-node-resolve';
 // import commonjs from 'rollup-plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
@@ -44,13 +51,13 @@ export default [
                 runtimeHelpers: true,       // 使plugin-transform-runtime生效
             }),
 
-            terser({
-                compress: {
-                    // compress options 
-                    // drop_console: true //去除log
-                },
-            }), // 压缩代码
-            filesize(), // 显示打包后文件的大小
+            // terser({
+            //     compress: {
+            //         // compress options 
+            //         // drop_console: true //去除log
+            //     },
+            // }), // 压缩代码
+            // filesize(), // 显示打包后文件的大小
             livereload(),
             serve({
                 open: true,

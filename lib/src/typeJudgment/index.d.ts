@@ -6,5 +6,14 @@ declare const typeJudgment: {
     isObject: (obj: any) => boolean;
     isNumber: (num: any) => boolean;
     isWeiXin: () => boolean;
+    isNull: (o: any) => boolean;
+    isUndefined: (o: any) => boolean;
+    isDate: (o: any) => boolean;
+    isRegExp: (o: any) => boolean;
+    isError: (o: any) => boolean;
+    isSymbol: (o: any) => boolean;
+    isPromise: (o: any) => boolean;
+    returnType: (o: any) => any;
+    isSupportWebP: () => boolean;
 };
 export default typeJudgment;

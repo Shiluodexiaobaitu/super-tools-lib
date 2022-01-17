@@ -18,5 +18,6 @@ declare const browser: {
     setVibration: () => void;
     copy: (str: string) => void;
     scrollToTop: () => void;
+    userBrowser: () => string;
 };
 export default browser;

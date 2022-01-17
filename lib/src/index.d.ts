@@ -5,11 +5,16 @@ interface Ajax {
     get url(): any;
 }
 
-
 declare const superToolsLib: {
+    accAdd: (num1: any, num2: number) => number;
+    accSub: (num1: number, num2: number) => number;
+    accMul: (num1: number, num2: number) => number;
+    accDiv: (num1: number, num2: number) => number;
     shuffle: (arr: any[]) => any[];
     smallRounding: (num: number, place: number) => number;
     dateFormater: (formater: string, time?: number) => string;
+    formatPassTime: (startTime: any) => string;
+    formatRemainTime: (endTime: any) => string;
     orient: () => void;
     vConsole: () => void;
     socket: ({ url }: {
@@ -25,11 +30,22 @@ declare const superToolsLib: {
     isObject: (obj: any) => boolean;
     isNumber: (num: any) => boolean;
     isWeiXin: () => boolean;
+    isNull: (o: any) => boolean;
+    isUndefined: (o: any) => boolean;
+    isDate: (o: any) => boolean;
+    isRegExp: (o: any) => boolean;
+    isError: (o: any) => boolean;
+    isSymbol: (o: any) => boolean;
+    isPromise: (o: any) => boolean;
+    returnType: (o: any) => any;
+    isSupportWebP: () => boolean;
     repeat: (obj: any) => void;
-    deepClone: (obj: any, hash?: WeakMap<object, any>) => any;
+    deepClone: (data: any) => any;
+    stringfyQueryString: (obj: Object) => string;
     arrayUnique: (arr: any[]) => any[];
     arrayNonRepeatfy: (arr: any[]) => any[];
     aLineUnique: (arr: any[]) => any[];
+    bubbleSort: (arr: any) => any;
     getOffset: (ele: any) => any;
     shaking: ({ ele, attr, cb, rate, time }: {
         ele: any;
@@ -43,6 +59,7 @@ declare const superToolsLib: {
     addClass: (ele: HTMLElement, name: string) => void;
     removeClass: (ele: HTMLElement, name: string) => void;
     replaceClass: (ele: HTMLElement, newName: string, oldName: string) => void;
+    numberRoll: (ele: any, targetNumber: number, duration: number) => void;
     getDistance: (endLat: number, endLon: number, startLat: number, startLon: number) => number;
     calcDistance: (lat1: any, lng1: any, lat2: any, lng2: any) => number;
     lonLatToMercator: (lonLat: {
@@ -69,6 +86,7 @@ declare const superToolsLib: {
     setVibration: () => void;
     copy: (str: string) => void;
     scrollToTop: () => void;
+    userBrowser: () => string;
     guid: () => string;
     getFileBase64: (file: File, cb: Function) => void;
     isAndroidMobileDevice: () => boolean;
@@ -96,6 +114,26 @@ declare const superToolsLib: {
 };
 export default superToolsLib;
 
+
+export declare const accAdd: (num1: any, num2: number) => number;
+export declare const accSub: (num1: number, num2: number) => number;
+export declare const accMul: (num1: number, num2: number) => number;
+export declare const accDiv: (num1: number, num2: number) => number;
+export declare const formatPassTime: (startTime: any) => string;
+export declare const formatRemainTime: (endTime: any) => string;
+export declare const isNull: (o: any) => boolean;
+export declare const isUndefined: (o: any) => boolean;
+export declare const isDate: (o: any) => boolean;
+export declare const isRegExp: (o: any) => boolean;
+export declare const isError: (o: any) => boolean;
+export declare const isSymbol: (o: any) => boolean;
+export declare const isPromise: (o: any) => boolean;
+export declare const returnType: (o: any) => any;
+export declare const isSupportWebP: () => boolean;
+export declare const stringfyQueryString: (obj: Object) => string;
+export declare const bubbleSort: (arr: any) => any;
+export declare const numberRoll: (ele: any, targetNumber: number, duration: number) => void;
+export declare const userBrowser: () => string;
 export declare const hasClass: (ele: HTMLElement, name: string) => RegExpMatchArray;
 export declare const addClass: (ele: HTMLElement, name: string) => void;
 export declare const removeClass: (ele: HTMLElement, name: string) => void;
@@ -106,7 +144,7 @@ export declare const sinogToLetter: (str: string) => string;
 export declare const shuffle: (arr: any[]) => any[];
 export declare const smallRounding: (num: number, place: number) => number;
 export declare const dateFormater: (formater: string, time?: number) => string;
-export declare const deepClone: (obj: any, hash?: WeakMap<object, any>) => any;
+export declare const deepClone: (data: any) => any;
 export declare const stopPropagation: (e: any) => void;
 export declare const scrollToTop: () => void;
 export declare const getAge: (id: string) => string;

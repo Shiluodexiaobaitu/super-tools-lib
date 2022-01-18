@@ -7,9 +7,9 @@ interface Ajax {
 
 declare const superToolsLib: {
     accAdd: (num1: any, num2: number) => number;
-    accSub: (num1: number, num2: number) => number;
+    accSub: (num1: number, num2: number) => Number;
     accMul: (num1: number, num2: number) => number;
-    accDiv: (num1: number, num2: number) => number;
+    accDiv: (num1: Number, num2: Number) => Number;
     shuffle: (arr: any[]) => any[];
     smallRounding: (num: number, place: number) => number;
     dateFormater: (formater: string, time?: number) => string;
@@ -39,7 +39,6 @@ declare const superToolsLib: {
     isPromise: (o: any) => boolean;
     returnType: (o: any) => any;
     isSupportWebP: () => boolean;
-    repeat: (obj: any) => void;
     deepClone: (data: any) => any;
     stringfyQueryString: (obj: Object) => string;
     arrayUnique: (arr: any[]) => any[];
@@ -60,7 +59,7 @@ declare const superToolsLib: {
     removeClass: (ele: HTMLElement, name: string) => void;
     replaceClass: (ele: HTMLElement, newName: string, oldName: string) => void;
     numberRoll: (ele: any, targetNumber: number, duration: number) => void;
-    getDistance: (endLat: number, endLon: number, startLat: number, startLon: number) => number;
+    getDistance: (startLon: number, startLat: number, endLon: number, endLat: number) => number;
     calcDistance: (lat1: any, lng1: any, lat2: any, lng2: any) => number;
     lonLatToMercator: (lonLat: {
         lon: number;
@@ -82,7 +81,7 @@ declare const superToolsLib: {
     };
     getPosition: (timeout?: number, maximumAge?: number) => Promise<unknown>;
     winCopy: (flag: any) => void;
-    print: (id: string, src: string) => void;
+    print: (printEleId: string, rootEleId: string, style: string) => boolean;
     setVibration: () => void;
     copy: (str: string) => void;
     scrollToTop: () => void;
@@ -94,7 +93,7 @@ declare const superToolsLib: {
     throttle: (func: Function, delay: number) => Function;
     debounce: (fn: Function, wait: number) => Function;
     fileDownload: (url: string) => boolean;
-    fuzzyQuery: (list: any[], key: string, keyWord: String) => any[];
+    fuzzyQuery: (list: any[], key: string, keyWord: string) => any[];
     getUrlParam: () => Object;
     getCookie: (name: string) => string;
     colorHex: (color: string) => string;
@@ -108,12 +107,12 @@ declare const superToolsLib: {
     injectScript: (src: string) => void;
     sinogToLetter: (str: string) => string;
     initialToCapitali: (gname: string) => string;
+    repeat: (str: string, n: number) => string;
     trim: (str: string) => string;
     validate: (key: string, value: string) => boolean;
     version: string;
 };
 export default superToolsLib;
-
 
 export declare const accAdd: (num1: any, num2: number) => number;
 export declare const accSub: (num1: number, num2: number) => number;
@@ -167,7 +166,7 @@ export declare const isFunction: (fn: any) => boolean;
 export declare const isObject: (obj: any) => boolean;
 export declare const isNumber: (num: any) => boolean;
 export declare const isWeiXin: () => boolean;
-export declare const repeat: (obj: any) => void;
+export declare const repeat: (str: string, n: number) => string;
 export declare const cloneDeep: (obj: any) => any;
 export declare const arrayUnique: (arr: any[]) => any[];
 export declare const arrayNonRepeatfy: (arr: any[]) => any[];
@@ -180,7 +179,7 @@ export declare const shaking: ({ ele, attr, cb, rate, time }: {
     time?: number;
     rate?: number;
 }) => void;
-export declare const getDistance: (endLat: number, endLon: number, startLat: number, startLon: number) => number;
+export declare const getDistance: (startLon: number, startLat: number, endLon: number, endLat: number) => number;
 export declare const calcDistance: (lat1: any, lng1: any, lat2: any, lng2: any) => number;
 export declare const lonLatToMercator: (lonLat: {
     lon: number;
@@ -202,7 +201,7 @@ export declare const LocalStorage: {
 };
 export declare const getPosition: (timeout?: number, maximumAge?: number) => Promise<unknown>;
 export declare const winCopy: (flag: any) => void;
-export declare const print: (id: string, src: string) => void;
+export declare const print: (printEleId: string, rootEleId: string, style: string) => boolean;
 export declare const setVibration: () => void;
 export declare const copy: (str: string) => void;
 export declare const guid: () => string;
@@ -212,7 +211,7 @@ export declare const isAppleMobileDevice: () => boolean;
 export declare const throttle: (func: Function, delay: number) => Function;
 export declare const debounce: (fn: Function, wait: number) => Function;
 export declare const fileDownload: (url: string) => boolean;
-export declare const fuzzyQuery: (list: any[], key: string, keyWord: String) => any[];
+export declare const fuzzyQuery: (list: any[], key: string, keyWord: string) => any[];
 export declare const getUrlParam: () => Object;
 export declare const getCookie: (name: string) => string;
 export declare const colorHex: (color: string) => string;
@@ -222,3 +221,4 @@ export declare const initialToCapitali: (gname: string) => string;
 export declare const trim: (str: string) => string;
 export declare const validate: (key: string, value: string) => boolean;
 export declare const exportExcel: (column: any[], dataSource: any[], fileName?: string) => void;
+

@@ -24,7 +24,7 @@ _.guid();
 ```js
 
 _.guid()
--> 'bfa39b2f-f77e-425e-8f41-1fe0d8ac38b4'
+=> 'bfa39b2f-f77e-425e-8f41-1fe0d8ac38b4'
 ```
 
 - getFileBase64 // 文件的 Base64 编码，
@@ -40,7 +40,7 @@ _.getFileBase64(file, (base64) => {
 ```js
 
 _.isAndroidMobileDevice()
--> true | false
+=> true | false
 ```
 
 - isAppleMobileDevice // 判断是否苹果移动设备访问
@@ -48,7 +48,7 @@ _.isAndroidMobileDevice()
 ```js
 
 _.isAppleMobileDevice()
--> true | false
+=> true | false
 ```
 
 - throttle // 函数节流
@@ -59,7 +59,7 @@ const fn = _.throttle(()=>{console.log('1')},2000);
 fn()
 fn()
 fn()
--> '1'
+=> '1'
 ```
 
 - debounce // 函数防抖
@@ -70,7 +70,7 @@ const fn =  _.debounce(()=>{console.log('1')},2000);
 fn()
 fn()
 fn() // 如果多次触发将上次记录延迟清除掉,以最后一次触发重新计时
--> '1'
+=> '1'
 ```
 
 - fileDownload // 根据 url 地址下载文件，图片，音频，视频
@@ -90,7 +90,7 @@ _.fileDownload(url);
 
 const arr = [{ name: "1" }, { name: "2" }, { name: "3" }];
 _.fuzzyQuery(arr, "name", "1");
--> [ { "name": "1"}]
+=> [ { "name": "1"}]
 ```
 
 - getUrlParam // 获取 url ？后的参数
@@ -98,7 +98,7 @@ _.fuzzyQuery(arr, "name", "1");
 ```js
 
 _.getUrlParam();
--> {}
+=> {}
 ```
 
 - getCookie // 获取 cookie 值
@@ -106,7 +106,7 @@ _.getUrlParam();
 ```js
 
 _.getCookie()
--> 'xxxxxxxxxxxx'
+=> 'xxxxxxxxxxxx'
 ```
 
 - colorHex // RGB 颜色转 16 进制
@@ -115,7 +115,7 @@ _.getCookie()
 
 _.colorHex('255,192,203');
 _.colorHex('rgb(255,192,203)')
--> '#ffc0cb'
+=> '#ffc0cb'
 ```
 
 - hexToRgba // 16 进制颜色转 RGBA
@@ -123,7 +123,7 @@ _.colorHex('rgb(255,192,203)')
 ```js
 
 _.hexToRgba('#ffc0cb');
--> 'rgba(255,192,203,1)'
+=> 'rgba(255,192,203,1)'
 ```
 
 - rgbaToHex // rgba 颜色转 16 进制
@@ -131,7 +131,7 @@ _.hexToRgba('#ffc0cb');
 ```js
 
 _.rgbaToHex('rgba(255,192,203,1)')
--> '#ffc0cb'
+=> '#ffc0cb'
 ```
 
 - viewportToPixels // 计算 vh / vw 转 px
@@ -139,7 +139,7 @@ _.rgbaToHex('rgba(255,192,203,1)')
 ```js
 
 _.viewportToPixels('90vh')
--> 640
+=> 640
 ```
 
 - noRefdelUrlParam // 无刷新去除 url ?后 参数
@@ -148,7 +148,7 @@ _.viewportToPixels('90vh')
 
 // http://localhost:8888/?id=2
 _.noRefdelUrlParam('id');
-->  // http://localhost:8888/?
+=>  // http://localhost:8888/?
 ```
 
 - vconsole //移动端查看 log
@@ -162,7 +162,7 @@ _.vconsole();
 ```js
 
 _.getAge('xxxxxxxxxxxxxxxxx');
--> '29岁0月14天'
+=> '29岁0月14天'
 ```
 
 - getSex // 输入身份证号获取性别
@@ -170,7 +170,7 @@ _.getAge('xxxxxxxxxxxxxxxxx');
 ```js
 
 _.getSex('xxxxxxxxxxxxxxxxx');
--> '男'
+=> '男'
 ```
 
 - digitUppercase //数字转化为大写金额
@@ -178,7 +178,7 @@ _.getSex('xxxxxxxxxxxxxxxxx');
 ```js
 
 _.digitUppercase(10000)
--> '壹万元整'
+=> '壹万元整'
 ```
 
 - injectScript // 动态引入 js
@@ -192,7 +192,7 @@ _.injectScript(src);
 ```js
 
 _.sinogToLetter('你好 ')
--> 'NH'
+=> 'NH'
 ```
 
 ### 字符串方法
@@ -202,7 +202,7 @@ _.sinogToLetter('你好 ')
 ```js
 
 _.initialToCapitali('aaaa');
--> 'Aaaa'
+=> 'Aaaa'
 ```
 
 - repeat // 传入字符串，和重复次数，返回结果字符串
@@ -210,7 +210,7 @@ _.initialToCapitali('aaaa');
 ```js
 
 _.repeat('abc',3)
--> 'abcabcabc'
+=> 'abcabcabc'
 ```
 
 - trim // 去除字符串首尾空格
@@ -218,7 +218,7 @@ _.repeat('abc',3)
 ```js
 
 _.trim('  xxx  ')
--> 'xxx'
+=> 'xxx'
 ```
 
 ### number
@@ -228,7 +228,7 @@ _.trim('  xxx  ')
 ```js
 
 _.accAdd(0.1, 0.2)
--> 0.3
+=> 0.3
 ```
 
 - accSub //浮点数减法运算
@@ -236,7 +236,7 @@ _.accAdd(0.1, 0.2)
 ```js
 
 _.accSub(0.3,0.1)
--> 0.2
+=> 0.2
 ```
 
 - accMul //浮点数乘法运算
@@ -244,7 +244,7 @@ _.accSub(0.3,0.1)
 ```js
 
 _.accMul(0.1,3)
--> 0.3
+=> 0.3
 ```
 
 - accDiv //浮点数除法运算
@@ -252,7 +252,7 @@ _.accMul(0.1,3)
 ```js
 
 _.accDiv(0.3,3)
--> 0.1
+=> 0.1
 ```
 
 ### 时间
@@ -262,7 +262,7 @@ _.accDiv(0.3,3)
 ```js
 
 _.dateFormater('YYYY-MM-DD HH:mm:ss',new Date())
--> '2022-01-18 12:01:10'
+=> '2022-01-18 12:01:10'
 ```
 
 - formatPassTime // 格式化${startTime}距现在的已过时间(距离传入的时间经多了多久)
@@ -270,7 +270,7 @@ _.dateFormater('YYYY-MM-DD HH:mm:ss',new Date())
 ```js
 
 _.formatPassTime(1578614400000);
--> '2年前'
+=> '2年前'
 ```
 
 - formatRemainTime // 格式化现在距${endTime}的剩余时间
@@ -278,7 +278,7 @@ _.formatPassTime(1578614400000);
 ```js
 
 _.formatRemainTime(new Date('2023').getTime())
--> '347天19小时52分钟 26秒'
+=> '347天19小时52分钟 26秒'
 ```
 
 ### 正则
@@ -304,7 +304,7 @@ color16Reg // 16 进制颜色校验
 mac //校验 mac 地址
 
 _.validate(key,value)
--> true | false
+=> true | false
 ```
 
 ### 性能监控
@@ -322,7 +322,7 @@ _.performanceAnalysis();
 ```js
 
 _.getOffset(element)
--> { top:0, left:0 }
+=> { top:0, left:0 }
 ```
 
 - stopPropagation //阻止冒泡事件
@@ -336,7 +336,7 @@ _.stopPropagation(element);
 ```js
 
 _.hasClass(element,name)
--> true | false
+=> true | false
 ```
 
 - addClass, //添加类名
@@ -369,14 +369,14 @@ _.numberRoll(element, targetNumber, duration);
 
 ```js
 _.lonLatToMercator({ lon: 116.445088, lat: 39.94614 });
--> {x: 12962607.899733523, y: 4858118.574453057}
+=> {x: 12962607.899733523, y: 4858118.574453057}
 ```
 
 - mercatorToLonlat, // 墨卡托转经纬度
 
 ```js
 _.mercatorToLonlat({x: 12962607.899733523, y: 4858118.574453057})
--> {lon: 116.44508800000001, lat: 39.946140000000014}
+=> {lon: 116.44508800000001, lat: 39.946140000000014}
 ```
 
 - getDistance, // 输入起终点的高德坐标获取距离（米）
@@ -388,7 +388,7 @@ const endLon = 116.213407;
 const endLat = 40.226617;
 
 _.getDistance(startLon, startLat, endLon, endLat);
--> 37405
+=> 37405
 ```
 
 - calcDistance // 计算经纬度两个坐标得距离
@@ -396,7 +396,7 @@ _.getDistance(startLon, startLat, endLon, endLat);
 ```js
 
 _.calcDistance(116.95400,39.95400,116.95300,39.95300)
--> 0.1222
+=> 0.1222
 ```
 
 ### 浏览器
@@ -417,16 +417,16 @@ _.exitFullscreen();
 
 ```js
 _.LocalStorage.get(user,name)
--> 返回user下的name值
+=> 返回user下的name值
 
 _.LocalStorage.get(user, name, value)
--> 设置user下name字段的的值value
+=> 设置user下name字段的的值value
 
 _.LocalStorage.remove(user, name)
--> 删除user下的name字段
+=> 删除user下的name字段
 
 _.LocalStoeage.clear()
--> 清空本地存储
+=> 清空本地存储
 ```
 
 - getPosition // H5 获取地理位置
@@ -472,7 +472,7 @@ _.scrollToTop();
 ```js
 // 可能返回类型 Firefox, Chrome, Opera, Safari
 _.userBrowser();
--> 'Chrome'
+=> 'Chrome'
 ```
 
 ### 数组方法
@@ -482,18 +482,18 @@ _.userBrowser();
 ```js
 const arr = [1,1,'true','true',true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,'NaN', 0, 0, 'a', 'a',{},{}]
 _.arrayNonRepeatfy(arr)
--> [1, 'true', true, 15, false, undefined, null, NaN, 'NaN', 0, 'a', {}, {}]
+=> [1, 'true', true, 15, false, undefined, null, NaN, 'NaN', 0, 'a', {}, {}]
 ```
 
 ### 对象方法
 
-<!-- - deepClone // 返回传入对象的一个深度克隆的副本对象 -->
+ <!-- deepClone // 返回传入对象的一个深度克隆的副本对象  -->
 
 - stringfyQueryString // 对象序列化
 
 ```js
 _.stringfyQueryString({name:'fei',id:1, "storeNo" : "1-105","floorName" : "F1",})
--> 'name=fei&id=1&storeNo=1-105&floorName=F1'
+=> 'name=fei&id=1&storeNo=1-105&floorName=F1'
 ```
 
 ### 计算
@@ -502,7 +502,7 @@ _.stringfyQueryString({name:'fei',id:1, "storeNo" : "1-105","floorName" : "F1",}
 
 ```js
 _.smallRounding(89.38931,3);
--> 89.39
+=> 89.39
 ```
 
 ### 类型判断
@@ -511,112 +511,112 @@ _.smallRounding(89.38931,3);
 
 ```js
 _.isBase64(target)
--> true | false
+=> true | false
 ```
 
 - isArray
 
 ```js
 _.isArray(target)
--> true | false
+=> true | false
 ```
 
 - isString
 
 ```js
 _.isString(target)
--> true | false
+=> true | false
 ```
 
 - isFunction
 
 ```js
 _.isFunction(target)
--> true | false
+=> true | false
 ```
 
 - isObject
 
 ```js
 _.isObject(target)
--> true | false
+=> true | false
 ```
 
 - isNumber
 
 ```js
 _.isNumber(target)
--> true | false
+=> true | false
 ```
 
 - isWeiXin
 
 ```js
 _.isWeiXin()
--> true | false
+=> true | false
 ```
 
 - isSupportWebP // 判断浏览器是否支持 webP 格式图片
 
 ```js
 _.isSupportWebP()
--> true | false
+=> true | false
 ```
 
 - returnType // 返回类型
 
 ```js
 _.returnType(target)
--> type
+=> type
 ```
 
 - isPromise // 是否 Promise 对象
 
 ```js
 _.isPromise(target)
--> true | false
+=> true | false
 ```
 
 - isSymbol
 
 ```js
 _.isSymbol(target)
--> true | false
+=> true | false
 ```
 
 - isError
 
 ```js
 _.isError(target)
--> true | false
+=> true | false
 ```
 
 - isRegExp
 
 ```js
 _.isRegExp(target)
--> true | false
+=> true | false
 ```
 
 - isDate
 
 ```js
 _.isDate(target)
--> true | false
+=> true | false
 ```
 
 - isUndefined
 
 ```js
 _.isUndefined(target)
--> true | false
+=> true | false
 ```
 
 - isNull
 
 ```js
 _.isNull(target)
--> true | false
+=> true | false
 ```
 
 ### file 文件操作
@@ -666,5 +666,5 @@ const data = [
   { type: "1", count: "2", countShare: "3", size: "4", sizeShare: "5" },
 ];
 
-_.exportExcel(column,data,'fileName')
+_.exportExcel(column, data, "fileName");
 ```

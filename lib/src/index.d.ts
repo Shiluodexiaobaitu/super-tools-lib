@@ -32,6 +32,7 @@ declare const superToolsLib: {
     isPromise: (o: any) => boolean;
     returnType: (o: any) => any;
     isSupportWebP: () => boolean;
+    repeat: (obj: any) => void;
     deepClone: (data: any) => any;
     stringfyQueryString: (obj: Object) => string;
     arrayUnique: (arr: any[]) => any[];
@@ -52,7 +53,7 @@ declare const superToolsLib: {
     removeClass: (ele: HTMLElement, name: string) => void;
     replaceClass: (ele: HTMLElement, newName: string, oldName: string) => void;
     numberRoll: (ele: any, targetNumber: number, duration: number) => void;
-    getDistance: (startLon: number, startLat: number, endLon: number, endLat: number) => number;
+    getDistance: (endLat: number, endLon: number, startLat: number, startLon: number) => number;
     calcDistance: (lat1: any, lng1: any, lat2: any, lng2: any) => number;
     lonLatToMercator: (lonLat: {
         lon: number;
@@ -74,7 +75,7 @@ declare const superToolsLib: {
     };
     getPosition: (timeout?: number, maximumAge?: number) => Promise<unknown>;
     winCopy: (flag: any) => void;
-    print: (printEleId: string, rootEleId: string, style: string) => boolean;
+    print: (id: string, src: string) => void;
     setVibration: () => void;
     copy: (str: string) => void;
     scrollToTop: () => void;
@@ -86,7 +87,7 @@ declare const superToolsLib: {
     throttle: (func: Function, delay: number) => Function;
     debounce: (fn: Function, wait: number) => Function;
     fileDownload: (url: string) => boolean;
-    fuzzyQuery: (list: any[], key: string, keyWord: string) => any[];
+    fuzzyQuery: (list: any[], key: string, keyWord: String) => any[];
     getUrlParam: () => Object;
     getCookie: (name: string) => string;
     colorHex: (color: string) => string;
@@ -100,7 +101,6 @@ declare const superToolsLib: {
     injectScript: (src: string) => void;
     sinogToLetter: (str: string) => string;
     initialToCapitali: (gname: string) => string;
-    repeat: (str: string, n: number) => string;
     trim: (str: string) => string;
     validate: (key: string, value: string) => boolean;
     version: string;

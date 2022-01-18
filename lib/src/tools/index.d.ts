@@ -10,7 +10,7 @@ declare const tools: {
     throttle: (func: Function, delay: number) => Function;
     debounce: (fn: Function, wait: number) => Function;
     fileDownload: (url: string) => boolean;
-    fuzzyQuery: (list: Array<any>, key: string, keyWord: String) => Array<any>;
+    fuzzyQuery: (list: Array<any>, key: string, keyWord: string) => Array<any>;
     getUrlParam: () => Object;
     getCookie: (name: string) => string;
     colorHex: (color: string) => string;

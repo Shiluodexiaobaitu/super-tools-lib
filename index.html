@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-10-08 14:15:34
  * @LastEditors: zhangce
- * @LastEditTime: 2022-01-17 10:01:50
+ * @LastEditTime: 2022-01-18 14:48:19
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -21,10 +21,12 @@
 </head>
 
 <body>
+    <div id="root"></div>
     <script src='./lib/super-tools-lib.js'></script>
     <div>super-tools-lib</div>
     <div id="ele"
         style="width: 100px;height: 100px;background-color: pink; position: relative; top: 300px;left: 300px;">
+        <div>saasasa</div>
     </div>
 
     <script>
@@ -46,6 +48,16 @@
 
 
         ele.onclick = function (e) {
+
+            superToolsLib.shaking({
+                ele: document.getElementById('ele'),
+                attr: 'top: 100px',
+                cb: ()=> {
+                    console.log('执行完成')
+                },
+                rate: 50,
+                time: 100
+            })
 
             superToolsLib.exportExcel([
                 {
@@ -81,6 +93,7 @@
             ], [
                 { type: '1', count: '2', countShare: '3', size: '4', sizeShare: '5' }
             ])
+        
         }
     </script>
 </body>

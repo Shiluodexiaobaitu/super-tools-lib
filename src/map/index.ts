@@ -1,10 +1,17 @@
+/*
+ * @Author: zhangce
+ * @Date: 2021-10-08 14:15:34
+ * @LastEditors: zhangce
+ * @LastEditTime: 2022-01-18 13:52:54
+ * @Description: 
+ */
 /**
 * 获取两个高德坐标的距离, 后一个点，不传，默认为用户坐标
-* @return {null|number} 距离多少米，没有定位信息，返回null
+* @return {null|number} 距离多少米
 * @example
 * getDistance(31.282055633974, 121.379623888259)
 */
-const getDistance = (endLat: number, endLon: number, startLat: number, startLon: number): number => {
+const getDistance = (startLon: number, startLat: number, endLon: number, endLat: number): number => {
 
     const PI = Math.PI
     const lon1: number = (PI / 180) * startLon

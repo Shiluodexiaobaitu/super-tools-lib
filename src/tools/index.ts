@@ -112,7 +112,7 @@ const fileDownload = function (url: string): boolean {
  * @param  {String} keyWord  查询的关键词
  * @return {Array}           查询的结果
 */
-const fuzzyQuery = function (list: Array<any>, key: string, keyWord: String): Array<any> {
+const fuzzyQuery = function (list: Array<any>, key: string, keyWord: string): Array<any> {
     const arr = [];
     for (let i = 0; i < list.length; i++) {
         if (list[i][key].match(keyWord) !== null) {
@@ -153,7 +153,11 @@ const getCookie = function (name: string): string {
 */
 const colorHex = (color: string): string => {
     const that = color;
-    const aColor = color.split(',');
+    const aColor = color
+        .replace(/rgb?\(/, '')
+        .replace(/\)/, '')
+        .replace(/[\s+]/g, '')
+        .split(',');
     let strHex = '#';
     for (let i = 0; i < aColor.length; i++) {
         let hex = Number(aColor[i]).toString(16);
@@ -331,7 +335,7 @@ const digitUppercase = (n: number): string => {
 
 /**
  * 动态引入js
-*/ 
+*/
 export const injectScript = (src: string) => {
     const s = document.createElement('script');
     s.type = 'text/javascript';

@@ -14,7 +14,7 @@ declare const browser: {
     };
     getPosition: (timeout?: number, maximumAge?: number) => Promise<unknown>;
     winCopy: (flag: any) => void;
-    print: (id: string, src: string) => void;
+    print: (printEleId: string, rootEleId: string, style: string) => boolean;
     setVibration: () => void;
     copy: (str: string) => void;
     scrollToTop: () => void;

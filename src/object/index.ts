@@ -2,21 +2,11 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-01-14 17:35:38
+ * @LastEditTime: 2022-01-18 11:39:38
  * @Description: 
  */
 import typeJudgment from '../typeJudgment';
 const { returnType } = typeJudgment;
-
-const repeat = (obj) => {
-
-    if (Object.values(obj).length !== new Set(Object.values(obj)).size) {
-        console.log('重复')
-    } else {
-        console.log('no')
-    }
-
-}
 
 /**
  * 对象深拷贝
@@ -175,7 +165,6 @@ const stringfyQueryString = (obj: Object) => {
 }
 
 const object = {
-    repeat,
     deepClone,
     stringfyQueryString
 }

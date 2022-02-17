@@ -52,7 +52,7 @@ const LocalStorage = {
         const mapStorage = JSON.parse(localStorage.getItem(user)) || {};
         return mapStorage[name] || ''
     },
-    set(user: string, name: string, value: string): void {
+    set(user: string, name: string, value: any): void {
         if (!name) return
         const mapStorage = JSON.parse(localStorage.getItem(user)) || {};
         mapStorage[name] = value

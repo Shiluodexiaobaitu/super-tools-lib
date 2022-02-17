@@ -8,7 +8,7 @@ declare const browser: {
     exitFullscreen: () => void;
     LocalStorage: {
         get(user: string, name: string): string;
-        set(user: string, name: string, value: string): void;
+        set(user: string, name: string, value: any): void;
         remove(user: string, name: string): void;
         clear(): void;
     };

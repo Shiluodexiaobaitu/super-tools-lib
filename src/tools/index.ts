@@ -49,13 +49,13 @@ const isAppleMobileDevice = (): boolean => {
  * @param {*} func 执行函数
  * @param {*} delay 节流时间,毫秒
 */
-const throttle = function (func: Function, delay: number): Function {
+const throttle = function (fn: Function, delay: number): Function {
     let timer: any = null
-    return function () {
+    return function (...rest) {
         if (!timer) {
             timer = setTimeout(() => {
                 // 或者直接 func()
-                func()
+                fn(...rest)
                 timer = null
             }, delay)
         }
@@ -67,11 +67,11 @@ const throttle = function (func: Function, delay: number): Function {
 */
 const debounce = function (fn: Function, wait: number): Function {
     let timeout: any = null
-    return function () {
+    return function (...rest) {
         if (timeout !== null) clearTimeout(timeout)// 如果多次触发将上次记录延迟清除掉
         timeout = setTimeout(() => {
             // 或者直接 fn()
-            fn()
+            fn(...rest)
             timeout = null
         }, wait)
     }
@@ -397,6 +397,17 @@ export const sinogToLetter = (str: string) => {
     return mkRslt(arrResult);
 }
 
+/**
+ * @description: 返回设计稿上px在不同屏幕下的适配尺寸
+ * @param {number} px 
+ * @param {*} draft 设计稿宽度
+ * @return {*}
+ */
+export function getFitSize(px: number, draft = 750): number {
+    const scale = document.body.clientWidth / draft;
+    return Math.floor((scale * px))
+}
+
 const tools = {
     guid,
     getFileBase64,
@@ -417,7 +428,8 @@ const tools = {
     hexToRgba,
     rgbaToHex,
     injectScript,
-    sinogToLetter
+    sinogToLetter,
+    getFitSize
 }
 
 export default tools;

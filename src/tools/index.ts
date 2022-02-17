@@ -429,7 +429,7 @@ const tools = {
     rgbaToHex,
     injectScript,
     sinogToLetter,
-    getFitSize,
+    getFitSize
 }
 
 export default tools;

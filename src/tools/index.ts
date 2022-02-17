@@ -403,7 +403,7 @@ export const sinogToLetter = (str: string) => {
  * @param {*} draft 设计稿宽度
  * @return {*}
  */
-export function getFitSize(px: number, draft = 750): number {
+export const getFitSize = (px: number, draft = 750): number => {
     const scale = document.body.clientWidth / draft;
     return Math.floor((scale * px))
 }
@@ -429,7 +429,7 @@ const tools = {
     rgbaToHex,
     injectScript,
     sinogToLetter,
-    getFitSize
+    getFitSize,
 }
 
 export default tools;

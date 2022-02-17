@@ -2,7 +2,7 @@ export declare const hexToRgba: (str: string, alpa: number) => string;
 export declare const rgbaToHex: (color: any) => string;
 export declare const injectScript: (src: string) => void;
 export declare const sinogToLetter: (str: string) => string;
-export declare function getFitSize(px: number, draft?: number): number;
+export declare const getFitSize: (px: number, draft?: number) => number;
 declare const tools: {
     guid: () => string;
     getFileBase64: (file: File, cb: Function) => void;
@@ -24,6 +24,6 @@ declare const tools: {
     rgbaToHex: (color: any) => string;
     injectScript: (src: string) => void;
     sinogToLetter: (str: string) => string;
-    getFitSize: typeof getFitSize;
+    getFitSize: (px: number, draft?: number) => number;
 };
 export default tools;

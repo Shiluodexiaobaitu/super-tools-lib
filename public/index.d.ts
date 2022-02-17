@@ -1,15 +1,9 @@
-interface Ajax {
-    constructor(options: any);
-    send(callback: Function, error: Function): void;
-    set url(url: any);
-    get url(): any;
-}
-
 declare const superToolsLib: {
     accAdd: (num1: any, num2: number) => number;
     accSub: (num1: number, num2: number) => Number;
     accMul: (num1: number, num2: number) => number;
     accDiv: (num1: Number, num2: Number) => Number;
+    formatPrice: (price: any, sign?: string) => string;
     shuffle: (arr: any[]) => any[];
     smallRounding: (num: number, place: number) => number;
     dateFormater: (formater: string, time?: number) => string;
@@ -75,7 +69,7 @@ declare const superToolsLib: {
     exitFullscreen: () => void;
     LocalStorage: {
         get(user: string, name: string): string;
-        set(user: string, name: string, value: string): void;
+        set(user: string, name: string, value: any): void;
         remove(user: string, name: string): void;
         clear(): void;
     };
@@ -90,7 +84,7 @@ declare const superToolsLib: {
     getFileBase64: (file: File, cb: Function) => void;
     isAndroidMobileDevice: () => boolean;
     isAppleMobileDevice: () => boolean;
-    throttle: (func: Function, delay: number) => Function;
+    throttle: (fn: Function, delay: number) => Function;
     debounce: (fn: Function, wait: number) => Function;
     fileDownload: (url: string) => boolean;
     fuzzyQuery: (list: any[], key: string, keyWord: string) => any[];
@@ -106,6 +100,7 @@ declare const superToolsLib: {
     rgbaToHex: (color: any) => string;
     injectScript: (src: string) => void;
     sinogToLetter: (str: string) => string;
+    getFitSize: (px: number, draft?: number) => number;
     initialToCapitali: (gname: string) => string;
     repeat: (str: string, n: number) => string;
     trim: (str: string) => string;
@@ -114,6 +109,15 @@ declare const superToolsLib: {
 };
 export default superToolsLib;
 
+interface Ajax {
+    constructor(options: any);
+    send(callback: Function, error: Function): void;
+    set url(url: any);
+    get url(): any;
+}
+
+export declare const formatPrice: (price: any, sign?: string) => string;
+export declare const getFitSize: (px: number, draft?: number) => number;
 export declare const accAdd: (num1: any, num2: number) => number;
 export declare const accSub: (num1: number, num2: number) => number;
 export declare const accMul: (num1: number, num2: number) => number;
@@ -195,7 +199,7 @@ export declare const toFullScreen: () => void;
 export declare const exitFullscreen: () => void;
 export declare const LocalStorage: {
     get(user: string, name: string): string;
-    set(user: string, name: string, value: string): void;
+    set(user: string, name: string, value: any): void;
     remove(user: string, name: string): void;
     clear(): void;
 };
@@ -208,7 +212,7 @@ export declare const guid: () => string;
 export declare const getFileBase64: (file: File, cb: Function) => void;
 export declare const isAndroidMobileDevice: () => boolean;
 export declare const isAppleMobileDevice: () => boolean;
-export declare const throttle: (func: Function, delay: number) => Function;
+export declare const throttle: (fn: Function, delay: number) => Function;
 export declare const debounce: (fn: Function, wait: number) => Function;
 export declare const fileDownload: (url: string) => boolean;
 export declare const fuzzyQuery: (list: any[], key: string, keyWord: string) => any[];
@@ -221,4 +225,5 @@ export declare const initialToCapitali: (gname: string) => string;
 export declare const trim: (str: string) => string;
 export declare const validate: (key: string, value: string) => boolean;
 export declare const exportExcel: (column: any[], dataSource: any[], fileName?: string) => void;
+
 

@@ -1,7 +1,7 @@
 {
   "name": "super-tools-lib",
-  "version": "1.28.0",
-  "description": "### map - lonLatToMercator,       // 经纬度转墨卡托 - mercatorToLonlat,       // 墨卡托转经纬度 - getPosition,            // H5 获取地理位置",
+  "version": "1.30.0",
+  "description": "常用工具函数",
   "main": "lib/super-tools-lib.min.js",
   "types": "lib/src/index.d.ts",
   "scripts": {
@@ -34,7 +34,7 @@
   "homepage": "https://github.com/Shiluodexiaobaitu/Utils#readme",
   "dependencies": {},
   "files": [
-    "lib/super-tools-lib.js",
+    "lib/super-tools-lib.min.js",
     "lib/src/index.d.ts"
   ],
   "devDependencies": {

@@ -640,9 +640,9 @@ _.isNull(target)
 _.downBlob(file, fileName);
 ```
 
-- exportExcel // 导出 Excel
+<!-- - exportExcel // 导出 Excel -->
 
-```js
+<!-- ```js
 const column = [
   {
     title: "类型/楼层",
@@ -680,4 +680,4 @@ const data = [
 ];
 
 _.exportExcel(column, data, "fileName");
-```
+``` -->

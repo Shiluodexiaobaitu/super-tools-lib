@@ -99,13 +99,13 @@ const vConsole = () => {
     }
     const oldLog = console.log;
     window.console.log = function (...rest) {
-        oldLog(...rest)
         const panel_li = document.createElement('li');
         // const pre = document.createElement('pre');
         // const code = document.createElement('code');
 
         panel_li.style.cssText = 'margin: 0;padding: 0.46153846em 0.61538462em;overflow: hidden;line-height: 1.3;border-bottom: 1px solid rgba(255,255,255,0.05);word-break: break-word;color: #fff'
         let text = '';
+
         rest.forEach((it: any) => {
             oldLog(Object.prototype.toString.call(it))
             text += JSON.stringify(it, null, 4)

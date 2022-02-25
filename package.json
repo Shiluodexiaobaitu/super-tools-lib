@@ -1,8 +1,8 @@
 {
   "name": "super-tools-lib",
-  "version": "1.27.0",
+  "version": "1.28.0",
   "description": "### map - lonLatToMercator,       // 经纬度转墨卡托 - mercatorToLonlat,       // 墨卡托转经纬度 - getPosition,            // H5 获取地理位置",
-  "main": "lib/super-tools-lib.js",
+  "main": "lib/super-tools-lib.min.js",
   "types": "lib/src/index.d.ts",
   "scripts": {
     "build": "rollup --config rollup.config.prod.js && gulp",

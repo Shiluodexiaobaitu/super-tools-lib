@@ -16,6 +16,7 @@ declare const superToolsLib: {
     }) => any;
     Ajax: typeof import("./request/ajax").default;
     downBlob: (data: any, fileName: string) => void;
+    exportExcel: (column: any[], dataSource: any[], fileName?: string) => void;
     isBase64: (base64: any) => boolean;
     isArray: (arr: any) => boolean;
     isString: (str: any) => boolean;
@@ -99,7 +100,7 @@ declare const superToolsLib: {
     rgbaToHex: (color: any) => string;
     injectScript: (src: string) => void;
     sinogToLetter: (str: string) => string;
-    getFitSize: (px: number, draft?: number) => number;
+    getFitSize: typeof import("./tools").getFitSize;
     initialToCapitali: (gname: string) => string;
     repeat: (str: string, n: number) => string;
     trim: (str: string) => string;

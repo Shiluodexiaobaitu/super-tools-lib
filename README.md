@@ -201,6 +201,35 @@ _.getFitSize(100,750);
 => 50
 ```
 
+### 循环
+
+- forEach
+  参数：
+  1，(Array|Object): 一个用来迭代的集合。
+  2，Function:每次迭代调用的函数。
+
+```js
+const arr = [1, 2, 3, 4, 5];
+_.forEach(arr, (item, index) => {});
+
+const obj = { a: 1, b: 2, c: 3 };
+_.forEach(obj, (value, key) => {
+  // return false 终止循环
+});
+```
+
+- filter
+  参数：
+  1，Array:一个用来迭代的集合。
+  2,Function:每次迭代调用的函数。
+
+```js
+
+const arr = [1, 2, 3, 4, 5];
+_.filter(arr, (item, index) => item === 3);
+=> [3]
+```
+
 ### 字符串方法
 
 - initialToCapitali // 字符串首位是字母转大写
@@ -225,6 +254,17 @@ _.repeat('abc',3)
 
 _.trim('  xxx  ')
 => 'xxx'
+```
+
+- getTextWidth 计算文字宽度
+  参数：
+  1，text(string)：文本
+  2，font(numver):文字字号
+
+```js
+
+_.getTextWidth('哈哈哈哈哈哈哈哈',26);
+=> 80
 ```
 
 ### number
@@ -522,6 +562,30 @@ _.arrayNonRepeatfy(arr)
 ```js
 _.stringfyQueryString({name:'fei',id:1, "storeNo" : "1-105","floorName" : "F1",})
 => 'name=fei&id=1&storeNo=1-105&floorName=F1'
+```
+
+- values
+  参数：
+  1，Object
+  返回：对象的 value 集合
+
+```js
+
+const obj = { a: 1, b: 2 };
+_.values(obj);
+=> [1,2]
+```
+
+- keys
+  参数：
+  1，Object
+  返回：对象的 key 集合
+
+```js
+
+const obj = { a: 1, b: 2 };
+_.keys(obj);
+=> ['a','b']
 ```
 
 ### 计算

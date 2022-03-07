@@ -1,11 +1,15 @@
 interface Ajax {
-    private options;
     constructor(options: any);
     send(callback: Function, error: Function): void;
     set url(url: any);
     get url(): any;
 }
 
+export declare const getTextWidth: (text: string, font: any) => number;
+export declare const values: (obj: any) => any[];
+export declare const keys: (obj: any) => any[];
+export declare const forEach: (data: Object | any[], fn: Function) => any;
+export declare const filter: (data: Object | any[], fn: Function) => any[];
 export declare const formatPrice: (price: any, sign?: string) => string;
 export declare const getFitSize: (px: number, draft?: number) => number;
 export declare const accAdd: (num1: any, num2: number) => number;
@@ -37,7 +41,6 @@ export declare const sinogToLetter: (str: string) => string;
 export declare const shuffle: (arr: any[]) => any[];
 export declare const smallRounding: (num: number, place: number) => number;
 export declare const dateFormater: (formater: string, time?: number) => string;
-export declare const deepClone: (data: any) => any;
 export declare const stopPropagation: (e: any) => void;
 export declare const scrollToTop: () => void;
 export declare const getAge: (id: string) => string;

@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-10-08 14:15:34
  * @LastEditors: zhangce
- * @LastEditTime: 2022-03-04 16:51:45
+ * @LastEditTime: 2022-03-07 15:33:54
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -31,46 +31,26 @@
 
     <script>
 
-        let arr = [{ f: 'k' }]
-        let reg = new RegExp(/s/)
-        let map = new Map();
-        let set = new Set();
-        let ssss = { s: '1' }
-        class A {
+        let arr = [{ f: 'k' }, 'dsd', 222, 3333, 555, null, NaN]
 
-            caa() { console.log(11111) }
-        }
-        const textA = new A()
-        map.set('key', { map: true })
-        set.add(arr)
-        set.add(set)
-        map.set('_map', map)
         let obj = {
             name: 'obj',
             date: new Date(),
             ttt: { n: [{ nn: { s: 1 } }], rest: { s: 2 }, },
             arr: arr,
-            map,
-            reg,
-            fn: function () {
-                console.log('this', this.name)
-            },
-            set,
-            class: textA
-        }
+        };
 
-        obj.a = obj;
-        map.set('m', ssss)
-        console.time('TIME')
-        const newObj = superToolsLib.cloneDeep(obj);
-        console.timeEnd('TIME') // 0.119873046875 ms
-        console.log('newObj', newObj)
-        newObj.name = 'newObj'
-        console.log('obj', obj)
-        console.log('newObj === obj class', newObj.class === obj.class)
+        superToolsLib.forEach(arr, (item, index) => {
+            console.log('item,index', item, index)
+        })
 
-        console.log('newObj === obj', newObj.a.a.ttt === obj.a.a.ttt)
-        console.log('newObj === obj map', newObj.map.get('_map').get('_map') === obj.map.get('_map').get('_map'))
+        superToolsLib.forEach(obj, (value, key) => {
+            console.log('value, key', value, key)
+            if (key === 'date') return false
+        })
+
+       console.log('A', superToolsLib.keys(superToolsLib))
+
 
     </script>
 </body>

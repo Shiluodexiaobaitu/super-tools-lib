@@ -2,9 +2,11 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-03-03 14:53:36
+ * @LastEditTime: 2022-03-07 15:24:11
  * @Description: 
  */
+
+import typeJudgment from '../typeJudgment';
 import { cloneDeep } from './_cloneDeep';
 
 /**
@@ -32,9 +34,32 @@ const stringfyQueryString = (obj: Object) => {
     return pairs.join('&');
 }
 
+
+const values = (obj): Array<any> => {
+    const arr = [];
+    if (typeJudgment.isObject(obj)) {
+        for (const key in obj) {
+            arr.push(obj[key])
+        }
+    }
+    return arr
+}
+
+const keys = (obj): Array<any> => {
+    const arr = [];
+    if (typeJudgment.isObject(obj)) {
+        for (const key in obj) {
+            arr.push(key)
+        }
+    }
+    return arr
+}
+
 const object = {
     cloneDeep,
-    stringfyQueryString
+    stringfyQueryString,
+    values,
+    keys
 }
 
 export default object;

@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-01-18 15:09:30
+ * @LastEditTime: 2022-03-07 13:51:20
  * @Description: 
  */
 import { version } from '../package.json';
@@ -25,6 +25,7 @@ import data from './date';
 import count from './count';
 import algorithm from './algorithm';
 import _number from './number';
+import _loop from './loop'
 
 const superToolsLib = {
     version: version,
@@ -45,7 +46,8 @@ const superToolsLib = {
     ...data,
     ...count,
     ...algorithm,
-    ..._number
+    ..._number,
+    ..._loop
 }
 
 export default superToolsLib;

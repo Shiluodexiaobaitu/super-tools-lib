@@ -1,4 +1,5 @@
 export declare const stopPropagation: (e: any) => void;
+declare function numberRoll(ele: any, targetNumber: number, duration: number): void;
 declare const dom: {
     getOffset: (ele: any) => any;
     shaking: ({ ele, attr, cb, rate, time }: {
@@ -9,5 +10,10 @@ declare const dom: {
         rate?: number;
     }) => void;
     stopPropagation: (e: any) => void;
+    hasClass: (ele: HTMLElement, name: string) => RegExpMatchArray;
+    addClass: (ele: HTMLElement, name: string) => void;
+    removeClass: (ele: HTMLElement, name: string) => void;
+    replaceClass: (ele: HTMLElement, newName: string, oldName: string) => void;
+    numberRoll: typeof numberRoll;
 };
 export default dom;

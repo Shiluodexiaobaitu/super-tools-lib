@@ -1,3 +1,10 @@
+/*
+ * @Author: zhangce
+ * @Date: 2021-11-04 17:11:40
+ * @LastEditors: zhangce
+ * @LastEditTime: 2022-03-07 13:51:20
+ * @Description: 
+ */
 import { version } from '../package.json';
 
 import string from './string';
@@ -15,6 +22,10 @@ import vconsole from './console';
 import request from './request';
 import mobile from './mobile';
 import data from './date';
+import count from './count';
+import algorithm from './algorithm';
+import _number from './number';
+import _loop from './loop'
 
 const superToolsLib = {
     version: version,
@@ -32,7 +43,11 @@ const superToolsLib = {
     ...request,
     ...vconsole,
     ...mobile,
-    ...data
+    ...data,
+    ...count,
+    ...algorithm,
+    ..._number,
+    ..._loop
 }
 
 export default superToolsLib;

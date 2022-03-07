@@ -52,7 +52,7 @@ const LocalStorage = {
         const mapStorage = JSON.parse(localStorage.getItem(user)) || {};
         return mapStorage[name] || ''
     },
-    set(user: string, name: string, value: string): void {
+    set(user: string, name: string, value: any): void {
         if (!name) return
         const mapStorage = JSON.parse(localStorage.getItem(user)) || {};
         mapStorage[name] = value
@@ -116,28 +116,37 @@ const winCopy = (flag) => {
 }
 
 /**
- * 打印屏幕
-*/
-const print = (id: string, src: string) => {
-    //const el = document.getElementById(id);
-    const iframe: any = document.createElement('IFRAME');
-    let doc = null;
-    iframe.setAttribute('style', 'position:absolute;width:100%;height:100%;left:0;top:0;');
-    document.body.appendChild(iframe);
-    doc = iframe.contentWindow.document;
-    const img = new Image();
-    img.src = src;
-    doc.body.appendChild(img);
-    // 引入打印的专有CSS样式，根据实际修改
-    // doc.write('<LINK rel="stylesheet" type="text/css" href="css/print.css">');
-    //doc.write(img);
-    doc.close();
-    // 获取iframe的焦点，从iframe开始打印
-    iframe.contentWindow.focus();
-    iframe.contentWindow.print();
-    if (navigator.userAgent.indexOf('MSIE') > 0) {
-        document.body.removeChild(iframe);
+ * @description: 打印屏幕
+ * @param {string} printEleId
+ * @param {string} rootEleId
+ * @param {string} style
+ * @return {*}
+ */
+const print = (printEleId: string, rootEleId: string, style: string) => {
+
+    const containerDiv = document.createElement('div');
+    containerDiv.setAttribute('id', 'containerDiv')
+    containerDiv.style.cssText = style ? style : 'width: 100vw;height:100vh';
+    const box = document.getElementById(printEleId);
+    const root = document.getElementById(rootEleId);
+
+    const _p = box.style.position;
+    const _o = box.style.overflowY;
+
+    box.style.position = 'static'
+    box.style.overflowY = 'visible'
+
+    root.style.visibility = 'hidden';
+    containerDiv.innerHTML = box.outerHTML
+    root.parentNode.insertBefore(containerDiv, root)
+    window.print();
+    root.style.visibility = 'visible';
+    box.style.position = _p;
+    box.style.overflowY = _o
+    if (document.body.contains(document.getElementById('containerDiv'))) {
+        document.body.removeChild(document.getElementById('containerDiv'));
     }
+    return false
 }
 
 const setVibration = () => {
@@ -168,6 +177,39 @@ const copy = (str: string): void => {
     }
 }
 
+/**
+ * 平滑滚动到页面顶部
+*/
+const scrollToTop = () => {
+    const c = document.documentElement.scrollTop || document.body.scrollTop
+    if (c > 0) {
+        window.requestAnimationFrame(scrollToTop)
+        window.scrollTo(0, c - c / 8)
+    }
+}
+
+/**
+ * @description: 返回当前浏览器是什么类型的浏览器
+ * @param {*} string
+ * @return {*} 
+ */
+const userBrowser = (): string => {
+    const browserName = navigator.userAgent.toLowerCase();
+    if (/msie/i.test(browserName) && !/opera/.test(browserName)) {
+        return 'IE'
+    } else if (/firefox/i.test(browserName)) {
+        return 'Firefox'
+    } else if (/chrome/i.test(browserName) && /webkit/i.test(browserName) && /mozilla/i.test(browserName)) {
+        return 'Chrome'
+    } else if (/opera/i.test(browserName)) {
+        return 'Opera'
+    } else if (/webkit/i.test(browserName) && !(/chrome/i.test(browserName) && /webkit/i.test(browserName) && /mozilla/i.test(browserName))) {
+        return 'Safari'
+    } else {
+        return ''
+    }
+}
+
 const browser = {
     toFullScreen,
     exitFullscreen,
@@ -176,7 +218,9 @@ const browser = {
     winCopy,
     print,
     setVibration,
-    copy
+    copy,
+    scrollToTop,
+    userBrowser
 }
 
 export default browser;

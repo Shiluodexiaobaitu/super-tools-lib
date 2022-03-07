@@ -1,3 +1,15 @@
+/*
+ * @Author: zhangce
+ * @Date: 2021-08-16 18:09:23
+ * @Email: zhangce@fengmap.com
+ * @LastEditTime: 2022-03-07 15:40:18
+ * @LastEditors: zhangce
+ * @LastEditorsEmail: zhangce@fengmap.com
+ * @Description: 
+ *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
+ */
+
+
 /**
   * 字符串首位是字母转大写
 */
@@ -32,13 +44,28 @@ const repeat = (str: string, n: number): string => {
 /**
  * 去除字符串首尾空格
 */
-const trim = (str:string):string => {
+const trim = (str: string): string => {
     return str.replace(/^\s+(.*?)\s+$/g, '$1');
+}
+
+/**
+ * @description: 计算文字宽度
+ * @param {string} text
+ * @param {any} font
+ * @return {*}
+ */
+const getTextWidth = (text: string, font: any): number => {
+    const canvas = document.createElement('canvas')
+    const context = canvas.getContext('2d');
+    context.font = font;
+    const metrics = context.measureText(text);
+    return metrics.width;
 }
 
 const string = {
     initialToCapitali,
     repeat,
-    trim
+    trim,
+    getTextWidth
 };
 export default string;

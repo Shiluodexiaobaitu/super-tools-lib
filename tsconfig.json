@@ -18,11 +18,13 @@
         "./src"
       ]
     },
+    "noUnusedLocals": true, // 未使用变量报错
     "target": "ES2019", // 编译的目标是什么版本的
     "outDir": "./lib", // 输出目录
     "declaration": true, // 是否自动创建类型声明文件
+    "declarationMap": false, // 生成定义sourceMap
     "declarationDir": "./lib", // 类型声明文件的输出目录
-    "allowJs": true, // 允许编译javascript文件。
+    // "allowJs": true, // 允许编译javascript文件。
     "lib": [ // 编译过程中需要引入的库文件的列表
       "es5",
       "es2015",

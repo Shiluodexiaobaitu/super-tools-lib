@@ -1,4 +1,4 @@
-//测试
+import { strChineseFirstPY, oMultiDiff } from './_utils';
 
 /**
  * 生成一个唯一的guid
@@ -49,13 +49,13 @@ const isAppleMobileDevice = (): boolean => {
  * @param {*} func 执行函数
  * @param {*} delay 节流时间,毫秒
 */
-const throttle = function (func: Function, delay: number): Function {
+const throttle = function (fn: Function, delay: number): Function {
     let timer: any = null
-    return function () {
+    return function (...rest) {
         if (!timer) {
             timer = setTimeout(() => {
                 // 或者直接 func()
-                func()
+                fn(...rest)
                 timer = null
             }, delay)
         }
@@ -67,11 +67,11 @@ const throttle = function (func: Function, delay: number): Function {
 */
 const debounce = function (fn: Function, wait: number): Function {
     let timeout: any = null
-    return function () {
+    return function (...rest) {
         if (timeout !== null) clearTimeout(timeout)// 如果多次触发将上次记录延迟清除掉
         timeout = setTimeout(() => {
             // 或者直接 fn()
-            fn()
+            fn(...rest)
             timeout = null
         }, wait)
     }
@@ -112,7 +112,7 @@ const fileDownload = function (url: string): boolean {
  * @param  {String} keyWord  查询的关键词
  * @return {Array}           查询的结果
 */
-const fuzzyQuery = function (list: Array<any>, key: string, keyWord: String): Array<any> {
+const fuzzyQuery = function (list: Array<any>, key: string, keyWord: string): Array<any> {
     const arr = [];
     for (let i = 0; i < list.length; i++) {
         if (list[i][key].match(keyWord) !== null) {
@@ -153,7 +153,11 @@ const getCookie = function (name: string): string {
 */
 const colorHex = (color: string): string => {
     const that = color;
-    const aColor = color.split(',');
+    const aColor = color
+        .replace(/rgb?\(/, '')
+        .replace(/\)/, '')
+        .replace(/[\s+]/g, '')
+        .split(',');
     let strHex = '#';
     for (let i = 0; i < aColor.length; i++) {
         let hex = Number(aColor[i]).toString(16);
@@ -166,6 +170,53 @@ const colorHex = (color: string): string => {
         strHex = that;
     }
     return strHex;
+}
+
+/**
+ * 16进制颜色转RGBA
+ * @param {str} 16进制颜色值
+ * @param {alpa} 
+ * @return {string}
+*/
+export const hexToRgba = (str: string, alpa: number): string => {
+    alpa = alpa === undefined ? 1 : alpa;
+    if (!str) return;
+    let color = str.toLowerCase();
+    const pattern = /^#([0-9|a-f]{3}|[0-9|a-f]{6})$/;
+    if (color && pattern.test(color)) {
+        if (color.length === 4) {
+            // 将三位转换为六位
+            color = '#' + color[1] + color[1] + color[2] + color[2] + color[3] + color[3];
+        }
+        //处理六位的颜色值
+        const colorNew = [];
+        for (let i = 1; i < 7; i += 2) {
+            colorNew.push(parseInt('0x' + color.slice(i, i + 2)));
+        }
+        colorNew.push(alpa);
+
+        return 'rgba(' + colorNew.join(',') + ')';
+    }
+    return color;
+}
+
+/**
+ * rgba颜色转16进制
+*/
+export const rgbaToHex = (color): string => {
+    const values = color
+        .replace(/rgba?\(/, '')
+        .replace(/\)/, '')
+        .replace(/[\s+]/g, '')
+        .split(',');
+    const a = parseFloat(values[3] || 1),
+        r = Math.floor(a * parseInt(values[0]) + (1 - a) * 255),
+        g = Math.floor(a * parseInt(values[1]) + (1 - a) * 255),
+        b = Math.floor(a * parseInt(values[2]) + (1 - a) * 255);
+    return '#' +
+        ('0' + r.toString(16)).slice(-2) +
+        ('0' + g.toString(16)).slice(-2) +
+        ('0' + b.toString(16)).slice(-2);
 }
 
 /**
@@ -282,6 +333,81 @@ const digitUppercase = (n: number): string => {
         .replace(/^整$/, '零元整');
 };
 
+/**
+ * 动态引入js
+*/
+export const injectScript = (src: string) => {
+    const s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = src;
+    const t = document.getElementsByTagName('script')[0];
+    t.parentNode.insertBefore(s, t);
+}
+
+/**
+ * 汉字转字母
+*/
+export const sinogToLetter = (str: string) => {
+
+    function checkCh(ch) {
+        const uni = ch.charCodeAt(0);
+        //如果不在汉字处理范围之内,返回原字符,也可以调用自己的处理函数    
+        if (uni > 40869 || uni < 19968)
+            return ch; //dealWithOthers(ch);    
+        //检查是否是多音字,是按多音字处理,不是就直接在strChineseFirstPY字符串中找对应的首字母    
+        return (oMultiDiff[uni] ? oMultiDiff[uni] : (strChineseFirstPY.charAt(uni - 19968)));
+    }
+
+    function mkRslt(arr: Array<any>) {
+        let arrRslt = [''];
+        for (let i = 0, len = arr.length; i < len; i++) {
+            const str = arr[i];
+            const strlen = str.length;
+            if (strlen == 1) {
+                for (let k = 0; k < arrRslt.length; k++) {
+                    arrRslt[k] += str;
+                }
+            } else {
+                const tmpArr = arrRslt.slice(0);
+                arrRslt = [];
+                for (let k = 0; k < strlen; k++) {
+                    //复制一个相同的arrRslt    
+                    const tmp = tmpArr.slice(0);
+                    //把当前字符str[k]添加到每个元素末尾    
+                    for (let j = 0; j < tmp.length; j++) {
+                        tmp[j] += str.charAt(k);
+                    }
+                    //把复制并修改后的数组连接到arrRslt上    
+                    arrRslt = arrRslt.concat(tmp);
+                }
+            }
+        }
+        return arrRslt.join();
+    }
+
+    if (typeof (str) != 'string')
+        throw new Error('函数makePy需要字符串类型参数!');
+    const arrResult = [];
+    //将字符串转码后转为数组  
+    for (let i = 0, len = str.length; i < len; i++) {
+        const ch = str.charAt(i);
+        arrResult.push(checkCh(ch));
+    }
+    return mkRslt(arrResult);
+}
+
+/**
+ * @description: 返回设计稿上px在不同屏幕下的适配尺寸
+ * @param {number} px 
+ * @param {*} draft 设计稿宽度
+ * @return {*}
+ */
+export const getFitSize = (px: number, draft = 750): number => {
+    const scale = document.body.clientWidth / draft;
+    return Math.floor((scale * px))
+}
+
 const tools = {
     guid,
     getFileBase64,
@@ -298,7 +424,12 @@ const tools = {
     noRefdelUrlParam,
     getAge,
     getSex,
-    digitUppercase
+    digitUppercase,
+    hexToRgba,
+    rgbaToHex,
+    injectScript,
+    sinogToLetter,
+    getFitSize
 }
 
 export default tools;

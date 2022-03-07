@@ -1,52 +1,65 @@
-// import typeJudgment from '../typeJudgment';
-// const { isObject } = typeJudgment;
+/*
+ * @Author: zhangce
+ * @Date: 2021-11-04 17:11:40
+ * @LastEditors: zhangce
+ * @LastEditTime: 2022-03-07 15:24:11
+ * @Description: 
+ */
 
-const repeat = (obj) => {
-
-    if (Object.values(obj).length !== new Set(Object.values(obj)).size) {
-        console.log('重复')
-    } else {
-        console.log('no')
-    }
-
-}
+import typeJudgment from '../typeJudgment';
+import { cloneDeep } from './_cloneDeep';
 
 /**
- * 对象深拷贝
+ * @description: 对象序列化
+ * @param {*} obj
+ * @return {*}
  */
-const deepClone = (obj, hash = new WeakMap()) => {
-    // 日期对象直接返回一个新的日期对象
-    if (obj instanceof Date) {
-        return new Date(obj);
-    }
-    //正则对象直接返回一个新的正则对象     
-    if (obj instanceof RegExp) {
-        return new RegExp(obj);
-    }
-    //如果循环引用,就用 weakMap 来解决
-    if (hash.has(obj)) {
-        return hash.get(obj);
-    }
-    // 获取对象所有自身属性的描述
-    const allDesc = Object.getOwnPropertyDescriptors(obj);
-    // 遍历传入参数所有键的特性
-    const cloneObj = Object.create(Object.getPrototypeOf(obj), allDesc)
+const stringfyQueryString = (obj: Object) => {
+    if (!obj) return '';
+    const pairs = [];
 
-    hash.set(obj, cloneObj)
-    for (const key of Reflect.ownKeys(obj)) {
-        if (typeof obj[key] === 'object' && obj[key] !== null) {
-            cloneObj[key] = deepClone(obj[key], hash);
-        } else {
-            cloneObj[key] = obj[key];
+    for (const key in obj) {
+        const value = obj[key];
+
+        if (value instanceof Array) {
+            for (let i = 0; i < value.length; ++i) {
+                pairs.push(encodeURIComponent(key + '[' + i + ']') + '=' + encodeURIComponent(value[i]));
+            }
+            continue;
         }
+
+        pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
     }
-    return cloneObj
+
+    return pairs.join('&');
 }
 
 
+const values = (obj): Array<any> => {
+    const arr = [];
+    if (typeJudgment.isObject(obj)) {
+        for (const key in obj) {
+            arr.push(obj[key])
+        }
+    }
+    return arr
+}
+
+const keys = (obj): Array<any> => {
+    const arr = [];
+    if (typeJudgment.isObject(obj)) {
+        for (const key in obj) {
+            arr.push(key)
+        }
+    }
+    return arr
+}
+
 const object = {
-    repeat,
-    deepClone
+    cloneDeep,
+    stringfyQueryString,
+    values,
+    keys
 }
 
 export default object;

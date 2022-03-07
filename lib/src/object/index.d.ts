@@ -1,5 +1,7 @@
 declare const object: {
-    repeat: (obj: any) => void;
-    deepClone: (obj: any, hash?: WeakMap<object, any>) => any;
+    cloneDeep: (data: any) => any;
+    stringfyQueryString: (obj: Object) => string;
+    values: (obj: any) => Array<any>;
+    keys: (obj: any) => Array<any>;
 };
 export default object;

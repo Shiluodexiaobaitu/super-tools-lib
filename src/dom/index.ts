@@ -57,20 +57,122 @@ const shaking = ({ ele, attr, cb, rate = 20, time = 50 }: { ele: any, attr: stri
 
 /**
  * 阻止冒泡事件
-*/
-export const stopPropagation = (e) => { 
-    e = e || window.event; 
-    if(e.stopPropagation) {    // W3C阻止冒泡方法 
-        e.stopPropagation(); 
-    } else { 
+ * @param e 
+ */
+export const stopPropagation = (e) => {
+    e = e || window.event;
+    if (e.stopPropagation) {    // W3C阻止冒泡方法 
+        e.stopPropagation();
+    } else {
         e.cancelBubble = true; // IE阻止冒泡方法 
-    } 
-} 
+    }
+}
+
+/**
+ * 检测类名
+ * @param ele dom
+ * @param name 类名
+ * @returns {boolean}
+ */
+const hasClass = (ele: HTMLElement, name: string) => {
+    return ele.className.match(new RegExp('(\\s|^)' + name + '(\\s|$)'));
+}
+
+/**
+ * @description: 添加类名
+ * @param {*} ele
+ * @param {*} name
+ * @return {*}
+ */
+const addClass = (ele: HTMLElement, name: string) => {
+    if (!hasClass(ele, name)) ele.className += '' + name;
+}
+
+/**
+ * @description: 删除类名
+ * @param {*} ele
+ * @param {*} name
+ * @return {*}
+ */
+const removeClass = (ele: HTMLElement, name: string) => {
+    if (hasClass(ele, name)) {
+        const reg = new RegExp('(\\s|^)' + name + '(\\s|$)');
+        ele.className = ele.className.replace(reg, '');
+    }
+}
+
+/**
+ * @description: 替换类名
+ * @param {*} ele
+ * @param {*} newName
+ * @param {*} oldName
+ * @return {*}
+ */
+const replaceClass = (ele: HTMLElement, newName: string, oldName: string) => {
+    removeClass(ele, oldName);
+    addClass(ele, newName);
+}
+
+/**
+ * 数字滚动封装，滚动到指定的数字
+ * @param {*} ele 目标dom元素
+ * @param {*} targetNumber 要滚动到的数字
+ * @param {*} duration 动画时间
+ */
+function numberRoll(ele:any, targetNumber: number, duration: number) {
+    const type = ele.tagName
+    let firstValue
+
+    const frequency = duration / 1000
+    if (type === 'INPUT') {
+        if (isNaN(Number(targetNumber))) {
+            throw new Error('目标数字传递错误')
+        }
+        if (!isNaN(Number(ele.value))) {
+            firstValue = !!ele.value ? Number(ele.value) : 0
+        }
+    } else {
+        if (isNaN(Number(targetNumber))) {
+            throw new Error('目标数字传递错误')
+        }
+        if (!isNaN(Number(ele.innerHTML))) {
+            firstValue = Number(ele.innerHTML)
+        }
+    }
+    const step = (Number(targetNumber) - firstValue) / 1000
+    if (type === 'INPUT') {
+        const numberTimer = setInterval(function () {
+            firstValue += step
+            ele.value = firstValue
+            if (Math.abs(Number(targetNumber) - firstValue) <= step) {
+                ele.value = targetNumber
+                clearInterval(numberTimer)
+            }
+            console.log(1)
+        }, frequency)
+    } else {
+        const numberTimer = setInterval(function () {
+            firstValue += step
+            ele.innerHTML = firstValue
+            if (Math.abs(Number(targetNumber) - firstValue) <= step) {
+                ele.innerHTML = targetNumber
+                clearInterval(numberTimer)
+            }
+            console.log(2)
+        }, frequency)
+    }
+
+}
 
 const dom = {
     getOffset,
     shaking,
-    stopPropagation
+    stopPropagation,
+    hasClass,
+    addClass,
+    removeClass,
+    replaceClass,
+    numberRoll
 }
 
 export default dom

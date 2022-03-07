@@ -4,7 +4,8 @@ import babel from "rollup-plugin-babel";
 import { terser } from 'rollup-plugin-terser';
 import { eslint } from 'rollup-plugin-eslint';
 import json from '@rollup/plugin-json';
-import typescript from 'rollup-plugin-typescript2'
+import typescript from 'rollup-plugin-typescript2';
+import filesize from 'rollup-plugin-filesize';
 
 export default [
     {
@@ -29,11 +30,17 @@ export default [
                 include: ['src/**'],
                 exclude: ['node_modules/**']
             }),
+            filesize(),
             babel({
                 exclude: 'node_modules/**', // 防止打包node_modules下的文件
                 runtimeHelpers: true,       // 使plugin-transform-runtime生效
             }),
-            terser(), // 压缩代码
+            terser({
+                compress: {
+                    // compress options 
+                    // drop_console: true //去除log
+                },
+            }), // 压缩代码
         ],
     }
 ];

@@ -1,3 +1,10 @@
+/*
+ * @Author: zhangce
+ * @Date: 2021-08-16 18:09:23
+ * @LastEditors: zhangce
+ * @LastEditTime: 2022-03-03 14:29:03
+ * @Description: 
+ */
 /**
  * base64类型验证
 */
@@ -56,6 +63,86 @@ const isWeiXin = (): boolean => {
     }
 }
 
+/**
+ * @description: 是否为null
+ * @param {*} o
+ * @return {*}
+ */
+const isNull = (o: any): boolean => {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Null'
+}
+
+/**
+ * @description: 是否undefined
+ * @param {*} o
+ * @return {*}
+ */
+const isUndefined = (o: any): boolean => {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Undefined'
+}
+
+/**
+ * @description: 是否时间
+ * @param {*} o
+ * @return {*}
+ */
+const isDate = (o: any): boolean => {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Date'
+}
+
+/**
+ * @description: 是否正则
+ * @param {*} o
+ * @return {*}
+ */
+const isRegExp = (o: any): boolean => {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'RegExp'
+}
+
+/**
+ * @description: 是否错误对象
+ * @param {*} o
+ * @return {*}
+ */
+const isError = (o: any): boolean => {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Error'
+}
+
+/**
+ * @description: 是否Symbol函数
+ * @param {*} o
+ * @return {*}
+ */
+const isSymbol = (o: any): boolean => {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Symbol'
+}
+
+/**
+ * @description: 是否Promise对象
+ * @param {*} o
+ * @return {*}
+ */
+const isPromise = (o: any): boolean => {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Promise'
+}
+
+
+/**
+ * 返回类型
+*/
+const returnType = (o: any): any => {
+    if (Number.isNaN(o)) return 'NaN'
+    return Object.prototype.toString.call(o).slice(8, -1)
+}
+
+/**
+ * @description: 判断浏览器是否支持webP格式图片
+ * @param {*}
+ * @return {*} 
+ */
+const isSupportWebP = () => {
+    return !![].map && document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0;
+}
 
 const typeJudgment = {
     isBase64,
@@ -64,7 +151,16 @@ const typeJudgment = {
     isFunction,
     isObject,
     isNumber,
-    isWeiXin
+    isWeiXin,
+    isNull,
+    isUndefined,
+    isDate,
+    isRegExp,
+    isError,
+    isSymbol,
+    isPromise,
+    returnType,
+    isSupportWebP
 }
 
 export default typeJudgment;

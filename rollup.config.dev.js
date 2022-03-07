@@ -1,3 +1,10 @@
+/*
+ * @Author: zhangce
+ * @Date: 2021-10-08 14:15:34
+ * @LastEditors: zhangce
+ * @LastEditTime: 2022-02-17 17:41:59
+ * @Description: 
+ */
 // import resolve from 'rollup-plugin-node-resolve';
 // import commonjs from 'rollup-plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
@@ -10,6 +17,7 @@ import livereload from 'rollup-plugin-livereload';
 import json from '@rollup/plugin-json';
 import typescript from 'rollup-plugin-typescript2';
 // import tslint from "rollup-plugin-tslint";
+import filesize from 'rollup-plugin-filesize';
 
 
 export default [
@@ -19,10 +27,13 @@ export default [
         output: {
             file: './lib/super-tools-lib.js',
             name: 'superToolsLib',
-            // sourcemap: true,
             format: 'umd',
             exports: 'default',
+            // sourcemap: true, // 生成源码映射文件
         },
+        // watch: {
+        //     include: 'src/**'
+        // },
         plugins: [
             // tslint(),
             typescript(),
@@ -39,7 +50,14 @@ export default [
                 exclude: 'node_modules/**', // 防止打包node_modules下的文件
                 runtimeHelpers: true,       // 使plugin-transform-runtime生效
             }),
-            terser(), // 压缩代码
+
+            // terser({
+            //     compress: {
+            //         // compress options 
+            //         // drop_console: true //去除log
+            //     },
+            // }), // 压缩代码
+            // filesize(), // 显示打包后文件的大小
             livereload(),
             serve({
                 open: true,
@@ -47,6 +65,8 @@ export default [
                 contentBase: ''
             })
         ],
-        // external: ['better-xlsx','file-saver']
+        // external: [/lodash-es\/[a-z]+/, 'better-xlsx', 'file-saver']
+
+
     }
 ];

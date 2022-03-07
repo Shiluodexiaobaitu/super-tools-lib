@@ -262,6 +262,7 @@ _.accDiv(0.3,3)
 ```
 
 - formatPrice //数字千分位增加逗号
+
 ```js
 
 _.formatPrice(1111112211111,',')
@@ -500,7 +501,21 @@ _.arrayNonRepeatfy(arr)
 
 ### 对象方法
 
- <!-- deepClone // 返回传入对象的一个深度克隆的副本对象  -->
+- cloneDeep 深度克隆数据
+
+```js
+
+ let obj = {
+      b: "sss",
+  };
+  obj.a = obj;
+  const newObj = _.cloneDeep(obj)
+  newObj.b = 'bbb'
+  console.log('newObj',newObj) //{b: 'bbb', a: {…}}
+  console.log('obj',obj) // {b: 'sss', a: {…}}
+  console.log('obj === newObj', obj.a === newObj.a) // false
+=>
+```
 
 - stringfyQueryString // 对象序列化
 

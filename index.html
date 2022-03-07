@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-10-08 14:15:34
  * @LastEditors: zhangce
- * @LastEditTime: 2022-02-25 10:54:22
+ * @LastEditTime: 2022-03-04 16:51:45
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -22,7 +22,7 @@
 
 <body>
     <div id="root"></div>
-    <script src='./lib/super-tools-lib.min.js'></script>
+    <script src='./lib/super-tools-lib.js'></script>
     <div>super-tools-lib</div>
     <div id="ele"
         style="width: 100px;height: 100px;background-color: pink; position: relative; top: 300px;left: 300px;">
@@ -30,71 +30,48 @@
     </div>
 
     <script>
-        // superToolsLib.vConsole();
-        superToolsLib.orient();
-        console.log('as', superToolsLib.validate('cname', '迪丽热巴·迪力木拉提'))
-        // for(let i = 0; i < 3; i++){
-        //     console.log('test',{a:22,sd:1})
-        // }
-        superToolsLib.vConsole()
-        console.log('AAA', superToolsLib.sinogToLetter('张策'))
 
+        let arr = [{ f: 'k' }]
+        let reg = new RegExp(/s/)
+        let map = new Map();
+        let set = new Set();
+        let ssss = { s: '1' }
+        class A {
 
-        console.time('deepClone');
-        // let obj2 = superToolsLib.deepClone(obj1);
-        console.log('++', 0.3+0.19098)
-        console.log('++1', superToolsLib.accAdd(0.3,0.19098))
-        console.timeEnd('deepClone');
-
-
-        ele.onclick = function (e) {
-
-            superToolsLib.shaking({
-                ele: document.getElementById('ele'),
-                attr: 'top: 100px',
-                cb: ()=> {
-                    console.log('执行完成')
-                },
-                rate: 50,
-                time: 100
-            })
-
-            superToolsLib.exportExcel([
-                {
-                    title: '类型/楼层',
-                    dataIndex: 'type',
-                    key: 'type',
-                    align: 'left'
-                },
-                {
-                    title: '单元（个）',
-                    dataIndex: 'count',
-                    key: 'count',
-                    align: 'left'
-                },
-                {
-                    title: '数量占比',
-                    dataIndex: 'countShare',
-                    key: 'countShare',
-                    align: 'left'
-                },
-                {
-                    title: '面积（㎡）',
-                    dataIndex: 'size',
-                    key: 'size',
-                    align: 'left'
-                },
-                {
-                    title: '面积占比',
-                    dataIndex: 'sizeShare',
-                    key: 'sizeShare',
-                    align: 'left'
-                },
-            ], [
-                { type: '1', count: '2', countShare: '3', size: '4', sizeShare: '5' }
-            ])
-        
+            caa() { console.log(11111) }
         }
+        const textA = new A()
+        map.set('key', { map: true })
+        set.add(arr)
+        set.add(set)
+        map.set('_map', map)
+        let obj = {
+            name: 'obj',
+            date: new Date(),
+            ttt: { n: [{ nn: { s: 1 } }], rest: { s: 2 }, },
+            arr: arr,
+            map,
+            reg,
+            fn: function () {
+                console.log('this', this.name)
+            },
+            set,
+            class: textA
+        }
+
+        obj.a = obj;
+        map.set('m', ssss)
+        console.time('TIME')
+        const newObj = superToolsLib.cloneDeep(obj);
+        console.timeEnd('TIME') // 0.119873046875 ms
+        console.log('newObj', newObj)
+        newObj.name = 'newObj'
+        console.log('obj', obj)
+        console.log('newObj === obj class', newObj.class === obj.class)
+
+        console.log('newObj === obj', newObj.a.a.ttt === obj.a.a.ttt)
+        console.log('newObj === obj map', newObj.map.get('_map').get('_map') === obj.map.get('_map').get('_map'))
+
     </script>
 </body>
 

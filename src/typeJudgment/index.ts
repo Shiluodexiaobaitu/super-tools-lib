@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @LastEditors: zhangce
- * @LastEditTime: 2022-01-14 17:22:57
+ * @LastEditTime: 2022-03-03 14:29:03
  * @Description: 
  */
 /**
@@ -131,6 +131,7 @@ const isPromise = (o: any): boolean => {
  * 返回类型
 */
 const returnType = (o: any): any => {
+    if (Number.isNaN(o)) return 'NaN'
     return Object.prototype.toString.call(o).slice(8, -1)
 }
 

@@ -1,6 +1,14 @@
 # 常用 js 工具函数
 
-# 用法
+
+### 安装
+```
+npm install super-tools-lib
+of
+yarn add super-tools-lib
+```
+
+### 引用
 
 ```
 import _ from 'super-tools-lib';

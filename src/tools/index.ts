@@ -49,7 +49,7 @@ const isAppleMobileDevice = (): boolean => {
  * @param {*} func 执行函数
  * @param {*} delay 节流时间,毫秒
 */
-const throttle = function (fn: Function, delay: number): Function {
+const throttle = function (fn: Function, delay: number = 200): () => void {
     let timer: any = null
     return function (...rest) {
         if (!timer) {

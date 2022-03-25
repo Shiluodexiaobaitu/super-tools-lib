@@ -8,7 +8,7 @@ declare const tools: {
     getFileBase64: (file: File, cb: Function) => void;
     isAndroidMobileDevice: () => boolean;
     isAppleMobileDevice: () => boolean;
-    throttle: (fn: Function, delay: number) => Function;
+    throttle: (fn: Function, delay?: number) => () => void;
     debounce: (fn: Function, wait: number) => Function;
     fileDownload: (url: string) => boolean;
     fuzzyQuery: (list: Array<any>, key: string, keyWord: string) => Array<any>;

@@ -15,5 +15,6 @@ declare const dom: {
     removeClass: (ele: HTMLElement, name: string) => void;
     replaceClass: (ele: HTMLElement, newName: string, oldName: string) => void;
     numberRoll: typeof numberRoll;
+    scrollToTheBottom: (ele: HTMLElement, callback: Function, delay?: number) => void;
 };
 export default dom;

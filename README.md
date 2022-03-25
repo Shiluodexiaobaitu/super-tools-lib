@@ -1,7 +1,7 @@
-# 常用 js 工具函数
-
+## 轻量级 js 工具库
 
 ### 安装
+
 ```
 npm install super-tools-lib
 of
@@ -354,6 +354,8 @@ number // 带小数点数字 0 ～ 30
 cPattern // 车牌号
 cP // 身份证
 intNumber // 正整数
+negativeInteger // 负整数
+isNotNegativeFloatNum // 匹配非负浮点数
 character // 字符 254
 email // 邮箱
 website // 网址
@@ -423,6 +425,16 @@ _.replaceClass(element, newName, oldName);
 
 ```js
 _.numberRoll(element, targetNumber, duration);
+```
+
+- scrollToTheBottom // 监听滚动条滚动到底部
+  参数：
+  {ele} dom
+  {callback} 滚动到底部事件回调
+  {delay} 滚动监听截流时间
+
+```js
+_.scrollToTheBottom(ele, callback, delay);
 ```
 
 ### map
@@ -726,45 +738,3 @@ _.isNull(target)
 ```js
 _.downBlob(file, fileName);
 ```
-
-<!-- - exportExcel // 导出 Excel -->
-
-<!-- ```js
-const column = [
-  {
-    title: "类型/楼层",
-    dataIndex: "type",
-    key: "type",
-    align: "left",
-  },
-  {
-    title: "单元（个）",
-    dataIndex: "count",
-    key: "count",
-    align: "left",
-  },
-  {
-    title: "数量占比",
-    dataIndex: "countShare",
-    key: "countShare",
-    align: "left",
-  },
-  {
-    title: "面积（㎡）",
-    dataIndex: "size",
-    key: "size",
-    align: "left",
-  },
-  {
-    title: "面积占比",
-    dataIndex: "sizeShare",
-    key: "sizeShare",
-    align: "left",
-  },
-];
-const data = [
-  { type: "1", count: "2", countShare: "3", size: "4", sizeShare: "5" },
-];
-
-_.exportExcel(column, data, "fileName");
-``` -->

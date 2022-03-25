@@ -1,3 +1,5 @@
+import tools from '../tools';
+
 /**
  * 获取一个元素距离浏览器左上角的偏移量
  * @param {ele} dom元素
@@ -119,7 +121,7 @@ const replaceClass = (ele: HTMLElement, newName: string, oldName: string) => {
  * @param {*} targetNumber 要滚动到的数字
  * @param {*} duration 动画时间
  */
-function numberRoll(ele:any, targetNumber: number, duration: number) {
+function numberRoll(ele: any, targetNumber: number, duration: number) {
     const type = ele.tagName
     let firstValue
 
@@ -148,7 +150,6 @@ function numberRoll(ele:any, targetNumber: number, duration: number) {
                 ele.value = targetNumber
                 clearInterval(numberTimer)
             }
-            console.log(1)
         }, frequency)
     } else {
         const numberTimer = setInterval(function () {
@@ -158,9 +159,30 @@ function numberRoll(ele:any, targetNumber: number, duration: number) {
                 ele.innerHTML = targetNumber
                 clearInterval(numberTimer)
             }
-            console.log(2)
         }, frequency)
     }
+
+}
+
+/**
+ * @description: 滚动条是否滚动到底部
+ * @param {HTMLElement} ele
+ * @param {Function} callback
+ * @param {number} delay
+ * @return {*}
+ */
+const scrollToTheBottom = (ele: HTMLElement, callback: Function, delay: number = 200) => {
+    const scrollFn = () => {
+        const sh = ele.scrollHeight
+
+        const ch = ele.clientHeight
+        const st = ele.scrollTop
+        if ((ch + st) >= sh) {
+            callback()
+        }
+    }
+
+    ele.addEventListener('scroll', tools.throttle(scrollFn, delay))
 
 }
 
@@ -172,7 +194,8 @@ const dom = {
     addClass,
     removeClass,
     replaceClass,
-    numberRoll
+    numberRoll,
+    scrollToTheBottom
 }
 
 export default dom

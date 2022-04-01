@@ -87,7 +87,7 @@ const hasClass = (ele: HTMLElement, name: string) => {
  * @return {*}
  */
 const addClass = (ele: HTMLElement, name: string) => {
-    if (!hasClass(ele, name)) ele.className += '' + name;
+    if (!hasClass(ele, name)) ele.className += ' ' + name;
 }
 
 /**

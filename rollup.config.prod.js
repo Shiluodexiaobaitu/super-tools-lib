@@ -35,12 +35,14 @@ export default [
                 exclude: 'node_modules/**', // 防止打包node_modules下的文件
                 runtimeHelpers: true,       // 使plugin-transform-runtime生效
             }),
-            // terser({
-            //     compress: {
-            //         // compress options 
-            //         // drop_console: true //去除log
-            //     },
-            // }), // 压缩代码
+            terser({
+                compress: {
+                    passes: 5,
+                    // compress options 
+                    // drop_console: true //去除log
+                },
+                keep_classnames: false
+            }), // 压缩代码
         ],
     }
 ];

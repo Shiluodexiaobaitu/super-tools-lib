@@ -16,7 +16,7 @@ declare const superToolsLib: {
     socket: ({ url }: {
         url: string;
     }) => any;
-    Ajax: Ajax;
+    Ajax: typeof import("./request/ajax").default;
     downBlob: (data: any, fileName: string) => void;
     isBase64: (base64: any) => boolean;
     isArray: (arr: any) => boolean;
@@ -84,6 +84,8 @@ declare const superToolsLib: {
     copy: (str: string) => void;
     scrollToTop: () => void;
     userBrowser: () => string;
+    IndexedDB: typeof import("./browser/IndexedDB").IndexedDB;
+    getLocalStorageSize: () => string;
     guid: () => string;
     getFileBase64: (file: File, cb: Function) => void;
     isAndroidMobileDevice: () => boolean;
@@ -114,13 +116,9 @@ declare const superToolsLib: {
 };
 export default superToolsLib;
 
-interface Ajax {
-    constructor(options: any);
-    send(callback: Function, error: Function): void;
-    set url(url: any);
-    get url(): any;
-}
 
+export declare const IndexedDB: typeof import("./browser/IndexedDB").IndexedDB;
+export declare const getLocalStorageSize: () => string;
 export declare const getTextWidth: (text: string, font: any) => number;
 export declare const values: (obj: any) => any[];
 export declare const keys: (obj: any) => any[];
@@ -151,7 +149,7 @@ export declare const hasClass: (ele: HTMLElement, name: string) => RegExpMatchAr
 export declare const addClass: (ele: HTMLElement, name: string) => void;
 export declare const removeClass: (ele: HTMLElement, name: string) => void;
 export declare const replaceClass: (ele: HTMLElement, newName: string, oldName: string) => void;
-export declare const Ajax: Ajax;
+export declare const Ajax: typeof import("./request/ajax").default;
 export declare const injectScript: (src: string) => void;
 export declare const sinogToLetter: (str: string) => string;
 export declare const shuffle: (arr: any[]) => any[];
@@ -234,4 +232,3 @@ export declare const initialToCapitali: (gname: string) => string;
 export declare const trim: (str: string) => string;
 export declare const validate: (key: string, value: string) => boolean;
 export declare const exportExcel: (column: any[], dataSource: any[], fileName?: string) => void;
-

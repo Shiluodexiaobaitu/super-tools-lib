@@ -1,3 +1,4 @@
+import { IndexedDB } from './IndexedDB';
 declare global {
     interface Window { ActiveXObject: any; }
 }
@@ -210,6 +211,23 @@ const userBrowser = (): string => {
     }
 }
 
+/**
+ * @description: 获取localStorage使用容量
+ * @return {*}
+ */
+const getLocalStorageSize = (): string => {
+    if (!window.localStorage) {
+        console.log('浏览器不支持localStorage');
+    }
+    let size = 0;
+    for (const item in window.localStorage) {
+        if (window.localStorage.hasOwnProperty(item)) {
+            size += window.localStorage.getItem(item).length;
+        }
+    }
+    return (size / 1024).toFixed(2) + 'KB'
+}
+
 const browser = {
     toFullScreen,
     exitFullscreen,
@@ -220,7 +238,9 @@ const browser = {
     setVibration,
     copy,
     scrollToTop,
-    userBrowser
+    userBrowser,
+    IndexedDB,
+    getLocalStorageSize
 }
 
 export default browser;

@@ -503,6 +503,13 @@ _.LocalStoeage.clear()
 => 清空本地存储
 ```
 
+- getLocalStorageSize // 获取localStorage使用容量
+
+```js
+_.getLocalStorageSize()
+=> '0.00KB'
+```
+
 - getPosition // H5 获取地理位置
 
 ```js
@@ -547,6 +554,31 @@ _.scrollToTop();
 // 可能返回类型 Firefox, Chrome, Opera, Safari
 _.userBrowser();
 => 'Chrome'
+```
+
+- IndexedDB //浏览器数据库
+
+```js
+
+const db = new _.IndexedDB('dbName', 'storeName', 100)
+
+// 设置数据
+db.set('name', '张三')
+
+// 获取数据
+db.get('name', (data)=>{console.log(data)}) // 张三
+
+// 更新数据
+db.update('name', '李四')
+
+// 获取数据
+db.get('name', (data)=>{console.log(data)}) // 李四
+
+// 删除数据
+db.remove('name')
+
+// 清空数据库
+db.close()
 ```
 
 ### 数组方法

@@ -1,3 +1,4 @@
+import { IndexedDB } from './IndexedDB';
 declare global {
     interface Window {
         ActiveXObject: any;
@@ -19,5 +20,7 @@ declare const browser: {
     copy: (str: string) => void;
     scrollToTop: () => void;
     userBrowser: () => string;
+    IndexedDB: typeof IndexedDB;
+    getLocalStorageSize: () => string;
 };
 export default browser;

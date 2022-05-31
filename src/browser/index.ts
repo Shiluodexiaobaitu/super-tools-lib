@@ -228,7 +228,7 @@ const getLocalStorageSize = (): string => {
     return (size / 1024).toFixed(2) + 'KB'
 }
 
-const browser = {
+export {
     toFullScreen,
     exitFullscreen,
     LocalStorage,
@@ -242,5 +242,3 @@ const browser = {
     IndexedDB,
     getLocalStorageSize
 }
-
-export default browser;

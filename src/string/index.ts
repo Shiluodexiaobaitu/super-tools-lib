@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2022-03-07 15:40:18
+ * @LastEditTime: 2022-05-31 12:14:31
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 
@@ -13,7 +13,7 @@
 /**
   * 字符串首位是字母转大写
 */
-const initialToCapitali = (gname: string): string => {
+export const initialToCapitali = (gname: string): string => {
     const pattern = new RegExp('[A-Za-z]+');
     const str = gname.substr(0, 1);
     if (pattern.test(str)) {
@@ -31,7 +31,7 @@ const initialToCapitali = (gname: string): string => {
 * @example
 * loadImg(url).then(console.log('加载完成')).catch(err => {console.log(err)})
 */
-const repeat = (str: string, n: number): string => {
+export const repeat = (str: string, n: number): string => {
     let res = ''
     while (n) {
         if (n % 2 === 1) res += str
@@ -44,7 +44,7 @@ const repeat = (str: string, n: number): string => {
 /**
  * 去除字符串首尾空格
 */
-const trim = (str: string): string => {
+export const trim = (str: string): string => {
     return str.replace(/^\s+(.*?)\s+$/g, '$1');
 }
 
@@ -54,7 +54,7 @@ const trim = (str: string): string => {
  * @param {any} font
  * @return {*}
  */
-const getTextWidth = (text: string, font: any): number => {
+export const getTextWidth = (text: string, font: any): number => {
     const canvas = document.createElement('canvas')
     const context = canvas.getContext('2d');
     context.font = font;
@@ -62,10 +62,10 @@ const getTextWidth = (text: string, font: any): number => {
     return metrics.width;
 }
 
-const string = {
-    initialToCapitali,
-    repeat,
-    trim,
-    getTextWidth
-};
-export default string;
+// const string = {
+//     initialToCapitali,
+//     repeat,
+//     trim,
+//     getTextWidth
+// };
+// export default string;

@@ -2,15 +2,14 @@
  * @Author: zhangce
  * @Date: 2022-03-07 13:50:06
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2022-03-07 14:59:33
+ * @LastEditTime: 2022-05-31 13:50:57
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 循环方法集合
  *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
  */
 import { filter } from './_filter';
-import typeJudgment from '../typeJudgment';
-const { isArray, isObject } = typeJudgment;
+import { isArray, isObject } from '../typeJudgment';
 
 const _arrayEach = (array, iteratee) => {
     let index = -1;
@@ -45,10 +44,7 @@ const forEach = (data: Array<any> | Object, fn: Function) => {
     return func(data, fn)
 }
 
-
-const loop = {
+export {
     forEach,
     filter
 }
-
-export default loop;

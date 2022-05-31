@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-10-08 14:15:34
  * @LastEditors: zhangce
- * @LastEditTime: 2022-01-18 13:52:54
+ * @LastEditTime: 2022-05-31 13:42:23
  * @Description: 
  */
 /**
@@ -62,11 +62,9 @@ const mercatorToLonlat = (mercator: { x: number, y: number }): any => {
     return lonlat;
 }
 
-const map = {
+export {
     getDistance,
     calcDistance,
     lonLatToMercator,
     mercatorToLonlat
 }
-
-export default map;

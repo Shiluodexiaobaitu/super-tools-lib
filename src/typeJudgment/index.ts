@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @LastEditors: zhangce
- * @LastEditTime: 2022-04-06 17:02:02
+ * @LastEditTime: 2022-05-31 13:45:14
  * @Description: 
  */
 /**
@@ -144,7 +144,8 @@ const isSupportWebP = () => {
     return !![].map && document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0;
 }
 
-const typeJudgment = {
+
+export {
     isBase64,
     isArray,
     isString,
@@ -162,5 +163,3 @@ const typeJudgment = {
     returnType,
     isSupportWebP
 }
-
-export default typeJudgment;

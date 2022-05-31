@@ -1,4 +1,2 @@
-declare const vconsole: {
-    vConsole: () => void;
-};
-export default vconsole;
+declare const vConsole: () => void;
+export { vConsole };

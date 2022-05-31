@@ -9,8 +9,8 @@ const smallRounding = (num: number, place: number): number => {
     return Math.round(num * n) / n
 }
 
-const count = {
+
+
+export {
     smallRounding
 }
-
-export default count;

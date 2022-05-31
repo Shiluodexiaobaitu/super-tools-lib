@@ -1,7 +1,4 @@
-declare const string: {
-    initialToCapitali: (gname: string) => string;
-    repeat: (str: string, n: number) => string;
-    trim: (str: string) => string;
-    getTextWidth: (text: string, font: any) => number;
-};
-export default string;
+export declare const initialToCapitali: (gname: string) => string;
+export declare const repeat: (str: string, n: number) => string;
+export declare const trim: (str: string) => string;
+export declare const getTextWidth: (text: string, font: any) => number;

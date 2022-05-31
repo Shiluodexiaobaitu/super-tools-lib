@@ -2,11 +2,11 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-03-07 15:24:11
+ * @LastEditTime: 2022-05-31 13:45:48
  * @Description: 
  */
 
-import typeJudgment from '../typeJudgment';
+import { isObject } from '../typeJudgment';
 import { cloneDeep } from './_cloneDeep';
 
 /**
@@ -37,7 +37,7 @@ const stringfyQueryString = (obj: Object) => {
 
 const values = (obj): Array<any> => {
     const arr = [];
-    if (typeJudgment.isObject(obj)) {
+    if (isObject(obj)) {
         for (const key in obj) {
             arr.push(obj[key])
         }
@@ -47,7 +47,7 @@ const values = (obj): Array<any> => {
 
 const keys = (obj): Array<any> => {
     const arr = [];
-    if (typeJudgment.isObject(obj)) {
+    if (isObject(obj)) {
         for (const key in obj) {
             arr.push(key)
         }
@@ -55,11 +55,9 @@ const keys = (obj): Array<any> => {
     return arr
 }
 
-const object = {
+export {
     cloneDeep,
     stringfyQueryString,
     values,
     keys
 }
-
-export default object;

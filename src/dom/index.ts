@@ -1,4 +1,4 @@
-import tools from '../tools';
+import { throttle } from '../tools';
 
 /**
  * 获取一个元素距离浏览器左上角的偏移量
@@ -61,7 +61,7 @@ const shaking = ({ ele, attr, cb, rate = 20, time = 50 }: { ele: any, attr: stri
  * 阻止冒泡事件
  * @param e 
  */
-export const stopPropagation = (e) => {
+const stopPropagation = (e) => {
     e = e || window.event;
     if (e.stopPropagation) {    // W3C阻止冒泡方法 
         e.stopPropagation();
@@ -182,11 +182,11 @@ const scrollToTheBottom = (ele: HTMLElement, callback: Function, delay: number =
         }
     }
 
-    ele.addEventListener('scroll', tools.throttle(scrollFn, delay))
+    ele.addEventListener('scroll', throttle(scrollFn, delay))
 
 }
 
-const dom = {
+export {
     getOffset,
     shaking,
     stopPropagation,
@@ -197,5 +197,3 @@ const dom = {
     numberRoll,
     scrollToTheBottom
 }
-
-export default dom

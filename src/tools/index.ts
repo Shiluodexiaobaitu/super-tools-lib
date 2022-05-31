@@ -178,7 +178,7 @@ const colorHex = (color: string): string => {
  * @param {alpa} 
  * @return {string}
 */
-export const hexToRgba = (str: string, alpa: number): string => {
+const hexToRgba = (str: string, alpa: number): string => {
     alpa = alpa === undefined ? 1 : alpa;
     if (!str) return;
     let color = str.toLowerCase();
@@ -203,7 +203,7 @@ export const hexToRgba = (str: string, alpa: number): string => {
 /**
  * rgba颜色转16进制
 */
-export const rgbaToHex = (color): string => {
+const rgbaToHex = (color): string => {
     const values = color
         .replace(/rgba?\(/, '')
         .replace(/\)/, '')
@@ -336,7 +336,7 @@ const digitUppercase = (n: number): string => {
 /**
  * 动态引入js
 */
-export const injectScript = (src: string) => {
+const injectScript = (src: string) => {
     const s = document.createElement('script');
     s.type = 'text/javascript';
     s.async = true;
@@ -348,7 +348,7 @@ export const injectScript = (src: string) => {
 /**
  * 汉字转字母
 */
-export const sinogToLetter = (str: string) => {
+const sinogToLetter = (str: string) => {
 
     function checkCh(ch) {
         const uni = ch.charCodeAt(0);
@@ -403,12 +403,13 @@ export const sinogToLetter = (str: string) => {
  * @param {*} draft 设计稿宽度
  * @return {*}
  */
-export const getFitSize = (px: number, draft = 750): number => {
+const getFitSize = (px: number, draft = 750): number => {
     const scale = document.body.clientWidth / draft;
     return Math.floor((scale * px))
 }
 
-const tools = {
+
+export {
     guid,
     getFileBase64,
     isAndroidMobileDevice,
@@ -431,5 +432,3 @@ const tools = {
     sinogToLetter,
     getFitSize
 }
-
-export default tools;

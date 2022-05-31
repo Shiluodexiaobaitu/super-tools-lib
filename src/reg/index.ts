@@ -98,8 +98,6 @@ function validate(key: string, value: string): boolean {
     return new RegExp(reg[`${key}`]).test(value);
 }
 
-const regular = {
+export {
     validate
 }
-
-export default regular;

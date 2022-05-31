@@ -4,6 +4,8 @@ import { numberRoll } from './dom';
 import { Ajax } from './request';
 declare const _default: {
     version: string;
+    transFormat: (str: any, oldChar: any, newChar: any) => any;
+    strInversion: (str: any) => any[];
     initialToCapitali: (gname: string) => string;
     repeat: (str: string, n: number) => string;
     trim: (str: string) => string;
@@ -17,7 +19,11 @@ declare const _default: {
     fileDownload: (url: string) => boolean;
     fuzzyQuery: (list: any[], key: string, keyWord: string) => any[];
     getUrlParam: () => Object;
-    getCookie: (name: string) => string;
+    cookie: {
+        set: (key: string, value: string, expTime?: number) => void;
+        delete: (key: string) => void;
+        get: (key: string) => string;
+    };
     colorHex: (color: string) => string;
     viewportToPixels: (value: string) => number;
     noRefdelUrlParam: (ref: string) => string;
@@ -80,6 +86,7 @@ declare const _default: {
     bubbleSort: (arr: any) => any;
     cloneDeep: (data: any) => any;
     stringfyQueryString: (obj: Object) => string;
+    deserialization: (str: string) => object;
     values: (obj: any) => any[];
     keys: (obj: any) => any[];
     isBase64: (base64: any) => boolean;

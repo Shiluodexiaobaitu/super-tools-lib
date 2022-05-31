@@ -7,7 +7,11 @@ declare const debounce: (fn: Function, wait: number) => Function;
 declare const fileDownload: (url: string) => boolean;
 declare const fuzzyQuery: (list: Array<any>, key: string, keyWord: string) => Array<any>;
 declare const getUrlParam: () => Object;
-declare const getCookie: (name: string) => string;
+declare const cookie: {
+    set: (key: string, value: string, expTime?: number) => void;
+    delete: (key: string) => void;
+    get: (key: string) => string;
+};
 declare const colorHex: (color: string) => string;
 declare const hexToRgba: (str: string, alpa: number) => string;
 declare const rgbaToHex: (color: any) => string;
@@ -19,4 +23,4 @@ declare const digitUppercase: (n: number) => string;
 declare const injectScript: (src: string) => void;
 declare const sinogToLetter: (str: string) => string;
 declare const getFitSize: (px: number, draft?: number) => number;
-export { guid, getFileBase64, isAndroidMobileDevice, isAppleMobileDevice, throttle, debounce, fileDownload, fuzzyQuery, getUrlParam, getCookie, colorHex, viewportToPixels, noRefdelUrlParam, getAge, getSex, digitUppercase, hexToRgba, rgbaToHex, injectScript, sinogToLetter, getFitSize };
+export { guid, getFileBase64, isAndroidMobileDevice, isAppleMobileDevice, throttle, debounce, fileDownload, fuzzyQuery, getUrlParam, cookie, colorHex, viewportToPixels, noRefdelUrlParam, getAge, getSex, digitUppercase, hexToRgba, rgbaToHex, injectScript, sinogToLetter, getFitSize };

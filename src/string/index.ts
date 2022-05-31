@@ -2,18 +2,17 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2022-05-31 12:14:31
+ * @LastEditTime: 2022-05-31 14:22:58
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 
  *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
  */
 
-
 /**
   * 字符串首位是字母转大写
 */
-export const initialToCapitali = (gname: string): string => {
+const initialToCapitali = (gname: string): string => {
     const pattern = new RegExp('[A-Za-z]+');
     const str = gname.substr(0, 1);
     if (pattern.test(str)) {
@@ -31,7 +30,7 @@ export const initialToCapitali = (gname: string): string => {
 * @example
 * loadImg(url).then(console.log('加载完成')).catch(err => {console.log(err)})
 */
-export const repeat = (str: string, n: number): string => {
+const repeat = (str: string, n: number): string => {
     let res = ''
     while (n) {
         if (n % 2 === 1) res += str
@@ -44,7 +43,7 @@ export const repeat = (str: string, n: number): string => {
 /**
  * 去除字符串首尾空格
 */
-export const trim = (str: string): string => {
+const trim = (str: string): string => {
     return str.replace(/^\s+(.*?)\s+$/g, '$1');
 }
 
@@ -54,7 +53,7 @@ export const trim = (str: string): string => {
  * @param {any} font
  * @return {*}
  */
-export const getTextWidth = (text: string, font: any): number => {
+const getTextWidth = (text: string, font: any): number => {
     const canvas = document.createElement('canvas')
     const context = canvas.getContext('2d');
     context.font = font;
@@ -62,10 +61,36 @@ export const getTextWidth = (text: string, font: any): number => {
     return metrics.width;
 }
 
-// const string = {
-//     initialToCapitali,
-//     repeat,
-//     trim,
-//     getTextWidth
-// };
-// export default string;
+/**
+ * @description: 字符替换
+ * @param {*} str 表示将要替换的字符串
+ * @param {*} oldChar 表示你将要替换的字符
+ * @param {*} newChar 表示你想要替换的字符
+ * @return {*}
+ */
+const transFormat = (str, oldChar, newChar) => {
+    const reg = new RegExp(oldChar, 'g') // g表示全部替换，默认替换第一个
+    str = str.replace(reg, newChar)
+    return str
+}
+
+/**
+ * @description: 反转字符串
+ * @param {*} str
+ * @return {*}
+ */
+const strInversion = str => {
+    str = str + '';
+    let newStr = [];
+    newStr = str.split('').reverse().join('');
+    return newStr
+}
+
+export {
+    initialToCapitali,
+    repeat,
+    trim,
+    getTextWidth,
+    transFormat,
+    strInversion
+}

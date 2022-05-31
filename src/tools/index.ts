@@ -140,12 +140,49 @@ const getUrlParam = function (): Object {
 }
 
 /**
- * 获取cookie值
-*/
-const getCookie = function (name: string): string {
-    const arr = document.cookie.match(new RegExp('(^| )' + name + '=([^;]*)(;|$)'));
-    if (arr != null) return unescape(arr[2]);
-    return '';
+ * 封装cookie增删改查的函数
+ */
+const cookie = {
+    /**
+     * 设置cookie属性及时间
+     * 注意：只能逐条设置
+     * @param {*} key 属性名
+     * @param {*} value 属性值
+     * @param {*} expTime 过期时间
+     * @returns 
+     */
+    set: (key: string, value: string, expTime?: number) => {
+        document.cookie = key + '=' + value + ';max-age=' + expTime;
+    },
+
+    /**
+     * 删除cookie属性
+     * @param {*} key 被删的属性
+     */
+    delete: (key: string) => {
+        document.cookie = key + '=' + '' + ';max-age=' + -1;
+    },
+
+    /**
+     * 查询cookie属性
+     * 使用：get('hobby', function(data){console.log(data)})
+     * @param {*} key 
+     * @param {*} cb 
+     * @returns 
+     */
+    get: (key: string) => {
+        const CookiesArray = document.cookie.split('; ');
+        let value: string | undefined = undefined
+        for (let i = 0; i < CookiesArray.length; i++) {
+            const CookieItem = CookiesArray[i];
+            const CookieItemArray = CookieItem.split('=');
+
+            if (CookieItemArray[0] == key) {
+                value = CookieItemArray[1]
+            }
+        }
+        return value
+    }
 }
 
 /**
@@ -419,7 +456,7 @@ export {
     fileDownload,
     fuzzyQuery,
     getUrlParam,
-    getCookie,
+    cookie,
     colorHex,
     viewportToPixels,
     noRefdelUrlParam,

@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-05-31 13:51:09
+ * @LastEditTime: 2022-05-31 15:41:30
  * @Description: 
  */
 import { version } from '../package.json';
@@ -11,7 +11,9 @@ import {
     initialToCapitali,
     repeat,
     trim,
-    getTextWidth
+    getTextWidth,
+    transFormat,
+    strInversion
 } from './string';
 
 import {
@@ -24,7 +26,7 @@ import {
     fileDownload,
     fuzzyQuery,
     getUrlParam,
-    getCookie,
+    cookie,
     colorHex,
     viewportToPixels,
     noRefdelUrlParam,
@@ -89,6 +91,7 @@ import {
 import {
     cloneDeep,
     stringfyQueryString,
+    deserialization,
     values,
     keys
 } from './object';
@@ -129,8 +132,6 @@ import {
     formatRemainTime
 } from './date';
 
-import { smallRounding } from './count';
-
 import { shuffle } from './algorithm';
 
 import {
@@ -138,7 +139,8 @@ import {
     accSub,
     accMul,
     accDiv,
-    formatPrice
+    formatPrice,
+    smallRounding
 } from './number';
 
 import {
@@ -148,6 +150,8 @@ import {
 
 export default {
     version: version,
+    transFormat,
+    strInversion,
     initialToCapitali,
     repeat,
     trim,
@@ -161,7 +165,7 @@ export default {
     fileDownload,
     fuzzyQuery,
     getUrlParam,
-    getCookie,
+    cookie,
     colorHex,
     viewportToPixels,
     noRefdelUrlParam,
@@ -207,6 +211,7 @@ export default {
     bubbleSort,
     cloneDeep,
     stringfyQueryString,
+    deserialization,
     values,
     keys,
     isBase64,

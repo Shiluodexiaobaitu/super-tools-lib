@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-05-31 13:45:48
+ * @LastEditTime: 2022-05-31 14:41:55
  * @Description: 
  */
 
@@ -34,6 +34,23 @@ const stringfyQueryString = (obj: Object) => {
     return pairs.join('&');
 }
 
+/**
+ * @description: 反序列化
+ * @param {string} str
+ * @return {*}
+ */
+const deserialization = (str: string): object => {
+
+    const pairs = str.split('&');
+    const obj = {};
+    for (let i = 0; i < pairs.length; i++) {
+        const item = pairs[i]
+        const kv = item.split('=')
+        obj[kv[0]] = kv[1]
+    }
+    return obj
+}
+
 
 const values = (obj): Array<any> => {
     const arr = [];
@@ -58,6 +75,7 @@ const keys = (obj): Array<any> => {
 export {
     cloneDeep,
     stringfyQueryString,
+    deserialization,
     values,
     keys
 }

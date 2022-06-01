@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-05-31 15:41:30
+ * @LastEditTime: 2022-05-31 16:56:43
  * @Description: 
  */
 import { version } from '../package.json';
@@ -248,5 +248,3 @@ export default {
     forEach,
     filter
 };
-
-// export declare const

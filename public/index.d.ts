@@ -1,4 +1,10 @@
-
+// export declare const transFormat: (str: any, oldChar: any, newChar: any) => any;
+// export declare const strInversion: (str: any) => any[];
+// export declare const cookie: {
+//     set: (key: string, value: string, expTime?: number) => void;
+//     delete: (key: string) => void;
+//     get: (key: string) => string;
+// };
 // export declare const IndexedDB: typeof import("./browser/IndexedDB").IndexedDB;
 // export declare const getLocalStorageSize: () => string;
 // export declare const getTextWidth: (text: string, font: any) => number;

@@ -121,7 +121,7 @@ const replaceClass = (ele: HTMLElement, newName: string, oldName: string) => {
  * @param {*} targetNumber 要滚动到的数字
  * @param {*} duration 动画时间
  */
-function numberRoll(ele: any, targetNumber: number, duration: number) {
+const numberRoll = (ele: any, targetNumber: number, duration: number) => {
     const type = ele.tagName
     let firstValue
 

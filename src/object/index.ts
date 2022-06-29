@@ -2,11 +2,11 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-05-31 14:41:55
+ * @LastEditTime: 2022-06-10 15:19:57
  * @Description: 
  */
 
-import { isObject } from '../typeJudgment';
+import { isObject } from '../is';
 import { cloneDeep } from './_cloneDeep';
 
 /**

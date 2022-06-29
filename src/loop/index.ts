@@ -2,14 +2,14 @@
  * @Author: zhangce
  * @Date: 2022-03-07 13:50:06
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2022-05-31 13:50:57
+ * @LastEditTime: 2022-06-10 15:19:59
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 循环方法集合
  *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
  */
 import { filter } from './_filter';
-import { isArray, isObject } from '../typeJudgment';
+import { isArray, isObject } from '../is';
 
 const _arrayEach = (array, iteratee) => {
     let index = -1;

@@ -31,20 +31,6 @@ const getFileBase64 = (file: File, cb: Function): void => {
 }
 
 /**
- * 判断是否安卓移动设备访问
-*/
-const isAndroidMobileDevice = (): boolean => {
-    return /android/i.test(navigator.userAgent.toLowerCase());
-}
-
-/**
- * 判断是否苹果移动设备访问
-*/
-const isAppleMobileDevice = (): boolean => {
-    return /iphone|ipod|ipad|Macintosh/i.test(navigator.userAgent.toLowerCase());
-}
-
-/**
  * 节流
  * @param {*} func 执行函数
  * @param {*} delay 节流时间,毫秒
@@ -449,8 +435,6 @@ const getFitSize = (px: number, draft = 750): number => {
 export {
     guid,
     getFileBase64,
-    isAndroidMobileDevice,
-    isAppleMobileDevice,
     throttle,
     debounce,
     fileDownload,

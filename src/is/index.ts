@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @LastEditors: zhangce
- * @LastEditTime: 2022-05-31 13:45:14
+ * @LastEditTime: 2022-06-10 15:21:55
  * @Description: 
  */
 /**
@@ -144,6 +144,32 @@ const isSupportWebP = () => {
     return !![].map && document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0;
 }
 
+/**
+ * @description: 判断是否为移动端
+ * @return {*}
+ */
+const isMobile = (): boolean => {
+    if (window.navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)) {
+        return true; // 移动端
+    } else {
+        return false; // PC端
+    }
+}
+
+/**
+ * 判断是否安卓移动设备访问
+*/
+const isAndroidMobileDevice = (): boolean => {
+    return /android/i.test(navigator.userAgent.toLowerCase());
+}
+
+/**
+ * 判断是否苹果移动设备访问
+*/
+const isAppleMobileDevice = (): boolean => {
+    return /iphone|ipod|ipad|Macintosh/i.test(navigator.userAgent.toLowerCase());
+}
+
 
 export {
     isBase64,
@@ -161,5 +187,8 @@ export {
     isSymbol,
     isPromise,
     returnType,
-    isSupportWebP
+    isSupportWebP,
+    isMobile,
+    isAndroidMobileDevice,
+    isAppleMobileDevice
 }

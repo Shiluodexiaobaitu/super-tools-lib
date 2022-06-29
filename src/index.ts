@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-05-31 16:56:43
+ * @LastEditTime: 2022-06-29 10:13:27
  * @Description: 
  */
 import { version } from '../package.json';
@@ -19,8 +19,6 @@ import {
 import {
     guid,
     getFileBase64,
-    isAndroidMobileDevice,
-    isAppleMobileDevice,
     throttle,
     debounce,
     fileDownload,
@@ -112,8 +110,11 @@ import {
     isSymbol,
     isPromise,
     returnType,
-    isSupportWebP
-} from './typeJudgment';
+    isSupportWebP,
+    isMobile,
+    isAndroidMobileDevice,
+    isAppleMobileDevice,
+} from './is';
 
 import { downBlob } from './file';
 
@@ -230,6 +231,7 @@ export default {
     isPromise,
     returnType,
     isSupportWebP,
+    isMobile,
     downBlob,
     vConsole,
     socket,

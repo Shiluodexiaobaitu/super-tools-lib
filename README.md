@@ -680,7 +680,7 @@ _.keys(obj);
 => ['a','b']
 ```
 
-### 判断数据类型方法
+### 判断方法
 
 - isBase64
 
@@ -792,6 +792,22 @@ _.isUndefined(target)
 ```js
 _.isNull(target)
 => true | false
+```
+
+- isImg
+
+```js
+
+_.isImg(val)
+=> true | false
+```
+
+- isUrl
+```js
+
+_.isUrl(val)
+=> true | false
+
 ```
 
 ### 文件操作方法

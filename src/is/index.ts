@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @LastEditors: zhangce
- * @LastEditTime: 2022-07-05 12:05:58
+ * @LastEditTime: 2022-07-05 18:53:48
  * @Description: 
  */
 /**
@@ -170,6 +170,28 @@ const isAppleMobileDevice = (): boolean => {
     return /iphone|ipod|ipad|Macintosh/i.test(navigator.userAgent.toLowerCase());
 }
 
+/**
+ * 判断是否是图片链接
+*/
+const isImg = (path: string): boolean => {
+    return /\w.(png|jpg|jpeg|svg|webp|gif|bmp)$/i.test(path);
+}
+
+/**
+ * 判断是否为url链接
+*/
+const isUrl = (path: string): boolean => {
+    if (!path.startsWith('http')) {
+        return false;
+    }
+    try {
+        const url = new URL(path);
+        return !!url;
+    } catch (error) {
+        return false;
+    }
+};
+
 
 export {
     isBase64,
@@ -190,5 +212,7 @@ export {
     isSupportWebP,
     isMobile,
     isAndroidMobileDevice,
-    isAppleMobileDevice
+    isAppleMobileDevice,
+    isImg,
+    isUrl
 }

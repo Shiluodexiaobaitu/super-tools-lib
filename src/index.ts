@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-07-05 13:58:37
+ * @LastEditTime: 2022-07-05 18:53:57
  * @Description: 
  */
 import { version } from '../package.json';
@@ -113,6 +113,8 @@ import {
     isMobile,
     isAndroidMobileDevice,
     isAppleMobileDevice,
+    isImg,
+    isUrl,
 } from './is';
 
 import { downBlob } from './file';
@@ -150,6 +152,8 @@ import {
 
 export default {
     version: version,
+    isImg,
+    isUrl,
     transFormat,
     strInversion,
     initialToCapitali,

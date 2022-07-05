@@ -13,8 +13,7 @@ const orient = () => {
     }, false);
 }
 
-const mobile = {
+
+export {
     orient
 }
-
-export default mobile;

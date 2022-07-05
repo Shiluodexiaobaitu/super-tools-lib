@@ -2,11 +2,10 @@
  * @Author: zhangce
  * @Date: 2021-10-08 14:15:34
  * @LastEditors: zhangce
- * @LastEditTime: 2022-02-17 17:41:59
+ * @LastEditTime: 2022-04-28 15:35:36
  * @Description: 
  */
-// import resolve from 'rollup-plugin-node-resolve';
-// import commonjs from 'rollup-plugin-commonjs';
+
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import babel from "rollup-plugin-babel";

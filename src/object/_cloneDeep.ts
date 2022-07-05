@@ -2,15 +2,14 @@
  * @Author: zhangce
  * @Date: 2022-03-03 14:50:41
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2022-03-04 22:06:54
+ * @LastEditTime: 2022-06-10 15:20:03
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 
  *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
  */
 
-import typeJudgment from '../typeJudgment';
-const { returnType } = typeJudgment;
+import { returnType } from '../is';
 
 const _isBasicType = (opts: any): boolean => {
     const type = returnType(opts);

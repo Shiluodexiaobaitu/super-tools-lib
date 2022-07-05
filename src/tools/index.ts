@@ -15,7 +15,7 @@ const guid = (): string => {
  * 文件的Base64编码，
  * @param {则需要FileReader。FileReader类型实现的是一种异步文件读取机制。可以把FileReader想象成XMLHttpRequest，区别只是它读取的是文件系统，而不是远程服务器。}
 */
-const getFileBase64 = (file: File, cb: Function): void => {
+const getFileBase64 = (file: File, cb: (base64: any) => void): void => {
     if (!file) throw new Error('Error! no param "file"(getFileBase64()).');
 
     const reader = new FileReader();
@@ -31,25 +31,11 @@ const getFileBase64 = (file: File, cb: Function): void => {
 }
 
 /**
- * 判断是否安卓移动设备访问
-*/
-const isAndroidMobileDevice = (): boolean => {
-    return /android/i.test(navigator.userAgent.toLowerCase());
-}
-
-/**
- * 判断是否苹果移动设备访问
-*/
-const isAppleMobileDevice = (): boolean => {
-    return /iphone|ipod|ipad|Macintosh/i.test(navigator.userAgent.toLowerCase());
-}
-
-/**
  * 节流
  * @param {*} func 执行函数
  * @param {*} delay 节流时间,毫秒
 */
-const throttle = function (fn: Function, delay: number): Function {
+const throttle = function (fn: () => void, delay = 200): () => void {
     let timer: any = null
     return function (...rest) {
         if (!timer) {
@@ -65,7 +51,7 @@ const throttle = function (fn: Function, delay: number): Function {
 /**
  * 防抖
 */
-const debounce = function (fn: Function, wait: number): Function {
+const debounce = function (fn: () => void, wait: number): () => void {
     let timeout: any = null
     return function (...rest) {
         if (timeout !== null) clearTimeout(timeout)// 如果多次触发将上次记录延迟清除掉
@@ -125,7 +111,7 @@ const fuzzyQuery = function (list: Array<any>, key: string, keyWord: string): Ar
 /**
  * 获取url参数 返回一个{}
 */
-const getUrlParam = function (): Object {
+const getUrlParam = function () {
     const url = document.location.toString();
     let arrObj = url.split('?');
     const params = Object.create(null)
@@ -140,12 +126,49 @@ const getUrlParam = function (): Object {
 }
 
 /**
- * 获取cookie值
-*/
-const getCookie = function (name: string): string {
-    const arr = document.cookie.match(new RegExp('(^| )' + name + '=([^;]*)(;|$)'));
-    if (arr != null) return unescape(arr[2]);
-    return '';
+ * 封装cookie增删改查的函数
+ */
+const cookie = {
+    /**
+     * 设置cookie属性及时间
+     * 注意：只能逐条设置
+     * @param {*} key 属性名
+     * @param {*} value 属性值
+     * @param {*} expTime 过期时间
+     * @returns 
+     */
+    set: (key: string, value: string, expTime?: number) => {
+        document.cookie = key + '=' + value + ';max-age=' + expTime;
+    },
+
+    /**
+     * 删除cookie属性
+     * @param {*} key 被删的属性
+     */
+    delete: (key: string) => {
+        document.cookie = key + '=' + '' + ';max-age=' + -1;
+    },
+
+    /**
+     * 查询cookie属性
+     * 使用：get('hobby', function(data){console.log(data)})
+     * @param {*} key 
+     * @param {*} cb 
+     * @returns 
+     */
+    get: (key: string) => {
+        const CookiesArray = document.cookie.split('; ');
+        let value: string | undefined = undefined
+        for (let i = 0; i < CookiesArray.length; i++) {
+            const CookieItem = CookiesArray[i];
+            const CookieItemArray = CookieItem.split('=');
+
+            if (CookieItemArray[0] == key) {
+                value = CookieItemArray[1]
+            }
+        }
+        return value
+    }
 }
 
 /**
@@ -178,7 +201,7 @@ const colorHex = (color: string): string => {
  * @param {alpa} 
  * @return {string}
 */
-export const hexToRgba = (str: string, alpa: number): string => {
+const hexToRgba = (str: string, alpa: number): string => {
     alpa = alpa === undefined ? 1 : alpa;
     if (!str) return;
     let color = str.toLowerCase();
@@ -203,7 +226,7 @@ export const hexToRgba = (str: string, alpa: number): string => {
 /**
  * rgba颜色转16进制
 */
-export const rgbaToHex = (color): string => {
+const rgbaToHex = (color): string => {
     const values = color
         .replace(/rgba?\(/, '')
         .replace(/\)/, '')
@@ -336,7 +359,7 @@ const digitUppercase = (n: number): string => {
 /**
  * 动态引入js
 */
-export const injectScript = (src: string) => {
+const injectScript = (src: string) => {
     const s = document.createElement('script');
     s.type = 'text/javascript';
     s.async = true;
@@ -348,7 +371,7 @@ export const injectScript = (src: string) => {
 /**
  * 汉字转字母
 */
-export const sinogToLetter = (str: string) => {
+const sinogToLetter = (str: string) => {
 
     function checkCh(ch) {
         const uni = ch.charCodeAt(0);
@@ -403,22 +426,21 @@ export const sinogToLetter = (str: string) => {
  * @param {*} draft 设计稿宽度
  * @return {*}
  */
-export const getFitSize = (px: number, draft = 750): number => {
+const getFitSize = (px: number, draft = 750): number => {
     const scale = document.body.clientWidth / draft;
     return Math.floor((scale * px))
 }
 
-const tools = {
+
+export {
     guid,
     getFileBase64,
-    isAndroidMobileDevice,
-    isAppleMobileDevice,
     throttle,
     debounce,
     fileDownload,
     fuzzyQuery,
     getUrlParam,
-    getCookie,
+    cookie,
     colorHex,
     viewportToPixels,
     noRefdelUrlParam,
@@ -431,5 +453,3 @@ const tools = {
     sinogToLetter,
     getFitSize
 }
-
-export default tools;

@@ -37,9 +37,11 @@ export default [
             }),
             terser({
                 compress: {
+                    passes: 5,
                     // compress options 
                     // drop_console: true //去除log
                 },
+                keep_classnames: false
             }), // 压缩代码
         ],
     }

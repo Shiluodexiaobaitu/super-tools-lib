@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-01-14 17:32:24
+ * @LastEditTime: 2022-05-31 13:48:22
  * @Description: 
  */
 /**
@@ -68,10 +68,8 @@ const formatRemainTime = (endTime) => {
     return d + '天' + h + '小时' + m + '分钟 ' + s + '秒';
 }
 
-const data = {
+export {
     dateFormater,
     formatPassTime,
     formatRemainTime
 }
-
-export default data;

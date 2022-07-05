@@ -77,9 +77,7 @@ const getPerformanceTiming = () => {
     return times;
 }
 
-const performance = {
+export {
     performanceAnalysis,
     getPerformanceTiming,
 }
-
-export default performance;

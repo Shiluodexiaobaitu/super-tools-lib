@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2022-01-14 17:53:01
  * @LastEditors: zhangce
- * @LastEditTime: 2022-01-17 09:53:02
+ * @LastEditTime: 2022-07-05 13:45:36
  * @Description: 
  */
 /**
@@ -47,7 +47,7 @@ const accAdd = function (num1, num2: number): number {
  * @param num1
  * @param num2
  */
-const accSub = function (num1: number, num2: number): Number {
+const accSub = function (num1: number, num2: number): number {
     num1 = Number(num1)
     num2 = Number(num2)
     let dec1 = 0;
@@ -96,7 +96,7 @@ const accMul = function (num1: number, num2: number): number {
  * @param num1
  * @param num2
  */
-const accDiv = function (num1: Number, num2: Number): Number {
+const accDiv = function (num1: number, num2: number): number {
     num1 = Number(num1)
     num2 = Number(num2)
     let t1 = 0

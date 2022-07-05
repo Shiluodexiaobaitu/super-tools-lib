@@ -1,6 +1,14 @@
-# 常用 js 工具函数
+## 轻量级 js 工具库
 
-# 用法
+### 安装
+
+```
+npm install super-tools-lib
+of
+yarn add super-tools-lib
+```
+
+### 引用
 
 ```
 import _ from 'super-tools-lib';
@@ -17,7 +25,7 @@ const _ = require('super-tools-lib');
 _.guid();
 ```
 
-### utils
+### 常用方法
 
 - guid // 生成一个唯一的 guid
 
@@ -101,12 +109,20 @@ _.getUrlParam();
 => {}
 ```
 
-- getCookie // 获取 cookie 值
+- cookie // cookie 操作
 
 ```js
 
-_.getCookie()
-=> 'xxxxxxxxxxxx'
+_.cookie.set('key','value',1000)
+
+_.cookie.get('key')
+=> 'value'
+
+_.cookie.delete('key')
+
+_.cookie.get('key')
+=> undefined
+
 ```
 
 - colorHex // RGB 颜色转 16 进制
@@ -201,7 +217,7 @@ _.getFitSize(100,750);
 => 50
 ```
 
-### 循环
+### 循环数组对象方法
 
 - forEach
   参数：
@@ -230,7 +246,7 @@ _.filter(arr, (item, index) => item === 3);
 => [3]
 ```
 
-### 字符串方法
+### 字符串操作方法
 
 - initialToCapitali // 字符串首位是字母转大写
 
@@ -267,7 +283,29 @@ _.getTextWidth('哈哈哈哈哈哈哈哈',26);
 => 80
 ```
 
-### number
+- transFormat 字符串替换
+  参数：
+  1，str 表示将要替换的字符串
+  2，oldChar 表示你将要替换的字符
+  3，newChar 表示你想要替换的字符
+
+```js
+
+_.transFormat('2019-12-13', '-', '/')
+=> 2019/12/13
+```
+
+- strInversion 反正字符串
+  参数：
+  1，str 要反转的字符串
+
+```js
+
+_.strInversion('abc')
+=> 'cba'
+```
+
+### 数值操作方法
 
 - accAdd //浮点数加法运算
 
@@ -309,7 +347,14 @@ _.formatPrice(1111112211111,',')
 => '1,111,112,211,111'
 ```
 
-### 时间
+- smallRounding // 小数指定位数进行取整
+
+```js
+_.smallRounding(89.38931,3);
+=> 89.39
+```
+
+### 时间操作方法
 
 - dateFormater //格式化时间
 
@@ -335,7 +380,7 @@ _.formatRemainTime(new Date('2023').getTime())
 => '347天19小时52分钟 26秒'
 ```
 
-### 正则
+### 正则操作方法
 
 ```js
 
@@ -346,6 +391,8 @@ number // 带小数点数字 0 ～ 30
 cPattern // 车牌号
 cP // 身份证
 intNumber // 正整数
+negativeInteger // 负整数
+isNotNegativeFloatNum // 匹配非负浮点数
 character // 字符 254
 email // 邮箱
 website // 网址
@@ -369,7 +416,7 @@ _.validate(key,value)
 _.performanceAnalysis();
 ```
 
-### dom
+### DOM 操作方法
 
 - getOffset // 获取一个元素距离浏览器左上角的偏移量
 
@@ -417,7 +464,17 @@ _.replaceClass(element, newName, oldName);
 _.numberRoll(element, targetNumber, duration);
 ```
 
-### map
+- scrollToTheBottom // 监听滚动条滚动到底部
+  参数：
+  {ele} dom
+  {callback} 滚动到底部事件回调
+  {delay} 滚动监听截流时间
+
+```js
+_.scrollToTheBottom(ele, callback, delay);
+```
+
+### 经纬度坐标转换方法
 
 - lonLatToMercator, // 经纬度转墨卡托
 
@@ -453,7 +510,7 @@ _.calcDistance(116.95400,39.95400,116.95300,39.95300)
 => 0.1222
 ```
 
-### 浏览器
+### 操作浏览器方法
 
 - toFullScreen // 浏览器全屏
 
@@ -481,6 +538,13 @@ _.LocalStorage.remove(user, name)
 
 _.LocalStoeage.clear()
 => 清空本地存储
+```
+
+- getLocalStorageSize // 获取 localStorage 使用容量
+
+```js
+_.getLocalStorageSize()
+=> '0.00KB'
 ```
 
 - getPosition // H5 获取地理位置
@@ -529,7 +593,35 @@ _.userBrowser();
 => 'Chrome'
 ```
 
-### 数组方法
+- IndexedDB //浏览器数据库
+
+```js
+const db = new _.IndexedDB("dbName", "storeName", 100);
+
+// 设置数据
+db.set("name", "张三");
+
+// 获取数据
+db.get("name", (data) => {
+  console.log(data);
+}); // 张三
+
+// 更新数据
+db.update("name", "李四");
+
+// 获取数据
+db.get("name", (data) => {
+  console.log(data);
+}); // 李四
+
+// 删除数据
+db.remove("name");
+
+// 清空数据库
+db.close();
+```
+
+### 操作数组方法
 
 - arrayNonRepeatfy, // 利用 Map 数据结构去重
 
@@ -539,7 +631,7 @@ _.arrayNonRepeatfy(arr)
 => [1, 'true', true, 15, false, undefined, null, NaN, 'NaN', 0, 'a', {}, {}]
 ```
 
-### 对象方法
+### 操作对象方法
 
 - cloneDeep 深度克隆数据
 
@@ -588,16 +680,7 @@ _.keys(obj);
 => ['a','b']
 ```
 
-### 计算
-
-- smallRounding // 小数指定位数进行取整
-
-```js
-_.smallRounding(89.38931,3);
-=> 89.39
-```
-
-### 类型判断
+### 判断数据类型方法
 
 - isBase64
 
@@ -711,52 +794,10 @@ _.isNull(target)
 => true | false
 ```
 
-### file 文件操作
+### 文件操作方法
 
 - downBlob // 下载二进制流文件
 
 ```js
 _.downBlob(file, fileName);
 ```
-
-<!-- - exportExcel // 导出 Excel -->
-
-<!-- ```js
-const column = [
-  {
-    title: "类型/楼层",
-    dataIndex: "type",
-    key: "type",
-    align: "left",
-  },
-  {
-    title: "单元（个）",
-    dataIndex: "count",
-    key: "count",
-    align: "left",
-  },
-  {
-    title: "数量占比",
-    dataIndex: "countShare",
-    key: "countShare",
-    align: "left",
-  },
-  {
-    title: "面积（㎡）",
-    dataIndex: "size",
-    key: "size",
-    align: "left",
-  },
-  {
-    title: "面积占比",
-    dataIndex: "sizeShare",
-    key: "sizeShare",
-    align: "left",
-  },
-];
-const data = [
-  { type: "1", count: "2", countShare: "3", size: "4", sizeShare: "5" },
-];
-
-_.exportExcel(column, data, "fileName");
-``` -->

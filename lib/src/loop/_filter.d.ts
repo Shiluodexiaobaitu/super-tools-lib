@@ -1,1 +1,1 @@
-export declare const filter: (data: Array<any> | Object, fn: Function) => any[];
+export declare const filter: (data: any[] | Record<string, any>, fn: () => void) => any[];

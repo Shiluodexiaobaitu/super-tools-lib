@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-10-08 14:15:34
  * @LastEditors: zhangce
- * @LastEditTime: 2022-03-07 15:33:54
+ * @LastEditTime: 2022-04-28 15:16:26
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -25,32 +25,15 @@
     <script src='./lib/super-tools-lib.js'></script>
     <div>super-tools-lib</div>
     <div id="ele"
-        style="width: 100px;height: 100px;background-color: pink; position: relative; top: 300px;left: 300px;">
-        <div>saasasa</div>
+        style="overflow-y: auto; width: 100px;height: 100px;background-color: pink; position: relative; top: 300px;left: 300px;">
+        <div style="height: 400px;">saasasa</div>
     </div>
 
     <script>
-
-        let arr = [{ f: 'k' }, 'dsd', 222, 3333, 555, null, NaN]
-
-        let obj = {
-            name: 'obj',
-            date: new Date(),
-            ttt: { n: [{ nn: { s: 1 } }], rest: { s: 2 }, },
-            arr: arr,
-        };
-
-        superToolsLib.forEach(arr, (item, index) => {
-            console.log('item,index', item, index)
-        })
-
-        superToolsLib.forEach(obj, (value, key) => {
-            console.log('value, key', value, key)
-            if (key === 'date') return false
-        })
-
-       console.log('A', superToolsLib.keys(superToolsLib))
-
+        const dom = document.getElementById('ele')
+        superToolsLib.scrollToTheBottom(dom, () => {
+            console.log('到底部了')
+        }, 200)
 
     </script>
 </body>

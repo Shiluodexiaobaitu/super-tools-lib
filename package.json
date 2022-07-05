@@ -1,11 +1,11 @@
 {
   "name": "super-tools-lib",
-  "version": "1.31.0",
+  "version": "1.35.0",
   "description": "常用工具函数",
-  "main": "lib/super-tools-lib.min.js",
+  "main": "lib/super-tools-lib.js",
   "types": "lib/src/index.d.ts",
   "scripts": {
-    "build": "rollup --config rollup.config.prod.js && gulp",
+    "build": "rollup --config rollup.config.prod.js",
     "start": "rollup --config rollup.config.dev.js -w",
     "build:min": "gulp",
     "build-w": "rollup -c -w",
@@ -34,8 +34,10 @@
   "homepage": "https://github.com/Shiluodexiaobaitu/Utils#readme",
   "dependencies": {},
   "files": [
-    "lib/super-tools-lib.min.js",
-    "lib/src/index.d.ts"
+    "lib/super-tools-lib.js",
+    "lib/src/index.d.ts",
+    "lib/src/browser",
+    "lib/src/request"
   ],
   "devDependencies": {
     "@babel/core": "^7.14.8",

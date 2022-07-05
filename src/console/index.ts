@@ -1,4 +1,4 @@
-import tools from '../tools';
+import { viewportToPixels } from '../tools';
 
 /**
  * 封装vConsole
@@ -20,7 +20,7 @@ const vConsole = () => {
     panel_top.style.cssText = 'border-bottom: 1px solid rgba(255,255,255,0.05);overflow-x: auto;height: 3em;width: auto;white-space: nowrap;color: #fff; line-height: 3em; padding: 0 1.15384615em;'
     panel_top.innerHTML = 'log';
     panel.appendChild(panel_top);
-    const h = tools.viewportToPixels('85vh');
+    const h = viewportToPixels('85vh');
     const ulH = h - (14 * 6)
 
     const panel_ul = document.createElement('ul');
@@ -121,8 +121,6 @@ const vConsole = () => {
     }
 }
 
-const vconsole = {
+export {
     vConsole
 }
-
-export default vconsole;

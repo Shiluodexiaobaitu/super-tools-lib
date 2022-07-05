@@ -1,3 +1,5 @@
+import { throttle } from '../tools';
+
 /**
  * 获取一个元素距离浏览器左上角的偏移量
  * @param {ele} dom元素
@@ -27,7 +29,7 @@ const getOffset = function (ele: any): any {
  * @param {rate} 抖动次数
  * @param {time} 每次抖动需要的时间
 */
-const shaking = ({ ele, attr, cb, rate = 20, time = 50 }: { ele: any, attr: string, cb: Function, time?: number, rate?: number }): void => {
+const shaking = ({ ele, attr, cb, rate = 20, time = 50 }: { ele: any, attr: string, cb: ()=>void, time?: number, rate?: number }): void => {
 
     function getStyle(ele, attr) {
         if (ele.currentStyle) {
@@ -59,7 +61,7 @@ const shaking = ({ ele, attr, cb, rate = 20, time = 50 }: { ele: any, attr: stri
  * 阻止冒泡事件
  * @param e 
  */
-export const stopPropagation = (e) => {
+const stopPropagation = (e) => {
     e = e || window.event;
     if (e.stopPropagation) {    // W3C阻止冒泡方法 
         e.stopPropagation();
@@ -85,7 +87,7 @@ const hasClass = (ele: HTMLElement, name: string) => {
  * @return {*}
  */
 const addClass = (ele: HTMLElement, name: string) => {
-    if (!hasClass(ele, name)) ele.className += '' + name;
+    if (!hasClass(ele, name)) ele.className += ' ' + name;
 }
 
 /**
@@ -119,7 +121,7 @@ const replaceClass = (ele: HTMLElement, newName: string, oldName: string) => {
  * @param {*} targetNumber 要滚动到的数字
  * @param {*} duration 动画时间
  */
-function numberRoll(ele:any, targetNumber: number, duration: number) {
+const numberRoll = (ele: any, targetNumber: number, duration: number) => {
     const type = ele.tagName
     let firstValue
 
@@ -148,7 +150,6 @@ function numberRoll(ele:any, targetNumber: number, duration: number) {
                 ele.value = targetNumber
                 clearInterval(numberTimer)
             }
-            console.log(1)
         }, frequency)
     } else {
         const numberTimer = setInterval(function () {
@@ -158,13 +159,34 @@ function numberRoll(ele:any, targetNumber: number, duration: number) {
                 ele.innerHTML = targetNumber
                 clearInterval(numberTimer)
             }
-            console.log(2)
         }, frequency)
     }
 
 }
 
-const dom = {
+/**
+ * @description: 滚动条是否滚动到底部
+ * @param {HTMLElement} ele
+ * @param {Function} callback
+ * @param {number} delay
+ * @return {*}
+ */
+const scrollToTheBottom = (ele: HTMLElement, callback: ()=>void, delay = 200) => {
+    const scrollFn = () => {
+        const sh = ele.scrollHeight
+
+        const ch = ele.clientHeight
+        const st = ele.scrollTop
+        if ((ch + st) >= sh) {
+            callback()
+        }
+    }
+
+    ele.addEventListener('scroll', throttle(scrollFn, delay))
+
+}
+
+export {
     getOffset,
     shaking,
     stopPropagation,
@@ -172,7 +194,6 @@ const dom = {
     addClass,
     removeClass,
     replaceClass,
-    numberRoll
+    numberRoll,
+    scrollToTheBottom
 }
-
-export default dom

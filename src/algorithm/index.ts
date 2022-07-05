@@ -1,7 +1,7 @@
 /**
  * 洗牌算法随机
 */
-export const shuffle = (arr: Array<any>): Array<any> => {
+const shuffle = (arr: Array<any>): Array<any> => {
     const result = []
     let random;
     while (arr.length > 0) {
@@ -12,8 +12,7 @@ export const shuffle = (arr: Array<any>): Array<any> => {
     return result;
 }
 
-const algorithm = {
+
+export {
     shuffle
 }
-
-export default algorithm;

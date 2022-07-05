@@ -1,4 +1,2 @@
-declare const count: {
-    smallRounding: (num: number, place: number) => number;
-};
-export default count;
+declare const smallRounding: (num: number, place: number) => number;
+export { smallRounding };

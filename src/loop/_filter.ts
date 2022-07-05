@@ -2,14 +2,13 @@
  * @Author: zhangce
  * @Date: 2022-03-07 14:51:13
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2022-03-07 15:08:00
+ * @LastEditTime: 2022-07-05 13:45:07
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 
  *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
  */
-import typeJudgment from '../typeJudgment';
-const { isArray } = typeJudgment;
+import { isArray } from '../is';
 
 
 /**
@@ -18,7 +17,7 @@ const { isArray } = typeJudgment;
  * @param {Function} fn
  * @return {*}
  */
-export const filter = (data: Array<any> | Object, fn: Function) => {
+export const filter = (data: any[] |  Record<string, any>, fn: ()=>void) => {
     const func = isArray(data) ? _arrayFilter : () => [];
     return func(data, fn)
 }

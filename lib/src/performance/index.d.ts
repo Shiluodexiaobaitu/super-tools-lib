@@ -1,5 +1,3 @@
-declare const performance: {
-    performanceAnalysis: () => void;
-    getPerformanceTiming: () => any;
-};
-export default performance;
+declare const performanceAnalysis: () => void;
+declare const getPerformanceTiming: () => any;
+export { performanceAnalysis, getPerformanceTiming, };

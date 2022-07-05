@@ -2,13 +2,12 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2022-03-07 15:40:18
+ * @LastEditTime: 2022-05-31 14:22:58
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 
  *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
  */
-
 
 /**
   * 字符串首位是字母转大写
@@ -62,10 +61,36 @@ const getTextWidth = (text: string, font: any): number => {
     return metrics.width;
 }
 
-const string = {
+/**
+ * @description: 字符替换
+ * @param {*} str 表示将要替换的字符串
+ * @param {*} oldChar 表示你将要替换的字符
+ * @param {*} newChar 表示你想要替换的字符
+ * @return {*}
+ */
+const transFormat = (str, oldChar, newChar) => {
+    const reg = new RegExp(oldChar, 'g') // g表示全部替换，默认替换第一个
+    str = str.replace(reg, newChar)
+    return str
+}
+
+/**
+ * @description: 反转字符串
+ * @param {*} str
+ * @return {*}
+ */
+const strInversion = str => {
+    str = str + '';
+    let newStr = [];
+    newStr = str.split('').reverse().join('');
+    return newStr
+}
+
+export {
     initialToCapitali,
     repeat,
     trim,
-    getTextWidth
-};
-export default string;
+    getTextWidth,
+    transFormat,
+    strInversion
+}

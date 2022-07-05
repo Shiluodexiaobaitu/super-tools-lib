@@ -1,6 +1,16 @@
+/*
+ * @Author: zhangce
+ * @Date: 2022-07-05 13:47:24
+ * @Email: zhangce@fengmap.com
+ * @LastEditTime: 2022-07-05 13:50:34
+ * @LastEditors: zhangce
+ * @LastEditorsEmail: zhangce@fengmap.com
+ * @Description: 
+ *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
+ */
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import babel from "rollup-plugin-babel";
+import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import { eslint } from 'rollup-plugin-eslint';
 import json from '@rollup/plugin-json';

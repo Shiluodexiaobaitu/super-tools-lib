@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-07-05 11:58:13
+ * @LastEditTime: 2022-07-05 14:17:04
  * @Description: 
  */
 
@@ -41,17 +41,17 @@ const stringfyQueryString = (obj: Record<string, pos>) => {
  * @param {string} str
  * @return {*}
  */
-const deserialization = (str: string) => {
+// const deserialization = (str: string) => {
 
-    const pairs = str.split('&');
-    const obj = {};
-    for (let i = 0; i < pairs.length; i++) {
-        const item = pairs[i]
-        const kv = item.split('=')
-        obj[kv[0]] = kv[1]
-    }
-    return obj
-}
+//     const pairs = str.split('&');
+//     const obj = {};
+//     for (let i = 0; i < pairs.length; i++) {
+//         const item = pairs[i]
+//         const kv = item.split('=')
+//         obj[kv[0]] = kv[1]
+//     }
+//     return obj
+// }
 
 
 const values = (obj:Record<string, unknown>): unknown[] => {
@@ -77,7 +77,7 @@ const keys = (obj: Record<string, unknown>): unknown[] => {
 export {
     cloneDeep,
     stringfyQueryString,
-    deserialization,
+    // deserialization,
     values,
     keys
 }

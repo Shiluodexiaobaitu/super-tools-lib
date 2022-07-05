@@ -5,13 +5,13 @@
 //     delete: (key: string) => void;
 //     get: (key: string) => string;
 // };
-// export declare const IndexedDB: typeof import("./browser/IndexedDB").IndexedDB;
+// export declare const IndexedDB:  IndexedDB;
 // export declare const getLocalStorageSize: () => string;
 // export declare const getTextWidth: (text: string, font: any) => number;
 // export declare const values: (obj: any) => any[];
 // export declare const keys: (obj: any) => any[];
-// export declare const forEach: (data: Object | any[], fn: Function) => any;
-// export declare const filter: (data: Object | any[], fn: Function) => any[];
+// export declare const forEach: (data: Record<string, unknown> | unknown[], fn: () => void) => any;
+// export declare const filter: (data: any[] | Record<string, any>, fn: () => void) => any[];
 // export declare const formatPrice: (price: any, sign?: string) => string;
 // export declare const getFitSize: (px: number, draft?: number) => number;
 // export declare const accAdd: (num1: any, num2: number) => number;
@@ -29,7 +29,7 @@
 // export declare const isPromise: (o: any) => boolean;
 // export declare const returnType: (o: any) => any;
 // export declare const isSupportWebP: () => boolean;
-// export declare const stringfyQueryString: (obj: Object) => string;
+// export declare const stringfyQueryString: (obj: Record<string, string | number | boolean>) => string;
 // export declare const bubbleSort: (arr: any) => any;
 // export declare const numberRoll: (ele: any, targetNumber: number, duration: number) => void;
 // export declare const userBrowser: () => string;
@@ -37,7 +37,7 @@
 // export declare const addClass: (ele: HTMLElement, name: string) => void;
 // export declare const removeClass: (ele: HTMLElement, name: string) => void;
 // export declare const replaceClass: (ele: HTMLElement, newName: string, oldName: string) => void;
-// export declare const Ajax: typeof import("./request/ajax").default;
+// export declare const Ajax: Ajax;
 // export declare const injectScript: (src: string) => void;
 // export declare const sinogToLetter: (str: string) => string;
 // export declare const shuffle: (arr: any[]) => any[];
@@ -46,7 +46,7 @@
 // export declare const stopPropagation: (e: any) => void;
 // export declare const scrollToTop: () => void;
 // export declare const getAge: (id: string) => string;
-// export declare const getSex: (id: string) => "男" | "女";
+// export declare const getSex: (id: string) => '男' | '女';
 // export declare const digitUppercase: (n: number) => string;
 // export declare const hexToRgba: (str: string, alpa: number) => string;
 // export declare const rgbaToHex: (color: any) => string;
@@ -74,7 +74,7 @@
 // export declare const shaking: ({ ele, attr, cb, rate, time }: {
 //     ele: any;
 //     attr: string;
-//     cb: Function;
+//     cb: () => void;
 //     time?: number;
 //     rate?: number;
 // }) => void;
@@ -104,14 +104,14 @@
 // export declare const setVibration: () => void;
 // export declare const copy: (str: string) => void;
 // export declare const guid: () => string;
-// export declare const getFileBase64: (file: File, cb: Function) => void;
+// export declare const getFileBase64: (file: File, cb: (base64: any) => void) => void;
 // export declare const isAndroidMobileDevice: () => boolean;
 // export declare const isAppleMobileDevice: () => boolean;
-// export declare const throttle: (fn: Function, delay: number) => Function;
-// export declare const debounce: (fn: Function, wait: number) => Function;
+// export declare const throttle: (fn: () => void, delay?: number) => () => void;
+// export declare const debounce: (fn: () => void, wait: number) => () => void;
 // export declare const fileDownload: (url: string) => boolean;
 // export declare const fuzzyQuery: (list: any[], key: string, keyWord: string) => any[];
-// export declare const getUrlParam: () => Object;
+// export declare const getUrlParam: () => any;
 // export declare const getCookie: (name: string) => string;
 // export declare const colorHex: (color: string) => string;
 // export declare const viewportToPixels: (value: string) => number;
@@ -120,3 +120,4 @@
 // export declare const trim: (str: string) => string;
 // export declare const validate: (key: string, value: string) => boolean;
 // export declare const exportExcel: (column: any[], dataSource: any[], fileName?: string) => void;
+

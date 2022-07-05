@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-06-29 10:13:27
+ * @LastEditTime: 2022-07-05 13:58:37
  * @Description: 
  */
 import { version } from '../package.json';
@@ -89,7 +89,6 @@ import {
 import {
     cloneDeep,
     stringfyQueryString,
-    deserialization,
     values,
     keys
 } from './object';
@@ -212,7 +211,6 @@ export default {
     bubbleSort,
     cloneDeep,
     stringfyQueryString,
-    deserialization,
     values,
     keys,
     isBase64,

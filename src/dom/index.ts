@@ -29,7 +29,7 @@ const getOffset = function (ele: any): any {
  * @param {rate} 抖动次数
  * @param {time} 每次抖动需要的时间
 */
-const shaking = ({ ele, attr, cb, rate = 20, time = 50 }: { ele: any, attr: string, cb: Function, time?: number, rate?: number }): void => {
+const shaking = ({ ele, attr, cb, rate = 20, time = 50 }: { ele: any, attr: string, cb: ()=>void, time?: number, rate?: number }): void => {
 
     function getStyle(ele, attr) {
         if (ele.currentStyle) {
@@ -171,7 +171,7 @@ const numberRoll = (ele: any, targetNumber: number, duration: number) => {
  * @param {number} delay
  * @return {*}
  */
-const scrollToTheBottom = (ele: HTMLElement, callback: Function, delay: number = 200) => {
+const scrollToTheBottom = (ele: HTMLElement, callback: ()=>void, delay = 200) => {
     const scrollFn = () => {
         const sh = ele.scrollHeight
 

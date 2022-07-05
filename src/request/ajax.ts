@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-12-30 11:56:59
  * @LastEditors: zhangce
- * @LastEditTime: 2021-12-30 12:14:11
+ * @LastEditTime: 2022-07-05 13:37:25
  * @Description: 
  */
 
@@ -13,7 +13,7 @@ class Ajax {
         this.options = { data: null, method: 'GET', responseType: 'json', ...options };
     }
 
-    send(callback: Function, error: Function) {
+    send(callback: (res: any) => void, error: (err: any) => void) {
         const { data, method, url, responseType } = this.options;
         const xhr = new XMLHttpRequest();
 

@@ -2,26 +2,28 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-06-10 15:19:57
+ * @LastEditTime: 2022-07-05 11:58:13
  * @Description: 
  */
 
 import { isObject } from '../is';
 import { cloneDeep } from './_cloneDeep';
 
+export type pos = string | number | boolean 
+
 /**
  * @description: 对象序列化
  * @param {*} obj
  * @return {*}
  */
-const stringfyQueryString = (obj: Object) => {
+const stringfyQueryString = (obj: Record<string, pos>) => {
     if (!obj) return '';
     const pairs = [];
 
     for (const key in obj) {
         const value = obj[key];
 
-        if (value instanceof Array) {
+        if (Array.isArray(value)) {
             for (let i = 0; i < value.length; ++i) {
                 pairs.push(encodeURIComponent(key + '[' + i + ']') + '=' + encodeURIComponent(value[i]));
             }
@@ -39,7 +41,7 @@ const stringfyQueryString = (obj: Object) => {
  * @param {string} str
  * @return {*}
  */
-const deserialization = (str: string): object => {
+const deserialization = (str: string) => {
 
     const pairs = str.split('&');
     const obj = {};
@@ -52,7 +54,7 @@ const deserialization = (str: string): object => {
 }
 
 
-const values = (obj): Array<any> => {
+const values = (obj:Record<string, unknown>): unknown[] => {
     const arr = [];
     if (isObject(obj)) {
         for (const key in obj) {
@@ -62,7 +64,7 @@ const values = (obj): Array<any> => {
     return arr
 }
 
-const keys = (obj): Array<any> => {
+const keys = (obj: Record<string, unknown>): unknown[] => {
     const arr = [];
     if (isObject(obj)) {
         for (const key in obj) {

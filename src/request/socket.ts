@@ -1,3 +1,13 @@
+/*
+ * @Author: zhangce
+ * @Date: 2021-08-16 18:09:23
+ * @Email: zhangce@fengmap.com
+ * @LastEditTime: 2022-07-05 13:46:11
+ * @LastEditors: zhangce
+ * @LastEditorsEmail: zhangce@fengmap.com
+ * @Description: 
+ *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
+ */
 interface IProps {
     url: string;
     reconnectCount?: number
@@ -27,7 +37,7 @@ class Socket {
 
     }
 
-    createWebSocket(message: any, cb: Function) {
+    createWebSocket(message: any, cb: (data:any)=>void) {
 
         this.ws = new WebSocket(this.url);
         message = JSON.stringify(message);

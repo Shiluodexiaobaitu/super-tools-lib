@@ -11,7 +11,7 @@ declare class Socket {
     private reconnectCount;
     private heartTime;
     constructor(props: IProps);
-    createWebSocket(message: any, cb: Function): void;
+    createWebSocket(message: any, cb: (data: any) => void): void;
     heartbeat(message: any, cb: any): void;
 }
 export default Socket;

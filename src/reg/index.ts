@@ -1,4 +1,4 @@
-const reg: Object = {
+const reg = {
     /**
      * 手机号
     */

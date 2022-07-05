@@ -2,34 +2,34 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @LastEditors: zhangce
- * @LastEditTime: 2022-06-10 15:21:55
+ * @LastEditTime: 2022-07-05 12:05:58
  * @Description: 
  */
 /**
  * base64类型验证
 */
-const isBase64 = (base64: any): boolean => {
+const isBase64 = (base64: string): boolean => {
     return /data:image\/.+;base64,/.test(base64);
 }
 
 /**
  * 数组类型验证
 */
-const isArray = (arr: any): boolean => {
+const isArray = (arr: unknown): boolean => {
     return Array.isArray(arr)
 }
 
 /**
  * 字符串类型验证
 */
-const isString = (str: any): boolean => {
+const isString = (str: unknown): boolean => {
     return typeof str === 'string'
 }
 
 /**
  * 函数类型验证
 */
-const isFunction = (fn: any): boolean => {
+const isFunction = (fn: unknown): boolean => {
     if (fn && typeof fn === 'function') {
         return true
     }
@@ -39,7 +39,7 @@ const isFunction = (fn: any): boolean => {
 /**
  * 对象类型验证
 */
-const isObject = (obj: any): boolean => {
+const isObject = (obj: unknown): boolean => {
     return Object.prototype.toString.call(obj) === '[object Object]'
 }
 
@@ -68,7 +68,7 @@ const isWeiXin = (): boolean => {
  * @param {*} o
  * @return {*}
  */
-const isNull = (o: any): boolean => {
+const isNull = (o: unknown): boolean => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Null'
 }
 
@@ -77,7 +77,7 @@ const isNull = (o: any): boolean => {
  * @param {*} o
  * @return {*}
  */
-const isUndefined = (o: any): boolean => {
+const isUndefined = (o: unknown): boolean => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Undefined'
 }
 
@@ -86,7 +86,7 @@ const isUndefined = (o: any): boolean => {
  * @param {*} o
  * @return {*}
  */
-const isDate = (o: any): boolean => {
+const isDate = (o: unknown): boolean => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Date'
 }
 
@@ -95,7 +95,7 @@ const isDate = (o: any): boolean => {
  * @param {*} o
  * @return {*}
  */
-const isRegExp = (o: any): boolean => {
+const isRegExp = (o: unknown): boolean => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'RegExp'
 }
 
@@ -104,7 +104,7 @@ const isRegExp = (o: any): boolean => {
  * @param {*} o
  * @return {*}
  */
-const isError = (o: any): boolean => {
+const isError = (o: unknown): boolean => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Error'
 }
 
@@ -113,7 +113,7 @@ const isError = (o: any): boolean => {
  * @param {*} o
  * @return {*}
  */
-const isSymbol = (o: any): boolean => {
+const isSymbol = (o: unknown): boolean => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Symbol'
 }
 
@@ -122,7 +122,7 @@ const isSymbol = (o: any): boolean => {
  * @param {*} o
  * @return {*}
  */
-const isPromise = (o: any): boolean => {
+const isPromise = (o: unknown): boolean => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Promise'
 }
 
@@ -130,7 +130,7 @@ const isPromise = (o: any): boolean => {
 /**
  * 返回类型
 */
-const returnType = (o: any): any => {
+const returnType = (o: unknown): unknown => {
     if (Number.isNaN(o)) return 'NaN'
     return Object.prototype.toString.call(o).slice(8, -1)
 }

@@ -1,6 +1,7 @@
 import { cloneDeep } from './_cloneDeep';
-declare const stringfyQueryString: (obj: Object) => string;
-declare const deserialization: (str: string) => object;
-declare const values: (obj: any) => Array<any>;
-declare const keys: (obj: any) => Array<any>;
+export declare type pos = string | number | boolean;
+declare const stringfyQueryString: (obj: Record<string, pos>) => string;
+declare const deserialization: (str: string) => {};
+declare const values: (obj: Record<string, unknown>) => unknown[];
+declare const keys: (obj: Record<string, unknown>) => unknown[];
 export { cloneDeep, stringfyQueryString, deserialization, values, keys };

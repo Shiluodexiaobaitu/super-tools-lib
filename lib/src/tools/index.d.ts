@@ -1,10 +1,10 @@
 declare const guid: () => string;
-declare const getFileBase64: (file: File, cb: Function) => void;
-declare const throttle: (fn: Function, delay?: number) => () => void;
-declare const debounce: (fn: Function, wait: number) => Function;
+declare const getFileBase64: (file: File, cb: (base64: any) => void) => void;
+declare const throttle: (fn: () => void, delay?: number) => () => void;
+declare const debounce: (fn: () => void, wait: number) => () => void;
 declare const fileDownload: (url: string) => boolean;
 declare const fuzzyQuery: (list: Array<any>, key: string, keyWord: string) => Array<any>;
-declare const getUrlParam: () => Object;
+declare const getUrlParam: () => any;
 declare const cookie: {
     set: (key: string, value: string, expTime?: number) => void;
     delete: (key: string) => void;

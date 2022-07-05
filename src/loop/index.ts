@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2022-03-07 13:50:06
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2022-06-10 15:19:59
+ * @LastEditTime: 2022-07-05 12:06:00
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 循环方法集合
@@ -39,7 +39,7 @@ const _objectEach = (obj, iteratee) => {
  * @param {Function} fn
  * @return {*}
  */
-const forEach = (data: Array<any> | Object, fn: Function) => {
+const forEach = (data: unknown[] | Record<string, unknown>, fn: () => void) => {
     const func = isArray(data) ? _arrayEach : _objectEach;
     return func(data, fn)
 }

@@ -15,7 +15,7 @@ const guid = (): string => {
  * 文件的Base64编码，
  * @param {则需要FileReader。FileReader类型实现的是一种异步文件读取机制。可以把FileReader想象成XMLHttpRequest，区别只是它读取的是文件系统，而不是远程服务器。}
 */
-const getFileBase64 = (file: File, cb: Function): void => {
+const getFileBase64 = (file: File, cb: (base64: any) => void): void => {
     if (!file) throw new Error('Error! no param "file"(getFileBase64()).');
 
     const reader = new FileReader();
@@ -35,7 +35,7 @@ const getFileBase64 = (file: File, cb: Function): void => {
  * @param {*} func 执行函数
  * @param {*} delay 节流时间,毫秒
 */
-const throttle = function (fn: Function, delay: number = 200): () => void {
+const throttle = function (fn: () => void, delay = 200): () => void {
     let timer: any = null
     return function (...rest) {
         if (!timer) {
@@ -51,7 +51,7 @@ const throttle = function (fn: Function, delay: number = 200): () => void {
 /**
  * 防抖
 */
-const debounce = function (fn: Function, wait: number): Function {
+const debounce = function (fn: () => void, wait: number): () => void {
     let timeout: any = null
     return function (...rest) {
         if (timeout !== null) clearTimeout(timeout)// 如果多次触发将上次记录延迟清除掉
@@ -111,7 +111,7 @@ const fuzzyQuery = function (list: Array<any>, key: string, keyWord: string): Ar
 /**
  * 获取url参数 返回一个{}
 */
-const getUrlParam = function (): Object {
+const getUrlParam = function () {
     const url = document.location.toString();
     let arrObj = url.split('?');
     const params = Object.create(null)

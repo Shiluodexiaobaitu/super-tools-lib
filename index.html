@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-10-08 14:15:34
  * @LastEditors: zhangce
- * @LastEditTime: 2022-07-06 12:10:26
+ * @LastEditTime: 2022-07-28 18:02:25
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -23,13 +23,17 @@
 <body>
     <script src='./lib/super-tools-lib.js'></script>
     <div id="root">
-        <h1>super-tools-lib</h1>
+        <h1 onmousedown="mousedown(this)" >super-tools-lib</h1>
 
         <input type="file" onchange="showFile(this)">
     </div>
 
 
     <script>
+        function mousedown(e){
+            console.log('e',e)
+        }
+
         function showFile(input) {
             let file = input.files[0];
             console.log(file)

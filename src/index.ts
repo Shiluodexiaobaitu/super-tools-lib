@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-07-05 18:53:57
+ * @LastEditTime: 2022-08-22 16:17:43
  * @Description: 
  */
 import { version } from '../package.json';
@@ -35,7 +35,8 @@ import {
     rgbaToHex,
     injectScript,
     sinogToLetter,
-    getFitSize
+    getFitSize,
+    checkPassWord,
 } from './tools';
 
 import {
@@ -181,6 +182,7 @@ export default {
     injectScript,
     sinogToLetter,
     getFitSize,
+    checkPassWord,
     toFullScreen,
     exitFullscreen,
     LocalStorage,

@@ -217,6 +217,17 @@ _.getFitSize(100,750);
 => 50
 ```
 
+- checkPassWord 检测密码强度
+  参数
+  1，密码
+  return {1：密码弱 2：密码中等 3：密码强 4：密码很强}
+
+```js
+//375屏幕下
+_.checkPassWord('ssssss@1Sdddd');
+=> 4
+```
+
 ### 循环数组对象方法
 
 - forEach
@@ -803,6 +814,7 @@ _.isImg(val)
 ```
 
 - isUrl
+
 ```js
 
 _.isUrl(val)

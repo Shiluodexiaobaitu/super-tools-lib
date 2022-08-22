@@ -431,6 +431,31 @@ const getFitSize = (px: number, draft = 750): number => {
     return Math.floor((scale * px))
 }
 
+/**
+ * @description: 检测密码强度
+ * @param {*} str
+ * @return {*}  1：密码弱 2：密码中等 3：密码强 4：密码很强
+ */
+const checkPassWord = (str: string): number => {
+    let level = 0;
+    if (str.length < 6) {
+        return level
+    }
+    if (/[0-9]/.test(str)) {
+        level++
+    }
+    if (/[a-z]/.test(str)) {
+        level++
+    }
+    if (/[A-Z]/.test(str)) {
+        level++
+    }
+    if (/\W/.test(str)) {
+        level++
+    }
+    return level
+}
+
 
 /**
  * @desc dom转img
@@ -494,5 +519,6 @@ export {
     rgbaToHex,
     injectScript,
     sinogToLetter,
-    getFitSize
+    getFitSize,
+    checkPassWord
 }

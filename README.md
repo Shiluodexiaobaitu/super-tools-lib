@@ -1,5 +1,5 @@
-## 轻量级 js 工具库
-
+## 轻量级 javascript 工具库
+封装超 100+ javascript 常用方法
 ### 安装
 
 ```
@@ -314,6 +314,17 @@ _.transFormat('2019-12-13', '-', '/')
 
 _.strInversion('abc')
 => 'cba'
+```
+
+- toLine 驼峰转下划线
+  参数：
+  1，val 要驼峰转下划线字符串
+  2，isLowercase 是否转换成小写字母 默认值true
+
+```js
+
+_.toLine('contBeginDate', false)
+=> 'CONT_BEGIN_DATE'
 ```
 
 ### 数值操作方法
@@ -746,6 +757,13 @@ _.isWeiXin()
 
 ```js
 _.isSupportWebP()
+=> true | false
+```
+
+- isMobile // 判断当前是不是移动端
+
+```js
+_.isMobile()
 => true | false
 ```
 

@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-08-22 16:17:43
+ * @LastEditTime: 2022-09-13 14:02:31
  * @Description: 
  */
 import { version } from '../package.json';
@@ -13,7 +13,8 @@ import {
     trim,
     getTextWidth,
     transFormat,
-    strInversion
+    strInversion,
+    toLine,
 } from './string';
 
 import {
@@ -157,6 +158,7 @@ export default {
     isUrl,
     transFormat,
     strInversion,
+    toLine,
     initialToCapitali,
     repeat,
     trim,

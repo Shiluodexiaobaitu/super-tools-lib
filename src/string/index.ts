@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2022-05-31 14:22:58
+ * @LastEditTime: 2022-09-13 14:01:31
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 
@@ -86,11 +86,26 @@ const strInversion = str => {
     return newStr
 }
 
+/**
+ * @desc: 驼峰转下划线
+ * @param {*} val
+ * @param {*} isLowercase 是否转换为小写字母 默认值 true
+ * @return {*}
+ */
+const toLine = (val: string, isLowercase = true): string => {
+    const text = val.replace(/([A-Z])/g, '_$1')
+    if (isLowercase) {
+        return text.toLowerCase()
+    }
+    return text.toUpperCase()
+}
+
 export {
     initialToCapitali,
     repeat,
     trim,
     getTextWidth,
     transFormat,
-    strInversion
+    strInversion,
+    toLine,
 }

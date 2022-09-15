@@ -29,7 +29,7 @@ const getOffset = function (ele: any): any {
  * @param {rate} 抖动次数
  * @param {time} 每次抖动需要的时间
 */
-const shaking = ({ ele, attr, cb, rate = 20, time = 50 }: { ele: any, attr: string, cb: ()=>void, time?: number, rate?: number }): void => {
+const shaking = ({ ele, attr, cb, rate = 20, time = 50 }: { ele: any, attr: string, cb: () => void, time?: number, rate?: number }): void => {
 
     function getStyle(ele, attr) {
         if (ele.currentStyle) {
@@ -171,7 +171,7 @@ const numberRoll = (ele: any, targetNumber: number, duration: number) => {
  * @param {number} delay
  * @return {*}
  */
-const scrollToTheBottom = (ele: HTMLElement, callback: ()=>void, delay = 200) => {
+const scrollToTheBottom = (ele: HTMLElement, callback: () => void, delay = 200) => {
     const scrollFn = () => {
         const sh = ele.scrollHeight
 
@@ -186,6 +186,24 @@ const scrollToTheBottom = (ele: HTMLElement, callback: ()=>void, delay = 200) =>
 
 }
 
+/**
+ * @desc: 计算文字是否溢出容器
+ * @param {HTMLElement} dom 承载文字的容器
+ * @return {*}
+ */
+const textVisibilityChange = (dom: HTMLElement): boolean => {
+    // const ev = event.target.parentElement
+    const ev_weight = dom.scrollWidth // 文本的实际宽度   scrollWidth：对象的实际内容的宽度，不包边线宽度，会随对象中内容超过可视区后而变大。
+    const content_weight = dom.clientWidth // 文本的可视宽度 clientWidth：对象内容的可视区的宽度，不包滚动条等边线，会随对象显示大小的变化而改变。
+    if (ev_weight > content_weight) {
+        // 实际宽度 > 可视宽度  文字溢出
+        return true
+    } else {
+        // 否则为不溢出
+        return false
+    }
+}
+
 export {
     getOffset,
     shaking,
@@ -195,5 +213,6 @@ export {
     removeClass,
     replaceClass,
     numberRoll,
-    scrollToTheBottom
+    scrollToTheBottom,
+    textVisibilityChange
 }

@@ -496,6 +496,14 @@ _.numberRoll(element, targetNumber, duration);
 _.scrollToTheBottom(ele, callback, delay);
 ```
 
+- textVisibilityChange // 计算文字是否溢出容器
+  参数：
+  {dom} 承载文字的容器
+  return: true 文字溢出， false 不溢出
+```js
+_.textVisibilityChange(document.getElementById('text'));
+=> true
+```
 ### 经纬度坐标转换方法
 
 - lonLatToMercator, // 经纬度转墨卡托

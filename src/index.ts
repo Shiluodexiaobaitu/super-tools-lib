@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-09-13 14:02:31
+ * @LastEditTime: 2022-09-15 11:11:46
  * @Description: 
  */
 import { version } from '../package.json';
@@ -78,7 +78,8 @@ import {
     removeClass,
     replaceClass,
     numberRoll,
-    scrollToTheBottom
+    scrollToTheBottom,
+    textVisibilityChange,
 } from './dom';
 
 import {
@@ -213,6 +214,7 @@ export default {
     replaceClass,
     numberRoll,
     scrollToTheBottom,
+    textVisibilityChange,
     arrayUnique,
     arrayNonRepeatfy,
     aLineUnique,

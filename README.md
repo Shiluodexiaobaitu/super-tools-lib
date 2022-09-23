@@ -223,9 +223,29 @@ _.getFitSize(100,750);
   return {1：密码弱 2：密码中等 3：密码强 4：密码很强}
 
 ```js
-//375屏幕下
+
 _.checkPassWord('ssssss@1Sdddd');
 => 4
+```
+
+- fahrenheitToCelsius 将华氏温度转换为摄氏温度
+  参数
+  fahrenheit: 华氏温度
+
+```js
+
+_.fahrenheitToCelsius(50);
+=> 10
+```
+
+- celsiusToFahrenheit 将摄氏温度转华氏温度
+  参数
+  fahrenheit: 摄氏温度
+
+```js
+
+_.celsiusToFahrenheit(10);
+=> 50
 ```
 
 ### 循环数组对象方法
@@ -400,6 +420,14 @@ _.formatPassTime(1578614400000);
 
 _.formatRemainTime(new Date('2023').getTime())
 => '347天19小时52分钟 26秒'
+```
+
+- dayDiff // 两日期之间相差的天数
+
+```js
+
+_.dayDiff(new Date("2022-03-01"),new Date("2021-01-21"))
+=> 404
 ```
 
 ### 正则操作方法

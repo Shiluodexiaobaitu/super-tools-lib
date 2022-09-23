@@ -1,11 +1,53 @@
+
+// declare global {
+//   interface Window {
+//       webkitIndexedDB: any;
+//       mozIndexedDB: any;
+//   }
+// }
+// export declare type IndexedDBProps = {
+//   dbName: string;
+//   storeName: string;
+//   version: number;
+// };
+// export declare class IndexedDB {
+//   private storeName;
+//   db: any;
+//   store: any;
+//   constructor(props: IndexedDBProps);
+//   get(key: string, callback: (data: any) => void): void;
+//   set(key: any, value: any): void;
+//   update(key: any, newValue: any): void;
+//   remove(key: any): void;
+//   close(): void;
+// }
+
+// export declare class Ajax {
+//   private options;
+//   constructor(options: any);
+//   send(callback: (res: any) => void, error: (err: any) => void): void;
+//   set url(url: any);
+//   get url(): any;
+// }
+
+
+// export declare const dayDiff: (date1: Date, date2: Date) => number;
+// export declare const isMobile: () => boolean;
+// export declare const textVisibilityChange: (dom: HTMLElement) => boolean;
+// export declare const scrollToTheBottom: (ele: HTMLElement, callback: () => void, delay?: number) => void;
+// export declare const toLine: (val: string, isLowercase?: boolean) => string;
+// export declare const isImg: (path: string) => boolean;
+// export declare const isUrl: (path: string) => boolean;
+// export declare const fahrenheitToCelsius: (fahrenheit: number) => number;
+// export declare const celsiusToFahrenheit: (celsius: number) => number;
+// export declare const checkPassWord: (str: string) => number;
 // export declare const transFormat: (str: any, oldChar: any, newChar: any) => any;
 // export declare const strInversion: (str: any) => any[];
 // export declare const cookie: {
-//     set: (key: string, value: string, expTime?: number) => void;
-//     delete: (key: string) => void;
-//     get: (key: string) => string;
+//   set: (key: string, value: string, expTime?: number) => void;
+//   delete: (key: string) => void;
+//   get: (key: string) => string;
 // };
-// export declare const IndexedDB:  IndexedDB;
 // export declare const getLocalStorageSize: () => string;
 // export declare const getTextWidth: (text: string, font: any) => number;
 // export declare const values: (obj: any) => any[];
@@ -37,7 +79,6 @@
 // export declare const addClass: (ele: HTMLElement, name: string) => void;
 // export declare const removeClass: (ele: HTMLElement, name: string) => void;
 // export declare const replaceClass: (ele: HTMLElement, newName: string, oldName: string) => void;
-// export declare const Ajax: Ajax;
 // export declare const injectScript: (src: string) => void;
 // export declare const sinogToLetter: (str: string) => string;
 // export declare const shuffle: (arr: any[]) => any[];
@@ -55,7 +96,7 @@
 // export declare const orient: () => void;
 // export declare const vConsole: () => void;
 // export declare const socket: ({ url }: {
-//     url: string;
+//   url: string;
 // }) => any;
 // export declare const downBlob: (data: any, fileName: string) => void;
 // export declare const isBase64: (base64: any) => boolean;
@@ -72,31 +113,31 @@
 // export declare const aLineUnique: (arr: any[]) => any[];
 // export declare const getOffset: (ele: any) => any;
 // export declare const shaking: ({ ele, attr, cb, rate, time }: {
-//     ele: any;
-//     attr: string;
-//     cb: () => void;
-//     time?: number;
-//     rate?: number;
+//   ele: any;
+//   attr: string;
+//   cb: () => void;
+//   time?: number;
+//   rate?: number;
 // }) => void;
 // export declare const getDistance: (startLon: number, startLat: number, endLon: number, endLat: number) => number;
 // export declare const calcDistance: (lat1: any, lng1: any, lat2: any, lng2: any) => number;
 // export declare const lonLatToMercator: (lonLat: {
-//     lon: number;
-//     lat: number;
+//   lon: number;
+//   lat: number;
 // }) => any;
 // export declare const mercatorToLonlat: (mercator: {
-//     x: number;
-//     y: number;
+//   x: number;
+//   y: number;
 // }) => any;
 // export declare const performanceAnalysis: () => void;
 // export declare const getPerformanceTiming: () => any;
 // export declare const toFullScreen: () => void;
 // export declare const exitFullscreen: () => void;
 // export declare const LocalStorage: {
-//     get(user: string, name: string): string;
-//     set(user: string, name: string, value: any): void;
-//     remove(user: string, name: string): void;
-//     clear(): void;
+//   get(user: string, name: string): string;
+//   set(user: string, name: string, value: any): void;
+//   remove(user: string, name: string): void;
+//   clear(): void;
 // };
 // export declare const getPosition: (timeout?: number, maximumAge?: number) => Promise<unknown>;
 // export declare const winCopy: (flag: any) => void;
@@ -120,4 +161,5 @@
 // export declare const trim: (str: string) => string;
 // export declare const validate: (key: string, value: string) => boolean;
 // export declare const exportExcel: (column: any[], dataSource: any[], fileName?: string) => void;
+
 

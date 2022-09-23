@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-09-15 11:11:46
+ * @LastEditTime: 2022-09-23 14:35:52
  * @Description: 
  */
 import { version } from '../package.json';
@@ -38,6 +38,8 @@ import {
     sinogToLetter,
     getFitSize,
     checkPassWord,
+    fahrenheitToCelsius,
+    celsiusToFahrenheit,
 } from './tools';
 
 import {
@@ -51,9 +53,10 @@ import {
     copy,
     scrollToTop,
     userBrowser,
-    IndexedDB,
     getLocalStorageSize
 } from './browser';
+
+import { IndexedDB } from './IndexedDB';
 
 import {
     performanceAnalysis,
@@ -134,7 +137,8 @@ import { orient } from './mobile';
 import {
     dateFormater,
     formatPassTime,
-    formatRemainTime
+    formatRemainTime,
+    dayDiff,
 } from './date';
 
 import { shuffle } from './algorithm';
@@ -186,6 +190,8 @@ export default {
     sinogToLetter,
     getFitSize,
     checkPassWord,
+    fahrenheitToCelsius,
+    celsiusToFahrenheit,
     toFullScreen,
     exitFullscreen,
     LocalStorage,
@@ -248,6 +254,7 @@ export default {
     dateFormater,
     formatPassTime,
     formatRemainTime,
+    dayDiff,
     smallRounding,
     shuffle,
     accAdd,

@@ -1,4 +1,3 @@
-import { IndexedDB } from './IndexedDB';
 declare global {
     interface Window { ActiveXObject: any; }
 }
@@ -239,6 +238,5 @@ export {
     copy,
     scrollToTop,
     userBrowser,
-    IndexedDB,
     getLocalStorageSize
 }

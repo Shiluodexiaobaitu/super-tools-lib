@@ -456,6 +456,23 @@ const checkPassWord = (str: string): number => {
     return level
 }
 
+/**
+ * @desc: 将华氏温度转换为摄氏温度
+ * @param {*} fahrenheit 华氏温度
+ * @return {*} 摄氏温度
+ */
+const fahrenheitToCelsius = (fahrenheit: number): number => {
+    return (fahrenheit - 32) * 5 / 9
+}
+
+/**
+ * @desc: 将摄氏温度转华氏温度
+ * @param {*} celsius 摄氏温度
+ * @return {*} 华氏温度
+ */
+const celsiusToFahrenheit = (celsius: number): number => {
+    return celsius * 9 / 5 + 32
+}
 
 /**
  * @desc dom转img
@@ -520,5 +537,7 @@ export {
     injectScript,
     sinogToLetter,
     getFitSize,
-    checkPassWord
+    checkPassWord,
+    fahrenheitToCelsius,
+    celsiusToFahrenheit,
 }

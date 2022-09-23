@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-05-31 13:48:22
+ * @LastEditTime: 2022-09-23 13:56:31
  * @Description: 
  */
 /**
@@ -68,8 +68,20 @@ const formatRemainTime = (endTime) => {
     return d + '天' + h + '小时' + m + '分钟 ' + s + '秒';
 }
 
+/**
+ * @desc: 两日期之间相差的天数
+ * @param {Date} date1
+ * @param {Date} date2
+ * @return {*} 天数
+ */
+const dayDiff = (date1: Date, date2: Date): number => {
+    return Math.ceil(Math.abs(date1.getTime() - date2.getTime()) / 86400000)
+}
+
+
 export {
     dateFormater,
     formatPassTime,
-    formatRemainTime
+    formatRemainTime,
+    dayDiff,
 }

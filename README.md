@@ -1,5 +1,5 @@
 ## 轻量级 javascript 工具库
-封装超 100+ javascript 常用方法
+封装 100+ javascript 常用方法
 ### 安装
 
 ```

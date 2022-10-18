@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-10 15:07:24
  * @LastEditors: zhangce
- * @LastEditTime: 2022-10-13 15:14:09
+ * @LastEditTime: 2022-10-18 15:40:30
  * @Description: 
  */
 import { bubbleSort } from './_sort'
@@ -48,7 +48,6 @@ const last = (array: any[]): any => {
     const length = array == null ? 0 : array.length
     return length ? array[length - 1] : undefined
 }
-
 
 
 

@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-09-23 14:35:52
+ * @LastEditTime: 2022-10-18 15:47:37
  * @Description: 
  */
 import { version } from '../package.json';
@@ -158,6 +158,11 @@ import {
     filter
 } from './loop'
 
+import {
+    sortAscii,
+    generateSign
+} from './encrypt'
+
 export default {
     version: version,
     isImg,
@@ -265,5 +270,7 @@ export default {
     accDiv,
     formatPrice,
     forEach,
-    filter
+    filter,
+    sortAscii,
+    generateSign,
 };

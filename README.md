@@ -277,6 +277,14 @@ _.filter(arr, (item, index) => item === 3);
 => [3]
 ```
 
+- last 返回数组最后一项
+```js
+
+const arr = [1, 2, 3, 4, 5];
+_.last(arr);
+=> 5
+```
+
 ### 字符串操作方法
 
 - initialToCapitali // 字符串首位是字母转大写

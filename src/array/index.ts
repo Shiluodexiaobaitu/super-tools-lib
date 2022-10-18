@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-10 15:07:24
  * @LastEditors: zhangce
- * @LastEditTime: 2022-05-31 13:44:10
+ * @LastEditTime: 2022-10-13 15:14:09
  * @Description: 
  */
 import { bubbleSort } from './_sort'
@@ -39,10 +39,23 @@ const aLineUnique = (arr: Array<any>): Array<any> => {
     return [...new Set(arr)]
 }
 
+/**
+ * 返回数组中最后一项
+ * @param {*} array
+ * @return {*}
+ */
+const last = (array: any[]): any => {
+    const length = array == null ? 0 : array.length
+    return length ? array[length - 1] : undefined
+}
+
+
+
 
 export {
     arrayUnique,
     arrayNonRepeatfy,
     aLineUnique,
-    bubbleSort
+    bubbleSort,
+    last,
 }

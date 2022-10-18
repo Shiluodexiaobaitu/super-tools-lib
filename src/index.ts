@@ -89,7 +89,8 @@ import {
     arrayUnique,
     arrayNonRepeatfy,
     aLineUnique,
-    bubbleSort
+    bubbleSort,
+    last,
 } from './array';
 
 import {
@@ -225,6 +226,7 @@ export default {
     arrayNonRepeatfy,
     aLineUnique,
     bubbleSort,
+    last,
     cloneDeep,
     stringfyQueryString,
     values,

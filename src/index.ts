@@ -2,10 +2,10 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-10-18 15:47:37
+ * @LastEditTime: 2022-10-18 17:36:01
  * @Description: 
  */
-import { version } from '../package.json';
+import { version } from '../package.json'
 
 import {
     initialToCapitali,
@@ -15,7 +15,7 @@ import {
     transFormat,
     strInversion,
     toLine,
-} from './string';
+} from './string'
 
 import {
     guid,
@@ -40,7 +40,7 @@ import {
     checkPassWord,
     fahrenheitToCelsius,
     celsiusToFahrenheit,
-} from './tools';
+} from './tools'
 
 import {
     toFullScreen,
@@ -54,23 +54,23 @@ import {
     scrollToTop,
     userBrowser,
     getLocalStorageSize
-} from './browser';
+} from './browser'
 
-import { IndexedDB } from './IndexedDB';
+import { IndexedDB } from './IndexedDB'
 
 import {
     performanceAnalysis,
     getPerformanceTiming,
-} from './performance';
+} from './performance'
 
 import {
     getDistance,
     calcDistance,
     lonLatToMercator,
     mercatorToLonlat
-} from './map';
+} from './map'
 
-import { validate } from './reg';
+import { validate } from './reg'
 
 import {
     getOffset,
@@ -83,7 +83,7 @@ import {
     numberRoll,
     scrollToTheBottom,
     textVisibilityChange,
-} from './dom';
+} from './dom'
 
 import {
     arrayUnique,
@@ -91,14 +91,14 @@ import {
     aLineUnique,
     bubbleSort,
     last,
-} from './array';
+} from './array'
 
 import {
     cloneDeep,
     stringfyQueryString,
     values,
     keys
-} from './object';
+} from './object'
 
 import {
     isBase64,
@@ -122,27 +122,27 @@ import {
     isAppleMobileDevice,
     isImg,
     isUrl,
-} from './is';
+} from './is'
 
-import { downBlob } from './file';
+import { downBlob } from './file'
 
-import { vConsole } from './console';
+import { vConsole } from './console'
 
 import {
     socket,
     Ajax
-} from './request';
+} from './request'
 
-import { orient } from './mobile';
+import { orient } from './mobile'
 
 import {
     dateFormater,
     formatPassTime,
     formatRemainTime,
     dayDiff,
-} from './date';
+} from './date'
 
-import { shuffle } from './algorithm';
+import { shuffle } from './algorithm'
 
 import {
     accAdd,
@@ -151,7 +151,7 @@ import {
     accDiv,
     formatPrice,
     smallRounding
-} from './number';
+} from './number'
 
 import {
     forEach,
@@ -273,4 +273,4 @@ export default {
     filter,
     sortAscii,
     generateSign,
-};
+}

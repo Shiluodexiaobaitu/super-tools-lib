@@ -1,4 +1,4 @@
-import { strChineseFirstPY, oMultiDiff } from './_utils';
+import { strChineseFirstPY, oMultiDiff } from './_utils'
 
 /**
  * 生成一个唯一的guid
@@ -6,9 +6,9 @@ import { strChineseFirstPY, oMultiDiff } from './_utils';
 */
 const guid = (): string => {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c: any): string {
-        const r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-        return v.toString(16);
-    });
+        const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8)
+        return v.toString(16)
+    })
 }
 
 /**
@@ -16,18 +16,18 @@ const guid = (): string => {
  * @param {则需要FileReader。FileReader类型实现的是一种异步文件读取机制。可以把FileReader想象成XMLHttpRequest，区别只是它读取的是文件系统，而不是远程服务器。}
 */
 const getFileBase64 = (file: File, cb: (base64: any) => void): void => {
-    if (!file) throw new Error('Error! no param "file"(getFileBase64()).');
+    if (!file) throw new Error('Error! no param "file"(getFileBase64()).')
 
-    const reader = new FileReader();
+    const reader = new FileReader()
     reader.onload = function (e: any): void {
-        const base64 = e.target.result;   // 该文件的完整Base64
+        const base64 = e.target.result   // 该文件的完整Base64
 
-        if (cb) cb(base64);
-    };
+        if (cb) cb(base64)
+    }
     reader.onerror = function (): void {
-        alert('Read file fail.');
-    };
-    reader.readAsDataURL(file);
+        alert('Read file fail.')
+    }
+    reader.readAsDataURL(file)
 }
 
 /**
@@ -68,27 +68,27 @@ const debounce = function (fn: () => void, wait: number): () => void {
   * @param {string} url 下载地址
 */
 const fileDownload = function (url: string): boolean {
-    const isChrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
-    const isSafari = navigator.userAgent.toLowerCase().indexOf('safari') > -1;
+    const isChrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1
+    const isSafari = navigator.userAgent.toLowerCase().indexOf('safari') > -1
     if (isChrome || isSafari) {
-        const link = document.createElement('a');
-        link.href = url;
+        const link = document.createElement('a')
+        link.href = url
         if (link.download !== undefined) {
-            const fileName = url.substring(url.lastIndexOf('/') + 1, url.length);
-            link.download = fileName;
+            const fileName = url.substring(url.lastIndexOf('/') + 1, url.length)
+            link.download = fileName
         }
         if (document.createEvent) {
-            const e = document.createEvent('MouseEvents');
-            e.initEvent('click', true, true);
-            link.dispatchEvent(e);
-            return true;
+            const e = document.createEvent('MouseEvents')
+            e.initEvent('click', true, true)
+            link.dispatchEvent(e)
+            return true
         }
     }
     if (url.indexOf('?') === -1) {
-        url += '?download';
+        url += '?download'
     }
-    window.open(url, '_self');
-    return true;
+    window.open(url, '_self')
+    return true
 }
 
 /**
@@ -99,30 +99,30 @@ const fileDownload = function (url: string): boolean {
  * @return {Array}           查询的结果
 */
 const fuzzyQuery = function (list: Array<any>, key: string, keyWord: string): Array<any> {
-    const arr = [];
+    const arr = []
     for (let i = 0; i < list.length; i++) {
         if (list[i][key].match(keyWord) !== null) {
-            arr.push(list[i]);
+            arr.push(list[i])
         }
     }
-    return arr;
+    return arr
 }
 
 /**
  * 获取url参数 返回一个{}
 */
 const getUrlParam = function () {
-    const url = document.location.toString();
-    let arrObj = url.split('?');
+    const url = document.location.toString()
+    let arrObj = url.split('?')
     const params = Object.create(null)
     if (arrObj.length > 1) {
-        arrObj = arrObj[1].split('&');
+        arrObj = arrObj[1].split('&')
         arrObj.forEach((item: any) => {
-            item = item.split('=');
+            item = item.split('=')
             params[item[0]] = item[1]
         })
     }
-    return params;
+    return params
 }
 
 /**
@@ -138,7 +138,7 @@ const cookie = {
      * @returns 
      */
     set: (key: string, value: string, expTime?: number) => {
-        document.cookie = key + '=' + value + ';max-age=' + expTime;
+        document.cookie = key + '=' + value + ';max-age=' + expTime
     },
 
     /**
@@ -146,7 +146,7 @@ const cookie = {
      * @param {*} key 被删的属性
      */
     delete: (key: string) => {
-        document.cookie = key + '=' + '' + ';max-age=' + -1;
+        document.cookie = key + '=' + '' + ';max-age=' + -1
     },
 
     /**
@@ -157,13 +157,13 @@ const cookie = {
      * @returns 
      */
     get: (key: string) => {
-        const CookiesArray = document.cookie.split('; ');
+        const CookiesArray = document.cookie.split('; ')
         let value: string | undefined = undefined
         for (let i = 0; i < CookiesArray.length; i++) {
-            const CookieItem = CookiesArray[i];
-            const CookieItemArray = CookieItem.split('=');
+            const CookieItem = CookiesArray[i]
+            const CookieItemArray = CookieItem.split('=')
 
-            if (CookieItemArray[0] == key) {
+            if (CookieItemArray[0] === key) {
                 value = CookieItemArray[1]
             }
         }
@@ -175,24 +175,24 @@ const cookie = {
  * RGB颜色转16进制
 */
 const colorHex = (color: string): string => {
-    const that = color;
+    const that = color
     const aColor = color
         .replace(/rgb?\(/, '')
         .replace(/\)/, '')
         .replace(/[\s+]/g, '')
-        .split(',');
-    let strHex = '#';
+        .split(',')
+    let strHex = '#'
     for (let i = 0; i < aColor.length; i++) {
-        let hex = Number(aColor[i]).toString(16);
+        let hex = Number(aColor[i]).toString(16)
         if (hex.length < 2) {
-            hex = '0' + hex;
+            hex = '0' + hex
         }
-        strHex += hex;
+        strHex += hex
     }
     if (strHex.length !== 7) {
-        strHex = that;
+        strHex = that
     }
-    return strHex;
+    return strHex
 }
 
 /**
@@ -202,25 +202,25 @@ const colorHex = (color: string): string => {
  * @return {string}
 */
 const hexToRgba = (str: string, alpa: number): string => {
-    alpa = alpa === undefined ? 1 : alpa;
-    if (!str) return;
-    let color = str.toLowerCase();
-    const pattern = /^#([0-9|a-f]{3}|[0-9|a-f]{6})$/;
+    alpa = alpa === undefined ? 1 : alpa
+    if (!str) return
+    let color = str.toLowerCase()
+    const pattern = /^#([0-9|a-f]{3}|[0-9|a-f]{6})$/
     if (color && pattern.test(color)) {
         if (color.length === 4) {
             // 将三位转换为六位
-            color = '#' + color[1] + color[1] + color[2] + color[2] + color[3] + color[3];
+            color = '#' + color[1] + color[1] + color[2] + color[2] + color[3] + color[3]
         }
         //处理六位的颜色值
-        const colorNew = [];
+        const colorNew = []
         for (let i = 1; i < 7; i += 2) {
-            colorNew.push(parseInt('0x' + color.slice(i, i + 2)));
+            colorNew.push(parseInt('0x' + color.slice(i, i + 2)))
         }
-        colorNew.push(alpa);
+        colorNew.push(alpa)
 
-        return 'rgba(' + colorNew.join(',') + ')';
+        return 'rgba(' + colorNew.join(',') + ')'
     }
-    return color;
+    return color
 }
 
 /**
@@ -231,15 +231,15 @@ const rgbaToHex = (color): string => {
         .replace(/rgba?\(/, '')
         .replace(/\)/, '')
         .replace(/[\s+]/g, '')
-        .split(',');
+        .split(',')
     const a = parseFloat(values[3] || 1),
         r = Math.floor(a * parseInt(values[0]) + (1 - a) * 255),
         g = Math.floor(a * parseInt(values[1]) + (1 - a) * 255),
-        b = Math.floor(a * parseInt(values[2]) + (1 - a) * 255);
+        b = Math.floor(a * parseInt(values[2]) + (1 - a) * 255)
     return '#' +
         ('0' + r.toString(16)).slice(-2) +
         ('0' + g.toString(16)).slice(-2) +
-        ('0' + b.toString(16)).slice(-2);
+        ('0' + b.toString(16)).slice(-2)
 }
 
 /**
@@ -262,28 +262,28 @@ const viewportToPixels = (value: string) => {
  * 无刷新去除url参数
 */
 const noRefdelUrlParam = (ref: string): string => {
-    const url = window.location.href;
+    const url = window.location.href
     // 若是不包括此参数
-    if (url.indexOf(ref) == -1) {
-        return url;
+    if (url.indexOf(ref) === -1) {
+        return url
     }
-    const arr_url = url.split('?');
-    const base = arr_url[0];
-    const arr_param = arr_url[1].split('&');
-    let index = -1;
+    const arr_url = url.split('?')
+    const base = arr_url[0]
+    const arr_param = arr_url[1].split('&')
+    let index = -1
     for (let i = 0; i < arr_param.length; i++) {
-        const paired = arr_param[i].split('=');
-        if (paired[0] == ref) {
-            index = i;
-            break;
+        const paired = arr_param[i].split('=')
+        if (paired[0] === ref) {
+            index = i
+            break
         }
     }
-    if (index == -1) {
-        return url;
+    if (index === -1) {
+        return url
     } else {
-        arr_param.splice(index, 1);
+        arr_param.splice(index, 1)
         // return base + "?" + arr_param.join('&');
-        window.history.pushState({}, '0', base + '?' + arr_param.join('&'));
+        window.history.pushState({}, '0', base + '?' + arr_param.join('&'))
         return base + '?' + arr_param.join('&')
     }
 }
@@ -327,45 +327,45 @@ const getSex = (id: string) => {
  * 数字转化为大写金额
 */
 const digitUppercase = (n: number): string => {
-    const fraction = ['角', '分'];
+    const fraction = ['角', '分']
     const digit = [
         '零', '壹', '贰', '叁', '肆',
         '伍', '陆', '柒', '捌', '玖'
-    ];
+    ]
     const unit = [
         ['元', '万', '亿'],
         ['', '拾', '佰', '仟']
-    ];
-    n = Math.abs(n);
-    let s = '';
+    ]
+    n = Math.abs(n)
+    let s = ''
     for (let i = 0; i < fraction.length; i++) {
-        s += (digit[Math.floor(n * 10 * Math.pow(10, i)) % 10] + fraction[i]).replace(/零./, '');
+        s += (digit[Math.floor(n * 10 * Math.pow(10, i)) % 10] + fraction[i]).replace(/零./, '')
     }
-    s = s || '整';
-    n = Math.floor(n);
+    s = s || '整'
+    n = Math.floor(n)
     for (let i = 0; i < unit[0].length && n > 0; i++) {
-        let p = '';
+        let p = ''
         for (let j = 0; j < unit[1].length && n > 0; j++) {
-            p = digit[n % 10] + unit[1][j] + p;
-            n = Math.floor(n / 10);
+            p = digit[n % 10] + unit[1][j] + p
+            n = Math.floor(n / 10)
         }
-        s = p.replace(/(零.)*零$/, '').replace(/^$/, '零') + unit[0][i] + s;
+        s = p.replace(/(零.)*零$/, '').replace(/^$/, '零') + unit[0][i] + s
     }
     return s.replace(/(零.)*零元/, '元')
         .replace(/(零.)+/g, '零')
-        .replace(/^整$/, '零元整');
-};
+        .replace(/^整$/, '零元整')
+}
 
 /**
  * 动态引入js
 */
 const injectScript = (src: string) => {
-    const s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.async = true;
-    s.src = src;
-    const t = document.getElementsByTagName('script')[0];
-    t.parentNode.insertBefore(s, t);
+    const s = document.createElement('script')
+    s.type = 'text/javascript'
+    s.async = true
+    s.src = src
+    const t = document.getElementsByTagName('script')[0]
+    t.parentNode.insertBefore(s, t)
 }
 
 /**
@@ -374,50 +374,50 @@ const injectScript = (src: string) => {
 const sinogToLetter = (str: string) => {
 
     function checkCh(ch) {
-        const uni = ch.charCodeAt(0);
+        const uni = ch.charCodeAt(0)
         //如果不在汉字处理范围之内,返回原字符,也可以调用自己的处理函数    
         if (uni > 40869 || uni < 19968)
-            return ch; //dealWithOthers(ch);    
+            return ch //dealWithOthers(ch);    
         //检查是否是多音字,是按多音字处理,不是就直接在strChineseFirstPY字符串中找对应的首字母    
-        return (oMultiDiff[uni] ? oMultiDiff[uni] : (strChineseFirstPY.charAt(uni - 19968)));
+        return (oMultiDiff[uni] ? oMultiDiff[uni] : (strChineseFirstPY.charAt(uni - 19968)))
     }
 
     function mkRslt(arr: Array<any>) {
-        let arrRslt = [''];
+        let arrRslt = ['']
         for (let i = 0, len = arr.length; i < len; i++) {
-            const str = arr[i];
-            const strlen = str.length;
-            if (strlen == 1) {
+            const str = arr[i]
+            const strlen = str.length
+            if (strlen === 1) {
                 for (let k = 0; k < arrRslt.length; k++) {
-                    arrRslt[k] += str;
+                    arrRslt[k] += str
                 }
             } else {
-                const tmpArr = arrRslt.slice(0);
-                arrRslt = [];
+                const tmpArr = arrRslt.slice(0)
+                arrRslt = []
                 for (let k = 0; k < strlen; k++) {
                     //复制一个相同的arrRslt    
-                    const tmp = tmpArr.slice(0);
+                    const tmp = tmpArr.slice(0)
                     //把当前字符str[k]添加到每个元素末尾    
                     for (let j = 0; j < tmp.length; j++) {
-                        tmp[j] += str.charAt(k);
+                        tmp[j] += str.charAt(k)
                     }
                     //把复制并修改后的数组连接到arrRslt上    
-                    arrRslt = arrRslt.concat(tmp);
+                    arrRslt = arrRslt.concat(tmp)
                 }
             }
         }
-        return arrRslt.join();
+        return arrRslt.join()
     }
 
-    if (typeof (str) != 'string')
-        throw new Error('函数makePy需要字符串类型参数!');
-    const arrResult = [];
+    if (typeof (str) !== 'string')
+        throw new Error('函数makePy需要字符串类型参数!')
+    const arrResult = []
     //将字符串转码后转为数组  
     for (let i = 0, len = str.length; i < len; i++) {
-        const ch = str.charAt(i);
-        arrResult.push(checkCh(ch));
+        const ch = str.charAt(i)
+        arrResult.push(checkCh(ch))
     }
-    return mkRslt(arrResult);
+    return mkRslt(arrResult)
 }
 
 /**
@@ -427,7 +427,7 @@ const sinogToLetter = (str: string) => {
  * @return {*}
  */
 const getFitSize = (px: number, draft = 750): number => {
-    const scale = document.body.clientWidth / draft;
+    const scale = document.body.clientWidth / draft
     return Math.floor((scale * px))
 }
 
@@ -437,7 +437,7 @@ const getFitSize = (px: number, draft = 750): number => {
  * @return {*}  1：密码弱 2：密码中等 3：密码强 4：密码很强
  */
 const checkPassWord = (str: string): number => {
-    let level = 0;
+    let level = 0
     if (str.length < 6) {
         return level
     }

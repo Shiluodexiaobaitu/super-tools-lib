@@ -1,4 +1,4 @@
-import { throttle } from '../tools';
+import { throttle } from '../tools'
 
 /**
  * 获取一个元素距离浏览器左上角的偏移量
@@ -33,28 +33,28 @@ const shaking = ({ ele, attr, cb, rate = 20, time = 50 }: { ele: any, attr: stri
 
     function getStyle(ele, attr) {
         if (ele.currentStyle) {
-            return ele.currentStyle[attr];
+            return ele.currentStyle[attr]
         } else {
-            return window.getComputedStyle(ele)[attr];
+            return window.getComputedStyle(ele)[attr]
         }
     }
-    const pos = parseInt(getStyle(ele, attr));
-    const arr = [];
-    let timer = null;
-    let num = 0;
+    const pos = parseInt(getStyle(ele, attr))
+    const arr = []
+    let timer = null
+    let num = 0
     for (let i = rate; i > 0; i -= 2) {
-        arr.push(i, -i);
+        arr.push(i, -i)
     }
-    arr.push(0);
-    clearInterval(timer);
+    arr.push(0)
+    clearInterval(timer)
     timer = setInterval(function () {
-        ele.style[attr] = pos + arr[num] + 'px';
-        num++;
+        ele.style[attr] = pos + arr[num] + 'px'
+        num++
         if (num === arr.length) {
-            clearInterval(timer);
-            cb && cb();
+            clearInterval(timer)
+            cb && cb()
         }
-    }, time);
+    }, time)
 }
 
 /**
@@ -62,11 +62,11 @@ const shaking = ({ ele, attr, cb, rate = 20, time = 50 }: { ele: any, attr: stri
  * @param e 
  */
 const stopPropagation = (e) => {
-    e = e || window.event;
+    e = e || window.event
     if (e.stopPropagation) {    // W3C阻止冒泡方法 
-        e.stopPropagation();
+        e.stopPropagation()
     } else {
-        e.cancelBubble = true; // IE阻止冒泡方法 
+        e.cancelBubble = true // IE阻止冒泡方法 
     }
 }
 
@@ -77,7 +77,7 @@ const stopPropagation = (e) => {
  * @returns {boolean}
  */
 const hasClass = (ele: HTMLElement, name: string) => {
-    return ele.className.match(new RegExp('(\\s|^)' + name + '(\\s|$)'));
+    return ele.className.match(new RegExp('(\\s|^)' + name + '(\\s|$)'))
 }
 
 /**
@@ -87,7 +87,7 @@ const hasClass = (ele: HTMLElement, name: string) => {
  * @return {*}
  */
 const addClass = (ele: HTMLElement, name: string) => {
-    if (!hasClass(ele, name)) ele.className += ' ' + name;
+    if (!hasClass(ele, name)) ele.className += ' ' + name
 }
 
 /**
@@ -98,8 +98,8 @@ const addClass = (ele: HTMLElement, name: string) => {
  */
 const removeClass = (ele: HTMLElement, name: string) => {
     if (hasClass(ele, name)) {
-        const reg = new RegExp('(\\s|^)' + name + '(\\s|$)');
-        ele.className = ele.className.replace(reg, '');
+        const reg = new RegExp('(\\s|^)' + name + '(\\s|$)')
+        ele.className = ele.className.replace(reg, '')
     }
 }
 
@@ -111,8 +111,8 @@ const removeClass = (ele: HTMLElement, name: string) => {
  * @return {*}
  */
 const replaceClass = (ele: HTMLElement, newName: string, oldName: string) => {
-    removeClass(ele, oldName);
-    addClass(ele, newName);
+    removeClass(ele, oldName)
+    addClass(ele, newName)
 }
 
 /**

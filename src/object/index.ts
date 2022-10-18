@@ -2,12 +2,12 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-07-05 14:17:04
+ * @LastEditTime: 2022-10-18 17:39:12
  * @Description: 
  */
 
-import { isObject } from '../is';
-import { cloneDeep } from './_cloneDeep';
+import { isObject } from '../is'
+import { cloneDeep } from './_cloneDeep'
 
 export type pos = string | number | boolean 
 
@@ -17,23 +17,23 @@ export type pos = string | number | boolean
  * @return {*}
  */
 const stringfyQueryString = (obj: Record<string, pos>) => {
-    if (!obj) return '';
-    const pairs = [];
+    if (!obj) return ''
+    const pairs = []
 
     for (const key in obj) {
-        const value = obj[key];
+        const value = obj[key]
 
         if (Array.isArray(value)) {
             for (let i = 0; i < value.length; ++i) {
-                pairs.push(encodeURIComponent(key + '[' + i + ']') + '=' + encodeURIComponent(value[i]));
+                pairs.push(encodeURIComponent(key + '[' + i + ']') + '=' + encodeURIComponent(value[i]))
             }
-            continue;
+            continue
         }
 
-        pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
+        pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]))
     }
 
-    return pairs.join('&');
+    return pairs.join('&')
 }
 
 /**
@@ -55,7 +55,7 @@ const stringfyQueryString = (obj: Record<string, pos>) => {
 
 
 const values = (obj:Record<string, unknown>): unknown[] => {
-    const arr = [];
+    const arr = []
     if (isObject(obj)) {
         for (const key in obj) {
             arr.push(obj[key])
@@ -65,7 +65,7 @@ const values = (obj:Record<string, unknown>): unknown[] => {
 }
 
 const keys = (obj: Record<string, unknown>): unknown[] => {
-    const arr = [];
+    const arr = []
     if (isObject(obj)) {
         for (const key in obj) {
             arr.push(key)

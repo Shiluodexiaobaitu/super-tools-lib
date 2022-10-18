@@ -119,10 +119,10 @@ const reg = {
      * 校验mac地址是否正确
     */
     mac: /^[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}$/
-};
+}
 
 function validate(key: string, value: string): boolean {
-    return new RegExp(reg[`${key}`]).test(value);
+    return new RegExp(reg[`${key}`]).test(value)
 }
 
 export {

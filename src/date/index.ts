@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-09-23 13:56:31
+ * @LastEditTime: 2022-10-18 17:37:52
  * @Description: 
  */
 /**
@@ -15,7 +15,7 @@ const dateFormater = (formater: string, time?: number): string => {
         D = date.getDate(),
         H = date.getHours(),
         m = date.getMinutes(),
-        s = date.getSeconds();
+        s = date.getSeconds()
     return formater.replace(/YYYY|yyyy/g, Y)
         .replace(/YY|yy/g, Y.substr(2, 2))
         .replace(/MM/g, (M < 10 ? '0' : '') + M)
@@ -37,7 +37,7 @@ const formatPassTime = (startTime) => {
         hour = parseInt(String(time / (1000 * 60 * 60))),
         min = parseInt(String(time / (1000 * 60))),
         month = parseInt(String(day / 30)),
-        year = parseInt(String(month / 12));
+        year = parseInt(String(month / 12))
     if (year) return year + '年前'
     if (month) return month + '个月前'
     if (day) return day + '天前'
@@ -52,20 +52,20 @@ const formatPassTime = (startTime) => {
  * @return {*}
  */
 const formatRemainTime = (endTime) => {
-    const startDate = new Date(); //开始时间
-    const endDate = new Date(endTime); //结束时间
-    const t = endDate.getTime() - startDate.getTime(); //时间差
+    const startDate = new Date() //开始时间
+    const endDate = new Date(endTime) //结束时间
+    const t = endDate.getTime() - startDate.getTime() //时间差
     let d = 0,
         h = 0,
         m = 0,
-        s = 0;
+        s = 0
     if (t >= 0) {
-        d = Math.floor(t / 1000 / 3600 / 24);
-        h = Math.floor(t / 1000 / 60 / 60 % 24);
-        m = Math.floor(t / 1000 / 60 % 60);
-        s = Math.floor(t / 1000 % 60);
+        d = Math.floor(t / 1000 / 3600 / 24)
+        h = Math.floor(t / 1000 / 60 / 60 % 24)
+        m = Math.floor(t / 1000 / 60 % 60)
+        s = Math.floor(t / 1000 % 60)
     }
-    return d + '天' + h + '小时' + m + '分钟 ' + s + '秒';
+    return d + '天' + h + '小时' + m + '分钟 ' + s + '秒'
 }
 
 /**

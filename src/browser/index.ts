@@ -6,20 +6,20 @@ declare global {
  * 浏览器全屏
 */
 const toFullScreen = (): void => {
-    const el: any = document.documentElement;
-    const rfs = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullScreen;
+    const el: any = document.documentElement
+    const rfs = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullScreen
 
     //typeof rfs != "undefined" && rfs
     if (rfs) {
-        rfs.call(el);
+        rfs.call(el)
     } else if (typeof window.ActiveXObject !== 'undefined') {
         //for IE，这里其实就是模拟了按下键盘的F11，使浏览器全屏
-        const wscript = new window.ActiveXObject('WScript.Shell');
+        const wscript = new window.ActiveXObject('WScript.Shell')
         if (wscript !== null) {
-            wscript.SendKeys('{F11}');
+            wscript.SendKeys('{F11}')
         }
     } else {
-        alert('浏览器不支持全屏');
+        alert('浏览器不支持全屏')
     }
 }
 
@@ -27,17 +27,17 @@ const toFullScreen = (): void => {
  * 浏览器退出全屏
 */
 const exitFullscreen = (): void => {
-    const el: any = parent.document;
-    const cfs = el.cancelFullScreen || el.webkitCancelFullScreen || el.mozCancelFullScreen || el.exitFullScreen;
+    const el: any = parent.document
+    const cfs = el.cancelFullScreen || el.webkitCancelFullScreen || el.mozCancelFullScreen || el.exitFullScreen
 
     //typeof cfs != "undefined" && cfs
     if (cfs) {
-        cfs.call(el);
+        cfs.call(el)
     } else if (typeof window.ActiveXObject !== 'undefined') {
         //for IE，这里和fullScreen相同，模拟按下F11键退出全屏
-        const wscript = new window.ActiveXObject('WScript.Shell');
+        const wscript = new window.ActiveXObject('WScript.Shell')
         if (wscript !== null) {
-            wscript.SendKeys('{F11}');
+            wscript.SendKeys('{F11}')
         }
     } else {
         alert('切换失败,可尝试Esc退出')
@@ -49,22 +49,22 @@ const exitFullscreen = (): void => {
 */
 const LocalStorage = {
     get(user: string, name: string): string {
-        const mapStorage = JSON.parse(localStorage.getItem(user)) || {};
+        const mapStorage = JSON.parse(localStorage.getItem(user)) || {}
         return mapStorage[name] || ''
     },
     set(user: string, name: string, value: any): void {
         if (!name) return
-        const mapStorage = JSON.parse(localStorage.getItem(user)) || {};
+        const mapStorage = JSON.parse(localStorage.getItem(user)) || {}
         mapStorage[name] = value
-        localStorage.setItem(user, JSON.stringify(mapStorage));
+        localStorage.setItem(user, JSON.stringify(mapStorage))
     },
     remove(user: string, name: string): void {
-        const mapStorage = JSON.parse(localStorage.getItem(user)) || {};
+        const mapStorage = JSON.parse(localStorage.getItem(user)) || {}
         mapStorage[name] && delete mapStorage[name]
-        localStorage.setItem(user, JSON.stringify(mapStorage));
+        localStorage.setItem(user, JSON.stringify(mapStorage))
     },
     clear(): void {
-        localStorage.clear();
+        localStorage.clear()
     },
 }
 
@@ -112,7 +112,7 @@ const winCopy = (flag) => {
         document.addEventListener(ev, function (event) {
             return event.returnValue = flag
         })
-    });
+    })
 }
 
 /**
@@ -124,27 +124,27 @@ const winCopy = (flag) => {
  */
 const print = (printEleId: string, rootEleId: string, style: string) => {
 
-    const containerDiv = document.createElement('div');
+    const containerDiv = document.createElement('div')
     containerDiv.setAttribute('id', 'containerDiv')
-    containerDiv.style.cssText = style ? style : 'width: 100vw;height:100vh';
-    const box = document.getElementById(printEleId);
-    const root = document.getElementById(rootEleId);
+    containerDiv.style.cssText = style ? style : 'width: 100vw;height:100vh'
+    const box = document.getElementById(printEleId)
+    const root = document.getElementById(rootEleId)
 
-    const _p = box.style.position;
-    const _o = box.style.overflowY;
+    const _p = box.style.position
+    const _o = box.style.overflowY
 
     box.style.position = 'static'
     box.style.overflowY = 'visible'
 
-    root.style.visibility = 'hidden';
+    root.style.visibility = 'hidden'
     containerDiv.innerHTML = box.outerHTML
     root.parentNode.insertBefore(containerDiv, root)
-    window.print();
-    root.style.visibility = 'visible';
-    box.style.position = _p;
+    window.print()
+    root.style.visibility = 'visible'
+    box.style.position = _p
     box.style.overflowY = _o
     if (document.body.contains(document.getElementById('containerDiv'))) {
-        document.body.removeChild(document.getElementById('containerDiv'));
+        document.body.removeChild(document.getElementById('containerDiv'))
     }
     return false
 }
@@ -157,23 +157,23 @@ const setVibration = () => {
  * 复制文本
 */
 const copy = (str: string): void => {
-    const el = document.createElement('textarea');
-    el.value = str;
-    el.setAttribute('readonly', '');
-    el.style.position = 'absolute';
-    el.style.left = '-9999px';
-    el.style.top = '-9999px';
-    document.body.appendChild(el);
+    const el = document.createElement('textarea')
+    el.value = str
+    el.setAttribute('readonly', '')
+    el.style.position = 'absolute'
+    el.style.left = '-9999px'
+    el.style.top = '-9999px'
+    document.body.appendChild(el)
     const selected =
         document.getSelection().rangeCount > 0
             ? document.getSelection().getRangeAt(0)
-            : false;
-    el.select();
-    document.execCommand('copy');
-    document.body.removeChild(el);
+            : false
+    el.select()
+    document.execCommand('copy')
+    document.body.removeChild(el)
     if (selected) {
-        document.getSelection().removeAllRanges();
-        document.getSelection().addRange(selected);
+        document.getSelection().removeAllRanges()
+        document.getSelection().addRange(selected)
     }
 }
 
@@ -194,7 +194,7 @@ const scrollToTop = () => {
  * @return {*} 
  */
 const userBrowser = (): string => {
-    const browserName = navigator.userAgent.toLowerCase();
+    const browserName = navigator.userAgent.toLowerCase()
     if (/msie/i.test(browserName) && !/opera/.test(browserName)) {
         return 'IE'
     } else if (/firefox/i.test(browserName)) {
@@ -216,12 +216,12 @@ const userBrowser = (): string => {
  */
 const getLocalStorageSize = (): string => {
     if (!window.localStorage) {
-        console.log('浏览器不支持localStorage');
+        console.log('浏览器不支持localStorage')
     }
-    let size = 0;
+    let size = 0
     for (const item in window.localStorage) {
         if (window.localStorage.hasOwnProperty(item)) {
-            size += window.localStorage.getItem(item).length;
+            size += window.localStorage.getItem(item).length
         }
     }
     return (size / 1024).toFixed(2) + 'KB'

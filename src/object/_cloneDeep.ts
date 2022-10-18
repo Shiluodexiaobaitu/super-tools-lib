@@ -2,17 +2,17 @@
  * @Author: zhangce
  * @Date: 2022-03-03 14:50:41
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2022-06-10 15:20:03
+ * @LastEditTime: 2022-10-18 17:39:08
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 
  *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
  */
 
-import { returnType } from '../is';
+import { returnType } from '../is'
 
 const _isBasicType = (opts: any): boolean => {
-    const type = returnType(opts);
+    const type = returnType(opts)
     if (type === 'String' || type === 'Symbol' || type === 'Number' || type === 'Null' || type === 'Undefined' || type === 'Boolean' || type === 'NaN') {
         return true
     }
@@ -38,7 +38,7 @@ const _initCloneObject = obj => {
 
 const _returnEntity = (opts) => {
 
-    const type = returnType(opts);
+    const type = returnType(opts)
 
     switch (type) {
         case 'Object':
@@ -85,7 +85,7 @@ const _cloneArr = (arr, map, newArr) => {
             newArr.push(_deepClone(item, map))
         }
     })
-    return newArr;
+    return newArr
 }
 
 const _cloneMap = (map, WeakMap, newMap) => {
@@ -120,12 +120,12 @@ const _deepClone = (data: any, map = new WeakMap()) => {
         return data
     }
 
-    let newData = null;
-    const type = returnType(data);
+    let newData = null
+    const type = returnType(data)
 
     if (map.has(data)) {
         if (CACHEMAP.get(data)) {
-            const FREQUENCY = CACHEMAP.get(data);
+            const FREQUENCY = CACHEMAP.get(data)
             if (FREQUENCY >= DEPTH) {
                 return map.get(data)
             }
@@ -142,38 +142,38 @@ const _deepClone = (data: any, map = new WeakMap()) => {
     }
 
     if (!CACHEMAP.get(data)) {
-        CACHEMAP.set(data, 1);
+        CACHEMAP.set(data, 1)
     }
 
     switch (type) {
         case 'Object':
-            newData = _cloneObj(data, map, result);
-            break;
+            newData = _cloneObj(data, map, result)
+            break
         case 'Array':
-            newData = _cloneArr(data, map, result);
-            break;
+            newData = _cloneArr(data, map, result)
+            break
         case 'RegExp':
-            newData = new RegExp(data);
-            break;
+            newData = new RegExp(data)
+            break
         case 'Date':
             newData = new Date(data)
-            break;
+            break
         case 'Map':
             newData = _cloneMap(data, map, result)
-            break;
+            break
         case 'Set':
             newData = _cloneSet(data, map, result)
-            break;
+            break
         default:
             newData = data
-            break;
+            break
     }
 
-    return newData;
+    return newData
 }
 
-const DEPTH = 1; //克隆深度
-const CACHEMAP = new Map(); //克隆次数缓存
+const DEPTH = 1 //克隆深度
+const CACHEMAP = new Map() //克隆次数缓存
 
 /**
  * @description: 深度克隆
@@ -183,8 +183,8 @@ const CACHEMAP = new Map(); //克隆次数缓存
  */
 export const cloneDeep = (data: any): any => {
 
-    const NEWDAtA = _deepClone(data);
-    CACHEMAP.clear();
+    const NEWDAtA = _deepClone(data)
+    CACHEMAP.clear()
     return NEWDAtA
 }
 

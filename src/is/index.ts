@@ -2,14 +2,14 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @LastEditors: zhangce
- * @LastEditTime: 2022-07-05 18:53:48
+ * @LastEditTime: 2022-10-18 17:38:12
  * @Description: 
  */
 /**
  * base64类型验证
 */
 const isBase64 = (base64: string): boolean => {
-    return /data:image\/.+;base64,/.test(base64);
+    return /data:image\/.+;base64,/.test(base64)
 }
 
 /**
@@ -55,11 +55,11 @@ const isNumber = (num: any): boolean => {
  * 判断是否在微信中打开
 */
 const isWeiXin = (): boolean => {
-    const ua = navigator.userAgent.toLowerCase();
-    if (ua.indexOf('micromessenger') != -1) {
-        return true;
+    const ua = navigator.userAgent.toLowerCase()
+    if (ua.indexOf('micromessenger') !== -1) {
+        return true
     } else {
-        return false;
+        return false
     }
 }
 
@@ -141,7 +141,7 @@ const returnType = (o: unknown): unknown => {
  * @return {*} 
  */
 const isSupportWebP = () => {
-    return !![].map && document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0;
+    return !![].map && document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0
 }
 
 /**
@@ -150,9 +150,9 @@ const isSupportWebP = () => {
  */
 const isMobile = (): boolean => {
     if (window.navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)) {
-        return true; // 移动端
+        return true // 移动端
     } else {
-        return false; // PC端
+        return false // PC端
     }
 }
 
@@ -160,21 +160,21 @@ const isMobile = (): boolean => {
  * 判断是否安卓移动设备访问
 */
 const isAndroidMobileDevice = (): boolean => {
-    return /android/i.test(navigator.userAgent.toLowerCase());
+    return /android/i.test(navigator.userAgent.toLowerCase())
 }
 
 /**
  * 判断是否苹果移动设备访问
 */
 const isAppleMobileDevice = (): boolean => {
-    return /iphone|ipod|ipad|Macintosh/i.test(navigator.userAgent.toLowerCase());
+    return /iphone|ipod|ipad|Macintosh/i.test(navigator.userAgent.toLowerCase())
 }
 
 /**
  * 判断是否是图片链接
 */
 const isImg = (path: string): boolean => {
-    return /\w.(png|jpg|jpeg|svg|webp|gif|bmp)$/i.test(path);
+    return /\w.(png|jpg|jpeg|svg|webp|gif|bmp)$/i.test(path)
 }
 
 /**
@@ -182,15 +182,15 @@ const isImg = (path: string): boolean => {
 */
 const isUrl = (path: string): boolean => {
     if (!path.startsWith('http')) {
-        return false;
+        return false
     }
     try {
-        const url = new URL(path);
-        return !!url;
+        const url = new URL(path)
+        return !!url
     } catch (error) {
-        return false;
+        return false
     }
-};
+}
 
 
 export {

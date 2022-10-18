@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2022-09-13 14:01:31
+ * @LastEditTime: 2022-10-18 17:39:52
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 
@@ -13,12 +13,12 @@
   * 字符串首位是字母转大写
 */
 const initialToCapitali = (gname: string): string => {
-    const pattern = new RegExp('[A-Za-z]+');
-    const str = gname.substr(0, 1);
+    const pattern = new RegExp('[A-Za-z]+')
+    const str = gname.substr(0, 1)
     if (pattern.test(str)) {
         return `${str.toUpperCase()}${gname.substr(1)}`
     } else {
-        const str1 = gname.substr(-1);
+        const str1 = gname.substr(-1)
         return `${gname.substr(0, gname.length - 1)}${str1.toUpperCase()}`
     }
 }
@@ -44,7 +44,7 @@ const repeat = (str: string, n: number): string => {
  * 去除字符串首尾空格
 */
 const trim = (str: string): string => {
-    return str.replace(/^\s+(.*?)\s+$/g, '$1');
+    return str.replace(/^\s+(.*?)\s+$/g, '$1')
 }
 
 /**
@@ -55,10 +55,10 @@ const trim = (str: string): string => {
  */
 const getTextWidth = (text: string, font: any): number => {
     const canvas = document.createElement('canvas')
-    const context = canvas.getContext('2d');
-    context.font = font;
-    const metrics = context.measureText(text);
-    return metrics.width;
+    const context = canvas.getContext('2d')
+    context.font = font
+    const metrics = context.measureText(text)
+    return metrics.width
 }
 
 /**
@@ -80,9 +80,9 @@ const transFormat = (str, oldChar, newChar) => {
  * @return {*}
  */
 const strInversion = str => {
-    str = str + '';
-    let newStr = [];
-    newStr = str.split('').reverse().join('');
+    str = str + ''
+    let newStr = []
+    newStr = str.split('').reverse().join('')
     return newStr
 }
 

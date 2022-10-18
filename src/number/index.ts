@@ -2,10 +2,10 @@
  * @Author: zhangce
  * @Date: 2022-01-14 17:50:51
  * @LastEditors: zhangce
- * @LastEditTime: 2022-05-31 14:12:41
+ * @LastEditTime: 2022-10-18 17:36:46
  * @Description: 
  */
-import { accAdd, accSub, accMul, accDiv } from './floatPares';
+import { accAdd, accSub, accMul, accDiv } from './floatPares'
 
 
 /**
@@ -14,7 +14,7 @@ import { accAdd, accSub, accMul, accDiv } from './floatPares';
  * @return {*}
  */
 const formatPrice = (price, sign = ',') => {
-    return String(price).replace(/\B(?=(\d{3})+(?!\d))/g, sign);
+    return String(price).replace(/\B(?=(\d{3})+(?!\d))/g, sign)
 }
 
 /**
@@ -23,7 +23,7 @@ const formatPrice = (price, sign = ',') => {
  * @param {第几位小数四舍五入} place
 */
 const smallRounding = (num: number, place: number): number => {
-    const p = '10000000000000000000000000000';
+    const p = '10000000000000000000000000000'
     const n = Number(p.slice(0, place))
     return Math.round(num * n) / n
 }

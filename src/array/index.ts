@@ -2,12 +2,12 @@
  * @Author: zhangce
  * @Date: 2021-08-10 15:07:24
  * @LastEditors: zhangce
- * @LastEditTime: 2022-10-18 15:40:30
+ * @LastEditTime: 2022-10-18 17:35:47
  * @Description: 
  */
 import { bubbleSort } from './_sort'
 
-/**
+/** 
   * 数组去重复 利用ES6 Set去重（ES6中最常用）
  */
 const arrayUnique = (arr: Array<any>): Array<any> => {
@@ -19,17 +19,17 @@ const arrayUnique = (arr: Array<any>): Array<any> => {
  * 利用Map数据结构去重
 */
 const arrayNonRepeatfy = (arr: Array<any>): Array<any> => {
-    const map = new Map();
-    const array = [];  // 数组用于返回结果
+    const map = new Map()
+    const array = []  // 数组用于返回结果
     for (let i = 0; i < arr.length; i++) {
         if (map.has(arr[i])) {  // 如果有该key值
-            map.set(arr[i], true);
+            map.set(arr[i], true)
         } else {
-            map.set(arr[i], false);   // 如果没有该key值
-            array.push(arr[i]);
+            map.set(arr[i], false)   // 如果没有该key值
+            array.push(arr[i])
         }
     }
-    return array;
+    return array
 }
 
 /**
@@ -45,7 +45,7 @@ const aLineUnique = (arr: Array<any>): Array<any> => {
  * @return {*}
  */
 const last = (array: any[]): any => {
-    const length = array == null ? 0 : array.length
+    const length = array === null ? 0 : array.length
     return length ? array[length - 1] : undefined
 }
 

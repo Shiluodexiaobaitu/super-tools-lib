@@ -2,13 +2,13 @@
  * @Author: zhangce
  * @Date: 2022-03-07 14:51:13
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2022-07-05 13:45:07
+ * @LastEditTime: 2022-10-18 17:38:35
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 
  *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
  */
-import { isArray } from '../is';
+import { isArray } from '../is'
 
 
 /**
@@ -18,22 +18,22 @@ import { isArray } from '../is';
  * @return {*}
  */
 export const filter = (data: any[] |  Record<string, any>, fn: ()=>void) => {
-    const func = isArray(data) ? _arrayFilter : () => [];
+    const func = isArray(data) ? _arrayFilter : () => []
     return func(data, fn)
 }
 
 
 function _arrayFilter(array, predicate) {
-    let index = -1;
-    const length = array == null ? 0 : array.length;
-    let resIndex = 0;
-    const result = [];
+    let index = -1
+    const length = array === null ? 0 : array.length
+    let resIndex = 0
+    const result = []
 
     while (++index < length) {
-        const value = array[index];
+        const value = array[index]
         if (predicate(value, index, array)) {
-            result[resIndex++] = value;
+            result[resIndex++] = value
         }
     }
-    return result;
+    return result
 }

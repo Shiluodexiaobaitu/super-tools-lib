@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2022-01-14 17:53:01
  * @LastEditors: zhangce
- * @LastEditTime: 2022-07-05 13:45:36
+ * @LastEditTime: 2022-10-18 17:36:41
  * @Description: 
  */
 /**
@@ -24,8 +24,8 @@
 const accAdd = function (num1, num2: number): number {
     num1 = Number(num1)
     num2 = Number(num2)
-    let dec1 = 0;
-    let dec2 = 0;
+    let dec1 = 0
+    let dec2 = 0
     try {
         dec1 = countDecimals(num1) + 1
     } catch (e) {
@@ -50,8 +50,8 @@ const accAdd = function (num1, num2: number): number {
 const accSub = function (num1: number, num2: number): number {
     num1 = Number(num1)
     num2 = Number(num2)
-    let dec1 = 0;
-    let dec2 = 0;
+    let dec1 = 0
+    let dec2 = 0
     try {
         dec1 = countDecimals(num1) + 1
     } catch (e) {
@@ -101,8 +101,8 @@ const accDiv = function (num1: number, num2: number): number {
     num2 = Number(num2)
     let t1 = 0
     let t2 = 0
-    let dec1 = 0;
-    let dec2 = 0;
+    let dec1 = 0
+    let dec2 = 0
     try {
         t1 = countDecimals(num1)
     } catch (e) {

@@ -5,9 +5,9 @@
  * @return {*}
  */
 const sortAscii = (data: string[]) => {
-  return data.sort((a, b) => {
-    return (a + '').localeCompare(b + '')
-  })
+    return data.sort((a, b) => {
+        return (a + '').localeCompare(b + '')
+    })
 }
 
 /**
@@ -19,20 +19,20 @@ const sortAscii = (data: string[]) => {
  */
 const generateSign = (obj: Record<string, unknown>): string => {
 
-  const arr = []
-  let sign = ''
-  for (const key in obj) {
-    arr.push(key)
-  }
-  arr.sort()
-  for (let i = 0; i < arr.length; i++) {
-    sign += `${arr[i]}=${obj[arr[i]]}`
-  }
+    const arr = []
+    let sign = ''
+    for (const key in obj) {
+        arr.push(key)
+    }
+    arr.sort()
+    for (let i = 0; i < arr.length; i++) {
+        sign += `${arr[i]}=${obj[arr[i]]}`
+    }
 
-  return sign.replace(/\=/g, '')
+    return sign.replace(/\=/g, '')
 }
 
 export {
-  sortAscii,
-  generateSign
+    sortAscii,
+    generateSign
 }

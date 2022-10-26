@@ -1,4 +1,5 @@
 
+
 // declare global {
 //   interface Window {
 //       webkitIndexedDB: any;
@@ -31,6 +32,13 @@
 // }
 
 
+// export declare const sortAscii: (data: string[]) => string[];
+// export declare const generateSign: (obj: Record<string, unknown>) => string;
+// export declare const last: (array: any[]) => any;
+// export declare const getTransformMatrix: (transform: string) => {
+//   x: number;
+//   y: number;
+// };
 // export declare const dayDiff: (date1: Date, date2: Date) => number;
 // export declare const isMobile: () => boolean;
 // export declare const textVisibilityChange: (dom: HTMLElement) => boolean;
@@ -161,5 +169,4 @@
 // export declare const trim: (str: string) => string;
 // export declare const validate: (key: string, value: string) => boolean;
 // export declare const exportExcel: (column: any[], dataSource: any[], fileName?: string) => void;
-
 

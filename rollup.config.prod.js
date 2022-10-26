@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2022-07-05 13:47:24
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2022-10-26 11:12:39
+ * @LastEditTime: 2022-10-26 12:15:01
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 
@@ -27,7 +27,7 @@ export default [
                 name: 'superToolsLib',
                 format: 'umd',
                 exports: 'default',
-            }
+            },
         ],
         plugins: [
             typescript(),
@@ -38,7 +38,7 @@ export default [
                 throwOnError: true,
                 throwOnWarning: true,
                 include: ['src/**'],
-                exclude: ['node_modules/**']
+                exclude: ['node_modules/**'],
             }),
             filesize(),
             babel({
@@ -47,12 +47,12 @@ export default [
             }),
             terser({
                 compress: {
-                    passes: 5,
+                    passes: 10,
                     // compress options 
                     // drop_console: true //去除log
                 },
-                keep_classnames: false
+                keep_classnames: false,
             }), // 压缩代码
         ],
-    }
+    },
 ]

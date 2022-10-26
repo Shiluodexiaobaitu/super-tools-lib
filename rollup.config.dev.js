@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-10-08 14:15:34
  * @LastEditors: zhangce
- * @LastEditTime: 2022-10-26 11:13:06
+ * @LastEditTime: 2022-10-26 11:16:07
  * @Description: 
  */
 
@@ -43,7 +43,7 @@ export default [
                 throwOnError: true,
                 throwOnWarning: true,
                 include: ['src/**'],
-                exclude: ['node_modules/**']
+                exclude: ['node_modules/**'],
             }),
             babel({
                 exclude: 'node_modules/**', // 防止打包node_modules下的文件
@@ -61,11 +61,11 @@ export default [
             serve({
                 open: true,
                 port: '8888',
-                contentBase: ''
-            })
+                contentBase: '',
+            }),
         ],
         // external: [/lodash-es\/[a-z]+/, 'better-xlsx', 'file-saver']
 
 
-    }
+    },
 ]

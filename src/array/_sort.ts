@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2022-01-17 10:34:53
  * @LastEditors: zhangce
- * @LastEditTime: 2022-01-17 10:36:17
+ * @LastEditTime: 2022-10-21 13:47:19
  * @Description: 
  */
 
@@ -36,5 +36,5 @@ const bubbleSort = (arr) => {
 
 
 export {
-    bubbleSort
+    bubbleSort,
 }

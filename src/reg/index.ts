@@ -118,7 +118,7 @@ const reg = {
     /**
      * 校验mac地址是否正确
     */
-    mac: /^[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}$/
+    mac: /^[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}$/,
 }
 
 function validate(key: string, value: string): boolean {
@@ -126,5 +126,5 @@ function validate(key: string, value: string): boolean {
 }
 
 export {
-    validate
+    validate,
 }

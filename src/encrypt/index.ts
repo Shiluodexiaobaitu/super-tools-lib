@@ -34,5 +34,5 @@ const generateSign = (obj: Record<string, unknown>): string => {
 
 export {
     sortAscii,
-    generateSign
+    generateSign,
 }

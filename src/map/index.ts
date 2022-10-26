@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-10-08 14:15:34
  * @LastEditors: zhangce
- * @LastEditTime: 2022-10-18 17:38:59
+ * @LastEditTime: 2022-10-21 13:59:31
  * @Description: 
  */
 /**
@@ -66,5 +66,5 @@ export {
     getDistance,
     calcDistance,
     lonLatToMercator,
-    mercatorToLonlat
+    mercatorToLonlat,
 }

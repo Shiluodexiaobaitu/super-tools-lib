@@ -15,10 +15,7 @@ const getOffset = function (ele: any): any {
         top += parent.offsetTop + parent.clientTop
         parent = parent.offsetParent
     }
-    return {
-        left,
-        top
-    }
+    return { left, top }
 }
 
 /**
@@ -204,6 +201,19 @@ const textVisibilityChange = (dom: HTMLElement): boolean => {
     }
 }
 
+/**
+ * 获取transform translate中矩阵x，y坐标
+ * @param {string} transform
+ * @return {*}
+ */
+const getTransformMatrix = (transform: string): { x: number, y: number } => {
+    const matrix = new WebKitCSSMatrix(transform)
+    if (matrix) {
+        return { x: matrix.m41, y: matrix.m42 }
+    }
+    return { x: -1, y: -1 }
+}
+
 export {
     getOffset,
     shaking,
@@ -214,5 +224,6 @@ export {
     replaceClass,
     numberRoll,
     scrollToTheBottom,
-    textVisibilityChange
+    textVisibilityChange,
+    getTransformMatrix,
 }

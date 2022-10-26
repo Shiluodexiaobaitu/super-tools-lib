@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @LastEditors: zhangce
- * @LastEditTime: 2022-10-18 17:38:12
+ * @LastEditTime: 2022-10-21 13:59:11
  * @Description: 
  */
 /**
@@ -214,5 +214,5 @@ export {
     isAndroidMobileDevice,
     isAppleMobileDevice,
     isImg,
-    isUrl
+    isUrl,
 }

@@ -122,5 +122,5 @@ const vConsole = () => {
 }
 
 export {
-    vConsole
+    vConsole,
 }

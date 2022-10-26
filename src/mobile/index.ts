@@ -15,5 +15,5 @@ const orient = () => {
 
 
 export {
-    orient
+    orient,
 }

@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2022-01-14 17:50:51
  * @LastEditors: zhangce
- * @LastEditTime: 2022-10-18 17:36:46
+ * @LastEditTime: 2022-10-21 13:59:48
  * @Description: 
  */
 import { accAdd, accSub, accMul, accDiv } from './floatPares'
@@ -34,5 +34,5 @@ export {
     accMul,
     accDiv,
     formatPrice,
-    smallRounding
+    smallRounding,
 }

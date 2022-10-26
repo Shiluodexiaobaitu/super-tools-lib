@@ -1,10 +1,3 @@
-/*
- * @Author: zhangce
- * @Date: 2021-11-04 17:11:40
- * @LastEditors: zhangce
- * @LastEditTime: 2022-10-18 17:36:01
- * @Description: 
- */
 import { version } from '../package.json'
 
 import {
@@ -53,7 +46,7 @@ import {
     copy,
     scrollToTop,
     userBrowser,
-    getLocalStorageSize
+    getLocalStorageSize,
 } from './browser'
 
 import { IndexedDB } from './IndexedDB'
@@ -67,7 +60,7 @@ import {
     getDistance,
     calcDistance,
     lonLatToMercator,
-    mercatorToLonlat
+    mercatorToLonlat,
 } from './map'
 
 import { validate } from './reg'
@@ -83,6 +76,7 @@ import {
     numberRoll,
     scrollToTheBottom,
     textVisibilityChange,
+    getTransformMatrix,
 } from './dom'
 
 import {
@@ -97,7 +91,7 @@ import {
     cloneDeep,
     stringfyQueryString,
     values,
-    keys
+    keys,
 } from './object'
 
 import {
@@ -130,7 +124,7 @@ import { vConsole } from './console'
 
 import {
     socket,
-    Ajax
+    Ajax,
 } from './request'
 
 import { orient } from './mobile'
@@ -150,17 +144,17 @@ import {
     accMul,
     accDiv,
     formatPrice,
-    smallRounding
+    smallRounding,
 } from './number'
 
 import {
     forEach,
-    filter
+    filter,
 } from './loop'
 
 import {
     sortAscii,
-    generateSign
+    generateSign,
 } from './encrypt'
 
 export default {
@@ -227,6 +221,7 @@ export default {
     numberRoll,
     scrollToTheBottom,
     textVisibilityChange,
+    getTransformMatrix,
     arrayUnique,
     arrayNonRepeatfy,
     aLineUnique,

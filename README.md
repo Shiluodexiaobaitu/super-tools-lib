@@ -540,6 +540,13 @@ _.scrollToTheBottom(ele, callback, delay);
 _.textVisibilityChange(document.getElementById('text'));
 => true
 ```
+
+- getTransformMatrix // 获取transform translate中矩阵x，y坐标
+```js
+_.getTransformMatrix(document.getElementById('text'));
+=> true
+```
+
 ### 经纬度坐标转换方法
 
 - lonLatToMercator, // 经纬度转墨卡托

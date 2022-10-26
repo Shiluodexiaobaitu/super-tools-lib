@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2022-05-17 10:15:46
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2022-10-18 17:37:22
+ * @LastEditTime: 2022-10-21 13:58:20
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 
@@ -49,7 +49,7 @@ export class IndexedDB {
   /**
    * 获取数据库数据
   */
-  get(key: string, callback: (data) => void) {
+  get(key: string, callback: (data: any) => void) {
     const transaction = this.db.transaction(this.storeName)
     const objectStore = transaction.objectStore(this.storeName)
     const request = objectStore.get(key)
@@ -61,7 +61,7 @@ export class IndexedDB {
   /**
    * 设置数据
   */
-  set(key:any, value:any) {
+  set(key: any, value: any) {
     let oldValue
     this.get(key, function (res) { oldValue = res })
 
@@ -79,7 +79,7 @@ export class IndexedDB {
   /**
    * 更新数据 （数据库中有key数据则更新，没有则添加）
   */
-  update(key:any, newValue:any) {
+  update(key: any, newValue: any) {
     const transaction = this.db.transaction(this.storeName, 'readwrite')
     const objectStore = transaction.objectStore(this.storeName)
     const request = objectStore.put(newValue, key)
@@ -91,7 +91,7 @@ export class IndexedDB {
   /**
    * 删除指定数据
   */
-  remove(key:any) {
+  remove(key: any) {
     const request = this.db.transaction(this.storeName, 'readwrite')
       .objectStore(this.storeName)
       .delete(key)

@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2022-03-07 13:50:06
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2022-10-18 17:38:47
+ * @LastEditTime: 2022-10-21 13:59:22
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 循环方法集合
@@ -46,5 +46,5 @@ const forEach = (data: unknown[] | Record<string, unknown>, fn: () => void) => {
 
 export {
     forEach,
-    filter
+    filter,
 }

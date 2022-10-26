@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2022-01-14 17:53:01
  * @LastEditors: zhangce
- * @LastEditTime: 2022-10-18 17:36:41
+ * @LastEditTime: 2022-10-21 13:59:45
  * @Description: 
  */
 /**
@@ -205,5 +205,5 @@ export {
     accAdd,
     accSub,
     accMul,
-    accDiv
+    accDiv,
 }

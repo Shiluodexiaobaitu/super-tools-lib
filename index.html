@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-10-08 14:15:34
  * @LastEditors: zhangce
- * @LastEditTime: 2022-10-13 14:18:31
+ * @LastEditTime: 2022-10-20 12:11:42
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -54,6 +54,45 @@
             }
             return partList;
         }
+
+        const data = [
+            { gid: 1, id: 1, name: '火锅', },
+            { gid: 2, id: 2, name: '烧烤', },
+            { gid: 3, id: 3, name: '炒菜', },
+        ]
+
+        const oldSort = ['L1', 'L2', 'L3']
+
+        const newSort = ['L1', 'M1', 'L2', 'L3']
+
+        const newData = []
+        for (let i = 0; i < oldSort.length; i++) {
+            const gid = i + 1
+            const gname = oldSort[i]
+            const gname2 = newSort[i]
+            if (gname !== gname2) {
+                data.forEach(item => {
+                    if (gid === item.gid) {
+                        newData.push({
+                            ...item,
+                            gid: gid + 1
+                        })
+                    }
+                })
+            }
+        }
+
+        for (let i = 0; i < newData.length; i++) {
+            const item = newData[i]
+
+            data.forEach(item2 => {
+                if (item.id === item2.id) {
+                    item2.gid = item.gid
+                }
+            })
+        }
+        console.log('data', data)
+
     </script>
 </body>
 

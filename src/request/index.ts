@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @LastEditors: zhangce
- * @LastEditTime: 2022-10-18 17:39:42
+ * @LastEditTime: 2022-10-21 14:00:33
  * @Description: 
  */
 import Socket from './socket'
@@ -15,5 +15,5 @@ const socket = ({ url }: { url: string }): any => {
 
 export {
     socket,
-    Ajax
+    Ajax,
 }

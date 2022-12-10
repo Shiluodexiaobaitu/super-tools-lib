@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-10 15:07:24
  * @LastEditors: zhangce
- * @LastEditTime: 2022-10-21 13:42:33
+ * @LastEditTime: 2022-12-10 11:55:12
  * @Description: 
  */
 import { bubbleSort } from './_sort'
@@ -49,6 +49,21 @@ const last = (array: any[]): any => {
     return length ? array[length - 1] : undefined
 }
 
+/**
+ * 按字母排序
+ * @param {*} data 
+ * @param {*} keyword
+ * @param {*} ascen 正序/逆序
+*/
+const alphabeticSort = (_data: any[], keyword: string, ascen = true): any[] => {
+    const data = [..._data]
+    if (ascen) {
+        return data.sort((a, b) => a[keyword] < b[keyword] ? -1 : a[keyword] > b[keyword] ? 1 : 0)
+    } else {
+        return data.sort((a, b) => a[keyword] > b[keyword] ? -1 : a[keyword] < b[keyword] ? 1 : 0)
+    }
+
+}
 
 
 export {
@@ -57,4 +72,5 @@ export {
     aLineUnique,
     bubbleSort,
     last,
+    alphabeticSort,
 }

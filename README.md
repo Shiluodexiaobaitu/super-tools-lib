@@ -1,5 +1,7 @@
 ## 轻量级 javascript 工具库
+
 封装 100+ javascript 常用方法
+
 ### 安装
 
 ```
@@ -278,11 +280,37 @@ _.filter(arr, (item, index) => item === 3);
 ```
 
 - last 返回数组最后一项
+
 ```js
 
 const arr = [1, 2, 3, 4, 5];
 _.last(arr);
 => 5
+```
+
+- alphabeticSort 按字母排序
+
+```js
+
+let arr = [{value: 'b'},{value: 'a'},{value: 'c'},{value: 'e'},{value: 'f'}]
+_.alphabeticSort(arr,'value')
+=> [
+    {
+        "value": "a"
+    },
+    {
+        "value": "b"
+    },
+    {
+        "value": "c"
+    },
+    {
+        "value": "e"
+    },
+    {
+        "value": "f"
+    }
+]
 ```
 
 ### 字符串操作方法
@@ -347,7 +375,7 @@ _.strInversion('abc')
 - toLine 驼峰转下划线
   参数：
   1，val 要驼峰转下划线字符串
-  2，isLowercase 是否转换成小写字母 默认值true
+  2，isLowercase 是否转换成小写字母 默认值 true
 
 ```js
 
@@ -536,12 +564,14 @@ _.scrollToTheBottom(ele, callback, delay);
   参数：
   {dom} 承载文字的容器
   return: true 文字溢出， false 不溢出
+
 ```js
 _.textVisibilityChange(document.getElementById('text'));
 => true
 ```
 
-- getTransformMatrix // 获取transform translate中矩阵x，y坐标
+- getTransformMatrix // 获取 transform translate 中矩阵 x，y 坐标
+
 ```js
 _.getTransformMatrix(document.getElementById('text'));
 => true

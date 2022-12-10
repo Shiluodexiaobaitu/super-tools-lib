@@ -158,6 +158,8 @@ import {
     generateSign,
 } from './encrypt'
 
+import { EventPool } from './eventPool'
+
 export default {
     version: version,
     isImg,
@@ -270,4 +272,5 @@ export default {
     filter,
     sortAscii,
     generateSign,
+    EventPool,
 }

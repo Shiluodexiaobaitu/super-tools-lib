@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-10-08 14:15:34
  * @LastEditors: zhangce
- * @LastEditTime: 2022-10-20 12:11:42
+ * @LastEditTime: 2022-12-10 12:37:28
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -23,75 +23,30 @@
 <body>
     <script src='./lib/super-tools-lib.js'></script>
     <div id="root">
-        <h1 onmousedown="mousedown(this)">super-tools-lib</h1>
-
-        <input type="file" onchange="showFile(this)">
+        <h1>super-tools-lib</h1>
+        <button id="add">add</button>
+        <button id="remove">remove add</button>
     </div>
 
 
     <script>
-        function mousedown(e) {
-            console.log('e', e)
+        const EventPool = superToolsLib.EventPool
+
+        var e = new EventPool()
+
+        function add1(data) {
+            console.log('add data', data)
         }
 
-        function showFile(input) {
-            let file = input.files[0];
-            console.log(file)
-            const fileList = createChunks(file);
-            console.log('fileList', fileList)
+        e.on('add', add1)
+
+        add.onclick = () => {
+            e.spread('add', { a: 2 })
         }
 
-        const SIZE = 1024 * 1024 * 1; // 默认切片大小1M分段
-
-        // 文件切片
-        function createChunks(file) {
-            const partList = [];
-            let current = 0;
-            while (current <= file.size) {
-                let chunk = file.slice(current, current + SIZE);
-                partList.push({ chunk, size: chunk.size })
-                current += SIZE
-            }
-            return partList;
+        remove.onclick = () => {
+            e.off('add', add1)
         }
-
-        const data = [
-            { gid: 1, id: 1, name: '火锅', },
-            { gid: 2, id: 2, name: '烧烤', },
-            { gid: 3, id: 3, name: '炒菜', },
-        ]
-
-        const oldSort = ['L1', 'L2', 'L3']
-
-        const newSort = ['L1', 'M1', 'L2', 'L3']
-
-        const newData = []
-        for (let i = 0; i < oldSort.length; i++) {
-            const gid = i + 1
-            const gname = oldSort[i]
-            const gname2 = newSort[i]
-            if (gname !== gname2) {
-                data.forEach(item => {
-                    if (gid === item.gid) {
-                        newData.push({
-                            ...item,
-                            gid: gid + 1
-                        })
-                    }
-                })
-            }
-        }
-
-        for (let i = 0; i < newData.length; i++) {
-            const item = newData[i]
-
-            data.forEach(item2 => {
-                if (item.id === item2.id) {
-                    item2.gid = item.gid
-                }
-            })
-        }
-        console.log('data', data)
 
     </script>
 </body>

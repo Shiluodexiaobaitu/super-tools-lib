@@ -54,4 +54,18 @@ class EventPool {
     }
 }
 
-export { EventPool }
+const _eventPool = new EventPool()
+
+const addEventListener = (type: string, cb: () => void) => {
+    _eventPool.on(type, cb)
+}
+
+const dispatchEvent = (type: string, ...rest) => {
+    _eventPool.spread(type, ...rest)
+}
+
+export {
+    EventPool,
+    addEventListener,
+    dispatchEvent,
+}

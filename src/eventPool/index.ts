@@ -1,7 +1,7 @@
 /**
  * 自定义事件池
 */
-class EventPool {
+class EventObserver {
     private _listener = {}
     constructor() {
 
@@ -54,7 +54,7 @@ class EventPool {
     }
 }
 
-const _eventPool = new EventPool()
+const _eventPool = new EventObserver()
 
 const addEventListener = (type: string, cb: () => void) => {
     _eventPool.on(type, cb)
@@ -65,7 +65,7 @@ const dispatchEvent = (type: string, ...rest) => {
 }
 
 export {
-    EventPool,
+    EventObserver,
     addEventListener,
     dispatchEvent,
 }

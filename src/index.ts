@@ -158,7 +158,7 @@ import {
     generateSign,
 } from './encrypt'
 
-import { EventPool } from './eventPool'
+import { EventObserver } from './eventPool'
 
 export default {
     version: version,
@@ -272,5 +272,5 @@ export default {
     filter,
     sortAscii,
     generateSign,
-    EventPool,
+    EventObserver,
 }

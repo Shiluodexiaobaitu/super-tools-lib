@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @LastEditors: zhangce
- * @LastEditTime: 2022-10-21 13:59:11
+ * @LastEditTime: 2022-12-30 11:37:13
  * @Description: 
  */
 /**
@@ -192,6 +192,58 @@ const isUrl = (path: string): boolean => {
     }
 }
 
+/**
+ * @desc: 判断两个对象是否拥有一样的键
+ * @param {Record} a
+ * @param {*} unknown
+ * @param {Record} b
+ * @param {*} unknown
+ * @return {*}
+ */
+const isObjectKeyEqual = (a: Record<string, unknown>, b: Record<string, unknown>): boolean => {
+    const aKeyNames = Object.getOwnPropertyNames(a)
+    const bKeyNames = Object.getOwnPropertyNames(b)
+    if (aKeyNames.length !== bKeyNames.length) {
+        return false
+    }
+    for (let i = 0; i < aKeyNames.length; i++) {
+        if (!bKeyNames.includes(aKeyNames[i])) {
+            return false
+        }
+    }
+    return true
+}
+
+/**
+ * @desc: 判断一个对象内是否包含指定的键
+ * @param {Record} obj
+ * @param {*} unknown
+ * @param {string} key
+ * @return {*}
+ */
+const isObjectExistsKey = (obj: Record<string, unknown>, key: string): boolean => {
+    const objKeyNames = Object.getOwnPropertyNames(obj)
+    return objKeyNames.includes(key)
+}
+
+/**
+ * @desc: 判断a对象是否包含b对象的键
+ * @param {Record} a
+ * @param {*} unknown
+ * @param {Record} b
+ * @param {*} unknown
+ * @return {*}
+ */
+const isObjectIncludeSpecifiedKey = (a: Record<string, unknown>, b: Record<string, unknown>): boolean => {
+    const aKeyNames = Object.getOwnPropertyNames(a)
+    const bKeyNames = Object.getOwnPropertyNames(b)
+    for (let i = 0; i < bKeyNames.length; i++) {
+        if (!aKeyNames.includes(bKeyNames[i])) {
+            return false
+        }
+    }
+    return true
+}
 
 export {
     isBase64,
@@ -215,4 +267,7 @@ export {
     isAppleMobileDevice,
     isImg,
     isUrl,
+    isObjectKeyEqual,
+    isObjectExistsKey,
+    isObjectIncludeSpecifiedKey,
 }

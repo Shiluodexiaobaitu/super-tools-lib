@@ -117,6 +117,9 @@ import {
     isAppleMobileDevice,
     isImg,
     isUrl,
+    isObjectKeyEqual,
+    isObjectExistsKey,
+    isObjectIncludeSpecifiedKey,
 } from './is'
 
 import { downBlob } from './file'
@@ -158,12 +161,21 @@ import {
     generateSign,
 } from './encrypt'
 
-import { EventObserver } from './eventPool'
+import {
+    EventObserver,
+    addEventListener,
+    dispatchEvent,
+} from './EventObserver'
+
+import { StateObserver } from './StateObserver'
 
 export default {
     version: version,
     isImg,
     isUrl,
+    isObjectKeyEqual,
+    isObjectExistsKey,
+    isObjectIncludeSpecifiedKey,
     transFormat,
     strInversion,
     toLine,
@@ -273,4 +285,7 @@ export default {
     sortAscii,
     generateSign,
     EventObserver,
+    StateObserver,
+    addEventListener,
+    dispatchEvent,
 }

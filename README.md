@@ -921,6 +921,86 @@ _.isUrl(val)
 
 ```
 
+- isObjectKeyEqual 判断两个对象是否拥有一样的 key
+
+```js
+
+_.isObjectKeyEqual({a:2},{a:3})
+=> true
+
+_.isObjectKeyEqual({a:2,b:3},{a:3,c:3})
+=> false
+```
+
+- isObjectExistsKey 判断一个对象内是否包含指定的键
+
+```js
+
+_.isObjectKeyEqual({a:2},'a')
+=> true
+```
+
+- isObjectIncludeSpecifiedKey 判断 a 对象是否包含 b 对象的键
+
+```js
+
+const a = {a:2,b:2}
+const b = {b:3}
+_.isObjectIncludeSpecifiedKey(a,b)
+=> true
+```
+
+### EventObserver 自定义事件观察者
+
+```js
+const eventObserver = new _.EventObserver();
+
+function change(e) {
+  console.log("e", e);
+}
+// 注册事件监听
+eventObserver.on("my_click", change);
+
+// 触发指定事件
+eventObserver.spread("my_click", { a: 1 });
+
+// 移除事件监听
+// eventObserver.off("my_click",change);
+
+// of
+
+_.addEventListener("my_click", (e) => {
+  console.log("e", e);
+});
+
+_.dispatchEvent("my_click", { a: 1 });
+```
+
+### StateObserver 状态观察者
+
+```js
+const state = new StateObserver({ name: "李四", age: 18 });
+
+function change(newValue){
+  console.log('newValue',newValue)
+}
+// 监听状态改变事件
+state.on('age', change);
+
+// 移除状态改变事件
+// state.off('age',change);
+
+// 设置状态
+state.setState({ age: 20 });
+
+// 查询状态
+state.getState('age')
+=> 20
+
+state.getState()
+=> { name: "李四", age: 20 }
+```
+
 ### 文件操作方法
 
 - downBlob // 下载二进制流文件

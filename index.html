@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-10-08 14:15:34
  * @LastEditors: zhangce
- * @LastEditTime: 2022-12-10 12:37:28
+ * @LastEditTime: 2022-12-30 12:04:14
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -30,23 +30,16 @@
 
 
     <script>
-        const EventPool = superToolsLib.EventPool
+        const StateObserver = superToolsLib.StateObserver
+        const state = new StateObserver({ name: "李四", age: 18 });
 
-        var e = new EventPool()
+        // 监听状态改变事件
+        state.on("age", (newValue) => {
+            console.log(newValue);
+        });
 
-        function add1(data) {
-            console.log('add data', data)
-        }
-
-        e.on('add', add1)
-
-        add.onclick = () => {
-            e.spread('add', { a: 2 })
-        }
-
-        remove.onclick = () => {
-            e.off('add', add1)
-        }
+        // 设置状态
+        state.setState({ age: 20 });
 
     </script>
 </body>

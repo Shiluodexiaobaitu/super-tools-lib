@@ -120,6 +120,7 @@ import {
     isObjectKeyEqual,
     isObjectExistsKey,
     isObjectIncludeSpecifiedKey,
+    isEmptyObject,
 } from './is'
 
 import { downBlob } from './file'
@@ -176,6 +177,7 @@ export default {
     isObjectKeyEqual,
     isObjectExistsKey,
     isObjectIncludeSpecifiedKey,
+    isEmptyObject,
     transFormat,
     strInversion,
     toLine,

@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @LastEditors: zhangce
- * @LastEditTime: 2022-12-30 11:37:13
+ * @LastEditTime: 2022-12-30 17:11:49
  * @Description: 
  */
 /**
@@ -245,6 +245,18 @@ const isObjectIncludeSpecifiedKey = (a: Record<string, unknown>, b: Record<strin
     return true
 }
 
+/**
+ * @desc: 判断对象是否为空
+ * @param {Record} obj
+ * @param {*} unknown
+ * @return {*}
+ */
+const isEmptyObject = (obj: Record<string, unknown>): boolean => {
+    if (!obj || typeof obj !== 'object' || Array.isArray(obj))
+        return false
+    return !Object.keys(obj).length
+}
+
 export {
     isBase64,
     isArray,
@@ -270,4 +282,5 @@ export {
     isObjectKeyEqual,
     isObjectExistsKey,
     isObjectIncludeSpecifiedKey,
+    isEmptyObject,
 }

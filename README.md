@@ -950,6 +950,13 @@ _.isObjectIncludeSpecifiedKey(a,b)
 => true
 ```
 
+- isEmptyObject 判断对象是否为空
+
+```js
+_.isEmptyObject({})
+=> true
+```
+
 ### EventObserver 事件观察者
 
 ```js

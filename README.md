@@ -950,7 +950,7 @@ _.isObjectIncludeSpecifiedKey(a,b)
 => true
 ```
 
-### EventObserver 自定义事件观察者
+### EventObserver 事件观察者
 
 ```js
 const eventObserver = new _.EventObserver();
@@ -979,7 +979,7 @@ _.dispatchEvent("my_click", { a: 1 });
 ### StateObserver 状态观察者
 
 ```js
-const state = new StateObserver({ name: "李四", age: 18 });
+const state = new _.StateObserver({ name: "李四", age: 18 });
 
 function change(newValue){
   console.log('newValue',newValue)

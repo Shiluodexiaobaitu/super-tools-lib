@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2022-12-30 11:41:36
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2022-12-30 11:59:29
+ * @LastEditTime: 2023-01-04 15:27:55
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 
@@ -25,14 +25,14 @@ class EventObserver {
     /**
      * 监听事件
     */
-    on(type: string, cb: () => void) {
+    on(type: string, cb: (...rest: any[]) => void) {
         this._on(type, cb)
     }
 
     /**
      * 移除事件
     */
-    off(type: string, cb: () => void) {
+    off(type: string, cb: (...rest: any[]) => void) {
         this._off(type, cb)
     }
 
@@ -46,7 +46,7 @@ class EventObserver {
         this._spread(type, ...rest)
     }
 
-    _on(type: string, cb: () => void) {
+    _on(type: string, cb: (...rest: any[]) => void) {
 
         if (this._listener[type]) {
             if (this._listener[type].includes(cb)) return
@@ -56,7 +56,7 @@ class EventObserver {
         }
     }
 
-    _off(type: string, cb: () => void) {
+    _off(type: string, cb: (...rest: any) => void) {
         if (this._listener[type]) {
             this._listener[type] = this._listener[type].filter(i => i !== cb)
         }
@@ -79,7 +79,7 @@ const _eventPool = new EventObserver()
  * @param {function} cb
  * @return {*}
  */
-const addEventListener = (type: string, cb: () => void) => {
+const addEventListener = (type: string, cb: (...rest: any[]) => void) => {
     _eventPool.on(type, cb)
 }
 

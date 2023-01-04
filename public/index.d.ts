@@ -1,3 +1,4 @@
+
 // declare type State = Record<string, unknown>;
 // export declare class StateObserver {
 //     private _state;
@@ -12,14 +13,14 @@
 //     _spread(type: any, ...rest: any[]): void;
 // }
 
-// export declare class EventObserver {
+// declare class EventObserver {
 //     private _listener;
 //     constructor();
-//     on(type: string, cb: () => void): void;
-//     off(type: string, cb: () => void): void;
+//     on(type: string, cb: (...rest: any[]) => void): void;
+//     off(type: string, cb: (...rest: any[]) => void): void;
 //     spread(type: string, ...rest: any[]): Error;
-//     _on(type: string, cb: () => void): void;
-//     _off(type: string, cb: () => void): void;
+//     _on(type: string, cb: (...rest: any[]) => void): void;
+//     _off(type: string, cb: (...rest: any) => void): void;
 //     _spread(type: string, ...rest: any[]): void;
 // }
 // // declare const addEventListener: (type: string, cb: () => void) => void;
@@ -199,4 +200,3 @@
 // export declare const trim: (str: string) => string;
 // export declare const validate: (key: string, value: string) => boolean;
 // export declare const exportExcel: (column: any[], dataSource: any[], fileName?: string) => void;
-

@@ -313,6 +313,64 @@ _.alphabeticSort(arr,'value')
 ]
 ```
 
+- arrToObject 将对象数组转换为单个对象
+
+```js
+_.arrToObject(
+  [
+    { id: "1", name: "Alpha", gender: "Male" },
+    { id: "2", name: "Bravo", gender: "Male" },
+    { id: "3", name: "Charlie", gender: "Female" },
+  ],
+  "id"
+)
+=> {
+    '1': { id: '1', name: 'Alpha', gender: 'Male' },
+    '2': { id: '2', name: 'Bravo', gender: 'Male' },
+    '3': { id: '3', name: 'Charlie', gender: 'Female' },
+}
+```
+
+- toNumbers 将字符串数组转换为数字
+
+```js
+
+_.toNumbers(['2', '3', '4'])
+=> [2, 3, 4]
+```
+
+- countBy 按数组对象中的属性计数
+
+```js
+_.countBy(
+  [
+    { branch: "audi", model: "q8", year: "2019" },
+    { branch: "audi", model: "rs7", year: "2020" },
+    { branch: "ford", model: "mustang", year: "2019" },
+    { branch: "ford", model: "explorer", year: "2020" },
+    { branch: "bmw", model: "x7", year: "2020" },
+  ],
+  "branch"
+)
+=> { 'audi': 2, 'ford': 2, 'bmw': 1 }
+```
+
+- indexOfMax 查找数组中最大项的索引
+
+```js
+
+_.indexOfMax([1, 3, 2, 7, 5])
+=> 3
+```
+
+- indexOfMin 查找数组中最小项的索引
+
+```js
+
+_.indexOfMin([1, 3, 2, 7, 5])
+=> 0
+```
+
 ### 字符串操作方法
 
 - initialToCapitali // 字符串首位是字母转大写
@@ -430,6 +488,22 @@ _.formatPrice(1111112211111,',')
 ```js
 _.smallRounding(89.38931,3);
 => 89.39
+```
+
+- range 在给定范围内创建数字数组
+
+```js
+
+_.range(1,5)
+=> [1,2,3,4,5]
+```
+
+- closest 从数组中查找最接近的数字
+
+```js
+
+_.closest([29, 87, 8, 78, 97, 20, 75, 33, 24, 17],50)
+=> 33
 ```
 
 ### 时间操作方法
@@ -954,6 +1028,13 @@ _.isObjectIncludeSpecifiedKey(a,b)
 
 ```js
 _.isEmptyObject({})
+=> true
+```
+
+- isEmptyArray 检查数组是否为空
+
+```js
+_.isEmptyArray([])
 => true
 ```
 

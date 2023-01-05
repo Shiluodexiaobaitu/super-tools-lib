@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @LastEditors: zhangce
- * @LastEditTime: 2022-12-30 17:11:49
+ * @LastEditTime: 2023-01-05 10:11:21
  * @Description: 
  */
 /**
@@ -257,6 +257,13 @@ const isEmptyObject = (obj: Record<string, unknown>): boolean => {
     return !Object.keys(obj).length
 }
 
+/**
+ * @desc: 检查数组是否为空
+ * @param {*} T
+ * @return {*}
+ */
+const isEmptyArray = <T>(arr: T[]): boolean => Array.isArray(arr) && !arr.length
+
 export {
     isBase64,
     isArray,
@@ -283,4 +290,5 @@ export {
     isObjectExistsKey,
     isObjectIncludeSpecifiedKey,
     isEmptyObject,
+    isEmptyArray,
 }

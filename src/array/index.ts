@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-10 15:07:24
  * @LastEditors: zhangce
- * @LastEditTime: 2022-12-10 11:55:12
+ * @LastEditTime: 2023-01-05 10:48:27
  * @Description: 
  */
 import { bubbleSort } from './_sort'
@@ -65,6 +65,55 @@ const alphabeticSort = (_data: any[], keyword: string, ascen = true): any[] => {
 
 }
 
+/**
+ * @desc: 将对象数组转换为单个对象
+ * @param {*} T
+ * @param {*} any
+ * @param {*} K
+ * @param {*} T
+ * @return {*}
+ */
+const arrToObject = <T extends Record<string, any>, K extends keyof T>(arr: T[], key: K): Record<string, T> => {
+    return Object.fromEntries(arr.map((it) => [it[key], it]))
+}
+
+/**
+ * @desc: 将字符串数组转换为数字
+ * @param {string} arr
+ * @return {*}
+ */
+const toNumbers = (arr: string[]): number[] => arr.map(Number)
+
+/**
+ * @desc: 按数组对象中的属性计数
+ * @param {*} T
+ * @param {*} string
+ * @param {*} K
+ * @param {*} number
+ * @return {*}
+ */
+const countBy = <T extends Record<string, string>, K extends keyof T>(arr: T[], prop: K): Record<string, number> => (
+    arr.reduce((prev, curr) => ((prev[curr[prop]] = ++prev[curr[prop]] || 1), prev), {} as Record<string, number>)
+)
+
+/**
+ * @desc: 查找数组中最大项的索引
+ * @param {number} arr
+ * @return {*}
+ */
+const indexOfMax = (arr: number[]): number => {
+    return arr.reduce((prev, curr, i, a) => (curr > a[prev] ? i : prev), 0)
+}
+
+/**
+ * @desc: 查找数组中最小项的索引
+ * @param {number} arr
+ * @return {*}
+ */
+const indexOfMin = (arr: number[]): number => {
+    return arr.reduce((prev, curr, i, a) => (curr < a[prev] ? i : prev), 0)
+}
+
 
 export {
     arrayUnique,
@@ -73,4 +122,9 @@ export {
     bubbleSort,
     last,
     alphabeticSort,
+    arrToObject,
+    toNumbers,
+    countBy,
+    indexOfMax,
+    indexOfMin,
 }

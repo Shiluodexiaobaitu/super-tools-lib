@@ -23,8 +23,6 @@
 //     _off(type: string, cb: (...rest: any) => void): void;
 //     _spread(type: string, ...rest: any[]): void;
 // }
-// // declare const addEventListener: (type: string, cb: () => void) => void;
-// // declare const dispatchEvent: (type: string, ...rest: any[]) => void;
 
 // declare global {
 //     interface Window {
@@ -61,7 +59,7 @@
 // export declare const isObjectKeyEqual: (a: Record<string, unknown>, b: Record<string, unknown>) => boolean;
 // export declare const isObjectExistsKey: (obj: Record<string, unknown>, key: string) => boolean;
 // export declare const isObjectIncludeSpecifiedKey: (a: Record<string, unknown>, b: Record<string, unknown>) => boolean;
-// export declare const addEventListener: (type: string, cb: () => void) => void;
+// export declare const addEventListener: (type: string, cb: (...rest: any[]) => void) => void;
 // export declare const dispatchEvent: (type: string, ...rest: any[]) => void;
 // export declare const sortAscii: (data: string[]) => string[];
 // export declare const generateSign: (obj: Record<string, unknown>) => string;

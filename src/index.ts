@@ -86,6 +86,11 @@ import {
     bubbleSort,
     last,
     alphabeticSort,
+    arrToObject,
+    toNumbers,
+    countBy,
+    indexOfMax,
+    indexOfMin,
 } from './array'
 
 import {
@@ -121,6 +126,7 @@ import {
     isObjectExistsKey,
     isObjectIncludeSpecifiedKey,
     isEmptyObject,
+    isEmptyArray,
 } from './is'
 
 import { downBlob } from './file'
@@ -150,6 +156,8 @@ import {
     accDiv,
     formatPrice,
     smallRounding,
+    range,
+    closest,
 } from './number'
 
 import {
@@ -178,6 +186,7 @@ export default {
     isObjectExistsKey,
     isObjectIncludeSpecifiedKey,
     isEmptyObject,
+    isEmptyArray,
     transFormat,
     strInversion,
     toLine,
@@ -245,6 +254,11 @@ export default {
     bubbleSort,
     last,
     alphabeticSort,
+    arrToObject,
+    toNumbers,
+    countBy,
+    indexOfMax,
+    indexOfMin,
     cloneDeep,
     stringfyQueryString,
     values,
@@ -276,6 +290,8 @@ export default {
     formatRemainTime,
     dayDiff,
     smallRounding,
+    range,
+    closest,
     shuffle,
     accAdd,
     accSub,

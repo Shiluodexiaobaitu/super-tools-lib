@@ -3,5 +3,5 @@ const { initialToCapitali } = superToolsLib
 
 
 test('initialToCapitali is initialToCapitali', () => {
-  expect(initialToCapitali('zzzz')).toBe('Zzzz')
+    expect(initialToCapitali('zzzz')).toBe('Zzzz')
 })

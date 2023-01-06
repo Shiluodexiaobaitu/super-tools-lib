@@ -1057,9 +1057,10 @@ eventObserver.spread("my_click", { a: 1 });
 
 // of
 
-_.addEventListener("my_click", (e) => {
-  console.log("e", e);
-});
+_.addEventListener("my_click", change);
+
+// 移除事件监听
+// _.removeEventListener("my_click", change);
 
 _.dispatchEvent("my_click", { a: 1 });
 ```

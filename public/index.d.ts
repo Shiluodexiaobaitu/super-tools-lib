@@ -1,4 +1,5 @@
 
+
 // declare type State = Record<string, unknown>;
 // export declare class StateObserver {
 //     private _state;
@@ -56,6 +57,17 @@
 // }
 
 
+// export declare const removeEventListener: (type: string, cb: (...rest: any[]) => void) => void;
+// export declare const alphabeticSort: (_data: any[], keyword: string, ascen?: boolean) => any[];
+// export declare const arrToObject: <T_1 extends Record<string, any>, K extends keyof T_1>(arr: T_1[], key: K) => Record<string, T_1>;
+// export declare const toNumbers: (arr: string[]) => number[];
+// export declare const countBy: <T_2 extends Record<string, string>, K_1 extends keyof T_2>(arr: T_2[], prop: K_1) => Record<string, number>;
+// export declare const indexOfMax: (arr: number[]) => number;
+// export declare const indexOfMin: (arr: number[]) => number;
+// export declare const range: (min: number, max: number) => number[];
+// export declare const closest: (arr: number[], n: number) => number;
+// export declare const isEmptyObject: (obj: Record<string, unknown>) => boolean;
+// export declare const isEmptyArray: <T>(arr: T[]) => boolean;
 // export declare const isObjectKeyEqual: (a: Record<string, unknown>, b: Record<string, unknown>) => boolean;
 // export declare const isObjectExistsKey: (obj: Record<string, unknown>, key: string) => boolean;
 // export declare const isObjectIncludeSpecifiedKey: (a: Record<string, unknown>, b: Record<string, unknown>) => boolean;
@@ -89,8 +101,8 @@
 // export declare const getTextWidth: (text: string, font: any) => number;
 // export declare const values: (obj: any) => any[];
 // export declare const keys: (obj: any) => any[];
-// export declare const forEach: (data: Record<string, unknown> | unknown[], fn: () => void) => any;
-// export declare const filter: (data: any[] | Record<string, any>, fn: () => void) => any[];
+// export declare const forEach: (data: Record<string, unknown> | unknown[], fn: (...rest: any[]) => void) => any;
+// export declare const filter: (data: any[] | Record<string, any>, fn: (...rest: any[]) => void) => any[];
 // export declare const formatPrice: (price: any, sign?: string) => string;
 // export declare const getFitSize: (px: number, draft?: number) => number;
 // export declare const accAdd: (num1: any, num2: number) => number;
@@ -198,3 +210,4 @@
 // export declare const trim: (str: string) => string;
 // export declare const validate: (key: string, value: string) => boolean;
 // export declare const exportExcel: (column: any[], dataSource: any[], fileName?: string) => void;
+

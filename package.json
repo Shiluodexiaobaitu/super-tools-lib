@@ -1,6 +1,6 @@
 {
   "name": "super-tools-lib",
-  "version": "1.42.0",
+  "version": "1.44.0",
   "description": "常用工具函数",
   "main": "lib/super-tools-lib.js",
   "types": "lib/src/index.d.ts",

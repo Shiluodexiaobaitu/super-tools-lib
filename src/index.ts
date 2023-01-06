@@ -173,6 +173,7 @@ import {
 import {
     EventObserver,
     addEventListener,
+    removeEventListener,
     dispatchEvent,
 } from './EventObserver'
 
@@ -305,5 +306,6 @@ export default {
     EventObserver,
     StateObserver,
     addEventListener,
+    removeEventListener,
     dispatchEvent,
 }

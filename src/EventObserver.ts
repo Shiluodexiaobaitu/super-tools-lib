@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2022-12-30 11:41:36
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2023-01-04 15:27:55
+ * @LastEditTime: 2023-01-06 16:38:20
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 
@@ -84,6 +84,16 @@ const addEventListener = (type: string, cb: (...rest: any[]) => void) => {
 }
 
 /**
+ * @desc: 移除监听器
+ * @param {string} type
+ * @param {function} cb
+ * @return {*}
+ */
+const removeEventListener = (type: string, cb: (...rest: any[]) => void) => {
+    _eventPool.off(type, cb)
+}
+
+/**
  * @desc: 触发监听器
  * @param {string} type
  * @param {array} rest
@@ -97,4 +107,5 @@ export {
     EventObserver,
     addEventListener,
     dispatchEvent,
+    removeEventListener,
 }

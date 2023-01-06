@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2022-03-07 14:51:13
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2022-10-18 17:38:35
+ * @LastEditTime: 2023-01-06 14:41:01
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 
@@ -17,7 +17,7 @@ import { isArray } from '../is'
  * @param {Function} fn
  * @return {*}
  */
-export const filter = (data: any[] |  Record<string, any>, fn: ()=>void) => {
+export const filter = (data: any[] | Record<string, any>, fn: (...rest: any[]) => void) => {
     const func = isArray(data) ? _arrayFilter : () => []
     return func(data, fn)
 }

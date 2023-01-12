@@ -1,6 +1,4 @@
-## 轻量级 javascript 工具库
-
-封装 150+ javascript 常用方法
+## 封装 150+ javascript 方法
 
 ### 安装
 

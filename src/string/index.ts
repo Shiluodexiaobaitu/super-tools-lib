@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2022-12-30 13:57:29
+ * @LastEditTime: 2023-01-12 10:02:25
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 
@@ -50,7 +50,7 @@ const trim = (str: string): string => {
 /**
  * @description: 计算文字宽度
  * @param {string} text
- * @param {any} font
+ * @param {any} font '14px sans-serif' 字号 字体
  * @return {*}
  */
 const getTextWidth = (text: string, font: any): number => {
@@ -68,7 +68,7 @@ const getTextWidth = (text: string, font: any): number => {
  * @param {*} newChar 表示你想要替换的字符
  * @return {*}
  */
-const transFormat = (str, oldChar, newChar) => {
+const transFormat = (str: string, oldChar: string, newChar: string) => {
     const reg = new RegExp(oldChar, 'g') // g表示全部替换，默认替换第一个
     str = str.replace(reg, newChar)
     return str
@@ -100,6 +100,75 @@ const toLine = (val: string, isLowercase = true): string => {
     return text.toUpperCase()
 }
 
+/**
+ * @desc: 将3位数颜色转换为6位数颜色
+ * @param {string} color
+ * @return {*}
+ */
+const toFullHexColor = (color: string): string => {
+    return `#${(color.startsWith('#') ? color.slice(1) : color)
+        .split('')
+        .map((c) => `${c}${c}`)
+        .join('')}`
+}
+
+/**
+ * @desc: 解码JWT令牌
+ * @param {string} token
+ * @return {*}
+ */
+const decode = (token: string): string => {
+    return decodeURIComponent(
+        atob(token.split('.')[1].replace('-', '+').replace('_', '/'))
+            .split('')
+            .map((c) => `%${('00' + c.charCodeAt(0).toString(16)).slice(-2)}`)
+            .join(''),
+    )
+}
+
+/**
+ * @desc: 转换字母以关联表情符号
+ * @param {string} c
+ * @return {*}
+ */
+const letterToEmoji = (c: string): string => String.fromCodePoint(c.toLowerCase().charCodeAt(0) + 127365)
+
+/**
+ * @desc: 将字符串转换为PascalCase
+ * @param {string} str
+ * @return {*}
+ */
+const toPascalCase = (str: string): string => (str.match(/[a-zA-Z0-9]+/g) || []).map((w) => `${w.charAt(0).toUpperCase()}${w.slice(1)}`).join('')
+
+/**
+ * @desc: 删除字符串中的空格
+ * @param {string} str
+ * @return {*}
+ */
+const removeSpaces = (str: string): string => str.replace(/\s/g, '')
+
+/**
+ * @desc: 替换指定位置字符串内容
+ * @param {string} str 
+ * @param {array} range 区间
+ * @param {string} mask 替换内容
+ * @return {*}
+ */
+const replaceText = (str: string, range: [number, number] | [number], mask: string): string => {
+
+    let old = ''
+    if (range.length === 2) {
+        old = `${str}`.slice(range[0], range[1])
+    } else {
+        old = `${str}`.slice(0, range[0])
+    }
+    const a = []
+    a.length = old.length
+    a.fill(mask).join('')
+
+    return transFormat(str, old, a.fill('*').join(''))
+}
+
 export {
     initialToCapitali,
     repeat,
@@ -108,4 +177,10 @@ export {
     transFormat,
     strInversion,
     toLine,
+    toFullHexColor,
+    decode,
+    letterToEmoji,
+    toPascalCase,
+    removeSpaces,
+    replaceText,
 }

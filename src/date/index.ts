@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-10-18 17:37:52
+ * @LastEditTime: 2023-01-11 15:30:41
  * @Description: 
  */
 /**
@@ -69,7 +69,7 @@ const formatRemainTime = (endTime) => {
 }
 
 /**
- * @desc: 两日期之间相差的天数
+ * @desc: 计算两日期之间相差的天数
  * @param {Date} date1
  * @param {Date} date2
  * @return {*} 天数
@@ -78,10 +78,79 @@ const dayDiff = (date1: Date, date2: Date): number => {
     return Math.ceil(Math.abs(date1.getTime() - date2.getTime()) / 86400000)
 }
 
+/**
+ * @desc: 计算两个日期之间的月数
+ * @param {Date} startDate
+ * @param {Date} endDate
+ * @return {*}
+ */
+const monthDiff = (startDate: Date, endDate: Date): number => {
+    return Math.max(0, (endDate.getFullYear() - startDate.getFullYear()) * 12 - startDate.getMonth() + endDate.getMonth())
+}
+
+/**
+ * @desc: 比较两个日期
+ * @param {Date} a
+ * @param {Date} b
+ * @return {*}
+ */
+const compareDate = (a: Date, b: Date): boolean => {
+    return a.getTime() > b.getTime()
+}
+
+/**
+ * @desc: 将秒转换为hh:mm:ss格式
+ * @param {number} s
+ * @return {*}
+ */
+const formatSeconds = (s: number): string => {
+    return new Date(s * 1000).toISOString().substr(11, 8)
+}
+
+/**
+ * @desc: 获取日期的当前季度
+ * @param {*} d
+ * @return {*}
+ */
+const getQuarter = (d = new Date()): number => {
+    return Math.ceil((d.getMonth() + 1) / 3)
+}
+
+/**
+ * @desc: 获取传入的日期当月的最后一个日期
+ * @param {*} d
+ * @return {*}
+ */
+const getLastDate = (d = new Date()): Date => {
+    return new Date(d.getFullYear(), d.getMonth() + 1, 0)
+}
+
+/**
+ * @desc: 获取传入的日期当月的第一个日期
+ * @param {*} d
+ * @return {*}
+ */
+const getFirstDate = (d = new Date()): Date => new Date(d.getFullYear(), d.getMonth(), 1)
+
+
+/**
+ * @desc: 获取当前时间戳（秒）
+ * @param {*} number
+ * @return {*}
+ */
+const getCurrentSecond = (): number => Math.floor(new Date().getTime() / 1000)
+
 
 export {
     dateFormater,
     formatPassTime,
     formatRemainTime,
     dayDiff,
+    monthDiff,
+    compareDate,
+    formatSeconds,
+    getQuarter,
+    getLastDate,
+    getCurrentSecond,
+    getFirstDate,
 }

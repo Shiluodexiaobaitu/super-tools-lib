@@ -371,6 +371,12 @@ _.indexOfMin([1, 3, 2, 7, 5])
 => 0
 ```
 
+- contains 检查数组是否包含符合某些标准的值
+
+```js
+_.contains([1, 2, 3], (v) => v == 3); // true
+```
+
 ### 字符串操作方法
 
 - initialToCapitali // 字符串首位是字母转大写
@@ -400,7 +406,7 @@ _.trim('  xxx  ')
 - getTextWidth 计算文字宽度
   参数：
   1，text(string)：文本
-  2，font(numver):文字字号
+  2，font(numver): '14px sans-serif' 字号 字体
 
 ```js
 
@@ -439,6 +445,51 @@ _.strInversion('abc')
 
 _.toLine('contBeginDate', false)
 => 'CONT_BEGIN_DATE'
+```
+
+- toFullHexColor 将 3 位数颜色转换为 6 位数颜色
+
+```js
+_.toFullHexColor('#FFF')
+=> '#FFFFFF'
+```
+
+- decode 解码 JWT 令牌
+
+```js
+_.decode(`
+    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+    eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0I
+    joxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+`)
+=> '{"sub":"1234567890","name":"John Doe","iat":1516239022}'
+```
+
+- letterToEmoji 转换字母以关联表情符号
+
+```js
+_.letterToEmoji('a')
+=> '🇦'
+```
+
+- toPascalCase 将字符串转换为 PascalCase
+
+```js
+_.toPascalCase("hello world"); // 'HelloWorld'
+_.toPascalCase("hello.world"); // 'HelloWorld'
+_.toPascalCase("foo_bar-baz"); // FooBarBaz
+```
+
+- removeSpaces 删除字符串中的空格
+
+```js
+_.removeSpaces("s s s k "); // sssk
+```
+
+- replaceText 替换指定位置字符串内容
+
+```js
+_.replaceText("17778780909", [3, 7], "*"); // '177****0909'
 ```
 
 ### 数值操作方法
@@ -532,12 +583,61 @@ _.formatRemainTime(new Date('2023').getTime())
 => '347天19小时52分钟 26秒'
 ```
 
-- dayDiff // 两日期之间相差的天数
+- dayDiff // 计算两日期之间相差的天数
 
 ```js
 
 _.dayDiff(new Date("2022-03-01"),new Date("2021-01-21"))
 => 404
+```
+
+- monthDiff // 计算两个日期之间的月数
+
+```js
+_.monthDiff(new Date("2022-01-01"),new Date("2021-01-01"))
+=> 12
+```
+
+- compareDate // 比较两个日期
+
+```js
+_.compareDate(new Date('2020-03-30'), new Date('2020-01-01'))
+=> true
+```
+
+- formatSeconds // 将秒转换为 hh:mm:ss 格式
+
+```js
+_.formatSeconds(300)
+=> '00:05:00'
+```
+
+- getQuarter // 获取日期的当前季度
+
+```js
+_.getQuarter(new Date('2023-12-12'))
+=> 4
+```
+
+- getLastDate // 获取传入的日期当月的最后一个日期
+
+```js
+_.getLastDate(new Date('2023-01-01'))
+=> Tue Jan 31 2023 00:00:00 GMT+0800 (中国标准时间)
+```
+
+- getFirstDate // 获取传入的日期当月的第一个日期
+
+```js
+_.getFirstDate(new Date('2023-01-23'))
+=> Sun Jan 01 2023 00:00:00 GMT+0800 (中国标准时间)
+```
+
+- getCurrentSecond // 获取当前时间戳（秒）
+
+```js
+_.getCurrentSecond()
+=> 1673418350
 ```
 
 ### 正则操作方法
@@ -649,6 +749,50 @@ _.textVisibilityChange(document.getElementById('text'));
 ```js
 _.getTransformMatrix(document.getElementById('text'));
 => true
+```
+
+- isDescendant // 检查某个元素是否是另一个元素的后代
+
+```js
+_.isDescendant(childDom,parentDom)
+=> true | false
+```
+
+- getSelectedText // 获取鼠标所选文本
+
+```js
+_.getSelectedText()
+=> ''
+```
+
+- insertAfter // 在其他元素之后插入一个元素
+
+```js
+_.insertAfter(newEle, anotherEle);
+```
+
+- insertBefore // 在其他元素之前插入一个元素
+
+```js
+_.insertBefore(newEle, anotherEle);
+```
+
+- insertHtmlAfter // 在元素后插入给定的 HTML
+
+```js
+_.insertHtmlAfter(html, ele);
+```
+
+- insertHtmlBefore // 在元素前插入给定的 HTML
+
+```js
+_.insertHtmlBefore(html, ele);
+```
+
+- eleReplace //
+
+```js
+_.eleReplace(oldEle, newEle);
 ```
 
 ### 经纬度坐标转换方法
@@ -1038,6 +1182,21 @@ _.isEmptyArray([])
 => true
 ```
 
+- isDarkMode 检测是否暗模式
+
+```js
+_.isDarkMode()
+=> true | false
+```
+
+- isHexColor 检查字符串是否为十六进制颜色
+
+```js
+_.isHexColor("#fff"); // true
+_.isHexColor("#ffffff"); // true
+_.isHexColor("dad"); // false
+```
+
 ### EventObserver 事件观察者
 
 ```js
@@ -1088,6 +1247,32 @@ state.getState('age')
 
 state.getState()
 => { name: "李四", age: 20 }
+```
+
+### Math
+
+- distance // 计算两点之间的距离
+
+```js
+_.distance(
+  {
+    x: 12601590.934991667,
+    y: 2507144.4488188336,
+  },
+  {
+    x: 12603303.603016667,
+    y: 2506982.020053167,
+    z: 50.99999999999932,
+  }
+);
+=> 1720.353122987682
+```
+
+- degsToRads // 将度转换为弧度
+
+```js
+_.degsToRads(90)
+=> 1.5707963267948966
 ```
 
 ### 文件操作方法

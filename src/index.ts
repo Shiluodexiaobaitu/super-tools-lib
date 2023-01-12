@@ -8,6 +8,12 @@ import {
     transFormat,
     strInversion,
     toLine,
+    toFullHexColor,
+    decode,
+    letterToEmoji,
+    toPascalCase,
+    removeSpaces,
+    replaceText,
 } from './string'
 
 import {
@@ -77,6 +83,13 @@ import {
     scrollToTheBottom,
     textVisibilityChange,
     getTransformMatrix,
+    isDescendant,
+    getSelectedText,
+    insertAfter,
+    insertBefore,
+    insertHtmlAfter,
+    eleReplace,
+    insertHtmlBefore,
 } from './dom'
 
 import {
@@ -91,6 +104,7 @@ import {
     countBy,
     indexOfMax,
     indexOfMin,
+    contains,
 } from './array'
 
 import {
@@ -127,6 +141,8 @@ import {
     isObjectIncludeSpecifiedKey,
     isEmptyObject,
     isEmptyArray,
+    isDarkMode,
+    isHexColor,
 } from './is'
 
 import { downBlob } from './file'
@@ -145,6 +161,13 @@ import {
     formatPassTime,
     formatRemainTime,
     dayDiff,
+    monthDiff,
+    compareDate,
+    formatSeconds,
+    getQuarter,
+    getLastDate,
+    getCurrentSecond,
+    getFirstDate,
 } from './date'
 
 import { shuffle } from './algorithm'
@@ -179,8 +202,15 @@ import {
 
 import { StateObserver } from './StateObserver'
 
+import {
+    distance,
+    degsToRads,
+} from './math'
+
 export default {
     version: version,
+    distance,
+    degsToRads,
     isImg,
     isUrl,
     isObjectKeyEqual,
@@ -188,9 +218,17 @@ export default {
     isObjectIncludeSpecifiedKey,
     isEmptyObject,
     isEmptyArray,
+    isDarkMode,
+    isHexColor,
     transFormat,
     strInversion,
     toLine,
+    toFullHexColor,
+    decode,
+    letterToEmoji,
+    toPascalCase,
+    removeSpaces,
+    replaceText,
     initialToCapitali,
     repeat,
     trim,
@@ -249,6 +287,13 @@ export default {
     scrollToTheBottom,
     textVisibilityChange,
     getTransformMatrix,
+    isDescendant,
+    getSelectedText,
+    insertAfter,
+    insertBefore,
+    insertHtmlAfter,
+    insertHtmlBefore,
+    eleReplace,
     arrayUnique,
     arrayNonRepeatfy,
     aLineUnique,
@@ -260,6 +305,7 @@ export default {
     countBy,
     indexOfMax,
     indexOfMin,
+    contains,
     cloneDeep,
     stringfyQueryString,
     values,
@@ -290,6 +336,13 @@ export default {
     formatPassTime,
     formatRemainTime,
     dayDiff,
+    monthDiff,
+    compareDate,
+    formatSeconds,
+    getQuarter,
+    getLastDate,
+    getCurrentSecond,
+    getFirstDate,
     smallRounding,
     range,
     closest,

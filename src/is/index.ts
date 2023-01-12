@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @LastEditors: zhangce
- * @LastEditTime: 2023-01-05 10:11:21
+ * @LastEditTime: 2023-01-12 10:15:08
  * @Description: 
  */
 /**
@@ -264,6 +264,22 @@ const isEmptyObject = (obj: Record<string, unknown>): boolean => {
  */
 const isEmptyArray = <T>(arr: T[]): boolean => Array.isArray(arr) && !arr.length
 
+/**
+ * @desc: 检测暗模式
+ * @return {*}
+ */
+const isDarkMode = () => {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+}
+
+/**
+ * @desc: 检查字符串是否为十六进制颜色
+ * @param {string} color
+ * @return {*}
+ */
+const isHexColor = (color: string): boolean => /^#([0-9A-F]{3}|[0-9A-F]{4}|[0-9A-F]{6}|[0-9A-F]{8})$/i.test(color)
+
+
 export {
     isBase64,
     isArray,
@@ -291,4 +307,6 @@ export {
     isObjectIncludeSpecifiedKey,
     isEmptyObject,
     isEmptyArray,
+    isDarkMode,
+    isHexColor,
 }

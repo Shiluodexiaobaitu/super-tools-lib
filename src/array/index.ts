@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-10 15:07:24
  * @LastEditors: zhangce
- * @LastEditTime: 2023-01-05 10:48:27
+ * @LastEditTime: 2023-01-12 10:15:59
  * @Description: 
  */
 import { bubbleSort } from './_sort'
@@ -114,6 +114,14 @@ const indexOfMin = (arr: number[]): number => {
     return arr.reduce((prev, curr, i, a) => (curr < a[prev] ? i : prev), 0)
 }
 
+/**
+ * @desc: 检查数组是否包含符合某些标准的值
+ * @param {*} T
+ * @return {*}
+ */
+const contains = <T>(arr: T[], criteria: (a: T) => boolean): boolean => {
+    return arr.filter(criteria).length > 0
+}
 
 export {
     arrayUnique,
@@ -127,4 +135,5 @@ export {
     countBy,
     indexOfMax,
     indexOfMin,
+    contains,
 }

@@ -214,6 +214,72 @@ const getTransformMatrix = (transform: string): { x: number, y: number } => {
     return { x: -1, y: -1 }
 }
 
+/**
+ * @desc: 检查某个元素是否是另一个元素的后代
+ * @param {Node} child
+ * @param {Node} parent
+ * @return {*}
+ */
+const isDescendant = (child: Node, parent: Node): boolean => parent.contains(child)
+
+/**
+ * @desc: 获取鼠标所选文本
+ * @return {*}
+ */
+const getSelectedText = () => window.getSelection().toString()
+
+/**
+ * @desc: 在其他元素之后插入一个元素
+ * @param {Element} newEle
+ * @param {Element} anotherEle
+ * @return {*}
+ */
+const insertAfter = (newEle: Element, anotherEle: Element): Element | null => {
+    return anotherEle.insertAdjacentElement('afterend', newEle)
+}
+
+/**
+ * @desc: 在其他元素之前插入一个元素
+ * @param {Element} newEle
+ * @param {Element} anotherEle
+ * @return {*}
+ */
+const insertBefore = (newEle: Element, anotherEle: Element) => {
+    return anotherEle.insertAdjacentElement('beforebegin', newEle)
+}
+
+/**
+ * @desc: 在元素后插入给定的HTML
+ * @param {string} html
+ * @param {Element} ele
+ * @return {*}
+ */
+const insertHtmlAfter = (html: string, ele: Element): void => {
+    ele.insertAdjacentHTML('afterend', html)
+}
+
+/**
+ * @desc: 在元素前插入给定的HTML
+ * @param {string} html
+ * @param {Element} ele
+ * @return {*}
+ */
+const insertHtmlBefore = (html: string, ele: Element): void => {
+    ele.insertAdjacentHTML('beforebegin', html)
+}
+
+/**
+ * @desc: 替换dom元素
+ * @param {Element} oldEle
+ * @param {Element} newEle
+ * @return {*}
+ */
+const eleReplace = (oldEle: Element, newEle: Element): Element | null => {
+    return (oldEle.parentNode ? oldEle.parentNode.replaceChild(newEle, oldEle) : null)
+}
+
+
+
 export {
     getOffset,
     shaking,
@@ -226,4 +292,11 @@ export {
     scrollToTheBottom,
     textVisibilityChange,
     getTransformMatrix,
+    isDescendant,
+    getSelectedText,
+    insertAfter,
+    insertBefore,
+    insertHtmlAfter,
+    insertHtmlBefore,
+    eleReplace,
 }

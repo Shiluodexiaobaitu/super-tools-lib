@@ -350,21 +350,21 @@ _.contains([1, 2, 3], (v) => v == 3); // true
 
 ### 字符串操作方法
 
-- initialToCapitali // 字符串首位是字母转大写
+- initialToCapitali 字符串首位是字母转大写
 
 ```js
 
 _.initialToCapitali('aaaa'); // 'Aaaa'
 ```
 
-- repeat // 传入字符串，和重复次数，返回结果字符串
+- repeat 传入字符串，和重复次数，返回结果字符串
 
 ```js
 
 _.repeat('abc',3) // 'abcabcabc'
 ```
 
-- trim // 去除字符串首尾空格
+- trim 去除字符串首尾空格
 
 ```js
 
@@ -455,42 +455,42 @@ _.replaceText("17778780909", [3, 7], "*"); // '177****0909'
 
 ### 数值操作方法
 
-- accAdd //浮点数加法运算
+- accAdd 浮点数加法运算
 
 ```js
 
 _.accAdd(0.1, 0.2) // 0.3
 ```
 
-- accSub //浮点数减法运算
+- accSub 浮点数减法运算
 
 ```js
 
 _.accSub(0.3,0.1) // 0.2
 ```
 
-- accMul //浮点数乘法运算
+- accMul 浮点数乘法运算
 
 ```js
 
 _.accMul(0.1,3) // 0.3
 ```
 
-- accDiv //浮点数除法运算
+- accDiv 浮点数除法运算
 
 ```js
 
 _.accDiv(0.3,3) // 0.1
 ```
 
-- formatPrice //数字千分位增加逗号
+- formatPrice 数字千分位增加逗号
 
 ```js
 
 _.formatPrice(1111112211111,',') // '1,111,112,211,111'
 ```
 
-- smallRounding // 小数指定位数进行取整
+- smallRounding 小数指定位数进行取整
 
 ```js
 _.smallRounding(89.38931,3); // 89.39
@@ -512,71 +512,71 @@ _.closest([29, 87, 8, 78, 97, 20, 75, 33, 24, 17],50) // 33
 
 ### 时间操作方法
 
-- dateFormater //格式化时间
+- dateFormater 格式化时间
 
 ```js
 
 _.dateFormater('YYYY-MM-DD HH:mm:ss',new Date()) // '2022-01-18 12:01:10'
 ```
 
-- formatPassTime // 格式化${startTime}距现在的已过时间(距离传入的时间经多了多久)
+- formatPassTime 格式化${startTime}距现在的已过时间(距离传入的时间经多了多久)
 
 ```js
 
 _.formatPassTime(1578614400000); // '2年前'
 ```
 
-- formatRemainTime // 格式化现在距${endTime}的剩余时间
+- formatRemainTime 格式化现在距${endTime}的剩余时间
 
 ```js
 
 _.formatRemainTime(new Date('2023').getTime()) // '347天19小时52分钟 26秒'
 ```
 
-- dayDiff // 计算两日期之间相差的天数
+- dayDiff 计算两日期之间相差的天数
 
 ```js
 
 _.dayDiff(new Date("2022-03-01"),new Date("2021-01-21")) // 404
 ```
 
-- monthDiff // 计算两个日期之间的月数
+- monthDiff 计算两个日期之间的月数
 
 ```js
 _.monthDiff(new Date("2022-01-01"),new Date("2021-01-01")) // 12
 ```
 
-- compareDate // 比较两个日期
+- compareDate 比较两个日期
 
 ```js
 _.compareDate(new Date('2020-03-30'), new Date('2020-01-01')) // true
 ```
 
-- formatSeconds // 将秒转换为 hh:mm:ss 格式
+- formatSeconds 将秒转换为 hh:mm:ss 格式
 
 ```js
 _.formatSeconds(300) // '00:05:00'
 ```
 
-- getQuarter // 获取日期的当前季度
+- getQuarter 获取日期的当前季度
 
 ```js
 _.getQuarter(new Date('2023-12-12')) // 4
 ```
 
-- getLastDate // 获取传入的日期当月的最后一个日期
+- getLastDate 获取传入的日期当月的最后一个日期
 
 ```js
 _.getLastDate(new Date('2023-01-01')) // Tue Jan 31 2023 00:00:00 GMT+0800 (中国标准时间)
 ```
 
-- getFirstDate // 获取传入的日期当月的第一个日期
+- getFirstDate 获取传入的日期当月的第一个日期
 
 ```js
 _.getFirstDate(new Date('2023-01-23')) // Sun Jan 01 2023 00:00:00 GMT+0800 (中国标准时间)
 ```
 
-- getCurrentSecond // 获取当前时间戳（秒）
+- getCurrentSecond 获取当前时间戳（秒）
 
 ```js
 _.getCurrentSecond() // 1673418350
@@ -611,7 +611,7 @@ _.validate(key,value) // true | false
 
 ### 性能监控
 
-- performanceAnalysis // 进行性能分析
+- performanceAnalysis 进行性能分析
 
 ```js
 _.performanceAnalysis();
@@ -619,20 +619,20 @@ _.performanceAnalysis();
 
 ### DOM 操作方法
 
-- getOffset // 获取一个元素距离浏览器左上角的偏移量
+- getOffset 获取一个元素距离浏览器左上角的偏移量
 
 ```js
 
 _.getOffset(element) // { top:0, left:0 }
 ```
 
-- stopPropagation //阻止冒泡事件
+- stopPropagation 阻止冒泡事件
 
 ```js
 _.stopPropagation(element);
 ```
 
-- hasClass, //检测类名
+- hasClass 检测类名
 
 ```js
 
@@ -640,25 +640,25 @@ _.hasClass(element,name)
 => true | false
 ```
 
-- addClass, //添加类名
+- addClass 添加类名
 
 ```js
 _.addClass(element, name);
 ```
 
-- removeClass, //删除类名
+- removeClass 删除类名
 
 ```js
 _.removeClass(element, name);
 ```
 
-- replaceClass //替换类名
+- replaceClass 替换类名
 
 ```js
 _.replaceClass(element, newName, oldName);
 ```
 
-- scrollToTheBottom // 监听滚动条滚动到底部
+- scrollToTheBottom 监听滚动条滚动到底部
   参数：
   {ele} dom
   {callback} 滚动到底部事件回调
@@ -668,7 +668,7 @@ _.replaceClass(element, newName, oldName);
 _.scrollToTheBottom(ele, callback, delay);
 ```
 
-- textVisibilityChange // 计算文字是否溢出容器
+- textVisibilityChange 计算文字是否溢出容器
   参数：
   {dom} 承载文字的容器
   return: true 文字溢出， false 不溢出
@@ -677,43 +677,43 @@ _.scrollToTheBottom(ele, callback, delay);
 _.textVisibilityChange(document.getElementById('text')); // true | false
 ```
 
-- getTransformMatrix // 获取 transform translate 中矩阵 x，y 坐标
+- getTransformMatrix 获取 transform translate 中矩阵 x，y 坐标
 
 ```js
 _.getTransformMatrix(document.getElementById('text'));
 ```
 
-- isDescendant // 检查某个元素是否是另一个元素的后代
+- isDescendant 检查某个元素是否是另一个元素的后代
 
 ```js
 _.isDescendant(childDom,parentDom) // true | false
 ```
 
-- getSelectedText // 获取鼠标所选文本
+- getSelectedText 获取鼠标所选文本
 
 ```js
 _.getSelectedText() // ''
 ```
 
-- insertAfter // 在其他元素之后插入一个元素
+- insertAfter 在其他元素之后插入一个元素
 
 ```js
 _.insertAfter(newEle, anotherEle);
 ```
 
-- insertBefore // 在其他元素之前插入一个元素
+- insertBefore 在其他元素之前插入一个元素
 
 ```js
 _.insertBefore(newEle, anotherEle);
 ```
 
-- insertHtmlAfter // 在元素后插入给定的 HTML
+- insertHtmlAfter 在元素后插入给定的 HTML
 
 ```js
 _.insertHtmlAfter(html, ele);
 ```
 
-- insertHtmlBefore  在元素前插入给定的 HTML
+- insertHtmlBefore 在元素前插入给定的 HTML
 
 ```js
 _.insertHtmlBefore(html, ele);

@@ -56,7 +56,35 @@
 //     get url(): any;
 // }
 
-
+// export declare const contains: <T_3>(arr: T_3[], criteria: (a: T_3) => boolean) => boolean;
+// export declare const replaceText: (str: string, range: [number, number] | [number], mask: string) => string;
+// export declare const removeSpaces: (str: string) => string;
+// export declare const toPascalCase: (str: string) => string;
+// export declare const letterToEmoji: (c: string) => string;
+// export declare const isDarkMode: () => boolean;
+// export declare const decode: (token: string) => string;
+// export declare const toFullHexColor: (color: string) => string;
+// export declare const degsToRads: (deg: number) => number;
+// export declare const distance: (p1: {
+//     x: number;
+//     y: number;
+// }, p2: {
+//     x: number;
+//     y: number;
+// }) => number;
+// export declare const getFirstDate: (d?: Date) => Date;
+// export declare const getCurrentSecond: () => number;
+// export declare const getLastDate: (d?: Date) => Date;
+// export declare const getQuarter: (d?: Date) => number;
+// export declare const compareDate: (a: Date, b: Date) => boolean;
+// export declare const formatSeconds: (s: number) => string;
+// export declare const monthDiff: (startDate: Date, endDate: Date) => number;
+// export declare const insertHtmlBefore: (html: string, ele: Element) => void;
+// export declare const insertHtmlAfter: (html: string, ele: Element) => void;
+// export declare const insertBefore: (newEle: Element, anotherEle: Element) => Element;
+// export declare const insertAfter: (newEle: Element, anotherEle: Element) => Element;
+// export declare const  getSelectedText: () => string;
+// export declare const  isDescendant: (child: Node, parent: Node) => boolean;
 // export declare const removeEventListener: (type: string, cb: (...rest: any[]) => void) => void;
 // export declare const alphabeticSort: (_data: any[], keyword: string, ascen?: boolean) => any[];
 // export declare const arrToObject: <T_1 extends Record<string, any>, K extends keyof T_1>(arr: T_1[], key: K) => Record<string, T_1>;
@@ -210,4 +238,5 @@
 // export declare const trim: (str: string) => string;
 // export declare const validate: (key: string, value: string) => boolean;
 // export declare const exportExcel: (column: any[], dataSource: any[], fileName?: string) => void;
+
 

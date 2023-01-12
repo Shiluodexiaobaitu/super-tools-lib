@@ -2,12 +2,18 @@
  * @Author: zhangce
  * @Date: 2023-01-06 16:41:02
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2023-01-12 14:23:42
+ * @LastEditTime: 2023-01-12 17:44:42
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description:
  *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
 -->
+
+### 1.47.0
+
+```js
+// 优化文档
+```
 
 ### 1.46.0
 
@@ -41,7 +47,6 @@
 // 26.throttle
 // 27.debounce
 // 28.fuzzyQuery
-
 
 // 删除方法
 // 1.numberRoll

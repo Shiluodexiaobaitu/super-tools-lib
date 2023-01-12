@@ -230,8 +230,6 @@ const eleReplace = (oldEle: Element, newEle: Element): Element | null => {
     return (oldEle.parentNode ? oldEle.parentNode.replaceChild(newEle, oldEle) : null)
 }
 
-
-
 export {
     getOffset,
     shaking,

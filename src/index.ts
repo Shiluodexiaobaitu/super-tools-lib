@@ -48,7 +48,6 @@ import {
     getPosition,
     winCopy,
     print,
-    setVibration,
     copy,
     scrollToTop,
     userBrowser,
@@ -79,7 +78,6 @@ import {
     addClass,
     removeClass,
     replaceClass,
-    numberRoll,
     scrollToTheBottom,
     textVisibilityChange,
     getTransformMatrix,
@@ -149,10 +147,9 @@ import { downBlob } from './file'
 
 import { vConsole } from './console'
 
-import {
-    socket,
-    Ajax,
-} from './request'
+import { Socket } from './Socket'
+
+import { Ajax } from './Ajax'
 
 import { orient } from './mobile'
 
@@ -263,7 +260,6 @@ export default {
     getPosition,
     winCopy,
     print,
-    setVibration,
     copy,
     scrollToTop,
     userBrowser,
@@ -283,7 +279,6 @@ export default {
     addClass,
     removeClass,
     replaceClass,
-    numberRoll,
     scrollToTheBottom,
     textVisibilityChange,
     getTransformMatrix,
@@ -329,8 +324,8 @@ export default {
     isMobile,
     downBlob,
     vConsole,
-    socket,
     Ajax,
+    Socket,
     orient,
     dateFormater,
     formatPassTime,

@@ -1,13 +1,3 @@
-/*
- * @Author: zhangce
- * @Date: 2021-08-16 18:09:23
- * @Email: zhangce@fengmap.com
- * @LastEditTime: 2022-10-18 17:39:46
- * @LastEditors: zhangce
- * @LastEditorsEmail: zhangce@fengmap.com
- * @Description: 
- *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
- */
 interface IProps {
     url: string;
     reconnectCount?: number
@@ -37,7 +27,7 @@ class Socket {
 
     }
 
-    createWebSocket(message: any, cb: (data:any)=>void) {
+    createWebSocket(message: any, cb: (data: any) => void) {
 
         this.ws = new WebSocket(this.url)
         message = JSON.stringify(message)
@@ -50,12 +40,12 @@ class Socket {
             console.log('ws连接成功!' + new Date().toLocaleString())
         }
 
-        this.ws.onclose = (evt:any) => {
-            console.log('关闭ws',evt)
+        this.ws.onclose = (evt: any) => {
+            console.log('关闭ws', evt)
             this.ws.close()
         }
 
-        this.ws.onmessage = (evt:any) => {
+        this.ws.onmessage = (evt: any) => {
             this.heartbeat(message, cb)
             const data = JSON.parse(evt.data)
             if (cb && typeof cb === 'function') {
@@ -64,7 +54,7 @@ class Socket {
         }
 
         //报错
-        this.ws.onerror = (evt:any) => {
+        this.ws.onerror = (evt: any) => {
             console.log('error:' + evt)
             this.heartbeat(message, cb)
         }
@@ -92,4 +82,4 @@ class Socket {
     }
 }
 
-export default Socket
+export { Socket }

@@ -2,12 +2,52 @@
  * @Author: zhangce
  * @Date: 2023-01-06 16:41:02
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2023-01-12 10:17:14
+ * @LastEditTime: 2023-01-12 14:23:42
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description:
  *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
 -->
+
+### 1.46.0
+
+```js
+// 优化ts语法
+// 1.shuffle
+// 2.arrayUnique
+// 3.arrayNonRepeatfy
+// 4.aLineUnique
+// 5.last
+// 6.alphabeticSort
+// 7.winCopy
+// 8.formatPassTime
+// 9.formatRemainTime
+// 10.getOffset
+// 11.shaking
+// 12.stopPropagation
+// 13.hasClass
+// 14.downBlob
+// 15.forEach
+// 16.filter
+// 17.calcDistance
+// 18.lonLatToMercator
+// 19.mercatorToLonlat
+// 20.orient
+// 21.cloneDeep
+// 22.values
+// 23.stringfyQueryString
+// 24.Socket
+// 25.getFileBase64
+// 26.throttle
+// 27.debounce
+// 28.fuzzyQuery
+
+
+// 删除方法
+// 1.numberRoll
+// 2.socket
+// 3.setVibration
+```
 
 ### 1.45.0
 

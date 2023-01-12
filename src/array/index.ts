@@ -2,23 +2,54 @@
  * @Author: zhangce
  * @Date: 2021-08-10 15:07:24
  * @LastEditors: zhangce
- * @LastEditTime: 2023-01-12 10:15:59
+ * @LastEditTime: 2023-01-12 14:10:32
  * @Description: 
  */
-import { bubbleSort } from './_sort'
 
-/** 
-  * 数组去重复 利用ES6 Set去重（ES6中最常用）
+/**
+ * @desc: 冒泡排序
+ * @param {*} arr
+ * @return {*}
  */
-const arrayUnique = (arr: Array<any>): Array<any> => {
+const bubbleSort = (arr) => {
+    // 两个数据进行交换
+    function exchange(v1, v2) {
+        const temp = arr[v1]
+        arr[v1] = arr[v2]
+        arr[v2] = temp
+    }
+
+    // 数组长度
+    const length = arr.length
+
+    for (let i = length - 1; i >= 0; i--) {
+        for (let j = 0; j < i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                exchange(j, j + 1)
+            }
+        }
+    }
+
+    // 返回最终数组
+    return arr
+}
+
+/**
+ * @desc: 数组去重复 利用ES6 Set去重（ES6中最常用）
+ * @param {*} T
+ * @return {*}
+ */
+const arrayUnique = <T>(arr: T[]): T[] => {
     return Array.from(new Set(arr))
     // var arr = [1,1,'true','true',true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,'NaN', 0, 0, 'a', 'a',{},{}];
 }
 
 /**
- * 利用Map数据结构去重
-*/
-const arrayNonRepeatfy = (arr: Array<any>): Array<any> => {
+ * @desc: 利用Map数据结构去重
+ * @param {*} T
+ * @return {*}
+ */
+const arrayNonRepeatfy = <T>(arr: T[]): T[] => {
     const map = new Map()
     const array = []  // 数组用于返回结果
     for (let i = 0; i < arr.length; i++) {
@@ -33,29 +64,31 @@ const arrayNonRepeatfy = (arr: Array<any>): Array<any> => {
 }
 
 /**
- * 一行代码数组去重复
-*/
-const aLineUnique = (arr: Array<any>): Array<any> => {
+ * @desc: 一行代码数组去重复
+ * @param {*} T
+ * @return {*}
+ */
+const aLineUnique = <T>(arr: T[]): T[] => {
     return [...new Set(arr)]
 }
 
 /**
- * 返回数组中最后一项
+ * @desc: 返回数组中最后一项
  * @param {*} array
  * @return {*}
  */
-const last = (array: any[]): any => {
+const last = <T>(array: T[]): T => {
     const length = array === null ? 0 : array.length
     return length ? array[length - 1] : undefined
 }
 
 /**
- * 按字母排序
+ * @desc: 按字母排序
  * @param {*} data 
  * @param {*} keyword
  * @param {*} ascen 正序/逆序
 */
-const alphabeticSort = (_data: any[], keyword: string, ascen = true): any[] => {
+const alphabeticSort = <T>(_data: T[], keyword: string, ascen = true): T[] => {
     const data = [..._data]
     if (ascen) {
         return data.sort((a, b) => a[keyword] < b[keyword] ? -1 : a[keyword] > b[keyword] ? 1 : 0)

@@ -1,7 +1,9 @@
 /**
- * 洗牌算法随机
-*/
-const shuffle = (arr: Array<any>): Array<any> => {
+ * @desc: 洗牌算法随机
+ * @param {*} T
+ * @return {*}
+ */
+const shuffle = <T>(arr: T[]): T[] => {
     const result = []
     let random
     while (arr.length > 0) {

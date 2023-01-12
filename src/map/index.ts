@@ -2,15 +2,18 @@
  * @Author: zhangce
  * @Date: 2021-10-08 14:15:34
  * @LastEditors: zhangce
- * @LastEditTime: 2022-10-21 13:59:31
+ * @LastEditTime: 2023-01-12 14:19:46
  * @Description: 
  */
+
 /**
-* 获取两个高德坐标的距离, 后一个点，不传，默认为用户坐标
-* @return {null|number} 距离多少米
-* @example
-* getDistance(31.282055633974, 121.379623888259)
-*/
+ * @desc: 获取两个高德坐标的距离, 后一个点，不传，默认为用户坐标
+ * @param {number} startLon
+ * @param {number} startLat
+ * @param {number} endLon
+ * @param {number} endLat
+ * @return {*}
+ */
 const getDistance = (startLon: number, startLat: number, endLon: number, endLat: number): number => {
 
     const PI = Math.PI
@@ -28,11 +31,14 @@ const getDistance = (startLon: number, startLat: number, endLon: number, endLat:
 }
 
 /**
- * 计算经纬度
- * calcDistance(116.95400,39.95400,116.95300,39.95300)
- * 返回值为距离 单位千米(KM)
+ * @desc: 计算经纬度
+ * @param {number} lat1
+ * @param {number} lng1
+ * @param {number} lat2
+ * @param {number} lng2
+ * @return {*}
  */
-const calcDistance = (lat1, lng1, lat2, lng2) => {
+const calcDistance = (lat1: number, lng1: number, lat2: number, lng2: number) => {
     const radLat1 = lat1 * Math.PI / 180.0
     const radLat2 = lat2 * Math.PI / 180.0
     const a = radLat1 - radLat2
@@ -44,8 +50,12 @@ const calcDistance = (lat1, lng1, lat2, lng2) => {
     return s //  
 }
 
-// 经纬度转墨卡托
-const lonLatToMercator = (lonLat: { lon: number, lat: number }): any => {
+/**
+ * @desc: 经纬度转墨卡托
+ * @param {object} lonLat
+ * @return {*}
+ */
+const lonLatToMercator = (lonLat: { lon: number, lat: number }): { x: number, y: number } => {
     const mercator = { x: 0, y: 0 }
     mercator.x = lonLat.lon * 20037508.34 / 180
     mercator.y = Math.log(Math.tan((90 + lonLat.lat) * Math.PI / 360)) / (Math.PI / 180)
@@ -53,8 +63,12 @@ const lonLatToMercator = (lonLat: { lon: number, lat: number }): any => {
     return mercator
 }
 
-// 墨卡托转经纬度
-const mercatorToLonlat = (mercator: { x: number, y: number }): any => {
+/**
+ * @desc: 墨卡托转经纬度
+ * @param {object} mercator
+ * @return {*}
+ */
+const mercatorToLonlat = (mercator: { x: number, y: number }): { lon: number, lat: number } => {
     const lonlat = { lon: 0, lat: 0 }
     lonlat.lon = mercator.x / 20037508.34 * 180
     lonlat.lat = mercator.y / 20037508.34 * 180

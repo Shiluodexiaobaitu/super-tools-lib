@@ -2,21 +2,20 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2022-10-21 14:00:04
+ * @LastEditTime: 2023-01-12 13:40:45
  * @Description: 
  */
 
 import { isObject } from '../is'
 import { cloneDeep } from './_cloneDeep'
 
-export type pos = string | number | boolean 
-
 /**
- * @description: 对象序列化
- * @param {*} obj
+ * @desc:  对象序列化
+ * @param {Record} obj
+ * @param {*} pos
  * @return {*}
  */
-const stringfyQueryString = (obj: Record<string, pos>) => {
+const stringfyQueryString = (obj: Record<string, string | number | boolean>) => {
     if (!obj) return ''
     const pairs = []
 
@@ -37,24 +36,11 @@ const stringfyQueryString = (obj: Record<string, pos>) => {
 }
 
 /**
- * @description: 反序列化
- * @param {string} str
+ * @desc: 将对象的value转换成数组
+ * @param {*} T
  * @return {*}
  */
-// const deserialization = (str: string) => {
-
-//     const pairs = str.split('&');
-//     const obj = {};
-//     for (let i = 0; i < pairs.length; i++) {
-//         const item = pairs[i]
-//         const kv = item.split('=')
-//         obj[kv[0]] = kv[1]
-//     }
-//     return obj
-// }
-
-
-const values = (obj:Record<string, unknown>): unknown[] => {
+const values = <T>(obj: Record<string, T>): T[] => {
     const arr = []
     if (isObject(obj)) {
         for (const key in obj) {
@@ -64,7 +50,12 @@ const values = (obj:Record<string, unknown>): unknown[] => {
     return arr
 }
 
-const keys = (obj: Record<string, unknown>): unknown[] => {
+/**
+ * @desc: 将对象的key转换成数组
+ * @param {*} T
+ * @return {*}
+ */
+const keys = <T>(obj: Record<string, T>): T[] => {
     const arr = []
     if (isObject(obj)) {
         for (const key in obj) {
@@ -77,7 +68,6 @@ const keys = (obj: Record<string, unknown>): unknown[] => {
 export {
     cloneDeep,
     stringfyQueryString,
-    // deserialization,
     values,
     keys,
 }

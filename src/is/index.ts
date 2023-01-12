@@ -2,33 +2,42 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @LastEditors: zhangce
- * @LastEditTime: 2023-01-12 10:15:08
+ * @LastEditTime: 2023-01-12 14:19:00
  * @Description: 
  */
+
 /**
- * base64类型验证
-*/
+ * @desc: base64类型验证
+ * @param {string} base64
+ * @return {*}
+ */
 const isBase64 = (base64: string): boolean => {
     return /data:image\/.+;base64,/.test(base64)
 }
 
 /**
- * 数组类型验证
-*/
+ * @desc: 数组类型验证
+ * @param {unknown} arr
+ * @return {*}
+ */
 const isArray = (arr: unknown): boolean => {
     return Array.isArray(arr)
 }
 
 /**
- * 字符串类型验证
-*/
+ * @desc: 字符串类型验证
+ * @param {unknown} str
+ * @return {*}
+ */
 const isString = (str: unknown): boolean => {
     return typeof str === 'string'
 }
 
 /**
- * 函数类型验证
-*/
+ * @desc: 函数类型验证
+ * @param {unknown} fn
+ * @return {*}
+ */
 const isFunction = (fn: unknown): boolean => {
     if (fn && typeof fn === 'function') {
         return true
@@ -37,23 +46,29 @@ const isFunction = (fn: unknown): boolean => {
 }
 
 /**
- * 对象类型验证
-*/
+ * @desc: 对象类型验证
+ * @param {unknown} obj
+ * @return {*}
+ */
 const isObject = (obj: unknown): boolean => {
     return Object.prototype.toString.call(obj) === '[object Object]'
 }
 
 /**
- * 数字类型验证
-*/
+ * @desc: 数字类型验证
+ * @param {any} num
+ * @return {*}
+ */
 const isNumber = (num: any): boolean => {
     if (isNaN(num)) return false
     return typeof num === 'number'
 }
 
 /**
- * 判断是否在微信中打开
-*/
+ * @desc: 判断是否在微信中打开
+ * @param {*} boolean
+ * @return {*}
+ */
 const isWeiXin = (): boolean => {
     const ua = navigator.userAgent.toLowerCase()
     if (ua.indexOf('micromessenger') !== -1) {
@@ -64,7 +79,7 @@ const isWeiXin = (): boolean => {
 }
 
 /**
- * @description: 是否为null
+ * @desc: 检测是否为null
  * @param {*} o
  * @return {*}
  */
@@ -73,7 +88,7 @@ const isNull = (o: unknown): boolean => {
 }
 
 /**
- * @description: 是否undefined
+ * @desc: 检测是否undefined
  * @param {*} o
  * @return {*}
  */
@@ -82,7 +97,7 @@ const isUndefined = (o: unknown): boolean => {
 }
 
 /**
- * @description: 是否时间
+ * @desc: 是否时间
  * @param {*} o
  * @return {*}
  */
@@ -91,7 +106,7 @@ const isDate = (o: unknown): boolean => {
 }
 
 /**
- * @description: 是否正则
+ * @desc: 是否正则
  * @param {*} o
  * @return {*}
  */
@@ -100,7 +115,7 @@ const isRegExp = (o: unknown): boolean => {
 }
 
 /**
- * @description: 是否错误对象
+ * @desc: 是否错误对象
  * @param {*} o
  * @return {*}
  */
@@ -109,7 +124,7 @@ const isError = (o: unknown): boolean => {
 }
 
 /**
- * @description: 是否Symbol函数
+ * @desc: 是否Symbol函数
  * @param {*} o
  * @return {*}
  */
@@ -118,7 +133,7 @@ const isSymbol = (o: unknown): boolean => {
 }
 
 /**
- * @description: 是否Promise对象
+ * @desc: 是否Promise对象
  * @param {*} o
  * @return {*}
  */
@@ -126,17 +141,18 @@ const isPromise = (o: unknown): boolean => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Promise'
 }
 
-
 /**
- * 返回类型
-*/
+ * @desc: 返回类型
+ * @param {unknown} o
+ * @return {*}
+ */
 const returnType = (o: unknown): unknown => {
     if (Number.isNaN(o)) return 'NaN'
     return Object.prototype.toString.call(o).slice(8, -1)
 }
 
 /**
- * @description: 判断浏览器是否支持webP格式图片
+ * @desc: 判断浏览器是否支持webP格式图片
  * @param {*}
  * @return {*} 
  */
@@ -145,7 +161,7 @@ const isSupportWebP = () => {
 }
 
 /**
- * @description: 判断是否为移动端
+ * @desc: 判断是否为移动端
  * @return {*}
  */
 const isMobile = (): boolean => {
@@ -157,29 +173,37 @@ const isMobile = (): boolean => {
 }
 
 /**
- * 判断是否安卓移动设备访问
-*/
+ * @desc: 判断是否安卓移动设备访问
+ * @param {*} boolean
+ * @return {*}
+ */
 const isAndroidMobileDevice = (): boolean => {
     return /android/i.test(navigator.userAgent.toLowerCase())
 }
 
 /**
- * 判断是否苹果移动设备访问
-*/
+ * @desc: 判断是否苹果移动设备访问
+ * @param {*} boolean
+ * @return {*}
+ */
 const isAppleMobileDevice = (): boolean => {
     return /iphone|ipod|ipad|Macintosh/i.test(navigator.userAgent.toLowerCase())
 }
 
 /**
- * 判断是否是图片链接
-*/
+ * @desc: 判断是否是图片链接
+ * @param {string} path
+ * @return {*}
+ */
 const isImg = (path: string): boolean => {
     return /\w.(png|jpg|jpeg|svg|webp|gif|bmp)$/i.test(path)
 }
 
 /**
- * 判断是否为url链接
-*/
+ * @desc: 判断是否为url链接
+ * @param {string} path
+ * @return {*}
+ */
 const isUrl = (path: string): boolean => {
     if (!path.startsWith('http')) {
         return false

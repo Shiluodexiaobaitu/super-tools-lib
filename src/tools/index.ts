@@ -1,9 +1,10 @@
 import { strChineseFirstPY, oMultiDiff } from './_utils'
 
 /**
- * 生成一个唯一的guid
- * @return {string}
-*/
+ * @desc: 生成一个唯一的guid
+ * @param {*} string
+ * @return {*}
+ */
 const guid = (): string => {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c: any): string {
         const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8)
@@ -12,14 +13,14 @@ const guid = (): string => {
 }
 
 /**
- * 文件的Base64编码，
+ * @desc: 文件的Base64编码，
  * @param {则需要FileReader。FileReader类型实现的是一种异步文件读取机制。可以把FileReader想象成XMLHttpRequest，区别只是它读取的是文件系统，而不是远程服务器。}
 */
-const getFileBase64 = (file: File, cb: (base64: any) => void): void => {
+const getFileBase64 = (file: File, cb: (base64: ArrayBuffer | string) => void): void => {
     if (!file) throw new Error('Error! no param "file"(getFileBase64()).')
 
     const reader = new FileReader()
-    reader.onload = function (e: any): void {
+    reader.onload = function (e): void {
         const base64 = e.target.result   // 该文件的完整Base64
 
         if (cb) cb(base64)
@@ -31,11 +32,11 @@ const getFileBase64 = (file: File, cb: (base64: any) => void): void => {
 }
 
 /**
- * 节流
+ * @desc: 节流
  * @param {*} func 执行函数
  * @param {*} delay 节流时间,毫秒
 */
-const throttle = function (fn: () => void, delay = 200): () => void {
+const throttle = function (fn: <T> (...rest: T[]) => void, delay = 200): <T> (...rest: T[]) => void {
     let timer: any = null
     return function (...rest) {
         if (!timer) {
@@ -49,9 +50,12 @@ const throttle = function (fn: () => void, delay = 200): () => void {
 }
 
 /**
- * 防抖
-*/
-const debounce = function (fn: () => void, wait: number): () => void {
+ * @desc: 防抖
+ * @param {*} function
+ * @param {number} delay
+ * @return {*}
+ */
+const debounce = function (fn: <T> (...rest: T[]) => void, delay: number): <T> (...rest: T[]) => void {
     let timeout: any = null
     return function (...rest) {
         if (timeout !== null) clearTimeout(timeout)// 如果多次触发将上次记录延迟清除掉
@@ -59,14 +63,15 @@ const debounce = function (fn: () => void, wait: number): () => void {
             // 或者直接 fn()
             fn(...rest)
             timeout = null
-        }, wait)
+        }, delay)
     }
 }
 
 /**
-  * 根据url地址下载
-  * @param {string} url 下载地址
-*/
+ * @desc: 根据url地址下载
+ * @param {string} url
+ * @return {*}
+ */
 const fileDownload = function (url: string): boolean {
     const isChrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1
     const isSafari = navigator.userAgent.toLowerCase().indexOf('safari') > -1
@@ -92,13 +97,13 @@ const fileDownload = function (url: string): boolean {
 }
 
 /**
- * 使用match方法实现模糊查询
+ * @desc: 使用match方法实现模糊查询
  * @param  {Array}  list     进行查询的数组
  * @param  {Array}  key     进行查询的数组的字段
  * @param  {String} keyWord  查询的关键词
  * @return {Array}           查询的结果
 */
-const fuzzyQuery = function (list: Array<any>, key: string, keyWord: string): Array<any> {
+const fuzzyQuery = <T>(list: T[], key: string, keyWord: string): T[] => {
     const arr = []
     for (let i = 0; i < list.length; i++) {
         if (list[i][key].match(keyWord) !== null) {
@@ -109,8 +114,9 @@ const fuzzyQuery = function (list: Array<any>, key: string, keyWord: string): Ar
 }
 
 /**
- * 获取url参数 返回一个{}
-*/
+ * @desc: 获取url参数 返回一个{}
+ * @return {*}
+ */
 const getUrlParam = function () {
     const url = document.location.toString()
     let arrObj = url.split('?')
@@ -126,7 +132,8 @@ const getUrlParam = function () {
 }
 
 /**
- * 封装cookie增删改查的函数
+ * @desc: 封装cookie增删改查的函数
+ * @return {*}
  */
 const cookie = {
     /**
@@ -172,8 +179,10 @@ const cookie = {
 }
 
 /**
- * RGB颜色转16进制
-*/
+ * @desc: RGB颜色转16进制
+ * @param {string} color
+ * @return {*}
+ */
 const colorHex = (color: string): string => {
     const that = color
     const aColor = color
@@ -196,11 +205,11 @@ const colorHex = (color: string): string => {
 }
 
 /**
- * 16进制颜色转RGBA
- * @param {str} 16进制颜色值
- * @param {alpa} 
- * @return {string}
-*/
+ * @desc: 16进制颜色转RGBA
+ * @param {string} str
+ * @param {number} alpa
+ * @return {*}
+ */
 const hexToRgba = (str: string, alpa: number): string => {
     alpa = alpa === undefined ? 1 : alpa
     if (!str) return
@@ -224,8 +233,10 @@ const hexToRgba = (str: string, alpa: number): string => {
 }
 
 /**
- * rgba颜色转16进制
-*/
+ * @desc: rgba颜色转16进制
+ * @param {*} color
+ * @return {*}
+ */
 const rgbaToHex = (color): string => {
     const values = color
         .replace(/rgba?\(/, '')
@@ -243,8 +254,10 @@ const rgbaToHex = (color): string => {
 }
 
 /**
- * 计算vh / vw转px
-// */
+ * @desc: 计算vh / vw转px
+ * @param {string} value
+ * @return {*}
+ */
 const viewportToPixels = (value: string) => {
     const parts: any = value.match(/([0-9\.]+)(vh|vw)/)
     const q = Number(parts[1])
@@ -259,8 +272,10 @@ const viewportToPixels = (value: string) => {
 }
 
 /**
- * 无刷新去除url参数
-*/
+ * @desc: 无刷新去除url参数
+ * @param {string} ref
+ * @return {*}
+ */
 const noRefdelUrlParam = (ref: string): string => {
     const url = window.location.href
     // 若是不包括此参数
@@ -289,8 +304,10 @@ const noRefdelUrlParam = (ref: string): string => {
 }
 
 /**
- * 根据身份证号获取年龄
-*/
+ * @desc: 根据身份证号获取年龄
+ * @param {string} id
+ * @return {*}
+ */
 const getAge = (id: string) => {
     // 1、先判断身份证号的正确性
     // 2、判断是否在世
@@ -315,8 +332,10 @@ const getAge = (id: string) => {
 }
 
 /**
- * 根据身份证号获取性别
-*/
+ * @desc: 根据身份证号获取性别
+ * @param {string} id
+ * @return {*}
+ */
 const getSex = (id: string) => {
     // 1、先判断身份证号的正确性
     const sex = Number(id.substr(16, 1))
@@ -324,8 +343,10 @@ const getSex = (id: string) => {
 }
 
 /**
- * 数字转化为大写金额
-*/
+ * @desc: 数字转化为大写金额
+ * @param {number} n
+ * @return {*}
+ */
 const digitUppercase = (n: number): string => {
     const fraction = ['角', '分']
     const digit = [
@@ -357,8 +378,10 @@ const digitUppercase = (n: number): string => {
 }
 
 /**
- * 动态引入js
-*/
+ * @desc: 动态引入js
+ * @param {string} src
+ * @return {*}
+ */
 const injectScript = (src: string) => {
     const s = document.createElement('script')
     s.type = 'text/javascript'
@@ -369,8 +392,10 @@ const injectScript = (src: string) => {
 }
 
 /**
- * 汉字转字母
-*/
+ * @desc: 汉字转字母
+ * @param {string} str
+ * @return {*}
+ */
 const sinogToLetter = (str: string) => {
 
     function checkCh(ch) {
@@ -421,7 +446,7 @@ const sinogToLetter = (str: string) => {
 }
 
 /**
- * @description: 返回设计稿上px在不同屏幕下的适配尺寸
+ * @desc: 返回设计稿上px在不同屏幕下的适配尺寸
  * @param {number} px 
  * @param {*} draft 设计稿宽度
  * @return {*}
@@ -432,7 +457,7 @@ const getFitSize = (px: number, draft = 750): number => {
 }
 
 /**
- * @description: 检测密码强度
+ * @desc: 检测密码强度
  * @param {*} str
  * @return {*}  1：密码弱 2：密码中等 3：密码强 4：密码很强
  */

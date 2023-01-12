@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2023-01-12 10:02:25
+ * @LastEditTime: 2023-01-12 13:50:34
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 
@@ -10,8 +10,10 @@
  */
 
 /**
-  * 字符串首位是字母转大写
-*/
+ * @desc: 字符串首位是字母转大写
+ * @param {string} gname
+ * @return {*}
+ */
 const initialToCapitali = (gname: string): string => {
     const pattern = new RegExp('[A-Za-z]+')
     const str = gname.substr(0, 1)
@@ -24,12 +26,11 @@ const initialToCapitali = (gname: string): string => {
 }
 
 /**
-* 传入字符串，和重复次数，返回结果字符串
-* @return {string} 
-* @param{string, number} str n 
-* @example
-* loadImg(url).then(console.log('加载完成')).catch(err => {console.log(err)})
-*/
+ * @desc: 传入字符串，和重复次数，返回结果字符串
+ * @param {string} str
+ * @param {number} n
+ * @return {*}
+ */
 const repeat = (str: string, n: number): string => {
     let res = ''
     while (n) {
@@ -41,14 +42,16 @@ const repeat = (str: string, n: number): string => {
 }
 
 /**
- * 去除字符串首尾空格
-*/
+ * @desc: 去除字符串首尾空格
+ * @param {string} str
+ * @return {*}
+ */
 const trim = (str: string): string => {
     return str.replace(/^\s+(.*?)\s+$/g, '$1')
 }
 
 /**
- * @description: 计算文字宽度
+ * @desc: 计算文字宽度
  * @param {string} text
  * @param {any} font '14px sans-serif' 字号 字体
  * @return {*}
@@ -62,7 +65,7 @@ const getTextWidth = (text: string, font: any): number => {
 }
 
 /**
- * @description: 字符替换
+ * @desc: 字符替换
  * @param {*} str 表示将要替换的字符串
  * @param {*} oldChar 表示你将要替换的字符
  * @param {*} newChar 表示你想要替换的字符
@@ -75,13 +78,13 @@ const transFormat = (str: string, oldChar: string, newChar: string) => {
 }
 
 /**
- * @description: 反转字符串
+ * @desc: 反转字符串
  * @param {*} str
  * @return {*}
  */
-const strInversion = str => {
+const strInversion = (str: string) => {
     str = str + ''
-    let newStr = []
+    let newStr = ''
     newStr = str.split('').reverse().join('')
     return newStr
 }

@@ -2,12 +2,16 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2023-01-11 15:30:41
+ * @LastEditTime: 2023-01-12 14:14:41
  * @Description: 
  */
+
 /**
- * 格式化时间
-*/
+ * @desc: 格式化时间
+ * @param {string} formater
+ * @param {number} time
+ * @return {*}
+ */
 const dateFormater = (formater: string, time?: number): string => {
     const date = time ? new Date(time) : new Date(),
         Y = date.getFullYear() + '',
@@ -26,11 +30,11 @@ const dateFormater = (formater: string, time?: number): string => {
 }
 
 /**
- * @description: 格式化${startTime}距现在的已过时间(距离传入的时间经多了多久)
+ * @desc: 格式化${startTime}距现在的已过时间(距离传入的时间经多了多久)
  * @param {*} startTime 以前的时间
  * @return {*}
  */
-const formatPassTime = (startTime) => {
+const formatPassTime = (startTime: number): string => {
     const currentTime = Date.parse(String(new Date())),
         time = currentTime - startTime,
         day = parseInt(String(time / (1000 * 60 * 60 * 24))),
@@ -47,11 +51,11 @@ const formatPassTime = (startTime) => {
 }
 
 /**
- * @description: 格式化现在距${endTime}的剩余时间
+ * @desc: 格式化现在距${endTime}的剩余时间
  * @param {*} endTime 未来的时间
  * @return {*}
  */
-const formatRemainTime = (endTime) => {
+const formatRemainTime = (endTime: string): string => {
     const startDate = new Date() //开始时间
     const endDate = new Date(endTime) //结束时间
     const t = endDate.getTime() - startDate.getTime() //时间差

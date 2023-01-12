@@ -3,13 +3,14 @@ declare global {
 }
 
 /**
- * 浏览器全屏
-*/
+ * @desc: 浏览器全屏
+ * @param {*} void
+ * @return {*}
+ */
 const toFullScreen = (): void => {
     const el: any = document.documentElement
     const rfs = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullScreen
 
-    //typeof rfs != "undefined" && rfs
     if (rfs) {
         rfs.call(el)
     } else if (typeof window.ActiveXObject !== 'undefined') {
@@ -24,13 +25,14 @@ const toFullScreen = (): void => {
 }
 
 /**
- * 浏览器退出全屏
-*/
+ * @desc: 浏览器退出全屏
+ * @param {*} void
+ * @return {*}
+ */
 const exitFullscreen = (): void => {
     const el: any = parent.document
     const cfs = el.cancelFullScreen || el.webkitCancelFullScreen || el.mozCancelFullScreen || el.exitFullScreen
 
-    //typeof cfs != "undefined" && cfs
     if (cfs) {
         cfs.call(el)
     } else if (typeof window.ActiveXObject !== 'undefined') {
@@ -45,8 +47,9 @@ const exitFullscreen = (): void => {
 }
 
 /**
- * LocalStorage 
-*/
+ * @desc: LocalStorage 
+ * @return {*}
+ */
 const LocalStorage = {
     get(user: string, name: string): string {
         const mapStorage = JSON.parse(localStorage.getItem(user)) || {}
@@ -69,8 +72,9 @@ const LocalStorage = {
 }
 
 /**
-  * H5 获取地理位置
-*/
+ * @desc: H5 获取地理位置
+ * @return {*}
+ */
 const getPosition = (
     timeout = 10000,
     maximumAge = 60000,
@@ -104,10 +108,13 @@ const getPosition = (
 //     })
 //     .catch(err => console.log(err))
 
+
 /**
- * 禁止/开启：右键、选择、复制
-*/
-const winCopy = (flag) => {
+ * @desc:  禁止/开启：右键、选择、复制
+ * @param {boolean} flag
+ * @return {*}
+ */
+const winCopy = (flag: boolean) => {
     ['contextmenu', 'selectstart', 'copy'].forEach(function (ev) {
         document.addEventListener(ev, function (event) {
             return event.returnValue = flag
@@ -116,7 +123,7 @@ const winCopy = (flag) => {
 }
 
 /**
- * @description: 打印屏幕
+ * @desc: 打印屏幕
  * @param {string} printEleId
  * @param {string} rootEleId
  * @param {string} style
@@ -149,13 +156,11 @@ const print = (printEleId: string, rootEleId: string, style: string) => {
     return false
 }
 
-const setVibration = () => {
-    window.navigator.vibrate([100, 30, 100, 30, 100, 200, 200, 30, 200, 30, 200, 200, 100, 30, 100, 30, 100])
-}
-
 /**
- * 复制文本
-*/
+ * @desc: 复制文本
+ * @param {string} str
+ * @return {*}
+ */
 const copy = (str: string): void => {
     const el = document.createElement('textarea')
     el.value = str
@@ -178,8 +183,9 @@ const copy = (str: string): void => {
 }
 
 /**
- * 平滑滚动到页面顶部
-*/
+ * @desc: 平滑滚动到页面顶部
+ * @return {*}
+ */
 const scrollToTop = () => {
     const c = document.documentElement.scrollTop || document.body.scrollTop
     if (c > 0) {
@@ -189,7 +195,7 @@ const scrollToTop = () => {
 }
 
 /**
- * @description: 返回当前浏览器是什么类型的浏览器
+ * @desc: 返回当前浏览器是什么类型的浏览器
  * @param {*} string
  * @return {*} 
  */
@@ -211,7 +217,7 @@ const userBrowser = (): string => {
 }
 
 /**
- * @description: 获取localStorage使用容量
+ * @desc: 获取localStorage使用容量
  * @return {*}
  */
 const getLocalStorageSize = (): string => {
@@ -234,7 +240,6 @@ export {
     getPosition,
     winCopy,
     print,
-    setVibration,
     copy,
     scrollToTop,
     userBrowser,

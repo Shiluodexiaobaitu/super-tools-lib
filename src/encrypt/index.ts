@@ -1,6 +1,6 @@
 
 /**
- * 按 ASCII 正序排序
+ * @desc: 按 ASCII 正序排序
  * @param {*} data []
  * @return {*}
  */
@@ -11,8 +11,7 @@ const sortAscii = (data: string[]) => {
 }
 
 /**
- * 生成sign
- * 按 Key 的 ASCII 正序排序，拼接为字符串返回。
+ * @desc: 生成sign 按 Key 的 ASCII 正序排序，拼接为字符串返回。
  * @param {Record} obj
  * @param {*} unknown
  * @return {string}

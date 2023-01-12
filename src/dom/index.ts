@@ -1,13 +1,14 @@
 import { throttle } from '../tools'
 
 /**
- * 获取一个元素距离浏览器左上角的偏移量
- * @param {ele} dom元素
-*/
-const getOffset = function (ele: any): any {
+ * @desc: 获取一个元素距离浏览器左上角的偏移量
+ * @param {HTMLElement} ele
+ * @return {*}
+ */
+const getOffset = function (ele: HTMLElement): { left: number, top: number } {
     let left = ele.offsetLeft // 左偏移
     let top = ele.offsetTop // 上偏移
-    let parent = ele.offsetParent
+    let parent: any = ele.offsetParent
 
     // 只要找到的父级参照物不是body 就继续往上查找（一直循环下去 一直到body为止）
     while (parent && parent.nodeName.toLowerCase() !== 'body') {
@@ -19,14 +20,14 @@ const getOffset = function (ele: any): any {
 }
 
 /**
- * 抖动函数
+ * @desc: 抖动函数
  * @param {ele} 抖动的dom元素
  * @param {attr} 抖动的方向 left top
  * @param {cb} 抖动的完成回调
  * @param {rate} 抖动次数
  * @param {time} 每次抖动需要的时间
 */
-const shaking = ({ ele, attr, cb, rate = 20, time = 50 }: { ele: any, attr: string, cb: () => void, time?: number, rate?: number }): void => {
+const shaking = ({ ele, attr, cb, rate = 20, time = 50 }: { ele: HTMLElement, attr: string, cb: () => void, time?: number, rate?: number }): void => {
 
     function getStyle(ele, attr) {
         if (ele.currentStyle) {
@@ -55,10 +56,10 @@ const shaking = ({ ele, attr, cb, rate = 20, time = 50 }: { ele: any, attr: stri
 }
 
 /**
- * 阻止冒泡事件
+ * @desc: 阻止冒泡事件
  * @param e 
  */
-const stopPropagation = (e) => {
+const stopPropagation = (e: Event) => {
     e = e || window.event
     if (e.stopPropagation) {    // W3C阻止冒泡方法 
         e.stopPropagation()
@@ -68,17 +69,17 @@ const stopPropagation = (e) => {
 }
 
 /**
- * 检测类名
+ * @desc: 检测类名
  * @param ele dom
  * @param name 类名
  * @returns {boolean}
  */
-const hasClass = (ele: HTMLElement, name: string) => {
-    return ele.className.match(new RegExp('(\\s|^)' + name + '(\\s|$)'))
+const hasClass = (ele: HTMLElement, name: string): boolean => {
+    return !!ele.className.match(new RegExp('(\\s|^)' + name + '(\\s|$)'))
 }
 
 /**
- * @description: 添加类名
+ * @desc: 添加类名
  * @param {*} ele
  * @param {*} name
  * @return {*}
@@ -88,7 +89,7 @@ const addClass = (ele: HTMLElement, name: string) => {
 }
 
 /**
- * @description: 删除类名
+ * @desc: 删除类名
  * @param {*} ele
  * @param {*} name
  * @return {*}
@@ -101,7 +102,7 @@ const removeClass = (ele: HTMLElement, name: string) => {
 }
 
 /**
- * @description: 替换类名
+ * @desc: 替换类名
  * @param {*} ele
  * @param {*} newName
  * @param {*} oldName
@@ -113,56 +114,7 @@ const replaceClass = (ele: HTMLElement, newName: string, oldName: string) => {
 }
 
 /**
- * 数字滚动封装，滚动到指定的数字
- * @param {*} ele 目标dom元素
- * @param {*} targetNumber 要滚动到的数字
- * @param {*} duration 动画时间
- */
-const numberRoll = (ele: any, targetNumber: number, duration: number) => {
-    const type = ele.tagName
-    let firstValue
-
-    const frequency = duration / 1000
-    if (type === 'INPUT') {
-        if (isNaN(Number(targetNumber))) {
-            throw new Error('目标数字传递错误')
-        }
-        if (!isNaN(Number(ele.value))) {
-            firstValue = !!ele.value ? Number(ele.value) : 0
-        }
-    } else {
-        if (isNaN(Number(targetNumber))) {
-            throw new Error('目标数字传递错误')
-        }
-        if (!isNaN(Number(ele.innerHTML))) {
-            firstValue = Number(ele.innerHTML)
-        }
-    }
-    const step = (Number(targetNumber) - firstValue) / 1000
-    if (type === 'INPUT') {
-        const numberTimer = setInterval(function () {
-            firstValue += step
-            ele.value = firstValue
-            if (Math.abs(Number(targetNumber) - firstValue) <= step) {
-                ele.value = targetNumber
-                clearInterval(numberTimer)
-            }
-        }, frequency)
-    } else {
-        const numberTimer = setInterval(function () {
-            firstValue += step
-            ele.innerHTML = firstValue
-            if (Math.abs(Number(targetNumber) - firstValue) <= step) {
-                ele.innerHTML = targetNumber
-                clearInterval(numberTimer)
-            }
-        }, frequency)
-    }
-
-}
-
-/**
- * @description: 滚动条是否滚动到底部
+ * @desc: 滚动条是否滚动到底部
  * @param {HTMLElement} ele
  * @param {Function} callback
  * @param {number} delay
@@ -202,7 +154,7 @@ const textVisibilityChange = (dom: HTMLElement): boolean => {
 }
 
 /**
- * 获取transform translate中矩阵x，y坐标
+ * @desc: 获取transform translate中矩阵x，y坐标
  * @param {string} transform
  * @return {*}
  */
@@ -288,7 +240,6 @@ export {
     addClass,
     removeClass,
     replaceClass,
-    numberRoll,
     scrollToTheBottom,
     textVisibilityChange,
     getTransformMatrix,

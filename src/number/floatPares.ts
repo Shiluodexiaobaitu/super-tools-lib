@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2022-01-14 17:53:01
  * @LastEditors: zhangce
- * @LastEditTime: 2022-10-26 11:35:49
+ * @LastEditTime: 2023-01-12 14:21:00
  * @Description: 
  */
 /**
@@ -16,7 +16,7 @@
  */
 
 /**
- * 浮点数加法运算 0.1 + 0.2 = 0.3
+ * @desc: 浮点数加法运算 0.1 + 0.2 = 0.3
  * JSCT.accAdd(0.1, 0.2) 之和等于 0.3 ，即（0.1 + 0.2 == 0.3） true
  * @param num1
  * @param num2
@@ -42,7 +42,7 @@ const accAdd = function (num1, num2: number): number {
 }
 
 /**
- * 浮点数减法运算 0.5 - 0.4 = 0.1
+ * @desc: 浮点数减法运算 0.5 - 0.4 = 0.1
  * JSCT.accSub(0.5, 0.4) 之差等于 0.1 ，即(0.5 - 0.4 == 0.1) true
  * @param num1
  * @param num2
@@ -68,7 +68,7 @@ const accSub = function (num1: number, num2: number): number {
 }
 
 /**
- * 浮点数乘法运算 0.1 * 3 = 0.3
+ * @desc: 浮点数乘法运算 0.1 * 3 = 0.3
  * JSCT.accMul(0.1, 3) 之积等于 0.3 ，即(0.1 * 3 == 0.3) true
  * @param num1
  * @param num2
@@ -91,7 +91,7 @@ const accMul = function (num1: number, num2: number): number {
     return getCorrectResult('mul', num1, num2, result)
 }
 /**
- * 浮点数除法运算 0.3 / 3 = 0.1
+ * @desc: 浮点数除法运算 0.3 / 3 = 0.1
  * JSCT.accDiv(0.3, 3) 之商等于 0.1, 即(0.3 / 3 == 0.1) true
  * @param num1
  * @param num2
@@ -118,7 +118,7 @@ const accDiv = function (num1: number, num2: number): number {
 }
 
 /**
- * 小数位计数
+ * @desc: 小数位计数
  * @param num
  * @returns {number}
  */
@@ -155,7 +155,7 @@ const countDecimals = function (num) {
     return len
 }
 /**
- * 转换位整型
+ * @desc: 转换位整型
  * @param num
  * @returns {number|*}
  */
@@ -172,7 +172,7 @@ const convertToInt = function (num) {
     return newNum
 }
 /**
- * 获取正确结果
+ * @desc: 获取正确结果
  * @param type
  * @param num1
  * @param num2

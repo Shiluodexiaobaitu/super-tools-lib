@@ -121,6 +121,12 @@ const reg = {
     mac: /^[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}$/,
 }
 
+/**
+ * @desc: 验证内容
+ * @param {string} key 规则
+ * @param {string} value 校验的内容
+ * @return {*}
+ */
 function validate(key: string, value: string): boolean {
     return new RegExp(reg[`${key}`]).test(value)
 }

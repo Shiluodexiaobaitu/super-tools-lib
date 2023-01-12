@@ -1,59 +1,74 @@
 
+// export declare class Socket {
+//   private ws;
+//   private url;
+//   private sendTimer;
+//   private heartTimer;
+//   private reconnectCount;
+//   private heartTime;
+//   constructor(props: {
+//       url: string;
+//       reconnectCount?: number;
+//       heartTime?: number;
+//   });
+//   createWebSocket(message: any, cb: (data: any) => void): void;
+//   heartbeat(message: any, cb: any): void;
+// }
 
 // declare type State = Record<string, unknown>;
 // export declare class StateObserver {
-//     private _state;
-//     private _listener;
-//     constructor(state: State);
-//     on(type: any, cb: any): Error;
-//     off(type: any, cb: any): void;
-//     setState(state: State): Error;
-//     getState(key?: string): unknown;
-//     _on(type: any, cb: any): void;
-//     _off(type: any, cb: any): void;
-//     _spread(type: any, ...rest: any[]): void;
+//   private _state;
+//   private _listener;
+//   constructor(state: State);
+//   on(type: any, cb: any): Error;
+//   off(type: any, cb: any): void;
+//   setState(state: State): Error;
+//   getState(key?: string): unknown;
+//   _on(type: any, cb: any): void;
+//   _off(type: any, cb: any): void;
+//   _spread(type: any, ...rest: any[]): void;
 // }
 
 // declare class EventObserver {
-//     private _listener;
-//     constructor();
-//     on(type: string, cb: (...rest: any[]) => void): void;
-//     off(type: string, cb: (...rest: any[]) => void): void;
-//     spread(type: string, ...rest: any[]): Error;
-//     _on(type: string, cb: (...rest: any[]) => void): void;
-//     _off(type: string, cb: (...rest: any) => void): void;
-//     _spread(type: string, ...rest: any[]): void;
+//   private _listener;
+//   constructor();
+//   on(type: string, cb: (...rest: any[]) => void): void;
+//   off(type: string, cb: (...rest: any[]) => void): void;
+//   spread(type: string, ...rest: any[]): Error;
+//   _on(type: string, cb: (...rest: any[]) => void): void;
+//   _off(type: string, cb: (...rest: any) => void): void;
+//   _spread(type: string, ...rest: any[]): void;
 // }
 
 // declare global {
-//     interface Window {
-//         webkitIndexedDB: any;
-//         mozIndexedDB: any;
-//     }
+//   interface Window {
+//       webkitIndexedDB: any;
+//       mozIndexedDB: any;
+//   }
 // }
 // export declare type IndexedDBProps = {
-//     dbName: string;
-//     storeName: string;
-//     version: number;
+//   dbName: string;
+//   storeName: string;
+//   version: number;
 // };
 // export declare class IndexedDB {
-//     private storeName;
-//     db: any;
-//     store: any;
-//     constructor(props: IndexedDBProps);
-//     get(key: string, callback: (data: any) => void): void;
-//     set(key: any, value: any): void;
-//     update(key: any, newValue: any): void;
-//     remove(key: any): void;
-//     close(): void;
+//   private storeName;
+//   db: any;
+//   store: any;
+//   constructor(props: IndexedDBProps);
+//   get(key: string, callback: (data: any) => void): void;
+//   set(key: any, value: any): void;
+//   update(key: any, newValue: any): void;
+//   remove(key: any): void;
+//   close(): void;
 // }
 
 // export declare class Ajax {
-//     private options;
-//     constructor(options: any);
-//     send(callback: (res: any) => void, error: (err: any) => void): void;
-//     set url(url: any);
-//     get url(): any;
+//   private options;
+//   constructor(options: any);
+//   send(callback: (res: any) => void, error: (err: any) => void): void;
+//   set url(url: any);
+//   get url(): any;
 // }
 
 // export declare const contains: <T_3>(arr: T_3[], criteria: (a: T_3) => boolean) => boolean;
@@ -66,11 +81,11 @@
 // export declare const toFullHexColor: (color: string) => string;
 // export declare const degsToRads: (deg: number) => number;
 // export declare const distance: (p1: {
-//     x: number;
-//     y: number;
+//   x: number;
+//   y: number;
 // }, p2: {
-//     x: number;
-//     y: number;
+//   x: number;
+//   y: number;
 // }) => number;
 // export declare const getFirstDate: (d?: Date) => Date;
 // export declare const getCurrentSecond: () => number;
@@ -83,10 +98,10 @@
 // export declare const insertHtmlAfter: (html: string, ele: Element) => void;
 // export declare const insertBefore: (newEle: Element, anotherEle: Element) => Element;
 // export declare const insertAfter: (newEle: Element, anotherEle: Element) => Element;
-// export declare const  getSelectedText: () => string;
-// export declare const  isDescendant: (child: Node, parent: Node) => boolean;
+// export declare const getSelectedText: () => string;
+// export declare const isDescendant: (child: Node, parent: Node) => boolean;
 // export declare const removeEventListener: (type: string, cb: (...rest: any[]) => void) => void;
-// export declare const alphabeticSort: (_data: any[], keyword: string, ascen?: boolean) => any[];
+// export declare const alphabeticSort: <T_10>(_data: T_10[], keyword: string, ascen?: boolean) => T_10[];
 // export declare const arrToObject: <T_1 extends Record<string, any>, K extends keyof T_1>(arr: T_1[], key: K) => Record<string, T_1>;
 // export declare const toNumbers: (arr: string[]) => number[];
 // export declare const countBy: <T_2 extends Record<string, string>, K_1 extends keyof T_2>(arr: T_2[], prop: K_1) => Record<string, number>;
@@ -103,10 +118,10 @@
 // export declare const dispatchEvent: (type: string, ...rest: any[]) => void;
 // export declare const sortAscii: (data: string[]) => string[];
 // export declare const generateSign: (obj: Record<string, unknown>) => string;
-// export declare const last: (array: any[]) => any;
+// export declare const last: <T_9>(array: T_9[]) => T_9;
 // export declare const getTransformMatrix: (transform: string) => {
-//     x: number;
-//     y: number;
+//   x: number;
+//   y: number;
 // };
 // export declare const dayDiff: (date1: Date, date2: Date) => number;
 // export declare const isMobile: () => boolean;
@@ -121,24 +136,24 @@
 // export declare const transFormat: (str: any, oldChar: any, newChar: any) => any;
 // export declare const strInversion: (str: any) => any[];
 // export declare const cookie: {
-//     set: (key: string, value: string, expTime?: number) => void;
-//     delete: (key: string) => void;
-//     get: (key: string) => string;
+//   set: (key: string, value: string, expTime?: number) => void;
+//   delete: (key: string) => void;
+//   get: (key: string) => string;
 // };
 // export declare const getLocalStorageSize: () => string;
 // export declare const getTextWidth: (text: string, font: any) => number;
-// export declare const values: (obj: any) => any[];
-// export declare const keys: (obj: any) => any[];
-// export declare const forEach: (data: Record<string, unknown> | unknown[], fn: (...rest: any[]) => void) => any;
-// export declare const filter: (data: any[] | Record<string, any>, fn: (...rest: any[]) => void) => any[];
+// export declare const values: <T_15>(obj: Record<string, T_15>) => T_15[];
+// export declare const keys: <T_16>(obj: Record<string, T_16>) => T_16[];
+// export declare const forEach: <T_18>(data: Record<string, T_18> | T_18[], iteratee: (...rest: T_18[]) => boolean | void) => void;
+// export declare const filter: <T_19>(data: Record<string, T_19> | T_19[], iteratee: (...rest: T_19[]) => boolean) => T_19[];
 // export declare const formatPrice: (price: any, sign?: string) => string;
 // export declare const getFitSize: (px: number, draft?: number) => number;
 // export declare const accAdd: (num1: any, num2: number) => number;
 // export declare const accSub: (num1: number, num2: number) => number;
 // export declare const accMul: (num1: number, num2: number) => number;
 // export declare const accDiv: (num1: number, num2: number) => number;
-// export declare const formatPassTime: (startTime: any) => string;
-// export declare const formatRemainTime: (endTime: any) => string;
+// export declare const formatPassTime: (startTime: number) => string;
+// export declare const formatRemainTime: (endTime: string) => string;
 // export declare const isNull: (o: any) => boolean;
 // export declare const isUndefined: (o: any) => boolean;
 // export declare const isDate: (o: any) => boolean;
@@ -152,16 +167,16 @@
 // export declare const bubbleSort: (arr: any) => any;
 // export declare const numberRoll: (ele: any, targetNumber: number, duration: number) => void;
 // export declare const userBrowser: () => string;
-// export declare const hasClass: (ele: HTMLElement, name: string) => RegExpMatchArray;
+// export declare const hasClass: (ele: HTMLElement, name: string) => boolean;
 // export declare const addClass: (ele: HTMLElement, name: string) => void;
 // export declare const removeClass: (ele: HTMLElement, name: string) => void;
 // export declare const replaceClass: (ele: HTMLElement, newName: string, oldName: string) => void;
 // export declare const injectScript: (src: string) => void;
 // export declare const sinogToLetter: (str: string) => string;
-// export declare const shuffle: (arr: any[]) => any[];
+// export declare const shuffle: <T_17>(arr: T_17[]) => T_17[];
 // export declare const smallRounding: (num: number, place: number) => number;
 // export declare const dateFormater: (formater: string, time?: number) => string;
-// export declare const stopPropagation: (e: any) => void;
+// export declare const stopPropagation: (e: Event) => void;
 // export declare const scrollToTop: () => void;
 // export declare const getAge: (id: string) => string;
 // export declare const getSex: (id: string) => '男' | '女';
@@ -170,12 +185,9 @@
 // export declare const rgbaToHex: (color: any) => string;
 // export declare const version: string;
 
-// export declare const orient: () => void;
+// export declare const orient: (fn: (type: string) => void) => void;
 // export declare const vConsole: () => void;
-// export declare const socket: ({ url }: {
-//     url: string;
-// }) => any;
-// export declare const downBlob: (data: any, fileName: string) => void;
+// export declare const downBlob: (data: BlobPart, fileName: string) => void;
 // export declare const isBase64: (base64: any) => boolean;
 // export declare const isArray: (arr: any) => boolean;
 // export declare const isString: (str: any) => boolean;
@@ -184,51 +196,60 @@
 // export declare const isNumber: (num: any) => boolean;
 // export declare const isWeiXin: () => boolean;
 // export declare const repeat: (str: string, n: number) => string;
-// export declare const cloneDeep: (obj: any) => any;
-// export declare const arrayUnique: (arr: any[]) => any[];
-// export declare const arrayNonRepeatfy: (arr: any[]) => any[];
-// export declare const aLineUnique: (arr: any[]) => any[];
-// export declare const getOffset: (ele: any) => any;
+// export declare const cloneDeep: <T_14>(data: T_14) => T_14;
+// export declare const arrayUnique: <T_6>(arr: T_6[]) => T_6[];
+// export declare const arrayNonRepeatfy: <T_7>(arr: T_7[]) => T_7[];
+// export declare const aLineUnique: <T_8>(arr: T_8[]) => T_8[];
+// export declare const getOffset: (ele: HTMLElement) => {
+//   left: number;
+//   top: number;
+// };
 // export declare const shaking: ({ ele, attr, cb, rate, time }: {
-//     ele: any;
-//     attr: string;
-//     cb: () => void;
-//     time?: number;
-//     rate?: number;
+//   ele: HTMLElement;
+//   attr: string;
+//   cb: () => void;
+//   time?: number;
+//   rate?: number;
 // }) => void;
 // export declare const getDistance: (startLon: number, startLat: number, endLon: number, endLat: number) => number;
-// export declare const calcDistance: (lat1: any, lng1: any, lat2: any, lng2: any) => number;
+// export declare const calcDistance: (lat1: number, lng1: number, lat2: number, lng2: number) => number;
 // export declare const lonLatToMercator: (lonLat: {
-//     lon: number;
-//     lat: number;
-// }) => any;
+//   lon: number;
+//   lat: number;
+// }) => {
+//   x: number;
+//   y: number;
+// };
 // export declare const mercatorToLonlat: (mercator: {
-//     x: number;
-//     y: number;
-// }) => any;
+//   x: number;
+//   y: number;
+// }) => {
+//   lon: number;
+//   lat: number;
+// };
 // export declare const performanceAnalysis: () => void;
 // export declare const getPerformanceTiming: () => any;
 // export declare const toFullScreen: () => void;
 // export declare const exitFullscreen: () => void;
 // export declare const LocalStorage: {
-//     get(user: string, name: string): string;
-//     set(user: string, name: string, value: any): void;
-//     remove(user: string, name: string): void;
-//     clear(): void;
+//   get(user: string, name: string): string;
+//   set(user: string, name: string, value: any): void;
+//   remove(user: string, name: string): void;
+//   clear(): void;
 // };
 // export declare const getPosition: (timeout?: number, maximumAge?: number) => Promise<unknown>;
-// export declare const winCopy: (flag: any) => void;
+// export declare const winCopy: (flag: boolean) => void;
 // export declare const print: (printEleId: string, rootEleId: string, style: string) => boolean;
 // export declare const setVibration: () => void;
 // export declare const copy: (str: string) => void;
 // export declare const guid: () => string;
-// export declare const getFileBase64: (file: File, cb: (base64: any) => void) => void;
+// export declare const getFileBase64: (file: File, cb: (base64: string | ArrayBuffer) => void) => void;
 // export declare const isAndroidMobileDevice: () => boolean;
 // export declare const isAppleMobileDevice: () => boolean;
-// export declare const throttle: (fn: () => void, delay?: number) => () => void;
-// export declare const debounce: (fn: () => void, wait: number) => () => void;
+// export declare const throttle: (fn: <T_1>(...rest: T_1[]) => void, delay?: number) => <T_2>(...rest: T_2[]) => void;
+// export declare const debounce: (fn: <T_3>(...rest: T_3[]) => void, delay: number) => <T_4>(...rest: T_4[]) => void;
 // export declare const fileDownload: (url: string) => boolean;
-// export declare const fuzzyQuery: (list: any[], key: string, keyWord: string) => any[];
+// export declare const fuzzyQuery: <T_5>(list: T_5[], key: string, keyWord: string) => T_5[];
 // export declare const getUrlParam: () => any;
 // export declare const getCookie: (name: string) => string;
 // export declare const colorHex: (color: string) => string;

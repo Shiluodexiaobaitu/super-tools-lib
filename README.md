@@ -718,12 +718,6 @@ _.removeClass(element, name);
 _.replaceClass(element, newName, oldName);
 ```
 
-- numberRoll //数字滚动封装，滚动到指定的数字
-
-```js
-_.numberRoll(element, targetNumber, duration);
-```
-
 - scrollToTheBottom // 监听滚动条滚动到底部
   参数：
   {ele} dom

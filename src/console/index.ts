@@ -1,8 +1,9 @@
 import { viewportToPixels } from '../tools'
 
 /**
- * 封装vConsole
-*/
+ * @desc: 移动端日志查看工具
+ * @return {*}
+ */
 const vConsole = () => {
     const btn = document.createElement('div')
     btn.style.cssText = ' background: #07c160;position: fixed; left: 0;top: 85%;font-size: 1.07692308em;border-radius: 0.30769231em;box-shadow: 0 0 0.61538462em rgb(0 0 0 / 40%);padding: 0.61538462em 1.23076923em;color: #fff'

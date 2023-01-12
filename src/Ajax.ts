@@ -2,19 +2,19 @@
  * @Author: zhangce
  * @Date: 2021-12-30 11:56:59
  * @LastEditors: zhangce
- * @LastEditTime: 2022-10-18 17:39:38
+ * @LastEditTime: 2023-01-12 13:44:24
  * @Description: 
  */
 
 class Ajax {
 
-    private options: any = null
+    private _options: any = null
     constructor(options) {
-        this.options = { data: null, method: 'GET', responseType: 'json', ...options }
+        this._options = { data: null, method: 'GET', responseType: 'json', ...options }
     }
 
     send(callback: (res: any) => void, error: (err: any) => void) {
-        const { data, method, url, responseType } = this.options
+        const { data, method, url, responseType } = this._options
         const xhr = new XMLHttpRequest()
 
         xhr.responseType = responseType
@@ -42,13 +42,15 @@ class Ajax {
     }
 
     set url(url) {
-        this.options.url = url
+        this._options.url = url
     }
 
     get url() {
-        return this.options.url
+        return this._options.url
     }
 
 }
 
-export default Ajax
+export {
+    Ajax,
+}

@@ -23,7 +23,7 @@ const performanceAnalysis = (): void => {
  * 计算加载时间
 */
 const getPerformanceTiming = () => {
-    const performance: any = window.performance
+    const performance = window.performance
 
     if (!performance) {
         // 当前浏览器不支持

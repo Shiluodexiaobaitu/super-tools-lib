@@ -2,21 +2,21 @@
  * @Author: zhangce
  * @Date: 2021-10-08 14:15:34
  * @LastEditors: zhangce
- * @LastEditTime: 2022-04-28 15:35:36
+ * @LastEditTime: 2022-10-26 11:16:07
  * @Description: 
  */
 
-import resolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import babel from "rollup-plugin-babel";
-import { terser } from 'rollup-plugin-terser';
-import { eslint } from 'rollup-plugin-eslint';
-import serve from 'rollup-plugin-serve';
-import livereload from 'rollup-plugin-livereload';
-import json from '@rollup/plugin-json';
-import typescript from 'rollup-plugin-typescript2';
+import resolve from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
+import babel from "rollup-plugin-babel"
+// import { terser } from 'rollup-plugin-terser'
+import eslint from '@rollup/plugin-eslint'
+import serve from 'rollup-plugin-serve'
+import livereload from 'rollup-plugin-livereload'
+import json from '@rollup/plugin-json'
+import typescript from 'rollup-plugin-typescript2'
 // import tslint from "rollup-plugin-tslint";
-import filesize from 'rollup-plugin-filesize';
+// import filesize from 'rollup-plugin-filesize' 
 
 
 export default [
@@ -43,7 +43,7 @@ export default [
                 throwOnError: true,
                 throwOnWarning: true,
                 include: ['src/**'],
-                exclude: ['node_modules/**']
+                exclude: ['node_modules/**'],
             }),
             babel({
                 exclude: 'node_modules/**', // 防止打包node_modules下的文件
@@ -61,11 +61,11 @@ export default [
             serve({
                 open: true,
                 port: '8888',
-                contentBase: ''
-            })
+                contentBase: '',
+            }),
         ],
         // external: [/lodash-es\/[a-z]+/, 'better-xlsx', 'file-saver']
 
 
-    }
-];
+    },
+]

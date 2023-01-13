@@ -2,33 +2,44 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @LastEditors: zhangce
- * @LastEditTime: 2022-07-05 12:05:58
+ * @LastEditTime: 2023-01-13 16:32:28
  * @Description: 
  */
+
+import { forEach } from '../loop'
+
 /**
- * base64类型验证
-*/
+ * @desc: base64类型验证
+ * @param {string} base64
+ * @return {*}
+ */
 const isBase64 = (base64: string): boolean => {
-    return /data:image\/.+;base64,/.test(base64);
+    return /data:image\/.+;base64,/.test(base64)
 }
 
 /**
- * 数组类型验证
-*/
+ * @desc: 数组类型验证
+ * @param {unknown} arr
+ * @return {*}
+ */
 const isArray = (arr: unknown): boolean => {
     return Array.isArray(arr)
 }
 
 /**
- * 字符串类型验证
-*/
+ * @desc: 字符串类型验证
+ * @param {unknown} str
+ * @return {*}
+ */
 const isString = (str: unknown): boolean => {
     return typeof str === 'string'
 }
 
 /**
- * 函数类型验证
-*/
+ * @desc: 函数类型验证
+ * @param {unknown} fn
+ * @return {*}
+ */
 const isFunction = (fn: unknown): boolean => {
     if (fn && typeof fn === 'function') {
         return true
@@ -37,34 +48,40 @@ const isFunction = (fn: unknown): boolean => {
 }
 
 /**
- * 对象类型验证
-*/
+ * @desc: 对象类型验证
+ * @param {unknown} obj
+ * @return {*}
+ */
 const isObject = (obj: unknown): boolean => {
     return Object.prototype.toString.call(obj) === '[object Object]'
 }
 
 /**
- * 数字类型验证
-*/
+ * @desc: 数字类型验证
+ * @param {any} num
+ * @return {*}
+ */
 const isNumber = (num: any): boolean => {
     if (isNaN(num)) return false
     return typeof num === 'number'
 }
 
 /**
- * 判断是否在微信中打开
-*/
+ * @desc: 判断是否在微信中打开
+ * @param {*} boolean
+ * @return {*}
+ */
 const isWeiXin = (): boolean => {
-    const ua = navigator.userAgent.toLowerCase();
-    if (ua.indexOf('micromessenger') != -1) {
-        return true;
+    const ua = navigator.userAgent.toLowerCase()
+    if (ua.indexOf('micromessenger') !== -1) {
+        return true
     } else {
-        return false;
+        return false
     }
 }
 
 /**
- * @description: 是否为null
+ * @desc: 检测是否为null
  * @param {*} o
  * @return {*}
  */
@@ -73,7 +90,7 @@ const isNull = (o: unknown): boolean => {
 }
 
 /**
- * @description: 是否undefined
+ * @desc: 检测是否undefined
  * @param {*} o
  * @return {*}
  */
@@ -82,7 +99,7 @@ const isUndefined = (o: unknown): boolean => {
 }
 
 /**
- * @description: 是否时间
+ * @desc: 是否时间
  * @param {*} o
  * @return {*}
  */
@@ -91,7 +108,7 @@ const isDate = (o: unknown): boolean => {
 }
 
 /**
- * @description: 是否正则
+ * @desc: 是否正则
  * @param {*} o
  * @return {*}
  */
@@ -100,7 +117,7 @@ const isRegExp = (o: unknown): boolean => {
 }
 
 /**
- * @description: 是否错误对象
+ * @desc: 是否错误对象
  * @param {*} o
  * @return {*}
  */
@@ -109,7 +126,7 @@ const isError = (o: unknown): boolean => {
 }
 
 /**
- * @description: 是否Symbol函数
+ * @desc: 是否Symbol函数
  * @param {*} o
  * @return {*}
  */
@@ -118,7 +135,7 @@ const isSymbol = (o: unknown): boolean => {
 }
 
 /**
- * @description: 是否Promise对象
+ * @desc: 是否Promise对象
  * @param {*} o
  * @return {*}
  */
@@ -126,48 +143,270 @@ const isPromise = (o: unknown): boolean => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Promise'
 }
 
-
 /**
- * 返回类型
-*/
+ * @desc: 返回类型
+ * @param {unknown} o
+ * @return {*}
+ */
 const returnType = (o: unknown): unknown => {
     if (Number.isNaN(o)) return 'NaN'
     return Object.prototype.toString.call(o).slice(8, -1)
 }
 
 /**
- * @description: 判断浏览器是否支持webP格式图片
+ * @desc: 判断浏览器是否支持webP格式图片
  * @param {*}
  * @return {*} 
  */
 const isSupportWebP = () => {
-    return !![].map && document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0;
+    return !![].map && document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0
 }
 
 /**
- * @description: 判断是否为移动端
+ * @desc: 判断是否为移动端
  * @return {*}
  */
 const isMobile = (): boolean => {
     if (window.navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)) {
-        return true; // 移动端
+        return true // 移动端
     } else {
-        return false; // PC端
+        return false // PC端
     }
 }
 
 /**
- * 判断是否安卓移动设备访问
-*/
+ * @desc: 判断是否安卓移动设备访问
+ * @param {*} boolean
+ * @return {*}
+ */
 const isAndroidMobileDevice = (): boolean => {
-    return /android/i.test(navigator.userAgent.toLowerCase());
+    return /android/i.test(navigator.userAgent.toLowerCase())
 }
 
 /**
- * 判断是否苹果移动设备访问
-*/
+ * @desc: 判断是否苹果移动设备访问
+ * @param {*} boolean
+ * @return {*}
+ */
 const isAppleMobileDevice = (): boolean => {
-    return /iphone|ipod|ipad|Macintosh/i.test(navigator.userAgent.toLowerCase());
+    return /iphone|ipod|ipad|Macintosh/i.test(navigator.userAgent.toLowerCase())
+}
+
+/**
+ * @desc: 判断是否是图片链接
+ * @param {string} path
+ * @return {*}
+ */
+const isImg = (path: string): boolean => {
+    return /\w.(png|jpg|jpeg|svg|webp|gif|bmp)$/i.test(path)
+}
+
+/**
+ * @desc: 判断是否为url链接
+ * @param {string} path
+ * @return {*}
+ */
+const isUrl = (path: string): boolean => {
+    if (!path.startsWith('http')) {
+        return false
+    }
+    try {
+        const url = new URL(path)
+        return !!url
+    } catch (error) {
+        return false
+    }
+}
+
+/**
+ * @desc: 判断两个对象是否拥有一样的键
+ * @param {Record} a
+ * @param {*} unknown
+ * @param {Record} b
+ * @param {*} unknown
+ * @return {*}
+ */
+const isObjectKeyEqual = (a: Record<string, unknown>, b: Record<string, unknown>): boolean => {
+    const aKeyNames = Object.getOwnPropertyNames(a)
+    const bKeyNames = Object.getOwnPropertyNames(b)
+    if (aKeyNames.length !== bKeyNames.length) {
+        return false
+    }
+    for (let i = 0; i < aKeyNames.length; i++) {
+        if (!bKeyNames.includes(aKeyNames[i])) {
+            return false
+        }
+    }
+    return true
+}
+
+/**
+ * @desc: 判断一个对象内是否包含指定的键
+ * @param {Record} obj
+ * @param {*} unknown
+ * @param {string} key
+ * @return {*}
+ */
+const isObjectExistsKey = (obj: Record<string, unknown>, key: string): boolean => {
+    const objKeyNames = Object.getOwnPropertyNames(obj)
+    return objKeyNames.includes(key)
+}
+
+/**
+ * @desc: 判断a对象是否包含b对象的键
+ * @param {Record} a
+ * @param {*} unknown
+ * @param {Record} b
+ * @param {*} unknown
+ * @return {*}
+ */
+const isObjectIncludeSpecifiedKey = (a: Record<string, unknown>, b: Record<string, unknown>): boolean => {
+    const aKeyNames = Object.getOwnPropertyNames(a)
+    const bKeyNames = Object.getOwnPropertyNames(b)
+    for (let i = 0; i < bKeyNames.length; i++) {
+        if (!aKeyNames.includes(bKeyNames[i])) {
+            return false
+        }
+    }
+    return true
+}
+
+/**
+ * @desc: 判断对象是否为空
+ * @param {Record} obj
+ * @param {*} unknown
+ * @return {*}
+ */
+const isEmptyObject = (obj: Record<string, unknown>): boolean => {
+    if (!obj || typeof obj !== 'object' || Array.isArray(obj))
+        return false
+    return !Object.keys(obj).length
+}
+
+/**
+ * @desc: 检查数组是否为空
+ * @param {*} T
+ * @return {*}
+ */
+const isEmptyArray = <T>(arr: T[]): boolean => Array.isArray(arr) && !arr.length
+
+/**
+ * @desc: 检测暗模式
+ * @return {*}
+ */
+const isDarkMode = () => {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+}
+
+/**
+ * @desc: 判断是否是基本数据类型
+ * @param {unknown} val
+ * @return {*}
+ */
+const isBasicType = (val: unknown): boolean => {
+    const t = Object.prototype.toString.call(val)
+    if (t === '[object String]' ||
+        t === '[object Boolean]' ||
+        t === '[object Number]' ||
+        t === '[object Null]' ||
+        t === '[object Undefined]' ||
+        t === '[object Symbol]') {
+        return true
+    }
+    return false
+}
+
+/**
+ * @desc: 检查字符串是否为十六进制颜色
+ * @param {string} color
+ * @return {*}
+ */
+const isHexColor = (color: string): boolean => /^#([0-9A-F]{3}|[0-9A-F]{4}|[0-9A-F]{6}|[0-9A-F]{8})$/i.test(color)
+
+
+const _equalObject = <V, O>(value: Record<string, V>, other: Record<string, O>, map) => {
+    if (isObjectKeyEqual(value, other)) {
+        let _flag = true
+
+        forEach(value, (item, key) => {
+            if (!_isEqual(item, other[key], map)) {
+                _flag = false
+                return false
+            }
+        })
+        return _flag
+    }
+    return false
+}
+
+const _equalArray = <V, O>(value: V[], other: O[], map) => {
+    const valueLength = value.length
+    const otherLength = other.length
+
+    if (valueLength !== otherLength) {
+        return false
+    }
+
+    let _flag = true
+
+    forEach(value, (item, index) => {
+        if (!_isEqual(item, other[index], map)) {
+            _flag = false
+            return false
+        }
+    })
+
+    return _flag
+}
+
+const _isEqual = (value, other, map = new WeakMap()) => {
+    if (value === other) {
+        return true
+    }
+
+    if (returnType(value) !== returnType(other)) {
+        return false
+    }
+
+    if (isBasicType(value) || isBasicType(other)) {
+        return value === other
+    }
+
+    // 解决引用数据类型循环引用
+    if (map.has(value)) {
+        const FREQUENCY = map.get(value)
+        if (FREQUENCY > 1) {
+            return true
+        }
+        map.set(value, FREQUENCY + 1)
+    }
+
+    if (isObject(value) || isArray(value)) {
+        if (!map.get(value)) {
+            map.set(value, 1)
+        }
+    }
+
+    if (isObject(value) && isObject(other)) {
+        return _equalObject(value, other, map)
+    }
+
+    if (isArray(value) && isArray(other)) {
+        return _equalArray(value, other, map)
+    }
+
+    return true
+}
+
+/**
+ * @desc: 深比较来确定两者的值是否相等
+ * ** 方法支持比较：array，object，string，boolean，number，null，undefined，symbol
+ * @param {*} value
+ * @param {*} other
+ * @return {*}
+ */
+const isEqual = (value, other) => {
+    return _isEqual(value, other)
 }
 
 
@@ -190,5 +429,16 @@ export {
     isSupportWebP,
     isMobile,
     isAndroidMobileDevice,
-    isAppleMobileDevice
+    isAppleMobileDevice,
+    isImg,
+    isUrl,
+    isObjectKeyEqual,
+    isObjectExistsKey,
+    isObjectIncludeSpecifiedKey,
+    isEmptyObject,
+    isEmptyArray,
+    isDarkMode,
+    isHexColor,
+    isEqual,
+    isBasicType,
 }

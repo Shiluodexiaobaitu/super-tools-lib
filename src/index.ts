@@ -1,11 +1,4 @@
-/*
- * @Author: zhangce
- * @Date: 2021-11-04 17:11:40
- * @LastEditors: zhangce
- * @LastEditTime: 2022-06-29 10:13:27
- * @Description: 
- */
-import { version } from '../package.json';
+import { version } from '../package.json'
 
 import {
     initialToCapitali,
@@ -13,8 +6,15 @@ import {
     trim,
     getTextWidth,
     transFormat,
-    strInversion
-} from './string';
+    strInversion,
+    toLine,
+    toFullHexColor,
+    decode,
+    letterToEmoji,
+    toPascalCase,
+    removeSpaces,
+    replaceText,
+} from './string'
 
 import {
     guid,
@@ -35,8 +35,11 @@ import {
     rgbaToHex,
     injectScript,
     sinogToLetter,
-    getFitSize
-} from './tools';
+    getFitSize,
+    checkPassWord,
+    fahrenheitToCelsius,
+    celsiusToFahrenheit,
+} from './tools'
 
 import {
     toFullScreen,
@@ -45,27 +48,26 @@ import {
     getPosition,
     winCopy,
     print,
-    setVibration,
     copy,
     scrollToTop,
     userBrowser,
-    IndexedDB,
-    getLocalStorageSize
-} from './browser';
+    getLocalStorageSize,
+} from './browser'
+
+import { IndexedDB } from './IndexedDB'
 
 import {
     performanceAnalysis,
     getPerformanceTiming,
-} from './performance';
+} from './performance'
 
 import {
-    getDistance,
     calcDistance,
     lonLatToMercator,
-    mercatorToLonlat
-} from './map';
+    mercatorToLonlat,
+} from './map'
 
-import { validate } from './reg';
+import { validate } from './reg'
 
 import {
     getOffset,
@@ -75,24 +77,39 @@ import {
     addClass,
     removeClass,
     replaceClass,
-    numberRoll,
-    scrollToTheBottom
-} from './dom';
+    scrollToTheBottom,
+    textVisibilityChange,
+    getTransformMatrix,
+    isDescendant,
+    getSelectedText,
+    insertAfter,
+    insertBefore,
+    insertHtmlAfter,
+    eleReplace,
+    insertHtmlBefore,
+} from './dom'
 
 import {
     arrayUnique,
     arrayNonRepeatfy,
     aLineUnique,
-    bubbleSort
-} from './array';
+    bubbleSort,
+    last,
+    alphabeticSort,
+    arrToObject,
+    toNumbers,
+    countBy,
+    indexOfMax,
+    indexOfMin,
+    contains,
+} from './array'
 
 import {
     cloneDeep,
     stringfyQueryString,
-    deserialization,
     values,
-    keys
-} from './object';
+    keys,
+} from './object'
 
 import {
     isBase64,
@@ -114,26 +131,44 @@ import {
     isMobile,
     isAndroidMobileDevice,
     isAppleMobileDevice,
-} from './is';
+    isImg,
+    isUrl,
+    isObjectKeyEqual,
+    isObjectExistsKey,
+    isObjectIncludeSpecifiedKey,
+    isEmptyObject,
+    isEmptyArray,
+    isDarkMode,
+    isHexColor,
+    isBasicType,
+    isEqual,
+} from './is'
 
-import { downBlob } from './file';
+import { downBlob } from './file'
 
-import { vConsole } from './console';
+import { vConsole } from './console'
 
-import {
-    socket,
-    Ajax
-} from './request';
+import { Socket } from './Socket'
 
-import { orient } from './mobile';
+import { Ajax } from './Ajax'
+
+import { orient } from './mobile'
 
 import {
     dateFormater,
     formatPassTime,
-    formatRemainTime
-} from './date';
+    formatRemainTime,
+    dayDiff,
+    monthDiff,
+    compareDate,
+    formatSeconds,
+    getQuarter,
+    getLastDate,
+    getCurrentSecond,
+    getFirstDate,
+} from './date'
 
-import { shuffle } from './algorithm';
+import { shuffle } from './algorithm'
 
 import {
     accAdd,
@@ -141,18 +176,59 @@ import {
     accMul,
     accDiv,
     formatPrice,
-    smallRounding
-} from './number';
+    smallRounding,
+    range,
+    closest,
+} from './number'
 
 import {
     forEach,
-    filter
+    filter,
 } from './loop'
+
+import {
+    sortAscii,
+    generateSign,
+} from './encrypt'
+
+import {
+    EventObserver,
+    addEventListener,
+    removeEventListener,
+    dispatchEvent,
+} from './EventObserver'
+
+import { StateObserver } from './StateObserver'
+
+import {
+    distance,
+    degsToRads,
+} from './math'
 
 export default {
     version: version,
+    distance,
+    degsToRads,
+    isImg,
+    isUrl,
+    isObjectKeyEqual,
+    isObjectExistsKey,
+    isObjectIncludeSpecifiedKey,
+    isEmptyObject,
+    isEmptyArray,
+    isDarkMode,
+    isHexColor,
+    isBasicType,
+    isEqual,
     transFormat,
     strInversion,
+    toLine,
+    toFullHexColor,
+    decode,
+    letterToEmoji,
+    toPascalCase,
+    removeSpaces,
+    replaceText,
     initialToCapitali,
     repeat,
     trim,
@@ -178,13 +254,15 @@ export default {
     injectScript,
     sinogToLetter,
     getFitSize,
+    checkPassWord,
+    fahrenheitToCelsius,
+    celsiusToFahrenheit,
     toFullScreen,
     exitFullscreen,
     LocalStorage,
     getPosition,
     winCopy,
     print,
-    setVibration,
     copy,
     scrollToTop,
     userBrowser,
@@ -192,7 +270,6 @@ export default {
     getLocalStorageSize,
     performanceAnalysis,
     getPerformanceTiming,
-    getDistance,
     calcDistance,
     lonLatToMercator,
     mercatorToLonlat,
@@ -204,15 +281,30 @@ export default {
     addClass,
     removeClass,
     replaceClass,
-    numberRoll,
     scrollToTheBottom,
+    textVisibilityChange,
+    getTransformMatrix,
+    isDescendant,
+    getSelectedText,
+    insertAfter,
+    insertBefore,
+    insertHtmlAfter,
+    insertHtmlBefore,
+    eleReplace,
     arrayUnique,
     arrayNonRepeatfy,
     aLineUnique,
     bubbleSort,
+    last,
+    alphabeticSort,
+    arrToObject,
+    toNumbers,
+    countBy,
+    indexOfMax,
+    indexOfMin,
+    contains,
     cloneDeep,
     stringfyQueryString,
-    deserialization,
     values,
     keys,
     isBase64,
@@ -234,13 +326,23 @@ export default {
     isMobile,
     downBlob,
     vConsole,
-    socket,
     Ajax,
+    Socket,
     orient,
     dateFormater,
     formatPassTime,
     formatRemainTime,
+    dayDiff,
+    monthDiff,
+    compareDate,
+    formatSeconds,
+    getQuarter,
+    getLastDate,
+    getCurrentSecond,
+    getFirstDate,
     smallRounding,
+    range,
+    closest,
     shuffle,
     accAdd,
     accSub,
@@ -248,5 +350,12 @@ export default {
     accDiv,
     formatPrice,
     forEach,
-    filter
-};
+    filter,
+    sortAscii,
+    generateSign,
+    EventObserver,
+    StateObserver,
+    addEventListener,
+    removeEventListener,
+    dispatchEvent,
+}

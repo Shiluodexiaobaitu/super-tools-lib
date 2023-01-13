@@ -46,35 +46,35 @@ _.getFileBase64(file, (base64) => {
 - isAndroidMobileDevice 判断是否安卓移动设备访问
 
 ```js
-
-_.isAndroidMobileDevice() // true | false
+_.isAndroidMobileDevice(); // true | false
 ```
 
 - isAppleMobileDevice 判断是否苹果移动设备访问
 
 ```js
-
-_.isAppleMobileDevice() // true | false
+_.isAppleMobileDevice(); // true | false
 ```
 
 - throttle 函数节流
 
 ```js
-
-const fn = _.throttle(()=>{console.log('1')},2000);
-fn()
-fn()
-fn()
+const fn = _.throttle(() => {
+  console.log("1");
+}, 2000);
+fn();
+fn();
+fn();
 ```
 
 - debounce 函数防抖
 
 ```js
-
-const fn =  _.debounce(()=>{console.log('1')},2000);
-fn()
-fn()
-fn() // 如果多次触发将上次记录延迟清除掉,以最后一次触发重新计时
+const fn = _.debounce(() => {
+  console.log("1");
+}, 2000);
+fn();
+fn();
+fn(); // 如果多次触发将上次记录延迟清除掉,以最后一次触发重新计时
 ```
 
 - fileDownload 根据 url 地址下载文件，图片，音频，视频
@@ -99,59 +99,51 @@ _.fuzzyQuery(arr, "name", "1"); // [ { "name": "1"}]
 - getUrlParam 获取 url ？后的参数
 
 ```js
-
 _.getUrlParam();
 ```
 
 - cookie cookie 操作
 
 ```js
+_.cookie.set("key", "value", 1000);
 
-_.cookie.set('key','value',1000)
+_.cookie.get("key"); // 'value'
 
-_.cookie.get('key') // 'value'
+_.cookie.delete("key");
 
-_.cookie.delete('key')
-
-_.cookie.get('key') // undefined
-
+_.cookie.get("key"); // undefined
 ```
 
 - colorHex RGB 颜色转 16 进制
 
 ```js
-
-_.colorHex('255,192,203'); // '#ffc0cb'
-_.colorHex('rgb(255,192,203)') // '#ffc0cb'
+_.colorHex("255,192,203"); // '#ffc0cb'
+_.colorHex("rgb(255,192,203)"); // '#ffc0cb'
 ```
 
 - hexToRgba 16 进制颜色转 RGBA
 
 ```js
-
-_.hexToRgba('#ffc0cb'); // 'rgba(255,192,203,1)'
+_.hexToRgba("#ffc0cb"); // 'rgba(255,192,203,1)'
 ```
 
 - rgbaToHex rgba 颜色转 16 进制
 
 ```js
-
-_.rgbaToHex('rgba(255,192,203,1)') // '#ffc0cb'
+_.rgbaToHex("rgba(255,192,203,1)"); // '#ffc0cb'
 ```
 
 - viewportToPixels 计算 vh / vw 转 px
 
 ```js
-
-_.viewportToPixels('90vh') // 640
+_.viewportToPixels("90vh"); // 640
 ```
 
 - noRefdelUrlParam 无刷新去除 url ?后 参数
 
 ```js
-
 // http://localhost:8888/?id=2
-_.noRefdelUrlParam('id');  // http://localhost:8888/?
+_.noRefdelUrlParam("id"); // http://localhost:8888/?
 ```
 
 - vconsole 移动端查看 log
@@ -163,22 +155,19 @@ _.vconsole();
 - getAge 输入身份证号获取年龄
 
 ```js
-
-_.getAge('xxxxxxxxxxxxxxxxx'); // '29岁0月14天'
+_.getAge("xxxxxxxxxxxxxxxxx"); // '29岁0月14天'
 ```
 
 - getSex 输入身份证号获取性别
 
 ```js
-
-_.getSex('xxxxxxxxxxxxxxxxx'); // '男'
+_.getSex("xxxxxxxxxxxxxxxxx"); // '男'
 ```
 
 - digitUppercase 数字转化为大写金额
 
 ```js
-
-_.digitUppercase(10000) // '壹万元整'
+_.digitUppercase(10000); // '壹万元整'
 ```
 
 - injectScript 动态引入 js
@@ -190,13 +179,12 @@ _.injectScript(src);
 - sinogToLetter 输入汉字转换汉字首字母
 
 ```js
-
-_.sinogToLetter('你好 ') // 'NH'
+_.sinogToLetter("你好 "); // 'NH'
 ```
 
 ```js
 //375屏幕下
-_.getFitSize(100,750); // 50
+_.getFitSize(100, 750); // 50
 ```
 
 - checkPassWord 检测密码强度
@@ -205,8 +193,7 @@ _.getFitSize(100,750); // 50
   return {1：密码弱 2：密码中等 3：密码强 4：密码很强}
 
 ```js
-
-_.checkPassWord('ssssss@1Sdddd'); // 4
+_.checkPassWord("ssssss@1Sdddd"); // 4
 ```
 
 - fahrenheitToCelsius 将华氏温度转换为摄氏温度
@@ -214,7 +201,6 @@ _.checkPassWord('ssssss@1Sdddd'); // 4
   fahrenheit: 华氏温度
 
 ```js
-
 _.fahrenheitToCelsius(50); // 10
 ```
 
@@ -223,7 +209,6 @@ _.fahrenheitToCelsius(50); // 10
   fahrenheit: 摄氏温度
 
 ```js
-
 _.celsiusToFahrenheit(10); // 50
 ```
 
@@ -250,7 +235,6 @@ _.forEach(obj, (value, key) => {
   2,Function:每次迭代调用的函数。
 
 ```js
-
 const arr = [1, 2, 3, 4, 5];
 _.filter(arr, (item, index) => item === 3); // [3]
 ```
@@ -258,7 +242,6 @@ _.filter(arr, (item, index) => item === 3); // [3]
 - last 返回数组最后一项
 
 ```js
-
 const arr = [1, 2, 3, 4, 5];
 _.last(arr); // 5
 ```
@@ -266,9 +249,14 @@ _.last(arr); // 5
 - alphabeticSort 按字母排序
 
 ```js
-
-let arr = [{value: 'b'},{value: 'a'},{value: 'c'},{value: 'e'},{value: 'f'}]
-_.alphabeticSort(arr,'value')
+let arr = [
+  { value: "b" },
+  { value: "a" },
+  { value: "c" },
+  { value: "e" },
+  { value: "f" },
+];
+_.alphabeticSort(arr, "value");
 // [
 //     {
 //         "value": "a"
@@ -285,7 +273,7 @@ _.alphabeticSort(arr,'value')
 //     {
 //         "value": "f"
 //     }
-// ] 
+// ]
 ```
 
 - arrToObject 将对象数组转换为单个对象
@@ -298,7 +286,7 @@ _.arrToObject(
     { id: "3", name: "Charlie", gender: "Female" },
   ],
   "id"
-)
+);
 // {
 //     '1': { id: '1', name: 'Alpha', gender: 'Male' },
 //     '2': { id: '2', name: 'Bravo', gender: 'Male' },
@@ -309,8 +297,7 @@ _.arrToObject(
 - toNumbers 将字符串数组转换为数字
 
 ```js
-
-_.toNumbers(['2', '3', '4']) // [2, 3, 4]
+_.toNumbers(["2", "3", "4"]); // [2, 3, 4]
 ```
 
 - countBy 按数组对象中的属性计数
@@ -325,21 +312,19 @@ _.countBy(
     { branch: "bmw", model: "x7", year: "2020" },
   ],
   "branch"
-) // { 'audi': 2, 'ford': 2, 'bmw': 1 }
+); // { 'audi': 2, 'ford': 2, 'bmw': 1 }
 ```
 
 - indexOfMax 查找数组中最大项的索引
 
 ```js
-
-_.indexOfMax([1, 3, 2, 7, 5]) // 3
+_.indexOfMax([1, 3, 2, 7, 5]); // 3
 ```
 
 - indexOfMin 查找数组中最小项的索引
 
 ```js
-
-_.indexOfMin([1, 3, 2, 7, 5]) // 0
+_.indexOfMin([1, 3, 2, 7, 5]); // 0
 ```
 
 - contains 检查数组是否包含符合某些标准的值
@@ -353,22 +338,19 @@ _.contains([1, 2, 3], (v) => v == 3); // true
 - initialToCapitali 字符串首位是字母转大写
 
 ```js
-
-_.initialToCapitali('aaaa'); // 'Aaaa'
+_.initialToCapitali("aaaa"); // 'Aaaa'
 ```
 
 - repeat 传入字符串，和重复次数，返回结果字符串
 
 ```js
-
-_.repeat('abc',3) // 'abcabcabc'
+_.repeat("abc", 3); // 'abcabcabc'
 ```
 
 - trim 去除字符串首尾空格
 
 ```js
-
-_.trim('  xxx  ') // 'xxx'
+_.trim("  xxx  "); // 'xxx'
 ```
 
 - getTextWidth 计算文字宽度
@@ -377,8 +359,7 @@ _.trim('  xxx  ') // 'xxx'
   2，font(numver): '14px sans-serif' 字号 字体
 
 ```js
-
-_.getTextWidth('哈哈哈哈哈哈哈哈',26); // 80
+_.getTextWidth("哈哈哈哈哈哈哈哈", 26); // 80
 ```
 
 - transFormat 字符串替换
@@ -388,8 +369,7 @@ _.getTextWidth('哈哈哈哈哈哈哈哈',26); // 80
   3，newChar 表示你想要替换的字符
 
 ```js
-
-_.transFormat('2019-12-13', '-', '/') // 2019/12/13
+_.transFormat("2019-12-13", "-", "/"); // 2019/12/13
 ```
 
 - strInversion 反正字符串
@@ -397,8 +377,7 @@ _.transFormat('2019-12-13', '-', '/') // 2019/12/13
   1，str 要反转的字符串
 
 ```js
-
-_.strInversion('abc') // 'cba'
+_.strInversion("abc"); // 'cba'
 ```
 
 - toLine 驼峰转下划线
@@ -407,14 +386,13 @@ _.strInversion('abc') // 'cba'
   2，isLowercase 是否转换成小写字母 默认值 true
 
 ```js
-
-_.toLine('contBeginDate', false) // 'CONT_BEGIN_DATE'
+_.toLine("contBeginDate", false); // 'CONT_BEGIN_DATE'
 ```
 
 - toFullHexColor 将 3 位数颜色转换为 6 位数颜色
 
 ```js
-_.toFullHexColor('#FFF') // '#FFFFFF'
+_.toFullHexColor("#FFF"); // '#FFFFFF'
 ```
 
 - decode 解码 JWT 令牌
@@ -424,13 +402,13 @@ _.decode(`
     eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
     eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0I
     joxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
-`)// '{"sub":"1234567890","name":"John Doe","iat":1516239022}'
+`); // '{"sub":"1234567890","name":"John Doe","iat":1516239022}'
 ```
 
 - letterToEmoji 转换字母以关联表情符号
 
 ```js
-_.letterToEmoji('a') // '🇦'
+_.letterToEmoji("a"); // '🇦'
 ```
 
 - toPascalCase 将字符串转换为 PascalCase
@@ -458,56 +436,49 @@ _.replaceText("17778780909", [3, 7], "*"); // '177****0909'
 - accAdd 浮点数加法运算
 
 ```js
-
-_.accAdd(0.1, 0.2) // 0.3
+_.accAdd(0.1, 0.2); // 0.3
 ```
 
 - accSub 浮点数减法运算
 
 ```js
-
-_.accSub(0.3,0.1) // 0.2
+_.accSub(0.3, 0.1); // 0.2
 ```
 
 - accMul 浮点数乘法运算
 
 ```js
-
-_.accMul(0.1,3) // 0.3
+_.accMul(0.1, 3); // 0.3
 ```
 
 - accDiv 浮点数除法运算
 
 ```js
-
-_.accDiv(0.3,3) // 0.1
+_.accDiv(0.3, 3); // 0.1
 ```
 
 - formatPrice 数字千分位增加逗号
 
 ```js
-
-_.formatPrice(1111112211111,',') // '1,111,112,211,111'
+_.formatPrice(1111112211111, ","); // '1,111,112,211,111'
 ```
 
 - smallRounding 小数指定位数进行取整
 
 ```js
-_.smallRounding(89.38931,3); // 89.39
+_.smallRounding(89.38931, 3); // 89.39
 ```
 
 - range 在给定范围内创建数字数组
 
 ```js
-
-_.range(1,5) // [1,2,3,4,5]
+_.range(1, 5); // [1,2,3,4,5]
 ```
 
 - closest 从数组中查找最接近的数字
 
 ```js
-
-_.closest([29, 87, 8, 78, 97, 20, 75, 33, 24, 17],50) // 33
+_.closest([29, 87, 8, 78, 97, 20, 75, 33, 24, 17], 50); // 33
 ```
 
 ### 时间操作方法
@@ -515,71 +486,67 @@ _.closest([29, 87, 8, 78, 97, 20, 75, 33, 24, 17],50) // 33
 - dateFormater 格式化时间
 
 ```js
-
-_.dateFormater('YYYY-MM-DD HH:mm:ss',new Date()) // '2022-01-18 12:01:10'
+_.dateFormater("YYYY-MM-DD HH:mm:ss", new Date()); // '2022-01-18 12:01:10'
 ```
 
 - formatPassTime 格式化${startTime}距现在的已过时间(距离传入的时间经多了多久)
 
 ```js
-
 _.formatPassTime(1578614400000); // '2年前'
 ```
 
 - formatRemainTime 格式化现在距${endTime}的剩余时间
 
 ```js
-
-_.formatRemainTime(new Date('2023').getTime()) // '347天19小时52分钟 26秒'
+_.formatRemainTime(new Date("2023").getTime()); // '347天19小时52分钟 26秒'
 ```
 
 - dayDiff 计算两日期之间相差的天数
 
 ```js
-
-_.dayDiff(new Date("2022-03-01"),new Date("2021-01-21")) // 404
+_.dayDiff(new Date("2022-03-01"), new Date("2021-01-21")); // 404
 ```
 
 - monthDiff 计算两个日期之间的月数
 
 ```js
-_.monthDiff(new Date("2022-01-01"),new Date("2021-01-01")) // 12
+_.monthDiff(new Date("2022-01-01"), new Date("2021-01-01")); // 12
 ```
 
 - compareDate 比较两个日期
 
 ```js
-_.compareDate(new Date('2020-03-30'), new Date('2020-01-01')) // true
+_.compareDate(new Date("2020-03-30"), new Date("2020-01-01")); // true
 ```
 
 - formatSeconds 将秒转换为 hh:mm:ss 格式
 
 ```js
-_.formatSeconds(300) // '00:05:00'
+_.formatSeconds(300); // '00:05:00'
 ```
 
 - getQuarter 获取日期的当前季度
 
 ```js
-_.getQuarter(new Date('2023-12-12')) // 4
+_.getQuarter(new Date("2023-12-12")); // 4
 ```
 
 - getLastDate 获取传入的日期当月的最后一个日期
 
 ```js
-_.getLastDate(new Date('2023-01-01')) // Tue Jan 31 2023 00:00:00 GMT+0800 (中国标准时间)
+_.getLastDate(new Date("2023-01-01")); // Tue Jan 31 2023 00:00:00 GMT+0800 (中国标准时间)
 ```
 
 - getFirstDate 获取传入的日期当月的第一个日期
 
 ```js
-_.getFirstDate(new Date('2023-01-23')) // Sun Jan 01 2023 00:00:00 GMT+0800 (中国标准时间)
+_.getFirstDate(new Date("2023-01-23")); // Sun Jan 01 2023 00:00:00 GMT+0800 (中国标准时间)
 ```
 
 - getCurrentSecond 获取当前时间戳（秒）
 
 ```js
-_.getCurrentSecond() // 1673418350
+_.getCurrentSecond(); // 1673418350
 ```
 
 ### 正则操作方法
@@ -622,8 +589,7 @@ _.performanceAnalysis();
 - getOffset 获取一个元素距离浏览器左上角的偏移量
 
 ```js
-
-_.getOffset(element) // { top:0, left:0 }
+_.getOffset(element); // { top:0, left:0 }
 ```
 
 - stopPropagation 阻止冒泡事件
@@ -674,25 +640,25 @@ _.scrollToTheBottom(ele, callback, delay);
   return: true 文字溢出， false 不溢出
 
 ```js
-_.textVisibilityChange(document.getElementById('text')); // true | false
+_.textVisibilityChange(document.getElementById("text")); // true | false
 ```
 
 - getTransformMatrix 获取 transform translate 中矩阵 x，y 坐标
 
 ```js
-_.getTransformMatrix(document.getElementById('text'));
+_.getTransformMatrix(document.getElementById("text"));
 ```
 
 - isDescendant 检查某个元素是否是另一个元素的后代
 
 ```js
-_.isDescendant(childDom,parentDom) // true | false
+_.isDescendant(childDom, parentDom); // true | false
 ```
 
 - getSelectedText 获取鼠标所选文本
 
 ```js
-_.getSelectedText() // ''
+_.getSelectedText(); // ''
 ```
 
 - insertAfter 在其他元素之后插入一个元素
@@ -719,7 +685,7 @@ _.insertHtmlAfter(html, ele);
 _.insertHtmlBefore(html, ele);
 ```
 
-- eleReplace 替换dom元素
+- eleReplace 替换 dom 元素
 
 ```js
 _.eleReplace(oldEle, newEle);
@@ -731,31 +697,18 @@ _.eleReplace(oldEle, newEle);
 
 ```js
 _.lonLatToMercator({ lon: 116.445088, lat: 39.94614 }); // {x: 12962607.899733523, y: 4858118.574453057}
-
 ```
 
 - mercatorToLonlat 墨卡托转经纬度
 
 ```js
-_.mercatorToLonlat({x: 12962607.899733523, y: 4858118.574453057}) // {lon: 116.44508800000001, lat: 39.946140000000014}
-```
-
-- getDistance 距离计算
-
-```js
-const startLon = 116.641874;
-const startLat = 40.304162;
-const endLon = 116.213407;
-const endLat = 40.226617;
-
-_.getDistance(startLon, startLat, endLon, endLat); // 37405
+_.mercatorToLonlat({ x: 12962607.899733523, y: 4858118.574453057 }); // {lon: 116.44508800000001, lat: 39.946140000000014}
 ```
 
 - calcDistance 计算经纬度两个坐标得距离
 
 ```js
-
-_.calcDistance(116.95400,39.95400,116.95300,39.95300) // 0.1222
+_.calcDistance(116.954, 39.954, 116.953, 39.953); // 0.1222
 ```
 
 ### 操作浏览器方法
@@ -776,22 +729,22 @@ _.exitFullscreen();
 
 ```js
 // 返回user下的name值
-_.LocalStorage.get(user,name)
+_.LocalStorage.get(user, name);
 
 // 设置user下name字段的的值value
-_.LocalStorage.get(user, name, value)
+_.LocalStorage.get(user, name, value);
 
 // 删除user下的name字段
-_.LocalStorage.remove(user, name)
+_.LocalStorage.remove(user, name);
 
 // 清空本地存储
-_.LocalStoeage.clear()
+_.LocalStoeage.clear();
 ```
 
 - getLocalStorageSize 获取 localStorage 使用容量
 
 ```js
-_.getLocalStorageSize() // '0.00KB'
+_.getLocalStorageSize(); // '0.00KB'
 ```
 
 - getPosition H5 获取地理位置
@@ -872,8 +825,32 @@ db.close();
 - arrayNonRepeatfy 利用 Map 数据结构去重
 
 ```js
-const arr = [1,1,'true','true',true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,'NaN', 0, 0, 'a', 'a',{},{}]
-_.arrayNonRepeatfy(arr) // [1, 'true', true, 15, false, undefined, null, NaN, 'NaN', 0, 'a', {}, {}]
+const arr = [
+  1,
+  1,
+  "true",
+  "true",
+  true,
+  true,
+  15,
+  15,
+  false,
+  false,
+  undefined,
+  undefined,
+  null,
+  null,
+  NaN,
+  NaN,
+  "NaN",
+  0,
+  0,
+  "a",
+  "a",
+  {},
+  {},
+];
+_.arrayNonRepeatfy(arr); // [1, 'true', true, 15, false, undefined, null, NaN, 'NaN', 0, 'a', {}, {}]
 ```
 
 ### 操作对象方法
@@ -897,7 +874,12 @@ _.arrayNonRepeatfy(arr) // [1, 'true', true, 15, false, undefined, null, NaN, 'N
 - stringfyQueryString 对象序列化
 
 ```js
-_.stringfyQueryString({name:'fei',id:1, "storeNo" : "1-105","floorName" : "F1",}) // 'name=fei&id=1&storeNo=1-105&floorName=F1'
+_.stringfyQueryString({
+  name: "fei",
+  id: 1,
+  storeNo: "1-105",
+  floorName: "F1",
+}); // 'name=fei&id=1&storeNo=1-105&floorName=F1'
 ```
 
 - values
@@ -929,161 +911,155 @@ _.keys(obj);
 - isBase64
 
 ```js
-_.isBase64(target) // true | false
+_.isBase64(target); // true | false
 ```
 
 - isArray
 
 ```js
-_.isArray(target) // true | false
+_.isArray(target); // true | false
 ```
 
 - isString
 
 ```js
-_.isString(target) // true | false
+_.isString(target); // true | false
 ```
 
 - isFunction
 
 ```js
-_.isFunction(target) // true | false
+_.isFunction(target); // true | false
 ```
 
 - isObject
 
 ```js
-_.isObject(target) // true | false
+_.isObject(target); // true | false
 ```
 
 - isNumber
 
 ```js
-_.isNumber(target) // true | false
+_.isNumber(target); // true | false
 ```
 
 - isWeiXin
 
 ```js
-_.isWeiXin() // true | false
+_.isWeiXin(); // true | false
 ```
 
 - isSupportWebP 判断浏览器是否支持 webP 格式图片
 
 ```js
-_.isSupportWebP() // true | false
+_.isSupportWebP(); // true | false
 ```
 
 - isMobile 判断当前是不是移动端
 
 ```js
-_.isMobile() // true | false
+_.isMobile(); // true | false
 ```
 
 - returnType 返回类型
 
 ```js
-_.returnType(target)
+_.returnType(target);
 ```
 
 - isPromise 是否 Promise 对象
 
 ```js
-_.isPromise(target) // true | false
+_.isPromise(target); // true | false
 ```
 
 - isSymbol
 
 ```js
-_.isSymbol(target) // true | false
+_.isSymbol(target); // true | false
 ```
 
 - isError
 
 ```js
-_.isError(target) // true | false
+_.isError(target); // true | false
 ```
 
 - isRegExp
 
 ```js
-_.isRegExp(target) // true | false
+_.isRegExp(target); // true | false
 ```
 
 - isDate
 
 ```js
-_.isDate(target) // true | false
+_.isDate(target); // true | false
 ```
 
 - isUndefined
 
 ```js
-_.isUndefined(target) // true | false
+_.isUndefined(target); // true | false
 ```
 
 - isNull
 
 ```js
-_.isNull(target) // true | false
+_.isNull(target); // true | false
 ```
 
 - isImg
 
 ```js
-
-_.isImg(val) // true | false
+_.isImg(val); // true | false
 ```
 
 - isUrl
 
 ```js
-
-_.isUrl(val) // true | false
-
+_.isUrl(val); // true | false
 ```
 
 - isObjectKeyEqual 判断两个对象是否拥有一样的 key
 
 ```js
+_.isObjectKeyEqual({ a: 2 }, { a: 3 }); // true
 
-_.isObjectKeyEqual({a:2},{a:3}) // true
-
-_.isObjectKeyEqual({a:2,b:3},{a:3,c:3}) // false
+_.isObjectKeyEqual({ a: 2, b: 3 }, { a: 3, c: 3 }); // false
 ```
 
 - isObjectExistsKey 判断一个对象内是否包含指定的键
 
 ```js
-
-_.isObjectKeyEqual({a:2},'a') // true
+_.isObjectKeyEqual({ a: 2 }, "a"); // true
 ```
 
 - isObjectIncludeSpecifiedKey 判断 a 对象是否包含 b 对象的键
 
 ```js
-
-const a = {a:2,b:2}
-const b = {b:3}
-_.isObjectIncludeSpecifiedKey(a,b) // true
+const a = { a: 2, b: 2 };
+const b = { b: 3 };
+_.isObjectIncludeSpecifiedKey(a, b); // true
 ```
 
 - isEmptyObject 判断对象是否为空
 
 ```js
-_.isEmptyObject({}) // true
+_.isEmptyObject({}); // true
 ```
 
 - isEmptyArray 检查数组是否为空
 
 ```js
-_.isEmptyArray([]) // true
+_.isEmptyArray([]); // true
 ```
 
 - isDarkMode 检测是否暗模式
 
 ```js
-_.isDarkMode() // true | false
+_.isDarkMode(); // true | false
 ```
 
 - isHexColor 检查字符串是否为十六进制颜色
@@ -1092,6 +1068,19 @@ _.isDarkMode() // true | false
 _.isHexColor("#fff"); // true
 _.isHexColor("#ffffff"); // true
 _.isHexColor("dad"); // false
+```
+
+- isHexColor 判断是否是基本数据类型
+
+```js
+_.isBasicType("1"); // true
+```
+
+- isEqual 深比较来确定两者的值是否相等
+** 方法支持比较：array，object，string，boolean，number，null，undefined，symbol
+
+```js
+_.isEqual({ a: 1 }, { a: 2 }); // true
 ```
 
 ### EventObserver 事件观察者
@@ -1126,11 +1115,11 @@ _.dispatchEvent("my_click", { a: 1 });
 ```js
 const state = new _.StateObserver({ name: "李四", age: 18 });
 
-function change(newValue){
-  console.log('newValue',newValue)
+function change(newValue) {
+  console.log("newValue", newValue);
 }
 // 监听状态改变事件
-state.on('age', change);
+state.on("age", change);
 
 // 移除状态改变事件
 // state.off('age',change);
@@ -1139,9 +1128,9 @@ state.on('age', change);
 state.setState({ age: 20 });
 
 // 查询状态
-state.getState('age') // 20
+state.getState("age"); // 20
 
-state.getState() // { name: "李四", age: 20 }
+state.getState(); // { name: "李四", age: 20 }
 ```
 
 ### Math
@@ -1165,7 +1154,7 @@ _.distance(
 - degsToRads // 将度转换为弧度
 
 ```js
-_.degsToRads(90) // 1.5707963267948966
+_.degsToRads(90); // 1.5707963267948966
 ```
 
 ### 文件操作方法

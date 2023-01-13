@@ -2,12 +2,18 @@
  * @Author: zhangce
  * @Date: 2023-01-06 16:41:02
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2023-01-13 16:55:39
+ * @LastEditTime: 2023-01-13 17:02:49
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description:
  *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
 -->
+
+### 1.50.0
+
+```js
+// 优化文档
+```
 
 ### 1.49.0
 

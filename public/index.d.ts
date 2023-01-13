@@ -71,6 +71,8 @@
 //   get url(): any;
 // }
 
+// export declare const isBasicType: (val: unknown) => boolean;
+// export declare const isEqual: (value: any, other: any) => boolean;
 // export declare const contains: <T_3>(arr: T_3[], criteria: (a: T_3) => boolean) => boolean;
 // export declare const replaceText: (str: string, range: [number, number] | [number], mask: string) => string;
 // export declare const removeSpaces: (str: string) => string;
@@ -144,8 +146,8 @@
 // export declare const getTextWidth: (text: string, font: any) => number;
 // export declare const values: <T_15>(obj: Record<string, T_15>) => T_15[];
 // export declare const keys: <T_16>(obj: Record<string, T_16>) => T_16[];
-// export declare const forEach: <T_18>(data: Record<string, T_18> | T_18[], iteratee: (...rest: T_18[]) => boolean | void) => void;
-// export declare const filter: <T_19>(data: Record<string, T_19> | T_19[], iteratee: (...rest: T_19[]) => boolean) => T_19[];
+// export declare const forEach: <T_18>(data: Record<string, T_18> | T_18[], iteratee: (item: T_18, key?: string | number) => boolean | void) => void;
+// export declare const filter:  <T_19>(data: Record<string, T_19> | T_19[], iteratee: (item: T_19, key?: string | number) => boolean) => T_19[];
 // export declare const formatPrice: (price: any, sign?: string) => string;
 // export declare const getFitSize: (px: number, draft?: number) => number;
 // export declare const accAdd: (num1: any, num2: number) => number;
@@ -211,7 +213,6 @@
 //   time?: number;
 //   rate?: number;
 // }) => void;
-// export declare const getDistance: (startLon: number, startLat: number, endLon: number, endLat: number) => number;
 // export declare const calcDistance: (lat1: number, lng1: number, lat2: number, lng2: number) => number;
 // export declare const lonLatToMercator: (lonLat: {
 //   lon: number;

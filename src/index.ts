@@ -62,7 +62,6 @@ import {
 } from './performance'
 
 import {
-    getDistance,
     calcDistance,
     lonLatToMercator,
     mercatorToLonlat,
@@ -141,6 +140,8 @@ import {
     isEmptyArray,
     isDarkMode,
     isHexColor,
+    isBasicType,
+    isEqual,
 } from './is'
 
 import { downBlob } from './file'
@@ -217,6 +218,8 @@ export default {
     isEmptyArray,
     isDarkMode,
     isHexColor,
+    isBasicType,
+    isEqual,
     transFormat,
     strInversion,
     toLine,
@@ -267,7 +270,6 @@ export default {
     getLocalStorageSize,
     performanceAnalysis,
     getPerformanceTiming,
-    getDistance,
     calcDistance,
     lonLatToMercator,
     mercatorToLonlat,

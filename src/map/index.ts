@@ -2,33 +2,9 @@
  * @Author: zhangce
  * @Date: 2021-10-08 14:15:34
  * @LastEditors: zhangce
- * @LastEditTime: 2023-01-12 14:19:46
+ * @LastEditTime: 2023-01-13 16:55:22
  * @Description: 
  */
-
-/**
- * @desc: 获取两个高德坐标的距离, 后一个点，不传，默认为用户坐标
- * @param {number} startLon
- * @param {number} startLat
- * @param {number} endLon
- * @param {number} endLat
- * @return {*}
- */
-const getDistance = (startLon: number, startLat: number, endLon: number, endLat: number): number => {
-
-    const PI = Math.PI
-    const lon1: number = (PI / 180) * startLon
-    const lon2: number = (PI / 180) * endLon
-    const lat1: number = (PI / 180) * startLat
-    const lat2: number = (PI / 180) * endLat
-    // 地球半径  
-    const R = 6378.137
-
-    // 两点间距离 km，如果想要米的话，结果*1000就可以了  
-    const d: number = Math.acos(Math.sin(lat1) * Math.sin(lat2) + Math.cos(lat1) * Math.cos(lat2) * Math.cos(lon2 - lon1)) * R
-    const s = d * 1000
-    return parseInt(`${s}`, 10)
-}
 
 /**
  * @desc: 计算经纬度
@@ -77,7 +53,6 @@ const mercatorToLonlat = (mercator: { x: number, y: number }): { lon: number, la
 }
 
 export {
-    getDistance,
     calcDistance,
     lonLatToMercator,
     mercatorToLonlat,

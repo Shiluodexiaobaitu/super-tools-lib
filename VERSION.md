@@ -2,13 +2,27 @@
  * @Author: zhangce
  * @Date: 2023-01-06 16:41:02
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2023-01-12 17:54:03
+ * @LastEditTime: 2023-01-13 16:55:39
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description:
  *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
 -->
 
+### 1.49.0
+
+```js
+// 优化
+// 1.forEach
+// 2.filter
+
+// 新增
+// 1.isBasicType
+// 2.isEqual
+
+// 删除
+// 1.getDistance
+```
 ### 1.48.0
 
 ```js

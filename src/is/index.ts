@@ -2,9 +2,11 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @LastEditors: zhangce
- * @LastEditTime: 2023-01-12 14:19:00
+ * @LastEditTime: 2023-01-13 16:32:28
  * @Description: 
  */
+
+import { forEach } from '../loop'
 
 /**
  * @desc: base64类型验证
@@ -297,11 +299,115 @@ const isDarkMode = () => {
 }
 
 /**
+ * @desc: 判断是否是基本数据类型
+ * @param {unknown} val
+ * @return {*}
+ */
+const isBasicType = (val: unknown): boolean => {
+    const t = Object.prototype.toString.call(val)
+    if (t === '[object String]' ||
+        t === '[object Boolean]' ||
+        t === '[object Number]' ||
+        t === '[object Null]' ||
+        t === '[object Undefined]' ||
+        t === '[object Symbol]') {
+        return true
+    }
+    return false
+}
+
+/**
  * @desc: 检查字符串是否为十六进制颜色
  * @param {string} color
  * @return {*}
  */
 const isHexColor = (color: string): boolean => /^#([0-9A-F]{3}|[0-9A-F]{4}|[0-9A-F]{6}|[0-9A-F]{8})$/i.test(color)
+
+
+const _equalObject = <V, O>(value: Record<string, V>, other: Record<string, O>, map) => {
+    if (isObjectKeyEqual(value, other)) {
+        let _flag = true
+
+        forEach(value, (item, key) => {
+            if (!_isEqual(item, other[key], map)) {
+                _flag = false
+                return false
+            }
+        })
+        return _flag
+    }
+    return false
+}
+
+const _equalArray = <V, O>(value: V[], other: O[], map) => {
+    const valueLength = value.length
+    const otherLength = other.length
+
+    if (valueLength !== otherLength) {
+        return false
+    }
+
+    let _flag = true
+
+    forEach(value, (item, index) => {
+        if (!_isEqual(item, other[index], map)) {
+            _flag = false
+            return false
+        }
+    })
+
+    return _flag
+}
+
+const _isEqual = (value, other, map = new WeakMap()) => {
+    if (value === other) {
+        return true
+    }
+
+    if (returnType(value) !== returnType(other)) {
+        return false
+    }
+
+    if (isBasicType(value) || isBasicType(other)) {
+        return value === other
+    }
+
+    // 解决引用数据类型循环引用
+    if (map.has(value)) {
+        const FREQUENCY = map.get(value)
+        if (FREQUENCY > 1) {
+            return true
+        }
+        map.set(value, FREQUENCY + 1)
+    }
+
+    if (isObject(value) || isArray(value)) {
+        if (!map.get(value)) {
+            map.set(value, 1)
+        }
+    }
+
+    if (isObject(value) && isObject(other)) {
+        return _equalObject(value, other, map)
+    }
+
+    if (isArray(value) && isArray(other)) {
+        return _equalArray(value, other, map)
+    }
+
+    return true
+}
+
+/**
+ * @desc: 深比较来确定两者的值是否相等
+ * ** 方法支持比较：array，object，string，boolean，number，null，undefined，symbol
+ * @param {*} value
+ * @param {*} other
+ * @return {*}
+ */
+const isEqual = (value, other) => {
+    return _isEqual(value, other)
+}
 
 
 export {
@@ -333,4 +439,6 @@ export {
     isEmptyArray,
     isDarkMode,
     isHexColor,
+    isEqual,
+    isBasicType,
 }

@@ -13,25 +13,6 @@ const guid = (): string => {
 }
 
 /**
- * @desc: 文件的Base64编码，
- * @param {则需要FileReader。FileReader类型实现的是一种异步文件读取机制。可以把FileReader想象成XMLHttpRequest，区别只是它读取的是文件系统，而不是远程服务器。}
-*/
-const getFileBase64 = (file: File, cb: (base64: ArrayBuffer | string) => void): void => {
-    if (!file) throw new Error('Error! no param "file"(getFileBase64()).')
-
-    const reader = new FileReader()
-    reader.onload = function (e): void {
-        const base64 = e.target.result   // 该文件的完整Base64
-
-        if (cb) cb(base64)
-    }
-    reader.onerror = function (): void {
-        alert('Read file fail.')
-    }
-    reader.readAsDataURL(file)
-}
-
-/**
  * @desc: 节流
  * @param {*} func 执行函数
  * @param {*} delay 节流时间,毫秒
@@ -113,70 +94,6 @@ const fuzzyQuery = <T>(list: T[], key: string, keyWord: string): T[] => {
     return arr
 }
 
-/**
- * @desc: 获取url参数 返回一个{}
- * @return {*}
- */
-const getUrlParam = function () {
-    const url = document.location.toString()
-    let arrObj = url.split('?')
-    const params = Object.create(null)
-    if (arrObj.length > 1) {
-        arrObj = arrObj[1].split('&')
-        arrObj.forEach((item: any) => {
-            item = item.split('=')
-            params[item[0]] = item[1]
-        })
-    }
-    return params
-}
-
-/**
- * @desc: 封装cookie增删改查的函数
- * @return {*}
- */
-const cookie = {
-    /**
-     * 设置cookie属性及时间
-     * 注意：只能逐条设置
-     * @param {*} key 属性名
-     * @param {*} value 属性值
-     * @param {*} expTime 过期时间
-     * @returns 
-     */
-    set: (key: string, value: string, expTime?: number) => {
-        document.cookie = key + '=' + value + ';max-age=' + expTime
-    },
-
-    /**
-     * 删除cookie属性
-     * @param {*} key 被删的属性
-     */
-    delete: (key: string) => {
-        document.cookie = key + '=' + '' + ';max-age=' + -1
-    },
-
-    /**
-     * 查询cookie属性
-     * 使用：get('hobby', function(data){console.log(data)})
-     * @param {*} key 
-     * @param {*} cb 
-     * @returns 
-     */
-    get: (key: string) => {
-        const CookiesArray = document.cookie.split('; ')
-        let value: string | undefined = undefined
-        for (let i = 0; i < CookiesArray.length; i++) {
-            const CookieItem = CookiesArray[i]
-            const CookieItemArray = CookieItem.split('=')
-
-            if (CookieItemArray[0] === key) {
-                value = CookieItemArray[1]
-            }
-        }
-        return value
-    },
-}
 
 /**
  * @desc: RGB颜色转16进制
@@ -544,13 +461,10 @@ const celsiusToFahrenheit = (celsius: number): number => {
 
 export {
     guid,
-    getFileBase64,
     throttle,
     debounce,
     fileDownload,
     fuzzyQuery,
-    getUrlParam,
-    cookie,
     colorHex,
     viewportToPixels,
     noRefdelUrlParam,

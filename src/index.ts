@@ -190,6 +190,7 @@ import {
     forEach,
     filter,
 } from './loop'
+import { map } from './loop/map'
 
 import {
     sortAscii,
@@ -362,6 +363,7 @@ export default {
     accDiv,
     formatPrice,
     forEach,
+    map,
     filter,
     sortAscii,
     generateSign,

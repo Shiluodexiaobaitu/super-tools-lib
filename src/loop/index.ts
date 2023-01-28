@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2022-03-07 13:50:06
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2023-01-13 14:01:25
+ * @LastEditTime: 2023-01-17 14:58:24
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 循环方法集合
@@ -41,9 +41,9 @@ function _objectFilter(obj, iteratee) {
 
 /**
  * @desc: 封装filter
- * @param {Record<string, T> | T[]} data
- * @param {*} iteratee 迭代函数
- * @return {T[]}
+ * @param {Record<string, T> | T[]} data 用来迭代的数据
+ * @param {*} iteratee 每次迭代调用的函数
+ * @return {[...]}
  */
 const filter = <T>(data: T[] | Record<string, T>, iteratee: (item: T, key?: string | number) => boolean): T[] => {
     const func = isArray(data) ? _arrayFilter : _objectFilter
@@ -73,9 +73,9 @@ const _objectEach = (obj, iteratee) => {
 
 /**
  * @desc: 封装forEach 
- * @param {Record<string, T> | T[]}  data
- * @param {*} iteratee 迭代函数
- * @return {*}
+ * @param {Record<string, T> | T[]}  data 用来迭代的数据
+ * @param {Function} iteratee 每次迭代调用的函数
+ * @return {void}
  */
 const forEach = <T>(data: T[] | Record<string, T>, iteratee: (item: T, key?: string | number) => void | boolean) => {
     const func = isArray(data) ? _arrayEach : _objectEach

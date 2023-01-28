@@ -2,14 +2,25 @@
  * @Author: zhangce
  * @Date: 2023-01-06 16:41:02
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2023-01-17 13:39:38
+ * @LastEditTime: 2023-01-28 10:18:44
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description:
  *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
 -->
 
+### 1.52.0
+
+```js
+// 新增
+// 1.map
+
+// 优化
+// 1.优化文档
+```
+
 ### 1.51.0
+
 ```js
 // 优化代码
 // 1.getFileBase64
@@ -45,6 +56,7 @@
 // 删除
 // 1.getDistance
 ```
+
 ### 1.48.0
 
 ```js

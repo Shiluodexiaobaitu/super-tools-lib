@@ -71,6 +71,8 @@
 //   get url(): any;
 // }
 
+
+// export declare const map: <T_22>(data: Record<string, T_22> | T_22[], iteratee: (item: T_22, key: string | number) => any) => Record<string, T_22> | T_22[];
 // export declare const isSet: (v: unknown) => boolean;
 // export declare const isMap: (v: unknown) => boolean;
 // export declare const isContain: <T_3 extends {

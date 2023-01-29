@@ -2,12 +2,51 @@
  * @Author: zhangce
  * @Date: 2023-01-06 16:41:02
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2023-01-13 17:02:49
+ * @LastEditTime: 2023-01-29 10:22:08
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description:
  *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
 -->
+
+### 1.53.0
+
+```js
+// 新增
+// 1.blobToDataURL
+// 2.drawAndShareImage
+
+// 优化方法
+// 1.getFileBase64
+// 2.validate
+```
+
+### 1.52.0
+
+```js
+// 新增
+// 1.map
+
+// 优化
+// 1.优化文档
+```
+
+### 1.51.0
+
+```js
+// 优化代码
+// 1.getFileBase64
+// 2.getUrlParam,
+// 3.cookie,
+// 3.isEqual
+
+// 新增
+// 1.getPolygonCenter
+// 2.scalePolygon
+// 3.isContain
+// 4.isSet,
+// 5.isMap,
+```
 
 ### 1.50.0
 
@@ -29,6 +68,7 @@
 // 删除
 // 1.getDistance
 ```
+
 ### 1.48.0
 
 ```js

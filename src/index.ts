@@ -18,13 +18,10 @@ import {
 
 import {
     guid,
-    getFileBase64,
     throttle,
     debounce,
     fileDownload,
     fuzzyQuery,
-    getUrlParam,
-    cookie,
     colorHex,
     viewportToPixels,
     noRefdelUrlParam,
@@ -52,6 +49,8 @@ import {
     scrollToTop,
     userBrowser,
     getLocalStorageSize,
+    getUrlParam,
+    cookie,
 } from './browser'
 
 import { IndexedDB } from './IndexedDB'
@@ -141,10 +140,18 @@ import {
     isDarkMode,
     isHexColor,
     isBasicType,
-    isEqual,
+    isSet,
+    isMap,
 } from './is'
+import { isEqual } from './is/isEqual'
+import { isContain } from './is/isContain'
 
-import { downBlob } from './file'
+import {
+    downBlob,
+    getFileBase64,
+    blobToDataURL,
+    drawAndShareImage,
+} from './file'
 
 import { vConsole } from './console'
 
@@ -185,6 +192,7 @@ import {
     forEach,
     filter,
 } from './loop'
+import { map } from './loop/map'
 
 import {
     sortAscii,
@@ -203,12 +211,16 @@ import { StateObserver } from './StateObserver'
 import {
     distance,
     degsToRads,
+    getPolygonCenter,
 } from './math'
+import { scalePolygon } from './math/scalePolygon'
 
 export default {
     version: version,
     distance,
     degsToRads,
+    getPolygonCenter,
+    scalePolygon,
     isImg,
     isUrl,
     isObjectKeyEqual,
@@ -219,7 +231,10 @@ export default {
     isDarkMode,
     isHexColor,
     isBasicType,
+    isSet,
+    isMap,
     isEqual,
+    isContain,
     transFormat,
     strInversion,
     toLine,
@@ -235,6 +250,8 @@ export default {
     getTextWidth,
     guid,
     getFileBase64,
+    blobToDataURL,
+    drawAndShareImage,
     isAndroidMobileDevice,
     isAppleMobileDevice,
     throttle,
@@ -350,6 +367,7 @@ export default {
     accDiv,
     formatPrice,
     forEach,
+    map,
     filter,
     sortAscii,
     generateSign,

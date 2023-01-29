@@ -127,7 +127,7 @@ const reg = {
  * @param {string} value 校验的内容
  * @return {*}
  */
-function validate(key: string, value: string): boolean {
+const validate = (key: keyof typeof reg, value: string): boolean => {
     return new RegExp(reg[`${key}`]).test(value)
 }
 

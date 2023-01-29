@@ -71,6 +71,41 @@
 //   get url(): any;
 // }
 
+
+// export declare const blobToDataURL: (blob: Blob, callback: (result: string | ArrayBuffer) => void) => void;
+// export declare const drawAndShareImage: (bgImgOps: {
+//   url: string;
+//   width: number;
+//   height: number;
+// }, upImgOps: {
+//   url: string;
+//   width: number;
+//   height: number;
+//   x: number;
+//   y: number;
+// }, ops?: {
+//   download: boolean;
+//   imgName: string;
+//   success: (base64: any) => any;
+// }) => void;
+// export declare const map: <T_22>(data: Record<string, T_22> | T_22[], iteratee: (item: T_22, key: string | number) => any) => Record<string, T_22> | T_22[];
+// export declare const isSet: (v: unknown) => boolean;
+// export declare const isMap: (v: unknown) => boolean;
+// export declare const isContain: <T_3 extends {
+//   x: number;
+//   y: number;
+// }>(point: T_3, points: T_3[]) => boolean;
+// export declare const getPolygonCenter: <T extends {
+//   x: number;
+//   y: number;
+// }>(points: T[]) => {
+//   x: number;
+//   y: number;
+// };
+// export declare const scalePolygon: <T_1 extends {
+//   x: number;
+//   y: number;
+// }>(points: T_1[], extra: number) => T_1[];
 // export declare const isBasicType: (val: unknown) => boolean;
 // export declare const isEqual: (value: any, other: any) => boolean;
 // export declare const contains: <T_3>(arr: T_3[], criteria: (a: T_3) => boolean) => boolean;
@@ -147,7 +182,7 @@
 // export declare const values: <T_15>(obj: Record<string, T_15>) => T_15[];
 // export declare const keys: <T_16>(obj: Record<string, T_16>) => T_16[];
 // export declare const forEach: <T_18>(data: Record<string, T_18> | T_18[], iteratee: (item: T_18, key?: string | number) => boolean | void) => void;
-// export declare const filter:  <T_19>(data: Record<string, T_19> | T_19[], iteratee: (item: T_19, key?: string | number) => boolean) => T_19[];
+// export declare const filter: <T_19>(data: Record<string, T_19> | T_19[], iteratee: (item: T_19, key?: string | number) => boolean) => T_19[];
 // export declare const formatPrice: (price: any, sign?: string) => string;
 // export declare const getFitSize: (px: number, draft?: number) => number;
 // export declare const accAdd: (num1: any, num2: number) => number;
@@ -258,7 +293,5 @@
 // export declare const noRefdelUrlParam: (ref: string) => string;
 // export declare const initialToCapitali: (gname: string) => string;
 // export declare const trim: (str: string) => string;
-// export declare const validate: (key: string, value: string) => boolean;
+// export declare const validate: (key: "number" | "mobile" | "phone" | "chinese_and_english" | "chinese10" | "website" | "nickname" | "verify_code" | "verify_pwd" | "email" | "character" | "intNumber" | "positiveInt5" | "positiveInt3_decimal2" | "negativeInteger" | "isNotNegativeFloatNum" | "cP" | "cPattern" | "numeric_letters" | "chinese_numeric_letters" | "strong_password" | "cname" | "ename" | "ip" | "ipv4" | "color16Reg" | "mac", value: string) => boolean;
 // export declare const exportExcel: (column: any[], dataSource: any[], fileName?: string) => void;
-
-

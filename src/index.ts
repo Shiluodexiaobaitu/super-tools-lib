@@ -149,6 +149,8 @@ import { isContain } from './is/isContain'
 import {
     downBlob,
     getFileBase64,
+    blobToDataURL,
+    drawAndShareImage,
 } from './file'
 
 import { vConsole } from './console'
@@ -248,6 +250,8 @@ export default {
     getTextWidth,
     guid,
     getFileBase64,
+    blobToDataURL,
+    drawAndShareImage,
     isAndroidMobileDevice,
     isAppleMobileDevice,
     throttle,

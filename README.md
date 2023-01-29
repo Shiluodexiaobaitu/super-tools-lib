@@ -35,18 +35,6 @@ _.guid();
 _.guid(); // 'bfa39b2f-f77e-425e-8f41-1fe0d8ac38b4'
 ```
 
-##### getFileBase64 (文件的 Base64 编码)
-
-- 参数
-  1，file(File)：文件
-  2，cb(Function)：解析成功回调
-
-```js
-_.getFileBase64(file, (base64) => {
-  console.log("base64", base64);
-});
-```
-
 ##### throttle (函数节流)
 
 - 参数
@@ -1753,4 +1741,37 @@ _.scalePolygon(
 
 ```js
 _.downBlob(file, fileName);
+```
+
+##### getFileBase64 (文件的 Base64 编码)
+
+- 参数
+  1，file(File)：文件
+  2，cb(Function)：解析成功回调
+
+```js
+_.getFileBase64(file, (base64) => {
+  console.log("base64", base64);
+});
+```
+
+##### blobToDataURL (blob 转 url)
+
+- 参数
+  > 1，(Blob)：要操作的文件
+- return (String)：返回 url 地址
+
+```js
+_.blobToDataURL(blob); // url....
+```
+
+##### drawAndShareImage (两张图片合并成一张图片)
+
+- 参数
+  > 1，(bgImgOps:{url: string, width: number, height: number })：背景图片配置项
+  > 2，(upImgOps: { url: string, width: number, height: number, x: number, y: number })：覆盖在底图上的图片
+  > 3，(ops?:{download:download,imgName: string,success:(bese64)=>bese63})：操作配置项目
+
+```js
+_.drawAndShareImage();
 ```

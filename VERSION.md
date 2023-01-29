@@ -2,12 +2,24 @@
  * @Author: zhangce
  * @Date: 2023-01-06 16:41:02
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2023-01-28 10:18:44
+ * @LastEditTime: 2023-01-29 10:22:08
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description:
  *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
 -->
+
+### 1.53.0
+
+```js
+// 新增
+// 1.blobToDataURL
+// 2.drawAndShareImage
+
+// 优化方法
+// 1.getFileBase64
+// 2.validate
+```
 
 ### 1.52.0
 

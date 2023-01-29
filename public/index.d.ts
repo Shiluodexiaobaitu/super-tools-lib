@@ -72,6 +72,22 @@
 // }
 
 
+// export declare const blobToDataURL: (blob: Blob, callback: (result: string | ArrayBuffer) => void) => void;
+// export declare const drawAndShareImage: (bgImgOps: {
+//   url: string;
+//   width: number;
+//   height: number;
+// }, upImgOps: {
+//   url: string;
+//   width: number;
+//   height: number;
+//   x: number;
+//   y: number;
+// }, ops?: {
+//   download: boolean;
+//   imgName: string;
+//   success: (base64: any) => any;
+// }) => void;
 // export declare const map: <T_22>(data: Record<string, T_22> | T_22[], iteratee: (item: T_22, key: string | number) => any) => Record<string, T_22> | T_22[];
 // export declare const isSet: (v: unknown) => boolean;
 // export declare const isMap: (v: unknown) => boolean;
@@ -277,5 +293,5 @@
 // export declare const noRefdelUrlParam: (ref: string) => string;
 // export declare const initialToCapitali: (gname: string) => string;
 // export declare const trim: (str: string) => string;
-// export declare const validate: (key: string, value: string) => boolean;
+// export declare const validate: (key: "number" | "mobile" | "phone" | "chinese_and_english" | "chinese10" | "website" | "nickname" | "verify_code" | "verify_pwd" | "email" | "character" | "intNumber" | "positiveInt5" | "positiveInt3_decimal2" | "negativeInteger" | "isNotNegativeFloatNum" | "cP" | "cPattern" | "numeric_letters" | "chinese_numeric_letters" | "strong_password" | "cname" | "ename" | "ip" | "ipv4" | "color16Reg" | "mac", value: string) => boolean;
 // export declare const exportExcel: (column: any[], dataSource: any[], fileName?: string) => void;

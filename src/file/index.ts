@@ -32,12 +32,86 @@ const getFileBase64 = (file: File, cb: (base64: ArrayBuffer | string) => void): 
         if (cb) cb(base64)
     }
     reader.onerror = function (): void {
-        alert('Read file fail.')
+        console.error('Read file fail.')
     }
     reader.readAsDataURL(file)
+}
+
+/**
+ * @desc: blob转url
+ * @param {*} blob
+ * @param {*} callback
+ * @return {*}
+ */
+const blobToDataURL = (blob: Blob, callback: (result: string | ArrayBuffer) => void) => {
+    const a = new FileReader()
+    a.onload = function (e) {
+        callback(e.target.result)
+    }
+    a.readAsDataURL(blob)
+}
+
+/**
+ * @desc: 两张图片合并成一张图片
+ * @param {*} bgImgOps
+ * @param {*} upImgOps
+ * @param {*} ops
+ * @return {*}
+ */
+const drawAndShareImage = (bgImgOps: { url: string, width: number, height: number }, upImgOps: { url: string, width: number, height: number, x: number, y: number }, ops = { download: false, imgName: '', success: (base64) => base64 }) => {
+    const {
+        url: bjUrl,
+        width: bjWidth,
+        height: bjHeight,
+    } = bgImgOps
+
+    const {
+        url: upUrl,
+        x: upX,
+        y: upY,
+        width: upWidth,
+        height: upHeight,
+    } = upImgOps
+
+    const {
+        download,
+        success,
+        imgName,
+    } = ops
+
+    const canvas = document.createElement('canvas')
+    canvas.width = bjWidth || 1800
+    canvas.height = bjHeight || 1800
+    const context = canvas.getContext('2d')
+    context.rect(0, 0, canvas.width, canvas.height)
+    const bgImg = new Image()
+    bgImg.src = bjUrl    // 背景图的url
+    bgImg.crossOrigin = 'Anonymous'
+    bgImg.onload = () => {
+        context.drawImage(bgImg, 0, 0, bjWidth, bjHeight)
+        const img = new Image()
+        img.src = upUrl    // 需要合进去的图片url
+        img.crossOrigin = 'Anonymous'
+        img.onload = () => {
+            context.drawImage(img, upX, upY, upWidth, upHeight)
+            const base64 = canvas.toDataURL('image/png')// 这个就是合成后的图片链接
+
+            success && success(base64)
+
+            if (download) {
+                const a = document.createElement('a')
+                a.download = imgName
+                const event = new MouseEvent('click')
+                a.href = base64
+                a.dispatchEvent(event)
+            }
+        }
+    }
 }
 
 export {
     downBlob,
     getFileBase64,
+    blobToDataURL,
+    drawAndShareImage,
 }

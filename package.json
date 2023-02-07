@@ -4,6 +4,7 @@
     "description": "常用工具函数",
     "main": "lib/super-tools-lib.js",
     "types": "lib/src/index.d.ts",
+    "type": "module",  
     "scripts": {
         "build": "rollup --config rollup.config.prod.js",
         "start": "rollup --config rollup.config.dev.js -w",

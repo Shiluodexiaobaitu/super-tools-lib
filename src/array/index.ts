@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-10 15:07:24
  * @LastEditors: zhangce
- * @LastEditTime: 2023-01-12 14:10:32
+ * @LastEditTime: 2023-02-03 15:05:17
  * @Description: 
  */
 
@@ -35,14 +35,56 @@ const bubbleSort = (arr) => {
 }
 
 /**
- * @desc: 数组去重复 利用ES6 Set去重（ES6中最常用）
+ * @desc: 数组去重
  * @param {*} T
+ * @param {*} field 对比字段
  * @return {*}
  */
-const arrayUnique = <T>(arr: T[]): T[] => {
-    return Array.from(new Set(arr))
+const arrayUnique = <T>(arr: T[], field: string | number): T[] => {
+
+    const _newKeys = {}
+    arr.forEach(item => {
+        if (!_newKeys[item[field]]) {
+            _newKeys[item[field]] = item
+        }
+    })
+
+    return Object.values(_newKeys)
+
+    // return Array.from(new Set(arr))
     // var arr = [1,1,'true','true',true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,'NaN', 0, 0, 'a', 'a',{},{}];
 }
+
+// /**
+//  * @desc: 数组去重
+//  * @param {*} T
+//  * @param {*} field 对比字段
+//  * @return {*}
+//  */
+// const arrayUnique = <T>(arr: T[], field: string | number): T[] => {
+
+//     const _newKeys = {}
+//     arr.forEach(item => {
+//         if (!_newKeys[item[field]]) {
+//             _newKeys[item[field]] = item
+//         }
+//     })
+
+//     return Object.values(_newKeys)
+
+//     // return Array.from(new Set(arr))
+//     // var arr = [1,1,'true','true',true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,'NaN', 0, 0, 'a', 'a',{},{}];
+// }
+
+// /**
+//  * @desc: 数组去重复 利用ES6 Set去重（ES6中最常用）
+//  * @param {*} T
+//  * @return {*}
+//  */
+// const arrayUnique = <T>(arr: T[]): T[] => {
+//     return Array.from(new Set(arr))
+//     // var arr = [1,1,'true','true',true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,'NaN', 0, 0, 'a', 'a',{},{}];
+// }
 
 /**
  * @desc: 利用Map数据结构去重

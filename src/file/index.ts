@@ -109,9 +109,28 @@ const drawAndShareImage = (bgImgOps: { url: string, width: number, height: numbe
     }
 }
 
+/**
+ * @desc: base64转文件
+ * @param {*} urlData
+ * @param {*} fileName
+ * @return {*}
+ */
+const base64ToFile = (urlData: string, fileName: string) => {
+    const arr = urlData.split(',')
+    const mime = arr[0].match(/:(.*?);/)[1]
+    const bytes = window.atob(arr[1])
+    let n = bytes.length
+    const ia = new Uint8Array(n)
+    while (n--) {
+        ia[n] = bytes.charCodeAt(n)
+    }
+    return new File([ia], fileName, { type: mime })
+}
+
 export {
     downBlob,
     getFileBase64,
     blobToDataURL,
     drawAndShareImage,
+    base64ToFile,
 }

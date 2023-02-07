@@ -151,6 +151,7 @@ import {
     getFileBase64,
     blobToDataURL,
     drawAndShareImage,
+    base64ToFile,
 } from './file'
 
 import { vConsole } from './console'
@@ -252,6 +253,7 @@ export default {
     getFileBase64,
     blobToDataURL,
     drawAndShareImage,
+    base64ToFile,
     isAndroidMobileDevice,
     isAppleMobileDevice,
     throttle,

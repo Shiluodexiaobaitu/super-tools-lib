@@ -72,6 +72,7 @@
 // }
 
 
+// export declare const base64ToFile: (urlData: string, fileName: string) => File;
 // export declare const blobToDataURL: (blob: Blob, callback: (result: string | ArrayBuffer) => void) => void;
 // export declare const drawAndShareImage: (bgImgOps: {
 //   url: string;

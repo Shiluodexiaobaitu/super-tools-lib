@@ -1,6 +1,3 @@
-// import { File } from 'better-xlsx';
-// import { saveAs } from 'file-saver';
-
 /**
  * @desc: 二进制文件流，前端通过blob对象实现下载
  * @param {BlobPart} data

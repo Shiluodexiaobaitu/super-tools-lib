@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @LastEditors: zhangce
- * @LastEditTime: 2023-01-17 12:19:10
+ * @LastEditTime: 2023-02-27 15:31:20
  * @Description: 
  */
 
@@ -39,12 +39,7 @@ const isString = (str: unknown): boolean => {
  * @param {unknown} fn
  * @return {*}
  */
-const isFunction = (fn: unknown): boolean => {
-    if (fn && typeof fn === 'function') {
-        return true
-    }
-    return false
-}
+const isFunction = (fn: unknown): boolean => typeof fn === 'function'
 
 /**
  * @desc: 对象类型验证
@@ -60,9 +55,8 @@ const isObject = (obj: unknown): boolean => {
  * @param {any} num
  * @return {*}
  */
-const isNumber = (num: any): boolean => {
-    if (isNaN(num)) return false
-    return typeof num === 'number'
+const isNumber = (num: unknown): num is number => {
+    return typeof num === 'number' && !isNaN(num)
 }
 
 /**
@@ -85,7 +79,7 @@ const isWeiXin = (): boolean => {
  * @return {*}
  */
 const isNull = (o: unknown): boolean => {
-    return Object.prototype.toString.call(o).slice(8, -1) === 'Null'
+    return o === null
 }
 
 /**
@@ -94,7 +88,7 @@ const isNull = (o: unknown): boolean => {
  * @return {*}
  */
 const isUndefined = (o: unknown): boolean => {
-    return Object.prototype.toString.call(o).slice(8, -1) === 'Undefined'
+    return o === undefined
 }
 
 /**
@@ -237,6 +231,7 @@ const isObjectKeyEqual = (a: Record<string, unknown>, b: Record<string, unknown>
         }
     }
     return true
+
 }
 
 /**
@@ -246,10 +241,7 @@ const isObjectKeyEqual = (a: Record<string, unknown>, b: Record<string, unknown>
  * @param {string} key
  * @return {*}
  */
-const isObjectExistsKey = (obj: Record<string, unknown>, key: string): boolean => {
-    const objKeyNames = Object.getOwnPropertyNames(obj)
-    return objKeyNames.includes(key)
-}
+const isObjectExistsKey = (obj: Record<string, unknown>, key: string): boolean => key in obj
 
 /**
  * @desc: 判断a对象是否包含b对象的键
@@ -262,13 +254,15 @@ const isObjectExistsKey = (obj: Record<string, unknown>, key: string): boolean =
 const isObjectIncludeSpecifiedKey = (a: Record<string, unknown>, b: Record<string, unknown>): boolean => {
     const aKeyNames = Object.getOwnPropertyNames(a)
     const bKeyNames = Object.getOwnPropertyNames(b)
-    for (let i = 0; i < bKeyNames.length; i++) {
-        if (!aKeyNames.includes(bKeyNames[i])) {
-            return false
-        }
-    }
-    return true
+    // for (let i = 0; i < bKeyNames.length; i++) {
+    //     if (!aKeyNames.includes(bKeyNames[i])) {
+    //         return false
+    //     }
+    // }
+    // return true
+    return bKeyNames.every(key => aKeyNames.includes(key))
 }
+
 
 /**
  * @desc: 判断对象是否为空
@@ -336,6 +330,20 @@ const isMap = (v: unknown) => returnType(v) === 'Map'
  */
 const isSet = (v: unknown) => returnType(v) === 'Set'
 
+/**
+ * @desc: 检测数字是否为奇数
+ * @param {number} v
+ * @return {*}
+ */
+const isOdd = (v: number) => !!(v & 1)
+
+/**
+ * @desc: 检测数字是否为偶数
+ * @param {number} v
+ * @return {*}
+ */
+const isEven = (v: number) => !(v & 1)
+
 export {
     isBase64,
     isArray,
@@ -368,4 +376,6 @@ export {
     isBasicType,
     isMap,
     isSet,
+    isOdd,
+    isEven,
 }

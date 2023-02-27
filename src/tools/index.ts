@@ -6,7 +6,7 @@ import { strChineseFirstPY, oMultiDiff } from './_utils'
  * @return {*}
  */
 const guid = (): string => {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c: any): string {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c): string => {
         const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8)
         return v.toString(16)
     })
@@ -78,20 +78,14 @@ const fileDownload = function (url: string): boolean {
 }
 
 /**
- * @desc: 使用match方法实现模糊查询
+ * @desc: 模糊查询
  * @param  {Array}  list     进行查询的数组
- * @param  {Array}  key     进行查询的数组的字段
+ * @param  {String}  key     进行查询的数组的字段
  * @param  {String} keyWord  查询的关键词
  * @return {Array}           查询的结果
 */
 const fuzzyQuery = <T>(list: T[], key: string, keyWord: string): T[] => {
-    const arr = []
-    for (let i = 0; i < list.length; i++) {
-        if (list[i][key].match(keyWord) !== null) {
-            arr.push(list[i])
-        }
-    }
-    return arr
+    return list.filter(item => item[key].match(keyWord) !== null)
 }
 
 

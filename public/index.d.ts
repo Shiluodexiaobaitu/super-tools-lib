@@ -72,6 +72,15 @@
 // }
 
 
+// export declare const SessionStorage: {
+//   get(user: string, name: string): string;
+//   set(user: string, name: string, value: any): void;
+//   remove(user: string, name: string): void;
+//   clear(): void;
+//   forEach(cb: (value: any, key: string) => void): void;
+// };
+// export declare const isOdd: (v: number) => boolean;
+// export declare const isEven: (v: number) => boolean;
 // export declare const base64ToFile: (urlData: string, fileName: string) => File;
 // export declare const blobToDataURL: (blob: Blob, callback: (result: string | ArrayBuffer) => void) => void;
 // export declare const drawAndShareImage: (bgImgOps: {
@@ -192,8 +201,8 @@
 // export declare const accDiv: (num1: number, num2: number) => number;
 // export declare const formatPassTime: (startTime: number) => string;
 // export declare const formatRemainTime: (endTime: string) => string;
-// export declare const isNull: (o: any) => boolean;
-// export declare const isUndefined: (o: any) => boolean;
+// export declare const isNull: (o: unknown) => boolean;
+// export declare const isUndefined: (o: unknown) => boolean;
 // export declare const isDate: (o: any) => boolean;
 // export declare const isRegExp: (o: any) => boolean;
 // export declare const isError: (o: any) => boolean;
@@ -231,7 +240,7 @@
 // export declare const isString: (str: any) => boolean;
 // export declare const isFunction: (fn: any) => boolean;
 // export declare const isObject: (obj: any) => boolean;
-// export declare const isNumber: (num: any) => boolean;
+// export declare const isNumber: (num: unknown) => num is number;
 // export declare const isWeiXin: () => boolean;
 // export declare const repeat: (str: string, n: number) => string;
 // export declare const cloneDeep: <T_14>(data: T_14) => T_14;
@@ -273,6 +282,7 @@
 //   set(user: string, name: string, value: any): void;
 //   remove(user: string, name: string): void;
 //   clear(): void;
+//   forEach(cb: (value: any, key: string) => void): void;
 // };
 // export declare const getPosition: (timeout?: number, maximumAge?: number) => Promise<unknown>;
 // export declare const winCopy: (flag: boolean) => void;

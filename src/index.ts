@@ -42,6 +42,7 @@ import {
     toFullScreen,
     exitFullscreen,
     LocalStorage,
+    SessionStorage,
     getPosition,
     winCopy,
     print,
@@ -142,6 +143,8 @@ import {
     isBasicType,
     isSet,
     isMap,
+    isOdd,
+    isEven,
 } from './is'
 import { isEqual } from './is/isEqual'
 import { isContain } from './is/isContain'
@@ -234,6 +237,8 @@ export default {
     isBasicType,
     isSet,
     isMap,
+    isOdd,
+    isEven,
     isEqual,
     isContain,
     transFormat,
@@ -279,6 +284,7 @@ export default {
     toFullScreen,
     exitFullscreen,
     LocalStorage,
+    SessionStorage,
     getPosition,
     winCopy,
     print,

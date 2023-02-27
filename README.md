@@ -998,7 +998,8 @@ _.toFullScreen();
 _.exitFullscreen();
 ```
 
-##### LocalStorage (封装本地存储方法，提供 get，set，remove， clear 等方法)
+##### LocalStorage (封装本地存储方法，提供 get，set，remove， clear，forEach 等方法)
+- 存储的数据的生命周期是永久，除非主动删除数据，否则永远不会过期
 
 ```js
 // 返回user下的name值
@@ -1012,12 +1013,36 @@ _.LocalStorage.remove(user, name);
 
 // 清空本地存储
 _.LocalStoeage.clear();
+
+// 遍历本地存储
+_.LocalStoeage.forEach((value,key)=>{})
 ```
 
-- getLocalStorageSize 获取 localStorage 使用容量
+##### getLocalStorageSize 获取 localStorage 使用容量
 
 ```js
 _.getLocalStorageSize(); // '0.00KB'
+```
+
+##### SessionStorage (封装本地存储方法，提供 get，set，remove， clear，forEach 等方法)
+
+- 存储的数据的生命周期是一个会话 （关闭当前浏览器页面）
+
+```js
+// 返回user下的name值
+_.SessionStorage.get(user, name);
+
+// 设置user下name字段的的值value
+_.SessionStorage.get(user, name, value);
+
+// 删除user下的name字段
+_.SessionStorage.remove(user, name);
+
+// 清空本地存储
+_.SessionStorage.clear();
+
+// 遍历本地存储
+_.SessionStorage.forEach((value,key)=>{})
 ```
 
 ##### getPosition (H5 获取地理位置)
@@ -1523,6 +1548,26 @@ _.isMap(new Map()); // true
 
 ```js
 _.isSet(new Set()); // true
+```
+
+##### isOdd （检测数字是否为奇数）
+
+- 参数
+  >1，(any)：要检查的值
+- return (Boolean)
+
+```js
+_.isOdd(3); // true
+```
+
+##### isEven （检测数字是否为偶数）
+
+- 参数
+  >1，(any)：要检查的值
+- return (Boolean)
+
+```js
+_.isEven(2); // true
 ```
 
 ##### isEqual (深比较来确定两者的值是否相等)

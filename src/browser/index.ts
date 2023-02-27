@@ -1,3 +1,5 @@
+// import { forEach } from '../loop'
+
 declare global {
     interface Window { ActiveXObject: any; }
 }
@@ -19,8 +21,6 @@ const toFullScreen = (): void => {
         if (wscript !== null) {
             wscript.SendKeys('{F11}')
         }
-    } else {
-        alert('浏览器不支持全屏')
     }
 }
 
@@ -41,13 +41,12 @@ const exitFullscreen = (): void => {
         if (wscript !== null) {
             wscript.SendKeys('{F11}')
         }
-    } else {
-        alert('切换失败,可尝试Esc退出')
     }
 }
 
 /**
  * @desc: LocalStorage 
+ * 存储的数据的生命周期是永久，除非主动删除数据，否则永远不会过期
  * @return {*}
  */
 const LocalStorage = {
@@ -68,6 +67,48 @@ const LocalStorage = {
     },
     clear(): void {
         localStorage.clear()
+    },
+    forEach(cb: (value: any, key: string) => void) {
+        for (const key in localStorage) {
+            if (localStorage.hasOwnProperty(key)) {
+                const value = JSON.parse(localStorage.getItem(key)) || {}
+                cb(value, key)
+            }
+        }
+    },
+}
+
+/**
+ * @desc: SessionStorage 
+ * 存储的数据的生命周期是一个会话
+ * @return {*}
+ */
+const SessionStorage = {
+    get(user: string, name: string): string {
+        const mapStorage = JSON.parse(sessionStorage.getItem(user)) || {}
+        return mapStorage[name] || ''
+    },
+    set(user: string, name: string, value: any): void {
+        if (!name) return
+        const mapStorage = JSON.parse(sessionStorage.getItem(user)) || {}
+        mapStorage[name] = value
+        sessionStorage.setItem(user, JSON.stringify(mapStorage))
+    },
+    remove(user: string, name: string): void {
+        const mapStorage = JSON.parse(sessionStorage.getItem(user)) || {}
+        mapStorage[name] && delete mapStorage[name]
+        sessionStorage.setItem(user, JSON.stringify(mapStorage))
+    },
+    clear(): void {
+        sessionStorage.clear()
+    },
+    forEach(cb: (value: any, key: string) => void) {
+        for (const key in sessionStorage) {
+            if (sessionStorage.hasOwnProperty(key)) {
+                const value = JSON.parse(sessionStorage.getItem(key)) || {}
+                cb(value, key)
+            }
+        }
     },
 }
 
@@ -302,6 +343,7 @@ export {
     toFullScreen,
     exitFullscreen,
     LocalStorage,
+    SessionStorage,
     getPosition,
     winCopy,
     print,

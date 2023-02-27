@@ -2,12 +2,27 @@
  * @Author: zhangce
  * @Date: 2023-01-06 16:41:02
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2023-02-07 13:57:27
+ * @LastEditTime: 2023-02-27 14:48:47
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description:
  *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
 -->
+
+### 1.55.0
+```js
+// 新增方法
+// 1.isOdd,
+// 2.isEven
+// 2.SessionStorage
+
+// 优化方法
+// 1.isNull
+// 2.isUndefined
+// 3.isNumber
+// 4.isObjectExistsKey
+// 5.LocalStorage
+```
 
 ### 1.54.0
 

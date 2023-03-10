@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-10-08 14:15:34
  * @LastEditors: zhangce
- * @LastEditTime: 2023-01-12 11:25:16
+ * @LastEditTime: 2023-03-10 17:04:34
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -21,27 +21,18 @@
 </head>
 
 <body>
-    <script src='./lib/super-tools-lib.js'></script>
     <div id="root">
-        <h1>super-tools-lib</h1>
-        <button id="add">add</button>
-        <button id="remove">remove add</button>
-        <div>222</div>
+        <!-- <h1>super-tools-lib</h1> -->
     </div>
 
+    <script type="module">
+        import _ from './lib/index.js'
+        console.log('_', _)
+    </script>
 
-    <script>
-        const StateObserver = superToolsLib.StateObserver
-        const state = new StateObserver({ name: "李四", age: 18 });
-
-        // 监听状态改变事件
-        state.on("age", (newValue) => {
-            console.log(newValue);
-        });
-
-        // 设置状态
-        state.setState({ age: 20 });
-
+    <script type="module">
+        import _ from './lib/super-tools-lib.js'
+        console.log('_2', _)
     </script>
 </body>
 

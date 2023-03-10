@@ -15,8 +15,11 @@
         "test:c": "jest --coverage",
         "pretest": "npm run build",
         "lint": "eslint --fix --ext .ts src",
-        "doc": "typedoc --options typedoc.json"
-    },
+        "doc": "typedoc --options typedoc.json",
+        "build:ts": "esbuild ./src/index.ts --bundle --outfile=./lib/index.js",
+        "build:css": "esbuild style.css --bundle --minify --outfile=./lib/index.css",
+        "build:dev": "node esbuild.config.dev.js"
+     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Shiluodexiaobaitu/Utils.git"
@@ -55,6 +58,7 @@
         "@typescript-eslint/parser": "^4.29.0",
         "better-xlsx": "^0.7.6",
         "core-js": "2.6.10",
+        "esbuild": "^0.17.11",
         "eslint": "^7.32.0",
         "file-saver": "^2.0.5",
         "gulp": "^4.0.2",

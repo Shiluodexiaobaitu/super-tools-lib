@@ -1006,7 +1006,7 @@ _.exitFullscreen();
 _.LocalStorage.get(user, name);
 
 // 设置user下name字段的的值value
-_.LocalStorage.get(user, name, value);
+_.LocalStorage.set(user, name, value);
 
 // 删除user下的name字段
 _.LocalStorage.remove(user, name);
@@ -1033,7 +1033,7 @@ _.getLocalStorageSize(); // '0.00KB'
 _.SessionStorage.get(user, name);
 
 // 设置user下name字段的的值value
-_.SessionStorage.get(user, name, value);
+_.SessionStorage.set(user, name, value);
 
 // 删除user下的name字段
 _.SessionStorage.remove(user, name);

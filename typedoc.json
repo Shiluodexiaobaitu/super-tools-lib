@@ -1,0 +1,15 @@
+{
+  "includeVersion": true,
+  "disableSources": true,
+  "entryPoints": [
+    "./src/algorithm",
+    "./src/array",
+    "./src/loop",
+    "./src/dom"
+  ],
+  "out": "./docs",
+  "htmlLang": "zh",
+  "tsconfig": "./tsconfig.json",
+  "plugin": ["typedoc-theme-hierarchy"],
+  "theme": "hierarchy",
+}

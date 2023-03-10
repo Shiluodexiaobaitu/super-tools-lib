@@ -2,11 +2,10 @@
  * @Author: zhangce
  * @Date: 2021-11-04 17:11:40
  * @LastEditors: zhangce
- * @LastEditTime: 2023-01-12 13:40:45
+ * @LastEditTime: 2023-03-01 10:24:37
  * @Description: 
  */
 
-import { isObject } from '../is'
 import { cloneDeep } from './_cloneDeep'
 
 /**
@@ -40,30 +39,14 @@ const stringfyQueryString = (obj: Record<string, string | number | boolean>) => 
  * @param {*} T
  * @return {*}
  */
-const values = <T>(obj: Record<string, T>): T[] => {
-    const arr = []
-    if (isObject(obj)) {
-        for (const key in obj) {
-            arr.push(obj[key])
-        }
-    }
-    return arr
-}
+const values = <T>(obj: Record<string, T>): T[] => Object.values<T>(obj)
 
 /**
  * @desc: 将对象的key转换成数组
  * @param {*} T
  * @return {*}
  */
-const keys = <T>(obj: Record<string, T>): T[] => {
-    const arr = []
-    if (isObject(obj)) {
-        for (const key in obj) {
-            arr.push(key)
-        }
-    }
-    return arr
-}
+const keys = <T>(obj: Record<string, T>): string[] => Object.keys(obj)
 
 export {
     cloneDeep,

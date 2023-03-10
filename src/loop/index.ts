@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2022-03-07 13:50:06
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2023-01-17 14:58:24
+ * @LastEditTime: 2023-03-02 18:00:34
  * @LastEditors: zhangce
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 循环方法集合
@@ -72,11 +72,22 @@ const _objectEach = (obj, iteratee) => {
 }
 
 /**
- * @desc: 封装forEach 
+ * 封装forEach 
+ * 
+ * @since 1.0.0
+ * @category Collection
  * @param {Record<string, T> | T[]}  data 用来迭代的数据
  * @param {Function} iteratee 每次迭代调用的函数
  * @return {void}
+ * @example
+ * 
+ * const arr = [1, 2, 3, 4, 5];
+ * 
+ * _.forEach(arr, (value, index) => {
+ *  // return false 终止循环
+ * });
  */
+
 const forEach = <T>(data: T[] | Record<string, T>, iteratee: (item: T, key?: string | number) => void | boolean) => {
     const func = isArray(data) ? _arrayEach : _objectEach
     return func(data, iteratee)

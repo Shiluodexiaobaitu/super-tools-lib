@@ -1,6 +1,6 @@
-import { version } from '../package.json'
+export { version } from '../package.json'
 
-import {
+export {
     initialToCapitali,
     repeat,
     trim,
@@ -16,7 +16,7 @@ import {
     replaceText,
 } from './string'
 
-import {
+export {
     guid,
     throttle,
     debounce,
@@ -38,7 +38,7 @@ import {
     celsiusToFahrenheit,
 } from './tools'
 
-import {
+export {
     toFullScreen,
     exitFullscreen,
     LocalStorage,
@@ -54,22 +54,22 @@ import {
     cookie,
 } from './browser'
 
-import { IndexedDB } from './IndexedDB'
+export { IndexedDB } from './IndexedDB'
 
-import {
+export {
     performanceAnalysis,
     getPerformanceTiming,
 } from './performance'
 
-import {
+export {
     calcDistance,
     lonLatToMercator,
     mercatorToLonlat,
 } from './map'
 
-import { validate } from './reg'
+export { validate } from './reg'
 
-import {
+export {
     getOffset,
     shaking,
     stopPropagation,
@@ -89,7 +89,7 @@ import {
     insertHtmlBefore,
 } from './dom'
 
-import {
+export {
     arrayUnique,
     arrayNonRepeatfy,
     aLineUnique,
@@ -104,14 +104,14 @@ import {
     contains,
 } from './array'
 
-import {
+export {
     cloneDeep,
     stringfyQueryString,
     values,
     keys,
 } from './object'
 
-import {
+export {
     isBase64,
     isArray,
     isString,
@@ -146,10 +146,10 @@ import {
     isOdd,
     isEven,
 } from './is'
-import { isEqual } from './is/isEqual'
-import { isContain } from './is/isContain'
+export { isEqual } from './is/isEqual'
+export { isContain } from './is/isContain'
 
-import {
+export {
     downBlob,
     getFileBase64,
     blobToDataURL,
@@ -157,15 +157,15 @@ import {
     base64ToFile,
 } from './file'
 
-import { vConsole } from './console'
+export { vConsole } from './console'
 
-import { Socket } from './Socket'
+export { Socket } from './Socket'
 
-import { Ajax } from './Ajax'
+export { Ajax } from './Ajax'
 
-import { orient } from './mobile'
+export { orient } from './mobile'
 
-import {
+export {
     dateFormater,
     formatPassTime,
     formatRemainTime,
@@ -179,9 +179,9 @@ import {
     getFirstDate,
 } from './date'
 
-import { shuffle } from './algorithm'
+export { shuffle } from './algorithm'
 
-import {
+export {
     accAdd,
     accSub,
     accMul,
@@ -192,196 +192,29 @@ import {
     closest,
 } from './number'
 
-import {
+export {
     forEach,
     filter,
 } from './loop'
-import { map } from './loop/map'
+export { map } from './loop/map'
 
-import {
+export {
     sortAscii,
     generateSign,
 } from './encrypt'
 
-import {
+export {
     EventObserver,
     addEventListener,
     removeEventListener,
     dispatchEvent,
 } from './EventObserver'
 
-import { StateObserver } from './StateObserver'
+export { StateObserver } from './StateObserver'
 
-import {
+export {
     distance,
     degsToRads,
     getPolygonCenter,
 } from './math'
-import { scalePolygon } from './math/scalePolygon'
-
-export default {
-    version: version,
-    distance,
-    degsToRads,
-    getPolygonCenter,
-    scalePolygon,
-    isImg,
-    isUrl,
-    isObjectKeyEqual,
-    isObjectExistsKey,
-    isObjectIncludeSpecifiedKey,
-    isEmptyObject,
-    isEmptyArray,
-    isDarkMode,
-    isHexColor,
-    isBasicType,
-    isSet,
-    isMap,
-    isOdd,
-    isEven,
-    isEqual,
-    isContain,
-    transFormat,
-    strInversion,
-    toLine,
-    toFullHexColor,
-    decode,
-    letterToEmoji,
-    toPascalCase,
-    removeSpaces,
-    replaceText,
-    initialToCapitali,
-    repeat,
-    trim,
-    getTextWidth,
-    guid,
-    getFileBase64,
-    blobToDataURL,
-    drawAndShareImage,
-    base64ToFile,
-    isAndroidMobileDevice,
-    isAppleMobileDevice,
-    throttle,
-    debounce,
-    fileDownload,
-    fuzzyQuery,
-    getUrlParam,
-    cookie,
-    colorHex,
-    viewportToPixels,
-    noRefdelUrlParam,
-    getAge,
-    getSex,
-    digitUppercase,
-    hexToRgba,
-    rgbaToHex,
-    injectScript,
-    sinogToLetter,
-    getFitSize,
-    checkPassWord,
-    fahrenheitToCelsius,
-    celsiusToFahrenheit,
-    toFullScreen,
-    exitFullscreen,
-    LocalStorage,
-    SessionStorage,
-    getPosition,
-    winCopy,
-    print,
-    copy,
-    scrollToTop,
-    userBrowser,
-    IndexedDB,
-    getLocalStorageSize,
-    performanceAnalysis,
-    getPerformanceTiming,
-    calcDistance,
-    lonLatToMercator,
-    mercatorToLonlat,
-    validate,
-    getOffset,
-    shaking,
-    stopPropagation,
-    hasClass,
-    addClass,
-    removeClass,
-    replaceClass,
-    scrollToTheBottom,
-    textVisibilityChange,
-    getTransformMatrix,
-    isDescendant,
-    getSelectedText,
-    insertAfter,
-    insertBefore,
-    insertHtmlAfter,
-    insertHtmlBefore,
-    eleReplace,
-    arrayUnique,
-    arrayNonRepeatfy,
-    aLineUnique,
-    bubbleSort,
-    last,
-    alphabeticSort,
-    arrToObject,
-    toNumbers,
-    countBy,
-    indexOfMax,
-    indexOfMin,
-    contains,
-    cloneDeep,
-    stringfyQueryString,
-    values,
-    keys,
-    isBase64,
-    isArray,
-    isString,
-    isFunction,
-    isObject,
-    isNumber,
-    isWeiXin,
-    isNull,
-    isUndefined,
-    isDate,
-    isRegExp,
-    isError,
-    isSymbol,
-    isPromise,
-    returnType,
-    isSupportWebP,
-    isMobile,
-    downBlob,
-    vConsole,
-    Ajax,
-    Socket,
-    orient,
-    dateFormater,
-    formatPassTime,
-    formatRemainTime,
-    dayDiff,
-    monthDiff,
-    compareDate,
-    formatSeconds,
-    getQuarter,
-    getLastDate,
-    getCurrentSecond,
-    getFirstDate,
-    smallRounding,
-    range,
-    closest,
-    shuffle,
-    accAdd,
-    accSub,
-    accMul,
-    accDiv,
-    formatPrice,
-    forEach,
-    map,
-    filter,
-    sortAscii,
-    generateSign,
-    EventObserver,
-    StateObserver,
-    addEventListener,
-    removeEventListener,
-    dispatchEvent,
-}
+export { scalePolygon } from './math/scalePolygon'

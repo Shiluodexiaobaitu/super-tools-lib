@@ -1,0 +1,1958 @@
+<!DOCTYPE html><html class="default" lang="zh"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>super-tools-lib - v1.55.0</title><meta name="description" content="Documentation for super-tools-lib - v1.55.0"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script><link rel="stylesheet" href="assets/custom.css"/></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container">
+<div class="table-cell" id="tsd-search" data-base=".">
+<div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M15.7824 13.833L12.6666 10.7177C12.5259 10.5771 12.3353 10.499 12.1353 10.499H11.6259C12.4884 9.39596 13.001 8.00859 13.001 6.49937C13.001 2.90909 10.0914 0 6.50048 0C2.90959 0 0 2.90909 0 6.49937C0 10.0896 2.90959 12.9987 6.50048 12.9987C8.00996 12.9987 9.39756 12.4863 10.5008 11.6239V12.1332C10.5008 12.3332 10.5789 12.5238 10.7195 12.6644L13.8354 15.7797C14.1292 16.0734 14.6042 16.0734 14.8948 15.7797L15.7793 14.8954C16.0731 14.6017 16.0731 14.1267 15.7824 13.833ZM6.50048 10.499C4.29094 10.499 2.50018 8.71165 2.50018 6.49937C2.50018 4.29021 4.28781 2.49976 6.50048 2.49976C8.71001 2.49976 10.5008 4.28708 10.5008 6.49937C10.5008 8.70852 8.71314 10.499 6.50048 10.499Z" fill="var(--color-text)"></path></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
+<div class="field">
+<div id="tsd-toolbar-links"></div></div>
+<ul class="results">
+<li class="state loading">Preparing search index...</li>
+<li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">super-tools-lib - v1.55.0</a></div>
+<div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="7" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="11" width="14" height="2" fill="var(--color-text)"></rect></svg></a></div></div></header>
+<div class="container container-main">
+<div class="col-8 col-content">
+<div class="tsd-page-title">
+<h2>super-tools-lib - v1.55.0</h2></div>
+<div class="tsd-panel tsd-typography">
+<a href="#封装-150-javascript-方法" id="封装-150-javascript-方法" style="color: inherit; text-decoration: none;">
+  <h2>封装 150+ javascript 方法</h2>
+</a>
+
+<a href="#安装" id="安装" style="color: inherit; text-decoration: none;">
+  <h3>安装</h3>
+</a>
+<pre><code><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-0">install</span><span class="hl-1"> </span><span class="hl-2">super</span><span class="hl-1">-</span><span class="hl-0">tools</span><span class="hl-1">-</span><span class="hl-0">lib</span><br/><span class="hl-2">of</span><br/><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-0">add</span><span class="hl-1"> </span><span class="hl-2">super</span><span class="hl-1">-</span><span class="hl-0">tools</span><span class="hl-1">-</span><span class="hl-0">lib</span>
+</code></pre>
+
+<a href="#引用" id="引用" style="color: inherit; text-decoration: none;">
+  <h3>引用</h3>
+</a>
+<pre><code><span class="hl-3">import</span><span class="hl-1"> </span><span class="hl-0">_</span><span class="hl-1"> </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-4">&#39;super-tools-lib&#39;</span><span class="hl-1">;</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">guid</span><span class="hl-1">()</span><br/><br/><span class="hl-2">of</span><br/><br/><span class="hl-3">import</span><span class="hl-1"> { </span><span class="hl-0">guid</span><span class="hl-1"> } </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-4">&#39;super-tools-lib&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">guid</span><span class="hl-1">()</span><br/><br/><span class="hl-2">of</span><br/><br/><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-6">_</span><span class="hl-1"> = </span><span class="hl-5">require</span><span class="hl-1">(</span><span class="hl-4">&#39;super-tools-lib&#39;</span><span class="hl-1">);</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">guid</span><span class="hl-1">();</span>
+</code></pre>
+
+<a href="#常用方法" id="常用方法" style="color: inherit; text-decoration: none;">
+  <h3>常用方法</h3>
+</a>
+
+<a href="#guid-生成一个唯一的-guid" id="guid-生成一个唯一的-guid" style="color: inherit; text-decoration: none;">
+  <h5>guid (生成一个唯一的 guid)</h5>
+</a>
+<ul>
+<li>return (String)：返回 guid</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">guid</span><span class="hl-1">(); </span><span class="hl-7">// &#39;bfa39b2f-f77e-425e-8f41-1fe0d8ac38b4&#39;</span>
+</code></pre>
+
+<a href="#throttle-函数节流" id="throttle-函数节流" style="color: inherit; text-decoration: none;">
+  <h5>throttle (函数节流)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，fn(Function)
+2，time(Number)：时间</p>
+</blockquote>
+</li>
+<li>return (Function)：返回一个新的函数</li>
+</ul>
+<pre><code class="language-js"><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-6">fn</span><span class="hl-1"> = </span><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">throttle</span><span class="hl-1">(() </span><span class="hl-2">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-5">log</span><span class="hl-1">(</span><span class="hl-4">&quot;1&quot;</span><span class="hl-1">);</span><br/><span class="hl-1">}, </span><span class="hl-8">2000</span><span class="hl-1">);</span><br/><span class="hl-5">fn</span><span class="hl-1">();</span><br/><span class="hl-5">fn</span><span class="hl-1">();</span><br/><span class="hl-5">fn</span><span class="hl-1">();</span>
+</code></pre>
+
+<a href="#debounce-函数防抖" id="debounce-函数防抖" style="color: inherit; text-decoration: none;">
+  <h5>debounce (函数防抖)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，fn(Function)
+2，time(Number)：时间</p>
+</blockquote>
+</li>
+<li>return (Function)：返回一个新的函数</li>
+</ul>
+<pre><code class="language-js"><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-6">fn</span><span class="hl-1"> = </span><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">debounce</span><span class="hl-1">(() </span><span class="hl-2">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-5">log</span><span class="hl-1">(</span><span class="hl-4">&quot;1&quot;</span><span class="hl-1">);</span><br/><span class="hl-1">}, </span><span class="hl-8">2000</span><span class="hl-1">);</span><br/><span class="hl-5">fn</span><span class="hl-1">();</span><br/><span class="hl-5">fn</span><span class="hl-1">();</span><br/><span class="hl-5">fn</span><span class="hl-1">(); </span><span class="hl-7">// 如果多次触发将上次记录延迟清除掉,以最后一次触发重新计时</span>
+</code></pre>
+
+<a href="#filedownload-根据-url-地址下载文件，图片，音频，视频" id="filedownload-根据-url-地址下载文件，图片，音频，视频" style="color: inherit; text-decoration: none;">
+  <h5>fileDownload (根据 url 地址下载文件，图片，音频，视频)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，url(String)：文件路径</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">fileDownload</span><span class="hl-1">(</span><span class="hl-0">url</span><span class="hl-1">);</span>
+</code></pre>
+
+<a href="#geturlparam-获取-url-？后的参数" id="geturlparam-获取-url-？后的参数" style="color: inherit; text-decoration: none;">
+  <h5>getUrlParam (获取 url ？后的参数)</h5>
+</a>
+<ul>
+<li>return (Object)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">getUrlParam</span><span class="hl-1">();</span>
+</code></pre>
+
+<a href="#cookie-cookie-操作" id="cookie-cookie-操作" style="color: inherit; text-decoration: none;">
+  <h5>cookie (cookie 操作)</h5>
+</a>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-0">cookie</span><span class="hl-1">.</span><span class="hl-5">set</span><span class="hl-1">(</span><span class="hl-4">&quot;key&quot;</span><span class="hl-1">, </span><span class="hl-4">&quot;value&quot;</span><span class="hl-1">, </span><span class="hl-8">1000</span><span class="hl-1">);</span><br/><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-0">cookie</span><span class="hl-1">.</span><span class="hl-5">get</span><span class="hl-1">(</span><span class="hl-4">&quot;key&quot;</span><span class="hl-1">); </span><span class="hl-7">// &#39;value&#39;</span><br/><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-0">cookie</span><span class="hl-1">.</span><span class="hl-5">delete</span><span class="hl-1">(</span><span class="hl-4">&quot;key&quot;</span><span class="hl-1">);</span><br/><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-0">cookie</span><span class="hl-1">.</span><span class="hl-5">get</span><span class="hl-1">(</span><span class="hl-4">&quot;key&quot;</span><span class="hl-1">); </span><span class="hl-7">// undefined</span>
+</code></pre>
+
+<a href="#colorhex-rgb-颜色转-16-进制" id="colorhex-rgb-颜色转-16-进制" style="color: inherit; text-decoration: none;">
+  <h5>colorHex (RGB 颜色转 16 进制)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，value(String)：rgb 颜色值</p>
+</blockquote>
+</li>
+<li>return (String)：返回转换后的 16 进制的颜色值</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">colorHex</span><span class="hl-1">(</span><span class="hl-4">&quot;255,192,203&quot;</span><span class="hl-1">); </span><span class="hl-7">// &#39;#ffc0cb&#39;</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">colorHex</span><span class="hl-1">(</span><span class="hl-4">&quot;rgb(255,192,203)&quot;</span><span class="hl-1">); </span><span class="hl-7">// &#39;#ffc0cb&#39;</span>
+</code></pre>
+
+<a href="#hextorgba-16-进制颜色转-rgba" id="hextorgba-16-进制颜色转-rgba" style="color: inherit; text-decoration: none;">
+  <h5>hexToRgba (16 进制颜色转 RGBA)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，value(String)：16 进制颜色值</p>
+</blockquote>
+</li>
+<li>return (String)：返回转换后的 rgba 颜色值</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">hexToRgba</span><span class="hl-1">(</span><span class="hl-4">&quot;#ffc0cb&quot;</span><span class="hl-1">); </span><span class="hl-7">// &#39;rgba(255,192,203,1)&#39;</span>
+</code></pre>
+
+<a href="#rgbatohex-rgba-颜色转-16-进制" id="rgbatohex-rgba-颜色转-16-进制" style="color: inherit; text-decoration: none;">
+  <h5>rgbaToHex (rgba 颜色转 16 进制)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，value(String)：rgba 颜色值</p>
+</blockquote>
+</li>
+<li>return (String)：返回转换后的 16 进制颜色值</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">rgbaToHex</span><span class="hl-1">(</span><span class="hl-4">&quot;rgba(255,192,203,1)&quot;</span><span class="hl-1">); </span><span class="hl-7">// &#39;#ffc0cb&#39;</span>
+</code></pre>
+
+<a href="#viewporttopixels-计算-vh--vw-转-px" id="viewporttopixels-计算-vh--vw-转-px" style="color: inherit; text-decoration: none;">
+  <h5>viewportToPixels (计算 vh / vw 转 px)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，value(String)：css vh vw 值</p>
+</blockquote>
+</li>
+<li>return (Number)：返回转换后的 px 值</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">viewportToPixels</span><span class="hl-1">(</span><span class="hl-4">&quot;90vh&quot;</span><span class="hl-1">); </span><span class="hl-7">// 640</span>
+</code></pre>
+
+<a href="#norefdelurlparam-无刷新去除-url-后-参数" id="norefdelurlparam-无刷新去除-url-后-参数" style="color: inherit; text-decoration: none;">
+  <h5>noRefdelUrlParam (无刷新去除 url ?后 参数)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，value(String)：url？后的参数名</p>
+</blockquote>
+</li>
+<li>return (String)：返回一个新的 url</li>
+</ul>
+<pre><code class="language-js"><span class="hl-7">// http://localhost:8888/?id=2</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">noRefdelUrlParam</span><span class="hl-1">(</span><span class="hl-4">&quot;id&quot;</span><span class="hl-1">); </span><span class="hl-7">// http://localhost:8888/?</span>
+</code></pre>
+
+<a href="#vconsole-移动端查看-log" id="vconsole-移动端查看-log" style="color: inherit; text-decoration: none;">
+  <h5>vconsole (移动端查看 log)</h5>
+</a>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">vconsole</span><span class="hl-1">();</span>
+</code></pre>
+
+<a href="#getage-输入身份证号获取年龄" id="getage-输入身份证号获取年龄" style="color: inherit; text-decoration: none;">
+  <h5>getAge (输入身份证号获取年龄)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，value(String)：身份证号</p>
+</blockquote>
+</li>
+<li>return (String)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">getAge</span><span class="hl-1">(</span><span class="hl-4">&quot;xxxxxxxxxxxxxxxxx&quot;</span><span class="hl-1">); </span><span class="hl-7">// &#39;29岁0月14天&#39;</span>
+</code></pre>
+
+<a href="#getsex-输入身份证号获取性别" id="getsex-输入身份证号获取性别" style="color: inherit; text-decoration: none;">
+  <h5>getSex (输入身份证号获取性别)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，value(String)：身份证号</p>
+</blockquote>
+</li>
+<li>return (String)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">getSex</span><span class="hl-1">(</span><span class="hl-4">&quot;xxxxxxxxxxxxxxxxx&quot;</span><span class="hl-1">); </span><span class="hl-7">// &#39;男&#39;</span>
+</code></pre>
+
+<a href="#digituppercase-数字转化为大写金额" id="digituppercase-数字转化为大写金额" style="color: inherit; text-decoration: none;">
+  <h5>digitUppercase (数字转化为大写金额)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，value(Number)：数值金额</p>
+</blockquote>
+</li>
+<li>return (String)：大写汉字金额</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">digitUppercase</span><span class="hl-1">(</span><span class="hl-8">10000</span><span class="hl-1">); </span><span class="hl-7">// &#39;壹万元整&#39;</span>
+</code></pre>
+
+<a href="#injectscript-动态引入-js" id="injectscript-动态引入-js" style="color: inherit; text-decoration: none;">
+  <h5>injectScript (动态引入 js)</h5>
+</a>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">injectScript</span><span class="hl-1">(</span><span class="hl-0">src</span><span class="hl-1">);</span>
+</code></pre>
+
+<a href="#sinogtoletter-输入汉字转换汉字首字母" id="sinogtoletter-输入汉字转换汉字首字母" style="color: inherit; text-decoration: none;">
+  <h5>sinogToLetter (输入汉字转换汉字首字母)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，value(String)：要转换的汉字</p>
+</blockquote>
+</li>
+<li>return (String)：返回汉字对应的大写英文首字母</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">sinogToLetter</span><span class="hl-1">(</span><span class="hl-4">&quot;你好&quot;</span><span class="hl-1">); </span><span class="hl-7">// &#39;NH&#39;</span>
+</code></pre>
+
+<a href="#getfitsize-返回设计稿上-px-在不同屏幕下的适配尺寸" id="getfitsize-返回设计稿上-px-在不同屏幕下的适配尺寸" style="color: inherit; text-decoration: none;">
+  <h5>getFitSize (返回设计稿上 px 在不同屏幕下的适配尺寸)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，px(Number)：设计稿上样式的尺寸
+2，draft(Number)：设计稿宽度</p>
+</blockquote>
+</li>
+<li>return (Number)：返回在不同屏幕下设配的样式尺寸</li>
+</ul>
+<pre><code class="language-js"><span class="hl-7">//375屏幕下</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">getFitSize</span><span class="hl-1">(</span><span class="hl-8">100</span><span class="hl-1">, </span><span class="hl-8">750</span><span class="hl-1">); </span><span class="hl-7">// 50</span>
+</code></pre>
+
+<a href="#checkpassword-检测密码强度" id="checkpassword-检测密码强度" style="color: inherit; text-decoration: none;">
+  <h5>checkPassWord (检测密码强度)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，value(String)：密码</p>
+</blockquote>
+</li>
+<li>return (Number) 1：密码弱 2：密码中等 3：密码强 4：密码很强</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">checkPassWord</span><span class="hl-1">(</span><span class="hl-4">&quot;ssssss@1Sdddd&quot;</span><span class="hl-1">); </span><span class="hl-7">// 4</span>
+</code></pre>
+
+<a href="#fahrenheittocelsius-将华氏温度转换为摄氏温度" id="fahrenheittocelsius-将华氏温度转换为摄氏温度" style="color: inherit; text-decoration: none;">
+  <h5>fahrenheitToCelsius (将华氏温度转换为摄氏温度)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，value(Number)： 华氏温度</p>
+</blockquote>
+</li>
+<li>return (Number)：返回摄氏温度</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">fahrenheitToCelsius</span><span class="hl-1">(</span><span class="hl-8">50</span><span class="hl-1">); </span><span class="hl-7">// 10</span>
+</code></pre>
+
+<a href="#celsiustofahrenheit-将摄氏温度转华氏温度" id="celsiustofahrenheit-将摄氏温度转华氏温度" style="color: inherit; text-decoration: none;">
+  <h5>celsiusToFahrenheit (将摄氏温度转华氏温度)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，value(Number)：摄氏温度</p>
+</blockquote>
+</li>
+<li>return (Number)：华氏温度</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">celsiusToFahrenheit</span><span class="hl-1">(</span><span class="hl-8">10</span><span class="hl-1">); </span><span class="hl-7">// 50</span>
+</code></pre>
+
+<a href="#数组对象方法" id="数组对象方法" style="color: inherit; text-decoration: none;">
+  <h3>数组对象方法</h3>
+</a>
+
+<a href="#foreach" id="foreach" style="color: inherit; text-decoration: none;">
+  <h5>forEach</h5>
+</a>
+<ul>
+<li>参数：<blockquote>
+<p>1，(Array|Object): 一个用来迭代的集合。
+2，Function:每次迭代调用的函数。</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-js"><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-6">arr</span><span class="hl-1"> = [</span><span class="hl-8">1</span><span class="hl-1">, </span><span class="hl-8">2</span><span class="hl-1">, </span><span class="hl-8">3</span><span class="hl-1">, </span><span class="hl-8">4</span><span class="hl-1">, </span><span class="hl-8">5</span><span class="hl-1">];</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">forEach</span><span class="hl-1">(</span><span class="hl-0">arr</span><span class="hl-1">, (</span><span class="hl-0">value</span><span class="hl-1">, </span><span class="hl-0">index</span><span class="hl-1">) </span><span class="hl-2">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-7">// return false 终止循环</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-6">obj</span><span class="hl-1"> = { </span><span class="hl-0">a:</span><span class="hl-1"> </span><span class="hl-8">1</span><span class="hl-1">, </span><span class="hl-0">b:</span><span class="hl-1"> </span><span class="hl-8">2</span><span class="hl-1">, </span><span class="hl-0">c:</span><span class="hl-1"> </span><span class="hl-8">3</span><span class="hl-1"> };</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">forEach</span><span class="hl-1">(</span><span class="hl-0">obj</span><span class="hl-1">, (</span><span class="hl-0">value</span><span class="hl-1">, </span><span class="hl-0">key</span><span class="hl-1">) </span><span class="hl-2">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-7">// return false 终止循环</span><br/><span class="hl-1">});</span>
+</code></pre>
+
+<a href="#filter" id="filter" style="color: inherit; text-decoration: none;">
+  <h5>filter</h5>
+</a>
+<ul>
+<li>参数：<blockquote>
+<p>1，(Array|Object)：一个用来迭代的集合。
+2，Function：每次迭代调用的函数。</p>
+</blockquote>
+</li>
+<li>return (Array)： 返回一个新的过滤后的数组。</li>
+</ul>
+<pre><code class="language-js"><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-6">arr</span><span class="hl-1"> = [</span><span class="hl-8">1</span><span class="hl-1">, </span><span class="hl-8">2</span><span class="hl-1">, </span><span class="hl-8">3</span><span class="hl-1">, </span><span class="hl-8">4</span><span class="hl-1">, </span><span class="hl-8">5</span><span class="hl-1">];</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">filter</span><span class="hl-1">(</span><span class="hl-0">arr</span><span class="hl-1">, (</span><span class="hl-0">value</span><span class="hl-1">, </span><span class="hl-0">index</span><span class="hl-1">) </span><span class="hl-2">=&gt;</span><span class="hl-1"> </span><span class="hl-0">value</span><span class="hl-1"> === </span><span class="hl-8">3</span><span class="hl-1">); </span><span class="hl-7">// [3]</span><br/><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">filter</span><span class="hl-1">({ </span><span class="hl-0">a:</span><span class="hl-1"> </span><span class="hl-8">2</span><span class="hl-1">, </span><span class="hl-0">v:</span><span class="hl-1"> </span><span class="hl-8">2</span><span class="hl-1"> }, (</span><span class="hl-0">value</span><span class="hl-1">, </span><span class="hl-0">key</span><span class="hl-1">) </span><span class="hl-2">=&gt;</span><span class="hl-1"> </span><span class="hl-0">value</span><span class="hl-1"> === </span><span class="hl-8">2</span><span class="hl-1">); </span><span class="hl-7">// [2,2]</span>
+</code></pre>
+
+<a href="#map" id="map" style="color: inherit; text-decoration: none;">
+  <h5>map</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Array|Object)：一个用来迭代的集合。
+2，Function:每次迭代调用的函数。</p>
+</blockquote>
+</li>
+<li>return (Array)： 返回新的映射后数组</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">map</span><span class="hl-1">([</span><span class="hl-8">1</span><span class="hl-1">, </span><span class="hl-8">2</span><span class="hl-1">, </span><span class="hl-8">3</span><span class="hl-1">], (</span><span class="hl-0">value</span><span class="hl-1">) </span><span class="hl-2">=&gt;</span><span class="hl-1"> </span><span class="hl-0">value</span><span class="hl-1"> * </span><span class="hl-8">2</span><span class="hl-1">); </span><span class="hl-7">// [2, 4, 6]</span><br/><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">map</span><span class="hl-1">({ </span><span class="hl-0">a:</span><span class="hl-1"> </span><span class="hl-8">1</span><span class="hl-1">, </span><span class="hl-0">b:</span><span class="hl-1"> </span><span class="hl-8">2</span><span class="hl-1">, </span><span class="hl-0">c:</span><span class="hl-1"> </span><span class="hl-8">3</span><span class="hl-1"> }, (</span><span class="hl-0">value</span><span class="hl-1">) </span><span class="hl-2">=&gt;</span><span class="hl-1"> </span><span class="hl-0">value</span><span class="hl-1"> * </span><span class="hl-8">2</span><span class="hl-1">); </span><span class="hl-7">// [2, 4, 6]</span>
+</code></pre>
+
+<a href="#last-返回数组最后一项" id="last-返回数组最后一项" style="color: inherit; text-decoration: none;">
+  <h5>last (返回数组最后一项)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，value(Array)：要操作的数组</p>
+</blockquote>
+</li>
+<li>return (Any)：返回数组的最后一项</li>
+</ul>
+<pre><code class="language-js"><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-6">arr</span><span class="hl-1"> = [</span><span class="hl-8">1</span><span class="hl-1">, </span><span class="hl-8">2</span><span class="hl-1">, </span><span class="hl-8">3</span><span class="hl-1">, </span><span class="hl-8">4</span><span class="hl-1">, </span><span class="hl-8">5</span><span class="hl-1">];</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">last</span><span class="hl-1">(</span><span class="hl-0">arr</span><span class="hl-1">); </span><span class="hl-7">// 5</span>
+</code></pre>
+
+<a href="#alphabeticsort-按字母排序" id="alphabeticsort-按字母排序" style="color: inherit; text-decoration: none;">
+  <h5>alphabeticSort (按字母排序)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Array)：要操作的数组
+2，(String)：排序字段</p>
+</blockquote>
+</li>
+<li>return (Array)：返回一个排序后的新数组</li>
+</ul>
+<pre><code class="language-js"><span class="hl-2">let</span><span class="hl-1"> </span><span class="hl-0">arr</span><span class="hl-1"> = [</span><br/><span class="hl-1">  { </span><span class="hl-0">value:</span><span class="hl-1"> </span><span class="hl-4">&quot;b&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">  { </span><span class="hl-0">value:</span><span class="hl-1"> </span><span class="hl-4">&quot;a&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">  { </span><span class="hl-0">value:</span><span class="hl-1"> </span><span class="hl-4">&quot;c&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">  { </span><span class="hl-0">value:</span><span class="hl-1"> </span><span class="hl-4">&quot;e&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">  { </span><span class="hl-0">value:</span><span class="hl-1"> </span><span class="hl-4">&quot;f&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">];</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">alphabeticSort</span><span class="hl-1">(</span><span class="hl-0">arr</span><span class="hl-1">, </span><span class="hl-4">&quot;value&quot;</span><span class="hl-1">);</span><br/><span class="hl-7">// [</span><br/><span class="hl-7">//     {</span><br/><span class="hl-7">//         &quot;value&quot;: &quot;a&quot;</span><br/><span class="hl-7">//     },</span><br/><span class="hl-7">//     {</span><br/><span class="hl-7">//         &quot;value&quot;: &quot;b&quot;</span><br/><span class="hl-7">//     },</span><br/><span class="hl-7">//     {</span><br/><span class="hl-7">//         &quot;value&quot;: &quot;c&quot;</span><br/><span class="hl-7">//     },</span><br/><span class="hl-7">//     {</span><br/><span class="hl-7">//         &quot;value&quot;: &quot;e&quot;</span><br/><span class="hl-7">//     },</span><br/><span class="hl-7">//     {</span><br/><span class="hl-7">//         &quot;value&quot;: &quot;f&quot;</span><br/><span class="hl-7">//     }</span><br/><span class="hl-7">// ]</span>
+</code></pre>
+
+<a href="#arrtoobject-将对象数组转换为单个对象" id="arrtoobject-将对象数组转换为单个对象" style="color: inherit; text-decoration: none;">
+  <h5>arrToObject (将对象数组转换为单个对象)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Array)：要操作的数组
+2，(String)：指定对象的键的值</p>
+</blockquote>
+</li>
+<li>return (Object)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">arrToObject</span><span class="hl-1">(</span><br/><span class="hl-1">  [</span><br/><span class="hl-1">    { </span><span class="hl-0">id:</span><span class="hl-1"> </span><span class="hl-4">&quot;1&quot;</span><span class="hl-1">, </span><span class="hl-0">name:</span><span class="hl-1"> </span><span class="hl-4">&quot;Alpha&quot;</span><span class="hl-1">, </span><span class="hl-0">gender:</span><span class="hl-1"> </span><span class="hl-4">&quot;Male&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">    { </span><span class="hl-0">id:</span><span class="hl-1"> </span><span class="hl-4">&quot;2&quot;</span><span class="hl-1">, </span><span class="hl-0">name:</span><span class="hl-1"> </span><span class="hl-4">&quot;Bravo&quot;</span><span class="hl-1">, </span><span class="hl-0">gender:</span><span class="hl-1"> </span><span class="hl-4">&quot;Male&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">    { </span><span class="hl-0">id:</span><span class="hl-1"> </span><span class="hl-4">&quot;3&quot;</span><span class="hl-1">, </span><span class="hl-0">name:</span><span class="hl-1"> </span><span class="hl-4">&quot;Charlie&quot;</span><span class="hl-1">, </span><span class="hl-0">gender:</span><span class="hl-1"> </span><span class="hl-4">&quot;Female&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">  ],</span><br/><span class="hl-1">  </span><span class="hl-4">&quot;id&quot;</span><br/><span class="hl-1">);</span><br/><span class="hl-7">// {</span><br/><span class="hl-7">//     &#39;1&#39;: { id: &#39;1&#39;, name: &#39;Alpha&#39;, gender: &#39;Male&#39; },</span><br/><span class="hl-7">//     &#39;2&#39;: { id: &#39;2&#39;, name: &#39;Bravo&#39;, gender: &#39;Male&#39; },</span><br/><span class="hl-7">//     &#39;3&#39;: { id: &#39;3&#39;, name: &#39;Charlie&#39;, gender: &#39;Female&#39; },</span><br/><span class="hl-7">// }</span>
+</code></pre>
+
+<a href="#tonumbers-将字符串数组转换为数字" id="tonumbers-将字符串数组转换为数字" style="color: inherit; text-decoration: none;">
+  <h5>toNumbers (将字符串数组转换为数字)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Array)：要操作的数组</p>
+</blockquote>
+</li>
+<li>return (Array)：返回一个新的数字</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">toNumbers</span><span class="hl-1">([</span><span class="hl-4">&quot;2&quot;</span><span class="hl-1">, </span><span class="hl-4">&quot;3&quot;</span><span class="hl-1">, </span><span class="hl-4">&quot;4&quot;</span><span class="hl-1">]); </span><span class="hl-7">// [2, 3, 4]</span>
+</code></pre>
+
+<a href="#countby-按数组对象中的属性计数" id="countby-按数组对象中的属性计数" style="color: inherit; text-decoration: none;">
+  <h5>countBy (按数组对象中的属性计数)</h5>
+</a>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">countBy</span><span class="hl-1">(</span><br/><span class="hl-1">  [</span><br/><span class="hl-1">    { </span><span class="hl-0">branch:</span><span class="hl-1"> </span><span class="hl-4">&quot;audi&quot;</span><span class="hl-1">, </span><span class="hl-0">model:</span><span class="hl-1"> </span><span class="hl-4">&quot;q8&quot;</span><span class="hl-1">, </span><span class="hl-0">year:</span><span class="hl-1"> </span><span class="hl-4">&quot;2019&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">    { </span><span class="hl-0">branch:</span><span class="hl-1"> </span><span class="hl-4">&quot;audi&quot;</span><span class="hl-1">, </span><span class="hl-0">model:</span><span class="hl-1"> </span><span class="hl-4">&quot;rs7&quot;</span><span class="hl-1">, </span><span class="hl-0">year:</span><span class="hl-1"> </span><span class="hl-4">&quot;2020&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">    { </span><span class="hl-0">branch:</span><span class="hl-1"> </span><span class="hl-4">&quot;ford&quot;</span><span class="hl-1">, </span><span class="hl-0">model:</span><span class="hl-1"> </span><span class="hl-4">&quot;mustang&quot;</span><span class="hl-1">, </span><span class="hl-0">year:</span><span class="hl-1"> </span><span class="hl-4">&quot;2019&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">    { </span><span class="hl-0">branch:</span><span class="hl-1"> </span><span class="hl-4">&quot;ford&quot;</span><span class="hl-1">, </span><span class="hl-0">model:</span><span class="hl-1"> </span><span class="hl-4">&quot;explorer&quot;</span><span class="hl-1">, </span><span class="hl-0">year:</span><span class="hl-1"> </span><span class="hl-4">&quot;2020&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">    { </span><span class="hl-0">branch:</span><span class="hl-1"> </span><span class="hl-4">&quot;bmw&quot;</span><span class="hl-1">, </span><span class="hl-0">model:</span><span class="hl-1"> </span><span class="hl-4">&quot;x7&quot;</span><span class="hl-1">, </span><span class="hl-0">year:</span><span class="hl-1"> </span><span class="hl-4">&quot;2020&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">  ],</span><br/><span class="hl-1">  </span><span class="hl-4">&quot;branch&quot;</span><br/><span class="hl-1">); </span><span class="hl-7">// { &#39;audi&#39;: 2, &#39;ford&#39;: 2, &#39;bmw&#39;: 1 }</span>
+</code></pre>
+
+<a href="#indexofmax-查找数组中最大项的索引" id="indexofmax-查找数组中最大项的索引" style="color: inherit; text-decoration: none;">
+  <h5>indexOfMax (查找数组中最大项的索引)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(number[])：要操作的数组</p>
+</blockquote>
+</li>
+<li>return (number)：返回数组中最大值的索引下标</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">indexOfMax</span><span class="hl-1">([</span><span class="hl-8">1</span><span class="hl-1">, </span><span class="hl-8">3</span><span class="hl-1">, </span><span class="hl-8">2</span><span class="hl-1">, </span><span class="hl-8">7</span><span class="hl-1">, </span><span class="hl-8">5</span><span class="hl-1">]); </span><span class="hl-7">// 3</span>
+</code></pre>
+
+<a href="#indexofmin-查找数组中最小项的索引" id="indexofmin-查找数组中最小项的索引" style="color: inherit; text-decoration: none;">
+  <h5>indexOfMin (查找数组中最小项的索引)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(number[])：要操作的数组</p>
+</blockquote>
+</li>
+<li>return (number)：返回数组中最小值的索引下标</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">indexOfMin</span><span class="hl-1">([</span><span class="hl-8">1</span><span class="hl-1">, </span><span class="hl-8">3</span><span class="hl-1">, </span><span class="hl-8">2</span><span class="hl-1">, </span><span class="hl-8">7</span><span class="hl-1">, </span><span class="hl-8">5</span><span class="hl-1">]); </span><span class="hl-7">// 0</span>
+</code></pre>
+
+<a href="#contains-检查数组是否包含符合某些标准的值" id="contains-检查数组是否包含符合某些标准的值" style="color: inherit; text-decoration: none;">
+  <h5>contains (检查数组是否包含符合某些标准的值)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Array)：要操作的数组
+2，(Function)：每次迭代调用的函数</p>
+</blockquote>
+</li>
+<li>return (boolean)：返回是否满足迭代函数的判断</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">contains</span><span class="hl-1">([</span><span class="hl-8">1</span><span class="hl-1">, </span><span class="hl-8">2</span><span class="hl-1">, </span><span class="hl-8">3</span><span class="hl-1">], (</span><span class="hl-0">v</span><span class="hl-1">) </span><span class="hl-2">=&gt;</span><span class="hl-1"> </span><span class="hl-0">v</span><span class="hl-1"> == </span><span class="hl-8">3</span><span class="hl-1">); </span><span class="hl-7">// true</span>
+</code></pre>
+
+<a href="#字符串操作方法" id="字符串操作方法" style="color: inherit; text-decoration: none;">
+  <h3>字符串操作方法</h3>
+</a>
+
+<a href="#initialtocapitali-字符串首位是字母转大写" id="initialtocapitali-字符串首位是字母转大写" style="color: inherit; text-decoration: none;">
+  <h5>initialToCapitali (字符串首位是字母转大写)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(String)：要操作的字符串</p>
+</blockquote>
+</li>
+<li>return (String)：返回首字母转为大写的字符串</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">initialToCapitali</span><span class="hl-1">(</span><span class="hl-4">&quot;aaaa&quot;</span><span class="hl-1">); </span><span class="hl-7">// &#39;Aaaa&#39;</span>
+</code></pre>
+
+<a href="#repeat-传入字符串，和重复次数，返回结果字符串" id="repeat-传入字符串，和重复次数，返回结果字符串" style="color: inherit; text-decoration: none;">
+  <h5>repeat (传入字符串，和重复次数，返回结果字符串)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(String)：要操作的字符串
+2，(Number)：重复次数</p>
+</blockquote>
+</li>
+<li>return (String)：返回一个新的字符串</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">repeat</span><span class="hl-1">(</span><span class="hl-4">&quot;abc&quot;</span><span class="hl-1">, </span><span class="hl-8">3</span><span class="hl-1">); </span><span class="hl-7">// &#39;abcabcabc&#39;</span>
+</code></pre>
+
+<a href="#trim-去除字符串首尾空格" id="trim-去除字符串首尾空格" style="color: inherit; text-decoration: none;">
+  <h5>trim (去除字符串首尾空格)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(String)：要操作的字符串</p>
+</blockquote>
+</li>
+<li>return (String)：返回一个去除空格的字符串</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">trim</span><span class="hl-1">(</span><span class="hl-4">&quot;  xxx  &quot;</span><span class="hl-1">); </span><span class="hl-7">// &#39;xxx&#39;</span>
+</code></pre>
+
+<a href="#gettextwidth-计算文字宽度" id="gettextwidth-计算文字宽度" style="color: inherit; text-decoration: none;">
+  <h5>getTextWidth (计算文字宽度)</h5>
+</a>
+<ul>
+<li>参数：<blockquote>
+<p>1，(String)：文本
+2，(Numver)： &#39;14px sans-serif&#39; 字号 字体</p>
+</blockquote>
+</li>
+<li>return (Number)：返回文字宽度</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">getTextWidth</span><span class="hl-1">(</span><span class="hl-4">&quot;哈哈哈哈哈哈哈哈&quot;</span><span class="hl-1">, </span><span class="hl-8">26</span><span class="hl-1">); </span><span class="hl-7">// 80</span>
+</code></pre>
+
+<a href="#transformat-字符串替换" id="transformat-字符串替换" style="color: inherit; text-decoration: none;">
+  <h5>transFormat (字符串替换)</h5>
+</a>
+<ul>
+<li>参数：<blockquote>
+<p>1，(String)：表示将要替换的字符串
+2，(String)：表示你将要替换的字符
+3，(String)：表示你想要替换的字符</p>
+</blockquote>
+</li>
+<li>return (String)：返回替换后的字符串</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">transFormat</span><span class="hl-1">(</span><span class="hl-4">&quot;2019-12-13&quot;</span><span class="hl-1">, </span><span class="hl-4">&quot;-&quot;</span><span class="hl-1">, </span><span class="hl-4">&quot;/&quot;</span><span class="hl-1">); </span><span class="hl-7">// 2019/12/13</span>
+</code></pre>
+
+<a href="#strinversion-反正字符串" id="strinversion-反正字符串" style="color: inherit; text-decoration: none;">
+  <h5>strInversion (反正字符串)</h5>
+</a>
+<ul>
+<li>参数：<blockquote>
+<p>1，(String)：要反转的字符串</p>
+</blockquote>
+</li>
+<li>return (String)：返回反转后的字符串</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">strInversion</span><span class="hl-1">(</span><span class="hl-4">&quot;abc&quot;</span><span class="hl-1">); </span><span class="hl-7">// &#39;cba&#39;</span>
+</code></pre>
+
+<a href="#toline-驼峰转下划线" id="toline-驼峰转下划线" style="color: inherit; text-decoration: none;">
+  <h5>toLine (驼峰转下划线)</h5>
+</a>
+<ul>
+<li>参数：<blockquote>
+<p>1，(String)：要驼峰转下划线字符串
+2，(Boolean)：是否转换成小写字母 默认值 true, false 转换成大写</p>
+</blockquote>
+</li>
+<li>return (String)：返回转换后的字符串</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">toLine</span><span class="hl-1">(</span><span class="hl-4">&quot;contBeginDate&quot;</span><span class="hl-1">, </span><span class="hl-2">false</span><span class="hl-1">); </span><span class="hl-7">// &#39;CONT_BEGIN_DATE&#39;</span>
+</code></pre>
+
+<a href="#tofullhexcolor-将-3-位数颜色转换为-6-位数颜色" id="tofullhexcolor-将-3-位数颜色转换为-6-位数颜色" style="color: inherit; text-decoration: none;">
+  <h5>toFullHexColor (将 3 位数颜色转换为 6 位数颜色)</h5>
+</a>
+<ul>
+<li>参数：<blockquote>
+<p>1，(String)：要操作 16 进制颜色值</p>
+</blockquote>
+</li>
+<li>return (String)：返回转换后的字符串</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">toFullHexColor</span><span class="hl-1">(</span><span class="hl-4">&quot;#FFF&quot;</span><span class="hl-1">); </span><span class="hl-7">// &#39;#FFFFFF&#39;</span>
+</code></pre>
+
+<a href="#decode-解码-jwt-令牌" id="decode-解码-jwt-令牌" style="color: inherit; text-decoration: none;">
+  <h5>decode (解码 JWT 令牌)</h5>
+</a>
+<ul>
+<li>参数：<blockquote>
+<p>1，(String)：要操作的字符串</p>
+</blockquote>
+</li>
+<li>return (String)：返回转换后的字符串</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">decode</span><span class="hl-1">(</span><span class="hl-4">`</span><br/><span class="hl-4">    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.</span><br/><span class="hl-4">    eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0I</span><br/><span class="hl-4">    joxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</span><br/><span class="hl-4">`</span><span class="hl-1">); </span><span class="hl-7">// &#39;{&quot;sub&quot;:&quot;1234567890&quot;,&quot;name&quot;:&quot;John Doe&quot;,&quot;iat&quot;:1516239022}&#39;</span>
+</code></pre>
+
+<a href="#lettertoemoji-转换字母以关联表情符号" id="lettertoemoji-转换字母以关联表情符号" style="color: inherit; text-decoration: none;">
+  <h5>letterToEmoji (转换字母以关联表情符号)</h5>
+</a>
+<ul>
+<li>参数：<blockquote>
+<p>1，(String)：要操作的字符串</p>
+</blockquote>
+</li>
+<li>return (String)：返回关联的表情符号</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">letterToEmoji</span><span class="hl-1">(</span><span class="hl-4">&quot;a&quot;</span><span class="hl-1">); </span><span class="hl-7">// &#39;🇦&#39;</span>
+</code></pre>
+
+<a href="#topascalcase-将字符串转换为-pascalcase" id="topascalcase-将字符串转换为-pascalcase" style="color: inherit; text-decoration: none;">
+  <h5>toPascalCase (将字符串转换为 PascalCase)</h5>
+</a>
+<ul>
+<li>参数：<blockquote>
+<p>1，(String)：要操作的字符串</p>
+</blockquote>
+</li>
+<li>return (String)：返回大驼峰命名规则字符串</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">toPascalCase</span><span class="hl-1">(</span><span class="hl-4">&quot;hello world&quot;</span><span class="hl-1">); </span><span class="hl-7">// &#39;HelloWorld&#39;</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">toPascalCase</span><span class="hl-1">(</span><span class="hl-4">&quot;hello.world&quot;</span><span class="hl-1">); </span><span class="hl-7">// &#39;HelloWorld&#39;</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">toPascalCase</span><span class="hl-1">(</span><span class="hl-4">&quot;foo_bar-baz&quot;</span><span class="hl-1">); </span><span class="hl-7">// FooBarBaz</span>
+</code></pre>
+
+<a href="#removespaces-删除字符串中的空格" id="removespaces-删除字符串中的空格" style="color: inherit; text-decoration: none;">
+  <h5>removeSpaces (删除字符串中的空格)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(String)：要操作的字符串</p>
+</blockquote>
+</li>
+<li>return (String)：返回去除空格的字符串</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">removeSpaces</span><span class="hl-1">(</span><span class="hl-4">&quot;s s s k &quot;</span><span class="hl-1">); </span><span class="hl-7">// sssk</span>
+</code></pre>
+
+<a href="#replacetext-替换指定位置字符串内容" id="replacetext-替换指定位置字符串内容" style="color: inherit; text-decoration: none;">
+  <h5>replaceText (替换指定位置字符串内容)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(String)：要操作的字符串
+2，([number, number] | [number])：字符串索引位置区间
+3，(String)：插入的字符串</p>
+</blockquote>
+</li>
+<li>return (String)：返回新的字符串</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">replaceText</span><span class="hl-1">(</span><span class="hl-4">&quot;17778780909&quot;</span><span class="hl-1">, [</span><span class="hl-8">3</span><span class="hl-1">, </span><span class="hl-8">7</span><span class="hl-1">], </span><span class="hl-4">&quot;*&quot;</span><span class="hl-1">); </span><span class="hl-7">// &#39;177****0909&#39;</span>
+</code></pre>
+
+<a href="#数值操作方法" id="数值操作方法" style="color: inherit; text-decoration: none;">
+  <h3>数值操作方法</h3>
+</a>
+
+<a href="#accadd-浮点数加法运算" id="accadd-浮点数加法运算" style="color: inherit; text-decoration: none;">
+  <h5>accAdd (浮点数加法运算)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Number)：要操作的数字
+2，(Number)：要操作的数字</p>
+</blockquote>
+</li>
+<li>return (Number)：返回两数相加的合</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">accAdd</span><span class="hl-1">(</span><span class="hl-8">0.1</span><span class="hl-1">, </span><span class="hl-8">0.2</span><span class="hl-1">); </span><span class="hl-7">// 0.3</span>
+</code></pre>
+
+<a href="#accsub-浮点数减法运算" id="accsub-浮点数减法运算" style="color: inherit; text-decoration: none;">
+  <h5>accSub (浮点数减法运算)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Number)：要操作的数字
+2，(Number)：要操作的数字</p>
+</blockquote>
+</li>
+<li>return (Number)：返回两数相减的合</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">accSub</span><span class="hl-1">(</span><span class="hl-8">0.3</span><span class="hl-1">, </span><span class="hl-8">0.1</span><span class="hl-1">); </span><span class="hl-7">// 0.2</span>
+</code></pre>
+
+<a href="#accmul-浮点数乘法运算" id="accmul-浮点数乘法运算" style="color: inherit; text-decoration: none;">
+  <h5>accMul (浮点数乘法运算)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Number)：要操作的数字
+2，(Number)：要操作的数字</p>
+</blockquote>
+</li>
+<li>return (Number)：返回两数相乘的合</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">accMul</span><span class="hl-1">(</span><span class="hl-8">0.1</span><span class="hl-1">, </span><span class="hl-8">3</span><span class="hl-1">); </span><span class="hl-7">// 0.3</span>
+</code></pre>
+
+<a href="#accdiv-浮点数除法运算" id="accdiv-浮点数除法运算" style="color: inherit; text-decoration: none;">
+  <h5>accDiv (浮点数除法运算)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Number)：要操作的数字
+2，(Number)：要操作的数字</p>
+</blockquote>
+</li>
+<li>return (Number)：返回两数相除的合</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">accDiv</span><span class="hl-1">(</span><span class="hl-8">0.3</span><span class="hl-1">, </span><span class="hl-8">3</span><span class="hl-1">); </span><span class="hl-7">// 0.1</span>
+</code></pre>
+
+<a href="#formatprice-数字千分位增加逗号" id="formatprice-数字千分位增加逗号" style="color: inherit; text-decoration: none;">
+  <h5>formatPrice (数字千分位增加逗号)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Number)：要操作的数字
+2，(String)：要插入的符号</p>
+</blockquote>
+</li>
+<li>return (Number)：返回一个新的字符串</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">formatPrice</span><span class="hl-1">(</span><span class="hl-8">1111112211111</span><span class="hl-1">, </span><span class="hl-4">&quot;,&quot;</span><span class="hl-1">); </span><span class="hl-7">// &#39;1,111,112,211,111&#39;</span>
+</code></pre>
+
+<a href="#smallrounding-小数指定位数进行取整" id="smallrounding-小数指定位数进行取整" style="color: inherit; text-decoration: none;">
+  <h5>smallRounding (小数指定位数进行取整)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Number)：要操作的数字
+2，(Number)：指定小数位进行取整</p>
+</blockquote>
+</li>
+<li>return (Number)：返回取整后的数字</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">smallRounding</span><span class="hl-1">(</span><span class="hl-8">89.38931</span><span class="hl-1">, </span><span class="hl-8">3</span><span class="hl-1">); </span><span class="hl-7">// 89.39</span>
+</code></pre>
+
+<a href="#range-在给定范围内创建数字数组" id="range-在给定范围内创建数字数组" style="color: inherit; text-decoration: none;">
+  <h5>range (在给定范围内创建数字数组)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Number)：开始数字
+2，(Number)：结束数字</p>
+</blockquote>
+</li>
+<li>return (number[])：返回创建的数字数组</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">range</span><span class="hl-1">(</span><span class="hl-8">1</span><span class="hl-1">, </span><span class="hl-8">5</span><span class="hl-1">); </span><span class="hl-7">// [1,2,3,4,5]</span>
+</code></pre>
+
+<a href="#closest-从数组中查找最接近的数字" id="closest-从数组中查找最接近的数字" style="color: inherit; text-decoration: none;">
+  <h5>closest (从数组中查找最接近的数字)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(number[])：要操作的数值
+2，(Number)：目标值</p>
+</blockquote>
+</li>
+<li>return (number[])：返回数组中最接近目标值的值</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">closest</span><span class="hl-1">([</span><span class="hl-8">29</span><span class="hl-1">, </span><span class="hl-8">87</span><span class="hl-1">, </span><span class="hl-8">8</span><span class="hl-1">, </span><span class="hl-8">78</span><span class="hl-1">, </span><span class="hl-8">97</span><span class="hl-1">, </span><span class="hl-8">20</span><span class="hl-1">, </span><span class="hl-8">75</span><span class="hl-1">, </span><span class="hl-8">33</span><span class="hl-1">, </span><span class="hl-8">24</span><span class="hl-1">, </span><span class="hl-8">17</span><span class="hl-1">], </span><span class="hl-8">50</span><span class="hl-1">); </span><span class="hl-7">// 33</span>
+</code></pre>
+
+<a href="#时间操作方法" id="时间操作方法" style="color: inherit; text-decoration: none;">
+  <h3>时间操作方法</h3>
+</a>
+
+<a href="#dateformater-格式化时间" id="dateformater-格式化时间" style="color: inherit; text-decoration: none;">
+  <h5>dateFormater (格式化时间)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(String)：日期格式
+2，(Date)：时间</p>
+</blockquote>
+</li>
+<li>return (String)：返回指定格式的日期</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">dateFormater</span><span class="hl-1">(</span><span class="hl-4">&quot;YYYY-MM-DD HH:mm:ss&quot;</span><span class="hl-1">, </span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-5">Date</span><span class="hl-1">()); </span><span class="hl-7">// &#39;2022-01-18 12:01:10&#39;</span>
+</code></pre>
+
+<a href="#formatpasstime-格式化starttime距现在的已过时间距离传入的时间经多了多久" id="formatpasstime-格式化starttime距现在的已过时间距离传入的时间经多了多久" style="color: inherit; text-decoration: none;">
+  <h5>formatPassTime (格式化${startTime}距现在的已过时间(距离传入的时间经多了多久))</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Number)：时间戳</p>
+</blockquote>
+</li>
+<li>return (String)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">formatPassTime</span><span class="hl-1">(</span><span class="hl-8">1578614400000</span><span class="hl-1">); </span><span class="hl-7">// &#39;2年前&#39;</span>
+</code></pre>
+
+<a href="#formatremaintime-格式化现在距endtime的剩余时间" id="formatremaintime-格式化现在距endtime的剩余时间" style="color: inherit; text-decoration: none;">
+  <h5>formatRemainTime (格式化现在距${endTime}的剩余时间)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Number)：时间戳</p>
+</blockquote>
+</li>
+<li>return (String)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">formatRemainTime</span><span class="hl-1">(</span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-5">Date</span><span class="hl-1">(</span><span class="hl-4">&quot;2023&quot;</span><span class="hl-1">).</span><span class="hl-5">getTime</span><span class="hl-1">()); </span><span class="hl-7">// &#39;347天19小时52分钟 26秒&#39;</span>
+</code></pre>
+
+<a href="#daydiff-计算两日期之间相差的天数" id="daydiff-计算两日期之间相差的天数" style="color: inherit; text-decoration: none;">
+  <h5>dayDiff (计算两日期之间相差的天数)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Date)：时间
+2，(Date)：时间</p>
+</blockquote>
+</li>
+<li>return (Number)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">dayDiff</span><span class="hl-1">(</span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-5">Date</span><span class="hl-1">(</span><span class="hl-4">&quot;2022-03-01&quot;</span><span class="hl-1">), </span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-5">Date</span><span class="hl-1">(</span><span class="hl-4">&quot;2021-01-21&quot;</span><span class="hl-1">)); </span><span class="hl-7">// 404</span>
+</code></pre>
+
+<a href="#monthdiff-计算两个日期之间的月数" id="monthdiff-计算两个日期之间的月数" style="color: inherit; text-decoration: none;">
+  <h5>monthDiff (计算两个日期之间的月数)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Date)：时间
+2，(Date)：时间</p>
+</blockquote>
+</li>
+<li>return (Number)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">monthDiff</span><span class="hl-1">(</span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-5">Date</span><span class="hl-1">(</span><span class="hl-4">&quot;2022-01-01&quot;</span><span class="hl-1">), </span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-5">Date</span><span class="hl-1">(</span><span class="hl-4">&quot;2021-01-01&quot;</span><span class="hl-1">)); </span><span class="hl-7">// 12</span>
+</code></pre>
+
+<a href="#comparedate-比较两个日期" id="comparedate-比较两个日期" style="color: inherit; text-decoration: none;">
+  <h5>compareDate (比较两个日期)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Date)：时间
+2，(Date)：时间</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">compareDate</span><span class="hl-1">(</span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-5">Date</span><span class="hl-1">(</span><span class="hl-4">&quot;2020-03-30&quot;</span><span class="hl-1">), </span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-5">Date</span><span class="hl-1">(</span><span class="hl-4">&quot;2020-01-01&quot;</span><span class="hl-1">)); </span><span class="hl-7">// true</span>
+</code></pre>
+
+<a href="#formatseconds-将秒转换为-hhmmss-格式" id="formatseconds-将秒转换为-hhmmss-格式" style="color: inherit; text-decoration: none;">
+  <h5>formatSeconds (将秒转换为 hh:mm:ss 格式)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Number)：秒</p>
+</blockquote>
+</li>
+<li>return (String)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">formatSeconds</span><span class="hl-1">(</span><span class="hl-8">300</span><span class="hl-1">); </span><span class="hl-7">// &#39;00:05:00&#39;</span>
+</code></pre>
+
+<a href="#getquarter-获取日期的当前季度" id="getquarter-获取日期的当前季度" style="color: inherit; text-decoration: none;">
+  <h5>getQuarter (获取日期的当前季度)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Date)：时间</p>
+</blockquote>
+</li>
+<li>return (Number)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">getQuarter</span><span class="hl-1">(</span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-5">Date</span><span class="hl-1">(</span><span class="hl-4">&quot;2023-12-12&quot;</span><span class="hl-1">)); </span><span class="hl-7">// 4</span>
+</code></pre>
+
+<a href="#getlastdate-获取传入的日期当月的最后一个日期" id="getlastdate-获取传入的日期当月的最后一个日期" style="color: inherit; text-decoration: none;">
+  <h5>getLastDate (获取传入的日期当月的最后一个日期)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Date)：时间</p>
+</blockquote>
+</li>
+<li>return (Date)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">getLastDate</span><span class="hl-1">(</span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-5">Date</span><span class="hl-1">(</span><span class="hl-4">&quot;2023-01-01&quot;</span><span class="hl-1">)); </span><span class="hl-7">// Tue Jan 31 2023 00:00:00 GMT+0800 (中国标准时间)</span>
+</code></pre>
+
+<a href="#getfirstdate-获取传入的日期当月的第一个日期" id="getfirstdate-获取传入的日期当月的第一个日期" style="color: inherit; text-decoration: none;">
+  <h5>getFirstDate (获取传入的日期当月的第一个日期)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Date)：时间</p>
+</blockquote>
+</li>
+<li>return (Date)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">getFirstDate</span><span class="hl-1">(</span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-5">Date</span><span class="hl-1">(</span><span class="hl-4">&quot;2023-01-23&quot;</span><span class="hl-1">)); </span><span class="hl-7">// Sun Jan 01 2023 00:00:00 GMT+0800 (中国标准时间)</span>
+</code></pre>
+
+<a href="#getcurrentsecond-获取当前时间戳（秒）" id="getcurrentsecond-获取当前时间戳（秒）" style="color: inherit; text-decoration: none;">
+  <h5>getCurrentSecond (获取当前时间戳（秒）)</h5>
+</a>
+<ul>
+<li>return (Number) 秒</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">getCurrentSecond</span><span class="hl-1">(); </span><span class="hl-7">// 1673418350</span>
+</code></pre>
+
+<a href="#正则操作方法" id="正则操作方法" style="color: inherit; text-decoration: none;">
+  <h3>正则操作方法</h3>
+</a>
+<pre><code class="language-js"><br/><span class="hl-0">规则</span><span class="hl-1"> </span><span class="hl-0">key</span><br/><span class="hl-0">chinese_numeric_letters</span><span class="hl-1"> </span><span class="hl-7">// 数字，字母，汉字，任意组合</span><br/><span class="hl-0">numeric_letters</span><span class="hl-1"> </span><span class="hl-7">// 数字，字母，数字或字母，字母或数字组合</span><br/><span class="hl-0">number</span><span class="hl-1"> </span><span class="hl-7">// 带小数点数字 0 ～ 30</span><br/><span class="hl-0">cPattern</span><span class="hl-1"> </span><span class="hl-7">// 车牌号</span><br/><span class="hl-0">cP</span><span class="hl-1"> </span><span class="hl-7">// 身份证</span><br/><span class="hl-0">intNumber</span><span class="hl-1"> </span><span class="hl-7">// 正整数</span><br/><span class="hl-0">negativeInteger</span><span class="hl-1"> </span><span class="hl-7">// 负整数</span><br/><span class="hl-0">isNotNegativeFloatNum</span><span class="hl-1"> </span><span class="hl-7">// 匹配非负浮点数</span><br/><span class="hl-0">character</span><span class="hl-1"> </span><span class="hl-7">// 字符 254</span><br/><span class="hl-0">email</span><span class="hl-1"> </span><span class="hl-7">// 邮箱</span><br/><span class="hl-0">website</span><span class="hl-1"> </span><span class="hl-7">// 网址</span><br/><span class="hl-0">mobile</span><span class="hl-1"> </span><span class="hl-7">// 手机号</span><br/><span class="hl-0">cname</span><span class="hl-1"> </span><span class="hl-7">//校验中文名 包含校验少数民族名字</span><br/><span class="hl-0">ename</span><span class="hl-1"> </span><span class="hl-7">//校验英文名 每一个单词首字母都是大写</span><br/><span class="hl-0">ip</span><span class="hl-1"> </span><span class="hl-7">//校验 IP 地址</span><br/><span class="hl-0">ipv4</span><span class="hl-1"> </span><span class="hl-7">// 校验 ipv4 地址</span><br/><span class="hl-0">color16Reg</span><span class="hl-1"> </span><span class="hl-7">// 16 进制颜色校验</span><br/><span class="hl-0">mac</span><span class="hl-1"> </span><span class="hl-7">//校验 mac 地址</span><br/><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">validate</span><span class="hl-1">(</span><span class="hl-0">key</span><span class="hl-1">,</span><span class="hl-0">value</span><span class="hl-1">) </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#性能监控" id="性能监控" style="color: inherit; text-decoration: none;">
+  <h3>性能监控</h3>
+</a>
+
+<a href="#performanceanalysis-进行性能分析" id="performanceanalysis-进行性能分析" style="color: inherit; text-decoration: none;">
+  <h5>performanceAnalysis (进行性能分析)</h5>
+</a>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">performanceAnalysis</span><span class="hl-1">();</span>
+</code></pre>
+
+<a href="#dom-操作方法" id="dom-操作方法" style="color: inherit; text-decoration: none;">
+  <h3>DOM 操作方法</h3>
+</a>
+
+<a href="#getoffset-获取一个元素距离浏览器左上角的偏移量" id="getoffset-获取一个元素距离浏览器左上角的偏移量" style="color: inherit; text-decoration: none;">
+  <h5>getOffset (获取一个元素距离浏览器左上角的偏移量)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Element)：dom</p>
+</blockquote>
+</li>
+<li>return ({ top:0, left:0 })</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">getOffset</span><span class="hl-1">(</span><span class="hl-0">element</span><span class="hl-1">); </span><span class="hl-7">// { top:0, left:0 }</span>
+</code></pre>
+
+<a href="#stoppropagation-阻止冒泡事件" id="stoppropagation-阻止冒泡事件" style="color: inherit; text-decoration: none;">
+  <h5>stopPropagation (阻止冒泡事件)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Element)：dom</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">stopPropagation</span><span class="hl-1">(</span><span class="hl-0">element</span><span class="hl-1">);</span>
+</code></pre>
+
+<a href="#hasclass-检测类名" id="hasclass-检测类名" style="color: inherit; text-decoration: none;">
+  <h5>hasClass (检测类名)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Element)：dom
+2，(String)：类名</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-js"><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">hasClass</span><span class="hl-1">(</span><span class="hl-0">element</span><span class="hl-1">,</span><span class="hl-0">name</span><span class="hl-1">)</span><br/><span class="hl-2">=&gt;</span><span class="hl-1"> </span><span class="hl-2">true</span><span class="hl-1"> | </span><span class="hl-2">false</span>
+</code></pre>
+
+<a href="#addclass-添加类名" id="addclass-添加类名" style="color: inherit; text-decoration: none;">
+  <h5>addClass (添加类名)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Element)：dom
+2，(String)：类名</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">addClass</span><span class="hl-1">(</span><span class="hl-0">element</span><span class="hl-1">, </span><span class="hl-0">name</span><span class="hl-1">);</span>
+</code></pre>
+
+<a href="#removeclass-删除类名" id="removeclass-删除类名" style="color: inherit; text-decoration: none;">
+  <h5>removeClass (删除类名)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Element)：dom
+2，(String)：类名</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">removeClass</span><span class="hl-1">(</span><span class="hl-0">element</span><span class="hl-1">, </span><span class="hl-0">name</span><span class="hl-1">);</span>
+</code></pre>
+
+<a href="#replaceclass-替换类名" id="replaceclass-替换类名" style="color: inherit; text-decoration: none;">
+  <h5>replaceClass (替换类名)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Element)：dom
+2，(String)：新类名
+3，(String)：旧类名</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">replaceClass</span><span class="hl-1">(</span><span class="hl-0">element</span><span class="hl-1">, </span><span class="hl-0">newName</span><span class="hl-1">, </span><span class="hl-0">oldName</span><span class="hl-1">);</span>
+</code></pre>
+
+<a href="#scrolltothebottom-监听滚动条滚动到底部" id="scrolltothebottom-监听滚动条滚动到底部" style="color: inherit; text-decoration: none;">
+  <h5>scrollToTheBottom (监听滚动条滚动到底部)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Element)： dom
+2，(Function)： 滚动到底部事件回调
+3，(Number)： 滚动监听截流时间</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">scrollToTheBottom</span><span class="hl-1">(</span><span class="hl-0">ele</span><span class="hl-1">, </span><span class="hl-0">callback</span><span class="hl-1">, </span><span class="hl-0">delay</span><span class="hl-1">);</span>
+</code></pre>
+
+<a href="#textvisibilitychange-计算文字是否溢出容器" id="textvisibilitychange-计算文字是否溢出容器" style="color: inherit; text-decoration: none;">
+  <h5>textVisibilityChange (计算文字是否溢出容器)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Element)：承载文字的容器</p>
+</blockquote>
+</li>
+<li>return: true 文字溢出， false 不溢出</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">textVisibilityChange</span><span class="hl-1">(</span><span class="hl-0">document</span><span class="hl-1">.</span><span class="hl-5">getElementById</span><span class="hl-1">(</span><span class="hl-4">&quot;text&quot;</span><span class="hl-1">)); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#gettransformmatrix-获取-transform-translate-中矩阵-x，y-坐标" id="gettransformmatrix-获取-transform-translate-中矩阵-x，y-坐标" style="color: inherit; text-decoration: none;">
+  <h5>getTransformMatrix (获取 transform translate 中矩阵 x，y 坐标)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Element)：dom</p>
+</blockquote>
+</li>
+<li>return: { x: Number, y: Number }</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">getTransformMatrix</span><span class="hl-1">(</span><span class="hl-0">document</span><span class="hl-1">.</span><span class="hl-5">getElementById</span><span class="hl-1">(</span><span class="hl-4">&quot;text&quot;</span><span class="hl-1">));</span>
+</code></pre>
+
+<a href="#isdescendant-检查某个元素是否是另一个元素的后代" id="isdescendant-检查某个元素是否是另一个元素的后代" style="color: inherit; text-decoration: none;">
+  <h5>isDescendant (检查某个元素是否是另一个元素的后代)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Element)：子节点
+2，(Element)：父节点</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isDescendant</span><span class="hl-1">(</span><span class="hl-0">childDom</span><span class="hl-1">, </span><span class="hl-0">parentDom</span><span class="hl-1">); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#getselectedtext-获取鼠标所选文本" id="getselectedtext-获取鼠标所选文本" style="color: inherit; text-decoration: none;">
+  <h5>getSelectedText (获取鼠标所选文本)</h5>
+</a>
+<ul>
+<li>return (String)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">getSelectedText</span><span class="hl-1">(); </span><span class="hl-7">// &#39;&#39;</span>
+</code></pre>
+
+<a href="#insertafter-在其他元素之后插入一个元素" id="insertafter-在其他元素之后插入一个元素" style="color: inherit; text-decoration: none;">
+  <h5>insertAfter (在其他元素之后插入一个元素)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Element)：插入的新节点
+2，(Element)：目标节点</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">insertAfter</span><span class="hl-1">(</span><span class="hl-0">newEle</span><span class="hl-1">, </span><span class="hl-0">anotherEle</span><span class="hl-1">);</span>
+</code></pre>
+
+<a href="#insertbefore-在其他元素之前插入一个元素" id="insertbefore-在其他元素之前插入一个元素" style="color: inherit; text-decoration: none;">
+  <h5>insertBefore (在其他元素之前插入一个元素)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Element)：插入的新节点
+2，(Element)：目标节点</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">insertBefore</span><span class="hl-1">(</span><span class="hl-0">newEle</span><span class="hl-1">, </span><span class="hl-0">anotherEle</span><span class="hl-1">);</span>
+</code></pre>
+
+<a href="#inserthtmlafter-在元素后插入给定的-html" id="inserthtmlafter-在元素后插入给定的-html" style="color: inherit; text-decoration: none;">
+  <h5>insertHtmlAfter (在元素后插入给定的 HTML)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(String)：html
+2，(Element)：目标节点</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">insertHtmlAfter</span><span class="hl-1">(</span><span class="hl-0">html</span><span class="hl-1">, </span><span class="hl-0">ele</span><span class="hl-1">);</span>
+</code></pre>
+
+<a href="#inserthtmlbefore-在元素前插入给定的-html" id="inserthtmlbefore-在元素前插入给定的-html" style="color: inherit; text-decoration: none;">
+  <h5>insertHtmlBefore (在元素前插入给定的 HTML)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(String)：html
+2，(Element)：目标节点</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">insertHtmlBefore</span><span class="hl-1">(</span><span class="hl-0">html</span><span class="hl-1">, </span><span class="hl-0">ele</span><span class="hl-1">);</span>
+</code></pre>
+
+<a href="#elereplace-替换-dom-元素" id="elereplace-替换-dom-元素" style="color: inherit; text-decoration: none;">
+  <h5>eleReplace (替换 dom 元素)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Element)：目标节点
+2，(Element)：将目标节点替换成指定节点</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">eleReplace</span><span class="hl-1">(</span><span class="hl-0">oldEle</span><span class="hl-1">, </span><span class="hl-0">newEle</span><span class="hl-1">);</span>
+</code></pre>
+
+<a href="#坐标转换方法" id="坐标转换方法" style="color: inherit; text-decoration: none;">
+  <h3>坐标转换方法</h3>
+</a>
+
+<a href="#lonlattomercator-经纬度转墨卡托" id="lonlattomercator-经纬度转墨卡托" style="color: inherit; text-decoration: none;">
+  <h5>lonLatToMercator (经纬度转墨卡托)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，({lon:Number,lat:Number})</p>
+</blockquote>
+</li>
+<li>return ({x:number,y:number})</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">lonLatToMercator</span><span class="hl-1">({ </span><span class="hl-0">lon:</span><span class="hl-1"> </span><span class="hl-8">116.445088</span><span class="hl-1">, </span><span class="hl-0">lat:</span><span class="hl-1"> </span><span class="hl-8">39.94614</span><span class="hl-1"> }); </span><span class="hl-7">// {x: 12962607.899733523, y: 4858118.574453057}</span>
+</code></pre>
+
+<a href="#mercatortolonlat-墨卡托转经纬度" id="mercatortolonlat-墨卡托转经纬度" style="color: inherit; text-decoration: none;">
+  <h5>mercatorToLonlat (墨卡托转经纬度)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，({x:number,y:number})</p>
+</blockquote>
+</li>
+<li>return ({lon:Number,lat:Number})</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">mercatorToLonlat</span><span class="hl-1">({ </span><span class="hl-0">x:</span><span class="hl-1"> </span><span class="hl-8">12962607.899733523</span><span class="hl-1">, </span><span class="hl-0">y:</span><span class="hl-1"> </span><span class="hl-8">4858118.574453057</span><span class="hl-1"> }); </span><span class="hl-7">// {lon: 116.44508800000001, lat: 39.946140000000014}</span>
+</code></pre>
+
+<a href="#操作浏览器方法" id="操作浏览器方法" style="color: inherit; text-decoration: none;">
+  <h3>操作浏览器方法</h3>
+</a>
+
+<a href="#tofullscreen-浏览器全屏" id="tofullscreen-浏览器全屏" style="color: inherit; text-decoration: none;">
+  <h5>toFullScreen (浏览器全屏)</h5>
+</a>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">toFullScreen</span><span class="hl-1">();</span>
+</code></pre>
+
+<a href="#exitfullscreen-浏览器退出全屏" id="exitfullscreen-浏览器退出全屏" style="color: inherit; text-decoration: none;">
+  <h5>exitFullscreen (浏览器退出全屏)</h5>
+</a>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">exitFullscreen</span><span class="hl-1">();</span>
+</code></pre>
+
+<a href="#localstorage-封装本地存储方法，提供-get，set，remove，-clear，foreach-等方法" id="localstorage-封装本地存储方法，提供-get，set，remove，-clear，foreach-等方法" style="color: inherit; text-decoration: none;">
+  <h5>LocalStorage (封装本地存储方法，提供 get，set，remove， clear，forEach 等方法)</h5>
+</a>
+<ul>
+<li>存储的数据的生命周期是永久，除非主动删除数据，否则永远不会过期</li>
+</ul>
+<pre><code class="language-js"><span class="hl-7">// 返回user下的name值</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-0">LocalStorage</span><span class="hl-1">.</span><span class="hl-5">get</span><span class="hl-1">(</span><span class="hl-0">user</span><span class="hl-1">, </span><span class="hl-0">name</span><span class="hl-1">);</span><br/><br/><span class="hl-7">// 设置user下name字段的的值value</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-0">LocalStorage</span><span class="hl-1">.</span><span class="hl-5">set</span><span class="hl-1">(</span><span class="hl-0">user</span><span class="hl-1">, </span><span class="hl-0">name</span><span class="hl-1">, </span><span class="hl-0">value</span><span class="hl-1">);</span><br/><br/><span class="hl-7">// 删除user下的name字段</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-0">LocalStorage</span><span class="hl-1">.</span><span class="hl-5">remove</span><span class="hl-1">(</span><span class="hl-0">user</span><span class="hl-1">, </span><span class="hl-0">name</span><span class="hl-1">);</span><br/><br/><span class="hl-7">// 清空本地存储</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-0">LocalStoeage</span><span class="hl-1">.</span><span class="hl-5">clear</span><span class="hl-1">();</span><br/><br/><span class="hl-7">// 遍历本地存储</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-0">LocalStoeage</span><span class="hl-1">.</span><span class="hl-5">forEach</span><span class="hl-1">((</span><span class="hl-0">value</span><span class="hl-1">,</span><span class="hl-0">key</span><span class="hl-1">)</span><span class="hl-2">=&gt;</span><span class="hl-1">{})</span>
+</code></pre>
+
+<a href="#getlocalstoragesize-获取-localstorage-使用容量" id="getlocalstoragesize-获取-localstorage-使用容量" style="color: inherit; text-decoration: none;">
+  <h5>getLocalStorageSize 获取 localStorage 使用容量</h5>
+</a>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">getLocalStorageSize</span><span class="hl-1">(); </span><span class="hl-7">// &#39;0.00KB&#39;</span>
+</code></pre>
+
+<a href="#sessionstorage-封装本地存储方法，提供-get，set，remove，-clear，foreach-等方法" id="sessionstorage-封装本地存储方法，提供-get，set，remove，-clear，foreach-等方法" style="color: inherit; text-decoration: none;">
+  <h5>SessionStorage (封装本地存储方法，提供 get，set，remove， clear，forEach 等方法)</h5>
+</a>
+<ul>
+<li>存储的数据的生命周期是一个会话 （关闭当前浏览器页面）</li>
+</ul>
+<pre><code class="language-js"><span class="hl-7">// 返回user下的name值</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-0">SessionStorage</span><span class="hl-1">.</span><span class="hl-5">get</span><span class="hl-1">(</span><span class="hl-0">user</span><span class="hl-1">, </span><span class="hl-0">name</span><span class="hl-1">);</span><br/><br/><span class="hl-7">// 设置user下name字段的的值value</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-0">SessionStorage</span><span class="hl-1">.</span><span class="hl-5">set</span><span class="hl-1">(</span><span class="hl-0">user</span><span class="hl-1">, </span><span class="hl-0">name</span><span class="hl-1">, </span><span class="hl-0">value</span><span class="hl-1">);</span><br/><br/><span class="hl-7">// 删除user下的name字段</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-0">SessionStorage</span><span class="hl-1">.</span><span class="hl-5">remove</span><span class="hl-1">(</span><span class="hl-0">user</span><span class="hl-1">, </span><span class="hl-0">name</span><span class="hl-1">);</span><br/><br/><span class="hl-7">// 清空本地存储</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-0">SessionStorage</span><span class="hl-1">.</span><span class="hl-5">clear</span><span class="hl-1">();</span><br/><br/><span class="hl-7">// 遍历本地存储</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-0">SessionStorage</span><span class="hl-1">.</span><span class="hl-5">forEach</span><span class="hl-1">((</span><span class="hl-0">value</span><span class="hl-1">,</span><span class="hl-0">key</span><span class="hl-1">)</span><span class="hl-2">=&gt;</span><span class="hl-1">{})</span>
+</code></pre>
+
+<a href="#getposition-h5-获取地理位置" id="getposition-h5-获取地理位置" style="color: inherit; text-decoration: none;">
+  <h5>getPosition (H5 获取地理位置)</h5>
+</a>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">getPosition</span><span class="hl-1">()</span><br/><span class="hl-1">  .</span><span class="hl-5">then</span><span class="hl-1">((</span><span class="hl-0">pos</span><span class="hl-1">) </span><span class="hl-2">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-5">log</span><span class="hl-1">(</span><span class="hl-4">&quot;pos&quot;</span><span class="hl-1">, </span><span class="hl-0">pos</span><span class="hl-1">);</span><br/><span class="hl-1">  })</span><br/><span class="hl-1">  .</span><span class="hl-5">catch</span><span class="hl-1">((</span><span class="hl-0">err</span><span class="hl-1">) </span><span class="hl-2">=&gt;</span><span class="hl-1"> </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-5">log</span><span class="hl-1">(</span><span class="hl-0">err</span><span class="hl-1">));</span>
+</code></pre>
+
+<a href="#wincopy-禁止开启：右键、选择、复制" id="wincopy-禁止开启：右键、选择、复制" style="color: inherit; text-decoration: none;">
+  <h5>winCopy (禁止/开启：右键、选择、复制)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Boolean)</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">winCopy</span><span class="hl-1">(</span><span class="hl-2">true</span><span class="hl-1">); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#print-打印指定内容" id="print-打印指定内容" style="color: inherit; text-decoration: none;">
+  <h5>print (打印指定内容)</h5>
+</a>
+<pre><code class="language-js"><span class="hl-1"> * @</span><span class="hl-0">param</span><span class="hl-1"> {</span><span class="hl-0">string</span><span class="hl-1">} </span><span class="hl-0">printEleId</span><span class="hl-1"> </span><span class="hl-7">//要打印的内容容器id</span><br/><span class="hl-1"> * @</span><span class="hl-0">param</span><span class="hl-1"> {</span><span class="hl-0">string</span><span class="hl-1">} </span><span class="hl-0">rootEleId</span><span class="hl-1">  </span><span class="hl-7">//根节点容器id</span><br/><span class="hl-1"> * @</span><span class="hl-0">param</span><span class="hl-1"> {</span><span class="hl-0">string</span><span class="hl-1">} </span><span class="hl-0">style</span><span class="hl-1"> </span><span class="hl-7">// 打印时页面容器样式</span><br/><span class="hl-1"> * @</span><span class="hl-0">return</span><span class="hl-1"> {*}</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">print</span><span class="hl-1">(</span><span class="hl-0">printEleId</span><span class="hl-1">, </span><span class="hl-0">rootEleId</span><span class="hl-1">, </span><span class="hl-0">style</span><span class="hl-1">)</span>
+</code></pre>
+
+<a href="#copy-复制文本" id="copy-复制文本" style="color: inherit; text-decoration: none;">
+  <h5>copy (复制文本)</h5>
+</a>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">copy</span><span class="hl-1">(</span><span class="hl-4">&quot;xxxxxxds&quot;</span><span class="hl-1">);</span>
+</code></pre>
+
+<a href="#scrolltotop-平滑滚动到页面顶部" id="scrolltotop-平滑滚动到页面顶部" style="color: inherit; text-decoration: none;">
+  <h5>scrollToTop (平滑滚动到页面顶部)</h5>
+</a>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">scrollToTop</span><span class="hl-1">();</span>
+</code></pre>
+
+<a href="#userbrowser-返回当前浏览器是什么类型的浏览器" id="userbrowser-返回当前浏览器是什么类型的浏览器" style="color: inherit; text-decoration: none;">
+  <h5>userBrowser (返回当前浏览器是什么类型的浏览器)</h5>
+</a>
+<ul>
+<li>return (Sting)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-7">// 可能返回类型 Firefox, Chrome, Opera, Safari</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">userBrowser</span><span class="hl-1">(); </span><span class="hl-7">// &#39;Chrome&#39;</span>
+</code></pre>
+
+<a href="#indexeddb-浏览器数据库" id="indexeddb-浏览器数据库" style="color: inherit; text-decoration: none;">
+  <h5>IndexedDB (浏览器数据库)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，dbName (String)：数据库名称
+2，storeName (String)：容器名称
+3，version (Number)：版本号</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-6">db</span><span class="hl-1"> = </span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">IndexedDB</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-0">dbName:</span><span class="hl-1"> </span><span class="hl-4">&quot;dbName&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-0">storeName:</span><span class="hl-1"> </span><span class="hl-4">&quot;storeName&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-0">version:</span><span class="hl-1"> </span><span class="hl-8">1</span><span class="hl-1">,</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-7">// 设置数据</span><br/><span class="hl-0">db</span><span class="hl-1">.</span><span class="hl-5">set</span><span class="hl-1">(</span><span class="hl-4">&quot;name&quot;</span><span class="hl-1">, </span><span class="hl-4">&quot;张三&quot;</span><span class="hl-1">);</span><br/><br/><span class="hl-7">// 获取数据</span><br/><span class="hl-0">db</span><span class="hl-1">.</span><span class="hl-5">get</span><span class="hl-1">(</span><span class="hl-4">&quot;name&quot;</span><span class="hl-1">, (</span><span class="hl-0">data</span><span class="hl-1">) </span><span class="hl-2">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-5">log</span><span class="hl-1">(</span><span class="hl-0">data</span><span class="hl-1">);</span><br/><span class="hl-1">}); </span><span class="hl-7">// 张三</span><br/><br/><span class="hl-7">// 更新数据</span><br/><span class="hl-0">db</span><span class="hl-1">.</span><span class="hl-5">update</span><span class="hl-1">(</span><span class="hl-4">&quot;name&quot;</span><span class="hl-1">, </span><span class="hl-4">&quot;李四&quot;</span><span class="hl-1">);</span><br/><br/><span class="hl-7">// 获取数据</span><br/><span class="hl-0">db</span><span class="hl-1">.</span><span class="hl-5">get</span><span class="hl-1">(</span><span class="hl-4">&quot;name&quot;</span><span class="hl-1">, (</span><span class="hl-0">data</span><span class="hl-1">) </span><span class="hl-2">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-5">log</span><span class="hl-1">(</span><span class="hl-0">data</span><span class="hl-1">);</span><br/><span class="hl-1">}); </span><span class="hl-7">// 李四</span><br/><br/><span class="hl-7">// 删除数据</span><br/><span class="hl-0">db</span><span class="hl-1">.</span><span class="hl-5">remove</span><span class="hl-1">(</span><span class="hl-4">&quot;name&quot;</span><span class="hl-1">);</span><br/><br/><span class="hl-7">// 清空数据库</span><br/><span class="hl-0">db</span><span class="hl-1">.</span><span class="hl-5">close</span><span class="hl-1">();</span>
+</code></pre>
+
+<a href="#操作数组方法" id="操作数组方法" style="color: inherit; text-decoration: none;">
+  <h3>操作数组方法</h3>
+</a>
+
+<a href="#arraynonrepeatfy-数组去重" id="arraynonrepeatfy-数组去重" style="color: inherit; text-decoration: none;">
+  <h5>arrayNonRepeatfy (数组去重)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Array)：要操作的数据</p>
+</blockquote>
+</li>
+<li>return (Array)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-6">arr</span><span class="hl-1"> = [</span><br/><span class="hl-1">  </span><span class="hl-8">1</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-8">1</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">&quot;true&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">&quot;true&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">true</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">true</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-8">15</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-8">15</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">false</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">false</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">undefined</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">undefined</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">null</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">null</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">NaN</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">NaN</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">&quot;NaN&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-8">0</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-8">0</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">&quot;a&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">&quot;a&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  {},</span><br/><span class="hl-1">  {},</span><br/><span class="hl-1">];</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">arrayNonRepeatfy</span><span class="hl-1">(</span><span class="hl-0">arr</span><span class="hl-1">); </span><span class="hl-7">// [1, &#39;true&#39;, true, 15, false, undefined, null, NaN, &#39;NaN&#39;, 0, &#39;a&#39;, {}, {}]</span>
+</code></pre>
+
+<a href="#操作对象方法" id="操作对象方法" style="color: inherit; text-decoration: none;">
+  <h3>操作对象方法</h3>
+</a>
+
+<a href="#clonedeep-深度克隆数据" id="clonedeep-深度克隆数据" style="color: inherit; text-decoration: none;">
+  <h5>cloneDeep (深度克隆数据)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(*)：要深拷贝的值</p>
+</blockquote>
+</li>
+<li>return (*)：返回拷贝后的值</li>
+</ul>
+<pre><code class="language-js"><br/><span class="hl-1"> </span><span class="hl-2">let</span><span class="hl-1"> </span><span class="hl-0">obj</span><span class="hl-1"> = {</span><br/><span class="hl-1">      </span><span class="hl-0">b:</span><span class="hl-1"> </span><span class="hl-4">&quot;sss&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  };</span><br/><span class="hl-1">  </span><span class="hl-0">obj</span><span class="hl-1">.</span><span class="hl-0">a</span><span class="hl-1"> = </span><span class="hl-0">obj</span><span class="hl-1">;</span><br/><span class="hl-1">  </span><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-6">newObj</span><span class="hl-1"> = </span><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">cloneDeep</span><span class="hl-1">(</span><span class="hl-0">obj</span><span class="hl-1">)</span><br/><span class="hl-1">  </span><span class="hl-0">newObj</span><span class="hl-1">.</span><span class="hl-0">b</span><span class="hl-1"> = </span><span class="hl-4">&#39;bbb&#39;</span><br/><span class="hl-1">  </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-5">log</span><span class="hl-1">(</span><span class="hl-4">&#39;newObj&#39;</span><span class="hl-1">,</span><span class="hl-0">newObj</span><span class="hl-1">) </span><span class="hl-7">//{b: &#39;bbb&#39;, a: {…}}</span><br/><span class="hl-1">  </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-5">log</span><span class="hl-1">(</span><span class="hl-4">&#39;obj&#39;</span><span class="hl-1">,</span><span class="hl-0">obj</span><span class="hl-1">) </span><span class="hl-7">// {b: &#39;sss&#39;, a: {…}}</span><br/><span class="hl-1">  </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-5">log</span><span class="hl-1">(</span><span class="hl-4">&#39;obj === newObj&#39;</span><span class="hl-1">, </span><span class="hl-0">obj</span><span class="hl-1">.</span><span class="hl-0">a</span><span class="hl-1"> === </span><span class="hl-0">newObj</span><span class="hl-1">.</span><span class="hl-0">a</span><span class="hl-1">) </span><span class="hl-7">// false</span><br/><span class="hl-2">=&gt;</span>
+</code></pre>
+
+<a href="#stringfyquerystring-对象序列化" id="stringfyquerystring-对象序列化" style="color: inherit; text-decoration: none;">
+  <h5>stringfyQueryString (对象序列化)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Object)：要操作的数据</p>
+</blockquote>
+</li>
+<li>return (String)：返回序列化的字符串</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">stringfyQueryString</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-0">name:</span><span class="hl-1"> </span><span class="hl-4">&quot;fei&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-0">id:</span><span class="hl-1"> </span><span class="hl-8">1</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-0">storeNo:</span><span class="hl-1"> </span><span class="hl-4">&quot;1-105&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-0">floorName:</span><span class="hl-1"> </span><span class="hl-4">&quot;F1&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">}); </span><span class="hl-7">// &#39;name=fei&amp;id=1&amp;storeNo=1-105&amp;floorName=F1&#39;</span>
+</code></pre>
+
+<a href="#values-对象的-value-集合" id="values-对象的-value-集合" style="color: inherit; text-decoration: none;">
+  <h5>values (对象的 value 集合)</h5>
+</a>
+<ul>
+<li>参数：<blockquote>
+<p>1，(Object)：要操作的对象</p>
+</blockquote>
+</li>
+<li>return (Array)： 返回对象的 value 集合</li>
+</ul>
+<pre><code class="language-js"><br/><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-6">obj</span><span class="hl-1"> = { </span><span class="hl-0">a:</span><span class="hl-1"> </span><span class="hl-8">1</span><span class="hl-1">, </span><span class="hl-0">b:</span><span class="hl-1"> </span><span class="hl-8">2</span><span class="hl-1"> };</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">values</span><span class="hl-1">(</span><span class="hl-0">obj</span><span class="hl-1">);</span><br/><span class="hl-2">=&gt;</span><span class="hl-1"> [</span><span class="hl-8">1</span><span class="hl-1">,</span><span class="hl-8">2</span><span class="hl-1">]</span>
+</code></pre>
+
+<a href="#keys-对象的-key-集合" id="keys-对象的-key-集合" style="color: inherit; text-decoration: none;">
+  <h5>keys (对象的 key 集合)</h5>
+</a>
+<ul>
+<li>参数：<blockquote>
+<p>1，Object</p>
+</blockquote>
+</li>
+<li>return (Array)：返回对象的 key 集合</li>
+</ul>
+<pre><code class="language-js"><br/><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-6">obj</span><span class="hl-1"> = { </span><span class="hl-0">a:</span><span class="hl-1"> </span><span class="hl-8">1</span><span class="hl-1">, </span><span class="hl-0">b:</span><span class="hl-1"> </span><span class="hl-8">2</span><span class="hl-1"> };</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">keys</span><span class="hl-1">(</span><span class="hl-0">obj</span><span class="hl-1">);</span><br/><span class="hl-2">=&gt;</span><span class="hl-1"> [</span><span class="hl-4">&#39;a&#39;</span><span class="hl-1">,</span><span class="hl-4">&#39;b&#39;</span><span class="hl-1">]</span>
+</code></pre>
+
+<a href="#判断方法" id="判断方法" style="color: inherit; text-decoration: none;">
+  <h3>判断方法</h3>
+</a>
+
+<a href="#isbase64" id="isbase64" style="color: inherit; text-decoration: none;">
+  <h5>isBase64</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isBase64</span><span class="hl-1">(</span><span class="hl-0">target</span><span class="hl-1">); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#isarray" id="isarray" style="color: inherit; text-decoration: none;">
+  <h5>isArray</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isArray</span><span class="hl-1">(</span><span class="hl-0">target</span><span class="hl-1">); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#isstring" id="isstring" style="color: inherit; text-decoration: none;">
+  <h5>isString</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isString</span><span class="hl-1">(</span><span class="hl-0">target</span><span class="hl-1">); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#isfunction" id="isfunction" style="color: inherit; text-decoration: none;">
+  <h5>isFunction</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isFunction</span><span class="hl-1">(</span><span class="hl-0">target</span><span class="hl-1">); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#isobject" id="isobject" style="color: inherit; text-decoration: none;">
+  <h5>isObject</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isObject</span><span class="hl-1">(</span><span class="hl-0">target</span><span class="hl-1">); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#isnumber" id="isnumber" style="color: inherit; text-decoration: none;">
+  <h5>isNumber</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isNumber</span><span class="hl-1">(</span><span class="hl-0">target</span><span class="hl-1">); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#isweixin" id="isweixin" style="color: inherit; text-decoration: none;">
+  <h5>isWeiXin</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isWeiXin</span><span class="hl-1">(); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#issupportwebp-判断浏览器是否支持-webp-格式图片" id="issupportwebp-判断浏览器是否支持-webp-格式图片" style="color: inherit; text-decoration: none;">
+  <h5>isSupportWebP 判断浏览器是否支持 webP 格式图片</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isSupportWebP</span><span class="hl-1">(); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#ismobile-判断当前是不是移动端" id="ismobile-判断当前是不是移动端" style="color: inherit; text-decoration: none;">
+  <h5>isMobile 判断当前是不是移动端</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isMobile</span><span class="hl-1">(); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#returntype-返回类型" id="returntype-返回类型" style="color: inherit; text-decoration: none;">
+  <h5>returnType 返回类型</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">returnType</span><span class="hl-1">(</span><span class="hl-0">target</span><span class="hl-1">);</span>
+</code></pre>
+
+<a href="#ispromise-是否-promise-对象" id="ispromise-是否-promise-对象" style="color: inherit; text-decoration: none;">
+  <h5>isPromise 是否 Promise 对象</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isPromise</span><span class="hl-1">(</span><span class="hl-0">target</span><span class="hl-1">); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#issymbol" id="issymbol" style="color: inherit; text-decoration: none;">
+  <h5>isSymbol</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isSymbol</span><span class="hl-1">(</span><span class="hl-0">target</span><span class="hl-1">); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#iserror" id="iserror" style="color: inherit; text-decoration: none;">
+  <h5>isError</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isError</span><span class="hl-1">(</span><span class="hl-0">target</span><span class="hl-1">); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#isregexp" id="isregexp" style="color: inherit; text-decoration: none;">
+  <h5>isRegExp</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isRegExp</span><span class="hl-1">(</span><span class="hl-0">target</span><span class="hl-1">); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#isandroidmobiledevice-判断是否安卓移动设备访问" id="isandroidmobiledevice-判断是否安卓移动设备访问" style="color: inherit; text-decoration: none;">
+  <h5>isAndroidMobileDevice 判断是否安卓移动设备访问</h5>
+</a>
+<ul>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isAndroidMobileDevice</span><span class="hl-1">(); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#isapplemobiledevice-判断是否苹果移动设备访问" id="isapplemobiledevice-判断是否苹果移动设备访问" style="color: inherit; text-decoration: none;">
+  <h5>isAppleMobileDevice 判断是否苹果移动设备访问</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isAppleMobileDevice</span><span class="hl-1">(); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#isdate" id="isdate" style="color: inherit; text-decoration: none;">
+  <h5>isDate</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isDate</span><span class="hl-1">(</span><span class="hl-0">target</span><span class="hl-1">); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#isundefined" id="isundefined" style="color: inherit; text-decoration: none;">
+  <h5>isUndefined</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isUndefined</span><span class="hl-1">(</span><span class="hl-0">target</span><span class="hl-1">); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#isnull" id="isnull" style="color: inherit; text-decoration: none;">
+  <h5>isNull</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isNull</span><span class="hl-1">(</span><span class="hl-0">target</span><span class="hl-1">); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#isimg" id="isimg" style="color: inherit; text-decoration: none;">
+  <h5>isImg</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isImg</span><span class="hl-1">(</span><span class="hl-0">val</span><span class="hl-1">); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#isurl" id="isurl" style="color: inherit; text-decoration: none;">
+  <h5>isUrl</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isUrl</span><span class="hl-1">(</span><span class="hl-0">val</span><span class="hl-1">); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#isobjectkeyequal-判断两个对象是否拥有一样的-key" id="isobjectkeyequal-判断两个对象是否拥有一样的-key" style="color: inherit; text-decoration: none;">
+  <h5>isObjectKeyEqual (判断两个对象是否拥有一样的 key)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isObjectKeyEqual</span><span class="hl-1">({ </span><span class="hl-0">a:</span><span class="hl-1"> </span><span class="hl-8">2</span><span class="hl-1"> }, { </span><span class="hl-0">a:</span><span class="hl-1"> </span><span class="hl-8">3</span><span class="hl-1"> }); </span><span class="hl-7">// true</span><br/><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isObjectKeyEqual</span><span class="hl-1">({ </span><span class="hl-0">a:</span><span class="hl-1"> </span><span class="hl-8">2</span><span class="hl-1">, </span><span class="hl-0">b:</span><span class="hl-1"> </span><span class="hl-8">3</span><span class="hl-1"> }, { </span><span class="hl-0">a:</span><span class="hl-1"> </span><span class="hl-8">3</span><span class="hl-1">, </span><span class="hl-0">c:</span><span class="hl-1"> </span><span class="hl-8">3</span><span class="hl-1"> }); </span><span class="hl-7">// false</span>
+</code></pre>
+
+<a href="#isobjectexistskey-判断一个对象内是否包含指定的键" id="isobjectexistskey-判断一个对象内是否包含指定的键" style="color: inherit; text-decoration: none;">
+  <h5>isObjectExistsKey (判断一个对象内是否包含指定的键)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isObjectKeyEqual</span><span class="hl-1">({ </span><span class="hl-0">a:</span><span class="hl-1"> </span><span class="hl-8">2</span><span class="hl-1"> }, </span><span class="hl-4">&quot;a&quot;</span><span class="hl-1">); </span><span class="hl-7">// true</span>
+</code></pre>
+
+<a href="#isobjectincludespecifiedkey-判断-a-对象是否包含-b-对象的键" id="isobjectincludespecifiedkey-判断-a-对象是否包含-b-对象的键" style="color: inherit; text-decoration: none;">
+  <h5>isObjectIncludeSpecifiedKey (判断 a 对象是否包含 b 对象的键)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-6">a</span><span class="hl-1"> = { </span><span class="hl-0">a:</span><span class="hl-1"> </span><span class="hl-8">2</span><span class="hl-1">, </span><span class="hl-0">b:</span><span class="hl-1"> </span><span class="hl-8">2</span><span class="hl-1"> };</span><br/><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-6">b</span><span class="hl-1"> = { </span><span class="hl-0">b:</span><span class="hl-1"> </span><span class="hl-8">3</span><span class="hl-1"> };</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isObjectIncludeSpecifiedKey</span><span class="hl-1">(</span><span class="hl-0">a</span><span class="hl-1">, </span><span class="hl-0">b</span><span class="hl-1">); </span><span class="hl-7">// true</span>
+</code></pre>
+
+<a href="#isemptyobject-判断对象是否为空" id="isemptyobject-判断对象是否为空" style="color: inherit; text-decoration: none;">
+  <h5>isEmptyObject (判断对象是否为空)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isEmptyObject</span><span class="hl-1">({}); </span><span class="hl-7">// true</span>
+</code></pre>
+
+<a href="#isemptyarray-检查数组是否为空" id="isemptyarray-检查数组是否为空" style="color: inherit; text-decoration: none;">
+  <h5>isEmptyArray (检查数组是否为空)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isEmptyArray</span><span class="hl-1">([]); </span><span class="hl-7">// true</span>
+</code></pre>
+
+<a href="#isdarkmode-检测是否暗模式" id="isdarkmode-检测是否暗模式" style="color: inherit; text-decoration: none;">
+  <h5>isDarkMode (检测是否暗模式)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isDarkMode</span><span class="hl-1">(); </span><span class="hl-7">// true | false</span>
+</code></pre>
+
+<a href="#ishexcolor-检查字符串是否为十六进制颜色" id="ishexcolor-检查字符串是否为十六进制颜色" style="color: inherit; text-decoration: none;">
+  <h5>isHexColor (检查字符串是否为十六进制颜色)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isHexColor</span><span class="hl-1">(</span><span class="hl-4">&quot;#fff&quot;</span><span class="hl-1">); </span><span class="hl-7">// true</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isHexColor</span><span class="hl-1">(</span><span class="hl-4">&quot;#ffffff&quot;</span><span class="hl-1">); </span><span class="hl-7">// true</span><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isHexColor</span><span class="hl-1">(</span><span class="hl-4">&quot;dad&quot;</span><span class="hl-1">); </span><span class="hl-7">// false</span>
+</code></pre>
+
+<a href="#ishexcolor-判断是否是基本数据类型" id="ishexcolor-判断是否是基本数据类型" style="color: inherit; text-decoration: none;">
+  <h5>isHexColor (判断是否是基本数据类型)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isBasicType</span><span class="hl-1">(</span><span class="hl-4">&quot;1&quot;</span><span class="hl-1">); </span><span class="hl-7">// true</span>
+</code></pre>
+
+<a href="#ismap-检查是否是-map-对象" id="ismap-检查是否是-map-对象" style="color: inherit; text-decoration: none;">
+  <h5>isMap (检查是否是 Map 对象)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isMap</span><span class="hl-1">(</span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-5">Map</span><span class="hl-1">()); </span><span class="hl-7">// true</span>
+</code></pre>
+
+<a href="#isset-检查是否是-set-对象" id="isset-检查是否是-set-对象" style="color: inherit; text-decoration: none;">
+  <h5>isSet (检查是否是 Set 对象)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isSet</span><span class="hl-1">(</span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-5">Set</span><span class="hl-1">()); </span><span class="hl-7">// true</span>
+</code></pre>
+
+<a href="#isodd-（检测数字是否为奇数）" id="isodd-（检测数字是否为奇数）" style="color: inherit; text-decoration: none;">
+  <h5>isOdd （检测数字是否为奇数）</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isOdd</span><span class="hl-1">(</span><span class="hl-8">3</span><span class="hl-1">); </span><span class="hl-7">// true</span>
+</code></pre>
+
+<a href="#iseven-（检测数字是否为偶数）" id="iseven-（检测数字是否为偶数）" style="color: inherit; text-decoration: none;">
+  <h5>isEven （检测数字是否为偶数）</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(any)：要检查的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isEven</span><span class="hl-1">(</span><span class="hl-8">2</span><span class="hl-1">); </span><span class="hl-7">// true</span>
+</code></pre>
+
+<a href="#isequal-深比较来确定两者的值是否相等" id="isequal-深比较来确定两者的值是否相等" style="color: inherit; text-decoration: none;">
+  <h5>isEqual (深比较来确定两者的值是否相等)</h5>
+</a>
+<ul>
+<li>方法支持比较：array，object，map，set，string，boolean，number，null，undefined，symbol</li>
+<li>参数<blockquote>
+<p>1，(any)：对比的值
+2，(any)：对比的值</p>
+</blockquote>
+</li>
+<li>return (Boolean)</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isEqual</span><span class="hl-1">({ </span><span class="hl-0">a:</span><span class="hl-1"> </span><span class="hl-8">1</span><span class="hl-1"> }, { </span><span class="hl-0">a:</span><span class="hl-1"> </span><span class="hl-8">2</span><span class="hl-1"> }); </span><span class="hl-7">// true</span>
+</code></pre>
+
+<a href="#iscontain-判断点是否在多边形内部" id="iscontain-判断点是否在多边形内部" style="color: inherit; text-decoration: none;">
+  <h5>isContain (判断点是否在多边形内部)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，({x:number,y:number})：当前点
+2，([{x:number,y:number}...])： 多边形轮廓</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">isContain</span><span class="hl-1">(</span><br/><span class="hl-1">  {</span><br/><span class="hl-1">    </span><span class="hl-0">x:</span><span class="hl-1"> </span><span class="hl-8">11791497.844463462</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-0">y:</span><span class="hl-1"> </span><span class="hl-8">3418807.651961008</span><span class="hl-1">,</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">  [</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-0">x:</span><span class="hl-1"> </span><span class="hl-8">11791461.222580431</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-0">y:</span><span class="hl-1"> </span><span class="hl-8">3418824.913886976</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-0">x:</span><span class="hl-1"> </span><span class="hl-8">11791521.222580431</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-0">y:</span><span class="hl-1"> </span><span class="hl-8">3418824.913886976</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-0">x:</span><span class="hl-1"> </span><span class="hl-8">11791521.222580431</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-0">y:</span><span class="hl-1"> </span><span class="hl-8">3418789.913886976</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-0">x:</span><span class="hl-1"> </span><span class="hl-8">11791461.222580431</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-0">y:</span><span class="hl-1"> </span><span class="hl-8">3418789.913886976</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">  ]</span><br/><span class="hl-1">); </span><span class="hl-7">// true</span>
+</code></pre>
+
+<a href="#eventobserver-事件观察者" id="eventobserver-事件观察者" style="color: inherit; text-decoration: none;">
+  <h4>EventObserver 事件观察者</h4>
+</a>
+<pre><code class="language-js"><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-6">eventObserver</span><span class="hl-1"> = </span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">EventObserver</span><span class="hl-1">();</span><br/><br/><span class="hl-2">function</span><span class="hl-1"> </span><span class="hl-5">change</span><span class="hl-1">(</span><span class="hl-0">e</span><span class="hl-1">) {</span><br/><span class="hl-1">  </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-5">log</span><span class="hl-1">(</span><span class="hl-4">&quot;e&quot;</span><span class="hl-1">, </span><span class="hl-0">e</span><span class="hl-1">);</span><br/><span class="hl-1">}</span><br/><span class="hl-7">// 注册事件监听</span><br/><span class="hl-0">eventObserver</span><span class="hl-1">.</span><span class="hl-5">on</span><span class="hl-1">(</span><span class="hl-4">&quot;my_click&quot;</span><span class="hl-1">, </span><span class="hl-0">change</span><span class="hl-1">);</span><br/><br/><span class="hl-7">// 触发指定事件</span><br/><span class="hl-0">eventObserver</span><span class="hl-1">.</span><span class="hl-5">spread</span><span class="hl-1">(</span><span class="hl-4">&quot;my_click&quot;</span><span class="hl-1">, { </span><span class="hl-0">a:</span><span class="hl-1"> </span><span class="hl-8">1</span><span class="hl-1"> });</span><br/><br/><span class="hl-7">// 移除事件监听</span><br/><span class="hl-7">// eventObserver.off(&quot;my_click&quot;,change);</span><br/><br/><span class="hl-7">// of</span><br/><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">addEventListener</span><span class="hl-1">(</span><span class="hl-4">&quot;my_click&quot;</span><span class="hl-1">, </span><span class="hl-0">change</span><span class="hl-1">);</span><br/><br/><span class="hl-7">// 移除事件监听</span><br/><span class="hl-7">// _.removeEventListener(&quot;my_click&quot;, change);</span><br/><br/><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">dispatchEvent</span><span class="hl-1">(</span><span class="hl-4">&quot;my_click&quot;</span><span class="hl-1">, { </span><span class="hl-0">a:</span><span class="hl-1"> </span><span class="hl-8">1</span><span class="hl-1"> });</span>
+</code></pre>
+
+<a href="#stateobserver-状态观察者" id="stateobserver-状态观察者" style="color: inherit; text-decoration: none;">
+  <h4>StateObserver 状态观察者</h4>
+</a>
+<pre><code class="language-js"><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-6">state</span><span class="hl-1"> = </span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">StateObserver</span><span class="hl-1">({ </span><span class="hl-0">name:</span><span class="hl-1"> </span><span class="hl-4">&quot;李四&quot;</span><span class="hl-1">, </span><span class="hl-0">age:</span><span class="hl-1"> </span><span class="hl-8">18</span><span class="hl-1"> });</span><br/><br/><span class="hl-2">function</span><span class="hl-1"> </span><span class="hl-5">change</span><span class="hl-1">(</span><span class="hl-0">newValue</span><span class="hl-1">) {</span><br/><span class="hl-1">  </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-5">log</span><span class="hl-1">(</span><span class="hl-4">&quot;newValue&quot;</span><span class="hl-1">, </span><span class="hl-0">newValue</span><span class="hl-1">);</span><br/><span class="hl-1">}</span><br/><span class="hl-7">// 监听状态改变事件</span><br/><span class="hl-0">state</span><span class="hl-1">.</span><span class="hl-5">on</span><span class="hl-1">(</span><span class="hl-4">&quot;age&quot;</span><span class="hl-1">, </span><span class="hl-0">change</span><span class="hl-1">);</span><br/><br/><span class="hl-7">// 移除状态改变事件</span><br/><span class="hl-7">// state.off(&#39;age&#39;,change);</span><br/><br/><span class="hl-7">// 设置状态</span><br/><span class="hl-0">state</span><span class="hl-1">.</span><span class="hl-5">setState</span><span class="hl-1">({ </span><span class="hl-0">age:</span><span class="hl-1"> </span><span class="hl-8">20</span><span class="hl-1"> });</span><br/><br/><span class="hl-7">// 查询状态</span><br/><span class="hl-0">state</span><span class="hl-1">.</span><span class="hl-5">getState</span><span class="hl-1">(</span><span class="hl-4">&quot;age&quot;</span><span class="hl-1">); </span><span class="hl-7">// 20</span><br/><br/><span class="hl-0">state</span><span class="hl-1">.</span><span class="hl-5">getState</span><span class="hl-1">(); </span><span class="hl-7">// { name: &quot;李四&quot;, age: 20 }</span>
+</code></pre>
+
+<a href="#math" id="math" style="color: inherit; text-decoration: none;">
+  <h3>Math</h3>
+</a>
+
+<a href="#distance-计算两点之间的距离" id="distance-计算两点之间的距离" style="color: inherit; text-decoration: none;">
+  <h5>distance (计算两点之间的距离)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，({x:number,y:number})
+2，({x:number,y:number})</p>
+</blockquote>
+</li>
+<li>return (Number)：返回两点之间的距离（m）</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">distance</span><span class="hl-1">(</span><br/><span class="hl-1">  {</span><br/><span class="hl-1">    </span><span class="hl-0">x:</span><span class="hl-1"> </span><span class="hl-8">12601590.934991667</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-0">y:</span><span class="hl-1"> </span><span class="hl-8">2507144.4488188336</span><span class="hl-1">,</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">  {</span><br/><span class="hl-1">    </span><span class="hl-0">x:</span><span class="hl-1"> </span><span class="hl-8">12603303.603016667</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-0">y:</span><span class="hl-1"> </span><span class="hl-8">2506982.020053167</span><span class="hl-1">,</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">); </span><span class="hl-7">// 1720.353122987682</span>
+</code></pre>
+
+<a href="#degstorads-将度转换为弧度" id="degstorads-将度转换为弧度" style="color: inherit; text-decoration: none;">
+  <h5>degsToRads (将度转换为弧度)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Number)：要操作的角度</p>
+</blockquote>
+</li>
+<li>return (Number)：返回弧度</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">degsToRads</span><span class="hl-1">(</span><span class="hl-8">90</span><span class="hl-1">); </span><span class="hl-7">// 1.5707963267948966</span>
+</code></pre>
+
+<a href="#getpolygoncenter-获取多边形中心点" id="getpolygoncenter-获取多边形中心点" style="color: inherit; text-decoration: none;">
+  <h5>getPolygonCenter (获取多边形中心点)</h5>
+</a>
+<ul>
+<li>参数：<blockquote>
+<p>1，points: 多边形坐标（最少三个点）</p>
+</blockquote>
+</li>
+<li>return ({x:number,y:number})：多边形的中心点</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">getPolygonCenter</span><span class="hl-1">([</span><br/><span class="hl-1">  {</span><br/><span class="hl-1">    </span><span class="hl-0">x:</span><span class="hl-1"> </span><span class="hl-8">11791461.222580431</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-0">y:</span><span class="hl-1"> </span><span class="hl-8">3418824.913886976</span><span class="hl-1">,</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">  {</span><br/><span class="hl-1">    </span><span class="hl-0">x:</span><span class="hl-1"> </span><span class="hl-8">11791521.222580431</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-0">y:</span><span class="hl-1"> </span><span class="hl-8">3418824.913886976</span><span class="hl-1">,</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">  {</span><br/><span class="hl-1">    </span><span class="hl-0">x:</span><span class="hl-1"> </span><span class="hl-8">11791521.222580431</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-0">y:</span><span class="hl-1"> </span><span class="hl-8">3418789.913886976</span><span class="hl-1">,</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">  {</span><br/><span class="hl-1">    </span><span class="hl-0">x:</span><span class="hl-1"> </span><span class="hl-8">11791461.222580431</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-0">y:</span><span class="hl-1"> </span><span class="hl-8">3418789.913886976</span><span class="hl-1">,</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">]); </span><span class="hl-7">// {&quot;x&quot;: 11791491.222580431,&quot;y&quot;: 3418807.413886976 }</span>
+</code></pre>
+
+<a href="#scalepolygon-缩放多边形坐标" id="scalepolygon-缩放多边形坐标" style="color: inherit; text-decoration: none;">
+  <h5>scalePolygon (缩放多边形坐标)</h5>
+</a>
+<ul>
+<li>参数：<blockquote>
+<p>1， points: 多边形坐标（最少三个点）
+2， extra: 多边形缩放倍数</p>
+</blockquote>
+</li>
+<li>return (points)：返回放大或缩小的坐标集合</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">scalePolygon</span><span class="hl-1">(</span><br/><span class="hl-1">  [</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-0">x:</span><span class="hl-1"> </span><span class="hl-8">11791461.222580431</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-0">y:</span><span class="hl-1"> </span><span class="hl-8">3418824.913886976</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-0">x:</span><span class="hl-1"> </span><span class="hl-8">11791521.222580431</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-0">y:</span><span class="hl-1"> </span><span class="hl-8">3418824.913886976</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-0">x:</span><span class="hl-1"> </span><span class="hl-8">11791521.222580431</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-0">y:</span><span class="hl-1"> </span><span class="hl-8">3418789.913886976</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-0">x:</span><span class="hl-1"> </span><span class="hl-8">11791461.222580431</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-0">y:</span><span class="hl-1"> </span><span class="hl-8">3418789.913886976</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">  ],</span><br/><span class="hl-1">  </span><span class="hl-8">5</span><br/><span class="hl-1">);</span><br/><span class="hl-7">/**</span><br/><span class="hl-7"> * [</span><br/><span class="hl-7">    {</span><br/><span class="hl-7">        &quot;x&quot;: 11791456.222580431,</span><br/><span class="hl-7">        &quot;y&quot;: 3418829.913886976</span><br/><span class="hl-7">    },</span><br/><span class="hl-7">    {</span><br/><span class="hl-7">        &quot;x&quot;: 11791526.222580431,</span><br/><span class="hl-7">        &quot;y&quot;: 3418829.913886976</span><br/><span class="hl-7">    },</span><br/><span class="hl-7">    {</span><br/><span class="hl-7">        &quot;x&quot;: 11791526.222580431,</span><br/><span class="hl-7">        &quot;y&quot;: 3418784.913886976</span><br/><span class="hl-7">    },</span><br/><span class="hl-7">    {</span><br/><span class="hl-7">        &quot;x&quot;: 11791456.222580431,</span><br/><span class="hl-7">        &quot;y&quot;: 3418784.913886976</span><br/><span class="hl-7">    }</span><br/><span class="hl-7">]</span><br/><span class="hl-7">*/</span>
+</code></pre>
+
+<a href="#文件操作方法" id="文件操作方法" style="color: inherit; text-decoration: none;">
+  <h3>文件操作方法</h3>
+</a>
+
+<a href="#downblob-（下载二进制流文件）" id="downblob-（下载二进制流文件）" style="color: inherit; text-decoration: none;">
+  <h5>downBlob （下载二进制流文件）</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(File)：文件流
+2，(String)：文件名称</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">downBlob</span><span class="hl-1">(</span><span class="hl-0">file</span><span class="hl-1">, </span><span class="hl-0">fileName</span><span class="hl-1">);</span>
+</code></pre>
+
+<a href="#getfilebase64-文件的-base64-编码" id="getfilebase64-文件的-base64-编码" style="color: inherit; text-decoration: none;">
+  <h5>getFileBase64 (文件的 Base64 编码)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，file(File)：文件
+2，cb(Function)：解析成功回调</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">getFileBase64</span><span class="hl-1">(</span><span class="hl-0">file</span><span class="hl-1">, (</span><span class="hl-0">base64</span><span class="hl-1">) </span><span class="hl-2">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-5">log</span><span class="hl-1">(</span><span class="hl-4">&quot;base64&quot;</span><span class="hl-1">, </span><span class="hl-0">base64</span><span class="hl-1">);</span><br/><span class="hl-1">});</span>
+</code></pre>
+
+<a href="#blobtodataurl-blob-转-url" id="blobtodataurl-blob-转-url" style="color: inherit; text-decoration: none;">
+  <h5>blobToDataURL (blob 转 url)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(Blob)：要操作的文件</p>
+</blockquote>
+</li>
+<li>return (String)：返回 url 地址</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">blobToDataURL</span><span class="hl-1">(</span><span class="hl-0">blob</span><span class="hl-1">); </span><span class="hl-7">// url....</span>
+</code></pre>
+
+<a href="#drawandshareimage-两张图片合并成一张图片" id="drawandshareimage-两张图片合并成一张图片" style="color: inherit; text-decoration: none;">
+  <h5>drawAndShareImage (两张图片合并成一张图片)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(bgImgOps:{url: string, width: number, height: number })：背景图片配置项
+2，(upImgOps: { url: string, width: number, height: number, x: number, y: number })：覆盖在底图上的图片
+3，(ops?:{download:download,imgName: string,success:(bese64)=&gt;bese63})：操作配置项目</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">drawAndShareImage</span><span class="hl-1">();</span>
+</code></pre>
+
+<a href="#base64tofile--base64转文件" id="base64tofile--base64转文件" style="color: inherit; text-decoration: none;">
+  <h5>base64ToFile ( base64转文件)</h5>
+</a>
+<ul>
+<li>参数<blockquote>
+<p>1，(String)：base64字符串
+2，(String)：文件名称</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-js"><span class="hl-0">_</span><span class="hl-1">.</span><span class="hl-5">base64ToFile</span><span class="hl-1">(</span><span class="hl-0">base64</span><span class="hl-1">, </span><span class="hl-4">&#39;fileName&#39;</span><span class="hl-1">)</span>
+</code></pre>
+</div></div>
+<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+<div class="tree">
+<div class="tree-settings">
+<div class="tsd-navigation settings">
+<details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility">
+<h4 class="uppercase">Member Visibility</h4><form>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div>
+<div class="tsd-theme-toggle">
+<h4 class="uppercase">Theme</h4><select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div></div>
+<div class="tree-config"><button class="tree-config__button tree-config__button--expand js-tree-expand" title="Expand All"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 490.72 490.72" fill="currentColor"><path d="M480.027,288.027H10.693c-5.867,0-10.667,4.8-10.667,10.667c0,5.867,4.8,10.667,10.667,10.667h213.333v144.96l-45.76-45.76c-4.267-4.053-10.987-3.947-15.04,0.213c-3.947,4.16-3.947,10.667,0,14.827l64,64c4.16,4.16,10.88,4.16,15.04,0l64-64c4.053-4.267,3.947-10.987-0.213-15.04c-4.16-3.947-10.667-3.947-14.827,0l-45.867,45.76V309.36h234.667c5.867,0,10.667-4.8,10.667-10.667C490.693,292.827,485.893,288.027,480.027,288.027z"></path><path d="M10.693,224.027h469.333c5.867,0,10.667-4.8,10.667-10.667c0-5.867-4.8-10.667-10.667-10.667H245.36V36.4l45.76,45.76c4.267,4.053,10.987,3.947,15.04-0.213c3.947-4.16,3.947-10.667,0-14.827l-64-64c-4.16-4.16-10.88-4.16-15.04,0l-64,64c-4.053,4.267-3.947,10.987,0.213,15.04c4.16,3.947,10.667,3.947,14.827,0l45.867-45.76v166.293H10.693c-5.867,0-10.667,4.8-10.667,10.667C0.027,219.227,4.827,224.027,10.693,224.027z"></path></svg></button><button class="tree-config__button tree-config__button--collapse js-tree-collapse" title="Collapse All"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 8zm7-8a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 4.293V.5A.5.5 0 0 1 8 0zm-.5 11.707-1.146 1.147a.5.5 0 0 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 11.707V15.5a.5.5 0 0 1-1 0v-3.793z"></path></svg></button><button class="tree-config__button tree-config__button--target js-tree-target" title="Scroll to current file"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><circle cx="12" cy="12" r="3"></circle><path d="M13 4.069V2h-2v2.069A8.008 8.008 0 0 0 4.069 11H2v2h2.069A8.007 8.007 0 0 0 11 19.931V22h2v-2.069A8.007 8.007 0 0 0 19.931 13H22v-2h-2.069A8.008 8.008 0 0 0 13 4.069zM12 18c-3.309 0-6-2.691-6-6s2.691-6 6-6 6 2.691 6 6-2.691 6-6 6z"></path></svg></button></div>
+<div class="tree-content">
+<ul class="js-category-list category" data-id="root">
+<li><a class="category__link js-category-link category__link--ts" href="modules/algorithm.html" data-id="/modules/algorithm.html"></a>
+<ul>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/algorithm.shuffle.html" data-id="/functions/algorithm.shuffle.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-function)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-64-path"></rect><path d="M9.39 16V7.24H14.55V8.224H10.446V11.128H14.238V12.112H10.47V16H9.39Z" fill="var(--color-text)" id="icon-64-text"></path></svg>shuffle</a></li></ul></li>
+<li><a class="category__link js-category-link category__link--ts" href="modules/array.html" data-id="/modules/array.html"></a>
+<ul>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/array.aLineUnique.html" data-id="/functions/array.aLineUnique.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>aLineUnique</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/array.alphabeticSort.html" data-id="/functions/array.alphabeticSort.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>alphabeticSort</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/array.arrToObject.html" data-id="/functions/array.arrToObject.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>arrToObject</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/array.arrayNonRepeatfy.html" data-id="/functions/array.arrayNonRepeatfy.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>arrayNonRepeatfy</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/array.arrayUnique.html" data-id="/functions/array.arrayUnique.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>arrayUnique</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/array.bubbleSort.html" data-id="/functions/array.bubbleSort.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>bubbleSort</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/array.contains.html" data-id="/functions/array.contains.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>contains</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/array.countBy.html" data-id="/functions/array.countBy.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>countBy</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/array.indexOfMax.html" data-id="/functions/array.indexOfMax.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>indexOfMax</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/array.indexOfMin.html" data-id="/functions/array.indexOfMin.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>indexOfMin</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/array.last.html" data-id="/functions/array.last.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>last</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/array.toNumbers.html" data-id="/functions/array.toNumbers.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>toNumbers</a></li></ul></li>
+<li><a class="category__link js-category-link category__link--ts" href="modules/dom.html" data-id="/modules/dom.html"></a>
+<ul>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/dom.addClass.html" data-id="/functions/dom.addClass.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>addClass</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/dom.eleReplace.html" data-id="/functions/dom.eleReplace.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>eleReplace</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/dom.getOffset.html" data-id="/functions/dom.getOffset.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>getOffset</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/dom.getSelectedText.html" data-id="/functions/dom.getSelectedText.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>getSelectedText</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/dom.getTransformMatrix.html" data-id="/functions/dom.getTransformMatrix.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>getTransformMatrix</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/dom.hasClass.html" data-id="/functions/dom.hasClass.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>hasClass</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/dom.insertAfter.html" data-id="/functions/dom.insertAfter.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>insertAfter</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/dom.insertBefore.html" data-id="/functions/dom.insertBefore.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>insertBefore</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/dom.insertHtmlAfter.html" data-id="/functions/dom.insertHtmlAfter.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>insertHtmlAfter</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/dom.insertHtmlBefore.html" data-id="/functions/dom.insertHtmlBefore.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>insertHtmlBefore</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/dom.isDescendant.html" data-id="/functions/dom.isDescendant.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>isDescendant</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/dom.removeClass.html" data-id="/functions/dom.removeClass.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>removeClass</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/dom.replaceClass.html" data-id="/functions/dom.replaceClass.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>replaceClass</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/dom.scrollToTheBottom.html" data-id="/functions/dom.scrollToTheBottom.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>scrollToTheBottom</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/dom.shaking.html" data-id="/functions/dom.shaking.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>shaking</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/dom.stopPropagation.html" data-id="/functions/dom.stopPropagation.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>stopPropagation</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/dom.textVisibilityChange.html" data-id="/functions/dom.textVisibilityChange.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>textVisibilityChange</a></li></ul></li>
+<li><a class="category__link js-category-link category__link--ts" href="modules/loop.html" data-id="/modules/loop.html"></a>
+<ul>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/loop.filter.html" data-id="/functions/loop.filter.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>filter</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a class="category__link js-category-link" href="functions/loop.forEach.html" data-id="/functions/loop.forEach.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>forEach</a></li></ul></li></ul></div></div></div></div>
+<div class="container tsd-generator">
+<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
+<div class="overlay"></div><script src="assets/main.js"></script><script src="assets/custom.js"></script></body></html>

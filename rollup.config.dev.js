@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2021-10-08 14:15:34
  * @LastEditors: zhangce
- * @LastEditTime: 2022-10-26 11:16:07
+ * @LastEditTime: 2023-03-13 14:05:33
  * @Description: 
  */
 
@@ -27,7 +27,7 @@ export default [
             file: './lib/super-tools-lib.js',
             name: 'superToolsLib',
             format: 'umd',
-            exports: 'default',
+            exports: 'named',
             // sourcemap: true, // 生成源码映射文件
         },
         // watch: {

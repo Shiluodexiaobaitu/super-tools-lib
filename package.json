@@ -1,6 +1,6 @@
 {
     "name": "super-tools-lib",
-    "version": "1.55.0",
+    "version": "1.59.0",
     "description": "常用工具函数",
     "main": "lib/super-tools-lib.js",
     "types": "lib/src/index.d.ts",
@@ -36,8 +36,7 @@
     "homepage": "https://github.com/Shiluodexiaobaitu/Utils#readme",
     "dependencies": {},
     "files": [
-        "lib/super-tools-lib.js",
-        "lib/src/index.d.ts"
+        "lib/"
     ],
     "devDependencies": {
         "@babel/core": "^7.14.8",
@@ -51,8 +50,8 @@
         "@types/file-saver": "^2.0.3",
         "@types/jest": "^26.0.24",
         "@types/lodash": "^4.14.175",
-        "@typescript-eslint/eslint-plugin": "^4.29.0",
-        "@typescript-eslint/parser": "^4.29.0",
+        "@typescript-eslint/eslint-plugin": "^5.54.1",
+        "@typescript-eslint/parser": "^5.54.1",
         "better-xlsx": "^0.7.6",
         "core-js": "2.6.10",
         "eslint": "^7.32.0",

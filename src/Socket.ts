@@ -1,17 +1,17 @@
 interface IProps {
-    url: string;
+    url: string
     reconnectCount?: number
     heartTime?: number
 }
 
 class Socket {
 
-    private ws: any;
-    private url: string;
-    private sendTimer: any;
-    private heartTimer: any;
-    private reconnectCount: number;
-    private heartTime: number;
+    private ws: any
+    private url: string
+    private sendTimer: any
+    private heartTimer: any
+    private reconnectCount: number
+    private heartTime: number
 
     constructor(props: IProps) {
         const { url, reconnectCount, heartTime } = props
@@ -73,7 +73,7 @@ class Socket {
                 // console.log('到达最多重连次数,禁止重新连接')
                 return
             }
-            // console.log('超过心跳检测时间触发重连', this.reconnectCount);
+            // console.log('超过心跳检测时间触发重连', this.reconnectCount)
             this.ws.close()
             clearInterval(this.sendTimer)
             this.createWebSocket(message, cb)

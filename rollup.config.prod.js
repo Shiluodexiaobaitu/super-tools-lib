@@ -16,33 +16,45 @@ export default [
                 file: './lib/super-tools-lib.js',
                 name: 'superToolsLib',
                 format: 'umd',
-                exports: 'default',
+                exports: 'named',
             },
+            // {
+            //     file: './lib/esm/super-tools-lib.js',
+            //     name: 'superToolsLib',
+            //     format: 'esm',
+            // },
+            // {
+            //     file: './lib/cjs/super-tools-lib.js',
+            //     name: 'superToolsLib',
+            //     format: 'cjs',
+            // },
         ],
         plugins: [
             typescript(),
             json(),
             resolve({ browser: true }),  // 这样 Rollup 能找到 `ms`
             commonjs(), // 这样 Rollup 能转换 `ms` 为一个ES模块
+            filesize(),
             eslint({
                 throwOnError: true,
                 throwOnWarning: true,
                 include: ['src/**'],
                 exclude: ['node_modules/**'],
             }),
-            filesize(),
             babel({
                 exclude: 'node_modules/**', // 防止打包node_modules下的文件
                 runtimeHelpers: true,       // 使plugin-transform-runtime生效
             }),
-            terser({
-                compress: {
-                    passes: 10,
-                    // compress options 
-                    // drop_console: true //去除log
-                },
-                keep_classnames: false,
-            }), // 压缩代码
+            terser(
+                //     {
+                //     compress: {
+                //         passes: 10,
+                //         // compress options 
+                //         // drop_console: true //去除log
+                //     },
+                //     keep_classnames: false,
+                // }
+            ), // 压缩代码
         ],
     },
 ]

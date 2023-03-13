@@ -1,6 +1,6 @@
-export { version } from '../package.json'
+import { version } from '../package.json'
 
-export {
+import {
     initialToCapitali,
     repeat,
     trim,
@@ -16,7 +16,7 @@ export {
     replaceText,
 } from './string'
 
-export {
+import {
     guid,
     throttle,
     debounce,
@@ -38,7 +38,7 @@ export {
     celsiusToFahrenheit,
 } from './tools'
 
-export {
+import {
     toFullScreen,
     exitFullscreen,
     LocalStorage,
@@ -54,22 +54,22 @@ export {
     cookie,
 } from './browser'
 
-export { IndexedDB } from './IndexedDB'
+import { IndexedDB } from './IndexedDB'
 
-export {
+import {
     performanceAnalysis,
     getPerformanceTiming,
 } from './performance'
 
-export {
+import {
     calcDistance,
     lonLatToMercator,
     mercatorToLonlat,
 } from './map'
 
-export { validate } from './reg'
+import { validate } from './reg'
 
-export {
+import {
     getOffset,
     shaking,
     stopPropagation,
@@ -89,7 +89,7 @@ export {
     insertHtmlBefore,
 } from './dom'
 
-export {
+import {
     arrayUnique,
     arrayNonRepeatfy,
     aLineUnique,
@@ -104,14 +104,14 @@ export {
     contains,
 } from './array'
 
-export {
+import {
     cloneDeep,
     stringfyQueryString,
     values,
     keys,
 } from './object'
 
-export {
+import {
     isBase64,
     isArray,
     isString,
@@ -146,10 +146,12 @@ export {
     isOdd,
     isEven,
 } from './is'
-export { isEqual } from './is/isEqual'
-export { isContain } from './is/isContain'
 
-export {
+import { isEqual } from './is/isEqual'
+
+import { isContain } from './is/isContain'
+
+import {
     downBlob,
     getFileBase64,
     blobToDataURL,
@@ -157,15 +159,15 @@ export {
     base64ToFile,
 } from './file'
 
-export { vConsole } from './console'
+import { vConsole } from './console'
 
-export { Socket } from './Socket'
+import { Socket } from './Socket'
 
-export { Ajax } from './Ajax'
+import { Ajax } from './Ajax'
 
-export { orient } from './mobile'
+import { orient } from './mobile'
 
-export {
+import {
     dateFormater,
     formatPassTime,
     formatRemainTime,
@@ -179,9 +181,9 @@ export {
     getFirstDate,
 } from './date'
 
-export { shuffle } from './algorithm'
+import { shuffle } from './algorithm'
 
-export {
+import {
     accAdd,
     accSub,
     accMul,
@@ -192,29 +194,366 @@ export {
     closest,
 } from './number'
 
-export {
+import {
     forEach,
     filter,
 } from './loop'
-export { map } from './loop/map'
 
-export {
+import { map } from './loop/map'
+
+import {
     sortAscii,
     generateSign,
 } from './encrypt'
 
-export {
+import {
     EventObserver,
     addEventListener,
     removeEventListener,
     dispatchEvent,
 } from './EventObserver'
 
-export { StateObserver } from './StateObserver'
+import { StateObserver } from './StateObserver'
 
-export {
+import {
     distance,
     degsToRads,
     getPolygonCenter,
 } from './math'
-export { scalePolygon } from './math/scalePolygon'
+
+import { scalePolygon } from './math/scalePolygon'
+
+
+export default {
+    scalePolygon,
+    distance,
+    degsToRads,
+    getPolygonCenter,
+    StateObserver,
+    EventObserver,
+    addEventListener,
+    removeEventListener,
+    dispatchEvent,
+    sortAscii,
+    generateSign,
+    forEach,
+    filter,
+    map,
+    accAdd,
+    accSub,
+    accMul,
+    accDiv,
+    formatPrice,
+    smallRounding,
+    range,
+    closest,
+    shuffle,
+    dateFormater,
+    formatPassTime,
+    formatRemainTime,
+    dayDiff,
+    monthDiff,
+    compareDate,
+    formatSeconds,
+    getQuarter,
+    getLastDate,
+    getCurrentSecond,
+    getFirstDate,
+    orient,
+    Ajax,
+    Socket,
+    vConsole,
+    downBlob,
+    getFileBase64,
+    blobToDataURL,
+    drawAndShareImage,
+    base64ToFile,
+    isContain,
+    isEqual,
+    isBase64,
+    isArray,
+    isString,
+    isFunction,
+    isObject,
+    isNumber,
+    isWeiXin,
+    isNull,
+    isUndefined,
+    isDate,
+    isRegExp,
+    isError,
+    isSymbol,
+    isPromise,
+    returnType,
+    isSupportWebP,
+    isMobile,
+    isAndroidMobileDevice,
+    isAppleMobileDevice,
+    isImg,
+    isUrl,
+    isObjectKeyEqual,
+    isObjectExistsKey,
+    isObjectIncludeSpecifiedKey,
+    isEmptyObject,
+    isEmptyArray,
+    isDarkMode,
+    isHexColor,
+    isBasicType,
+    isSet,
+    isMap,
+    isOdd,
+    isEven,
+    cloneDeep,
+    stringfyQueryString,
+    values,
+    keys,
+    arrayUnique,
+    arrayNonRepeatfy,
+    aLineUnique,
+    bubbleSort,
+    last,
+    alphabeticSort,
+    arrToObject,
+    toNumbers,
+    countBy,
+    indexOfMax,
+    indexOfMin,
+    contains,
+    getOffset,
+    shaking,
+    stopPropagation,
+    hasClass,
+    addClass,
+    removeClass,
+    replaceClass,
+    scrollToTheBottom,
+    textVisibilityChange,
+    getTransformMatrix,
+    isDescendant,
+    getSelectedText,
+    insertAfter,
+    insertBefore,
+    insertHtmlAfter,
+    eleReplace,
+    insertHtmlBefore,
+    validate,
+    calcDistance,
+    lonLatToMercator,
+    mercatorToLonlat,
+    performanceAnalysis,
+    getPerformanceTiming,
+    IndexedDB,
+    toFullScreen,
+    exitFullscreen,
+    LocalStorage,
+    SessionStorage,
+    getPosition,
+    winCopy,
+    print,
+    copy,
+    scrollToTop,
+    userBrowser,
+    getLocalStorageSize,
+    getUrlParam,
+    cookie,
+    guid,
+    throttle,
+    debounce,
+    fileDownload,
+    fuzzyQuery,
+    colorHex,
+    viewportToPixels,
+    noRefdelUrlParam,
+    getAge,
+    getSex,
+    digitUppercase,
+    hexToRgba,
+    rgbaToHex,
+    injectScript,
+    sinogToLetter,
+    getFitSize,
+    checkPassWord,
+    fahrenheitToCelsius,
+    celsiusToFahrenheit,
+    initialToCapitali,
+    repeat,
+    trim,
+    getTextWidth,
+    transFormat,
+    strInversion,
+    toLine,
+    toFullHexColor,
+    decode,
+    letterToEmoji,
+    toPascalCase,
+    removeSpaces,
+    replaceText,
+    version,
+}
+
+export {
+    scalePolygon,
+    distance,
+    degsToRads,
+    getPolygonCenter,
+    StateObserver,
+    EventObserver,
+    addEventListener,
+    removeEventListener,
+    dispatchEvent,
+    sortAscii,
+    generateSign,
+    forEach,
+    filter,
+    map,
+    accAdd,
+    accSub,
+    accMul,
+    accDiv,
+    formatPrice,
+    smallRounding,
+    range,
+    closest,
+    shuffle,
+    dateFormater,
+    formatPassTime,
+    formatRemainTime,
+    dayDiff,
+    monthDiff,
+    compareDate,
+    formatSeconds,
+    getQuarter,
+    getLastDate,
+    getCurrentSecond,
+    getFirstDate,
+    orient,
+    Ajax,
+    Socket,
+    vConsole,
+    downBlob,
+    getFileBase64,
+    blobToDataURL,
+    drawAndShareImage,
+    base64ToFile,
+    isContain,
+    isEqual,
+    isBase64,
+    isArray,
+    isString,
+    isFunction,
+    isObject,
+    isNumber,
+    isWeiXin,
+    isNull,
+    isUndefined,
+    isDate,
+    isRegExp,
+    isError,
+    isSymbol,
+    isPromise,
+    returnType,
+    isSupportWebP,
+    isMobile,
+    isAndroidMobileDevice,
+    isAppleMobileDevice,
+    isImg,
+    isUrl,
+    isObjectKeyEqual,
+    isObjectExistsKey,
+    isObjectIncludeSpecifiedKey,
+    isEmptyObject,
+    isEmptyArray,
+    isDarkMode,
+    isHexColor,
+    isBasicType,
+    isSet,
+    isMap,
+    isOdd,
+    isEven,
+    cloneDeep,
+    stringfyQueryString,
+    values,
+    keys,
+    arrayUnique,
+    arrayNonRepeatfy,
+    aLineUnique,
+    bubbleSort,
+    last,
+    alphabeticSort,
+    arrToObject,
+    toNumbers,
+    countBy,
+    indexOfMax,
+    indexOfMin,
+    contains,
+    getOffset,
+    shaking,
+    stopPropagation,
+    hasClass,
+    addClass,
+    removeClass,
+    replaceClass,
+    scrollToTheBottom,
+    textVisibilityChange,
+    getTransformMatrix,
+    isDescendant,
+    getSelectedText,
+    insertAfter,
+    insertBefore,
+    insertHtmlAfter,
+    eleReplace,
+    insertHtmlBefore,
+    validate,
+    calcDistance,
+    lonLatToMercator,
+    mercatorToLonlat,
+    performanceAnalysis,
+    getPerformanceTiming,
+    IndexedDB,
+    toFullScreen,
+    exitFullscreen,
+    LocalStorage,
+    SessionStorage,
+    getPosition,
+    winCopy,
+    print,
+    copy,
+    scrollToTop,
+    userBrowser,
+    getLocalStorageSize,
+    getUrlParam,
+    cookie,
+    guid,
+    throttle,
+    debounce,
+    fileDownload,
+    fuzzyQuery,
+    colorHex,
+    viewportToPixels,
+    noRefdelUrlParam,
+    getAge,
+    getSex,
+    digitUppercase,
+    hexToRgba,
+    rgbaToHex,
+    injectScript,
+    sinogToLetter,
+    getFitSize,
+    checkPassWord,
+    fahrenheitToCelsius,
+    celsiusToFahrenheit,
+    initialToCapitali,
+    repeat,
+    trim,
+    getTextWidth,
+    transFormat,
+    strInversion,
+    toLine,
+    toFullHexColor,
+    decode,
+    letterToEmoji,
+    toPascalCase,
+    removeSpaces,
+    replaceText,
+    version,
+}

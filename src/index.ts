@@ -167,6 +167,8 @@ import { Ajax } from './Ajax'
 
 import { orient } from './mobile'
 
+import { RunWorker } from './RunWorker'
+
 import {
     dateFormater,
     formatPassTime,
@@ -213,7 +215,7 @@ import {
     dispatchEvent,
 } from './EventObserver'
 
-import { StateObserver } from './StateObserver'
+import { StateObserver, getState, setState, deleteState, addStateListener, removeStateListener } from './StateObserver'
 
 import {
     distance,
@@ -230,6 +232,11 @@ export default {
     degsToRads,
     getPolygonCenter,
     StateObserver,
+    getState,
+    setState,
+    deleteState,
+    addStateListener,
+    removeStateListener,
     EventObserver,
     addEventListener,
     removeEventListener,
@@ -389,6 +396,7 @@ export default {
     removeSpaces,
     replaceText,
     version,
+    RunWorker,
 }
 
 export {
@@ -397,6 +405,11 @@ export {
     degsToRads,
     getPolygonCenter,
     StateObserver,
+    getState,
+    setState,
+    deleteState,
+    addStateListener,
+    removeStateListener,
     EventObserver,
     addEventListener,
     removeEventListener,
@@ -556,4 +569,5 @@ export {
     removeSpaces,
     replaceText,
     version,
+    RunWorker,
 }

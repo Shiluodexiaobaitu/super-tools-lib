@@ -2,14 +2,33 @@
  * @Author: zhangce
  * @Date: 2023-01-06 16:41:02
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2023-03-01 10:25:09
- * @LastEditors: zhangce
+ * @LastEditTime: 2023-03-15 10:40:50
+ * @LastEditors: 张策
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description:
  *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
 -->
 
 - node/14.18.0
+
+### 1.60.0
+```js
+// 新增类
+// 1.RunWorker
+
+// 新增方法
+// 1.getState, 
+// 2.setState, 
+// 3.deleteState, 
+// 4.addStateListener, 
+// 5.removeStateListener,
+
+// 优化类
+// 1.StateObserver
+// 2.Socket
+
+```
+
 ### 1.56.0
 ```js
 // 新增方法

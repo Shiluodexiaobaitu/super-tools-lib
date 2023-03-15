@@ -1,3 +1,13 @@
+/*
+ * @Author: 张策
+ * @Date: 2023-01-13 17:04:56
+ * @Email: zhangce@fengmap.com
+ * @LastEditTime: 2023-03-15 10:48:52
+ * @LastEditors: 张策
+ * @LastEditorsEmail: zhangce@fengmap.com
+ * @Copyright: Copyright 2014 - 2023, FengMap, Ltd. All rights reserved.
+ */
+import { EventObserver } from './EventObserver'
 interface IProps {
     url: string
     reconnectCount?: number
@@ -6,79 +16,108 @@ interface IProps {
 
 class Socket {
 
-    private ws: any
-    private url: string
-    private sendTimer: any
-    private heartTimer: any
-    private reconnectCount: number
-    private heartTime: number
+    private _ws: WebSocket
+    private _url: string
+    private _sendTimer: any
+    private _heartTimer: any
+    private _eventPool: EventObserver
+    private _reconnectCount: number
+    private _heartTime: number
 
     constructor(props: IProps) {
         const { url, reconnectCount, heartTime } = props
 
-        this.ws = null
-        this.url = url
-        this.sendTimer = null
-        this.heartTimer = null
+        this._url = url
+        this._sendTimer = null
+        this._heartTimer = null
         //重连次数
-        this.reconnectCount = reconnectCount || 3000
+        this._reconnectCount = reconnectCount || 3000
         //心跳检测时间
-        this.heartTime = heartTime || 5000
+        this._heartTime = heartTime || 5000
 
-    }
-
-    createWebSocket(message: any, cb: (data: any) => void) {
-
-        this.ws = new WebSocket(this.url)
-        message = JSON.stringify(message)
-
-        this.ws.onopen = () => {
-            this.sendTimer = setInterval(() => {
-                this.ws.send(message)
-            }, 1000)
-            this.heartbeat(message, cb)
-            console.log('ws连接成功!' + new Date().toLocaleString())
-        }
-
-        this.ws.onclose = (evt: any) => {
-            console.log('关闭ws', evt)
-            this.ws.close()
-        }
-
-        this.ws.onmessage = (evt: any) => {
-            this.heartbeat(message, cb)
-            const data = JSON.parse(evt.data)
-            if (cb && typeof cb === 'function') {
-                cb(data)
-            }
-        }
-
-        //报错
-        this.ws.onerror = (evt: any) => {
-            console.log('error:' + evt)
-            this.heartbeat(message, cb)
-        }
-
+        this._eventPool = new EventObserver()
     }
 
     /**
-    * 重连机制
-    */
-    heartbeat(message, cb) {
-        clearInterval(this.heartTimer)
+     * 启动
+     * @return {*}
+     */    
+    start(): void {
+        this._init()
+    }
 
-        this.heartTimer = setInterval(() => {
-            if (this.reconnectCount === 0) {
-                clearInterval(this.heartTimer)
+    /**
+     * 发送消息
+     * @param {string | ArrayBufferLike | Blob | ArrayBufferView} message
+     * @return {*}
+     */
+    send(message: string | ArrayBufferLike | Blob | ArrayBufferView): void {
+        this._ws.onopen = () => {
+            this._ws.send(message)
+        }
+    }
+
+    /**
+     * 关闭通信
+     * @return {*}
+     */
+    close(): void {
+        this._ws.close()
+        clearInterval(this._heartTimer)
+    }
+
+    /**
+     * 事件监听
+     * @param {*} type
+     * @param {*} cb
+     * @return {*}
+     */
+    on(type: 'message' | 'error', cb: (...rest: any[]) => void): void {
+        this._eventPool.on(type, cb)
+    }
+
+    _init() {
+
+        this._ws = new WebSocket(this._url)
+
+        this._ws.onclose = (evt: any) => {
+            console.log('关闭_ws', evt)
+            this._ws.close()
+        }
+
+        this._ws.onmessage = (evt: any) => {
+            this._heartbeat()
+            const data = JSON.parse(evt.data)
+            this._eventPool.spread('message', data)
+        }
+
+        //报错
+        this._ws.onerror = (evt: any) => {
+            console.log('error:' + evt)
+            this._eventPool.spread('error', evt)
+            this._heartbeat()
+        }
+    }
+
+    /**
+     * 重连机制
+     * @return {*}
+     */
+    _heartbeat(): void {
+        clearInterval(this._heartTimer)
+
+        this._heartTimer = setInterval(() => {
+            if (this._reconnectCount === 0) {
+                clearInterval(this._heartTimer)
                 // console.log('到达最多重连次数,禁止重新连接')
                 return
             }
-            // console.log('超过心跳检测时间触发重连', this.reconnectCount)
-            this.ws.close()
-            clearInterval(this.sendTimer)
-            this.createWebSocket(message, cb)
-            --this.reconnectCount
-        }, this.heartTime)
+            // console.log('超过心跳检测时间触发重连', this._reconnectCount)
+            this._ws.close()
+            clearInterval(this._sendTimer)
+            this._init()
+            --this._reconnectCount
+        }, this._heartTime)
     }
 }
 

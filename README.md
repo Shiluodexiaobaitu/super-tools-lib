@@ -1615,6 +1615,60 @@ _.isContain(
 ); // true
 ```
 
+#### RunWorker (线程池)
+
+```js
+
+const worker = new _.RunWorker()
+
+const f = () => {
+  self.onmessage = (evt) => {
+    console.log(evt.data)
+
+    // 执行耗时运算...
+
+    self.postMessage('运算完成')
+  }
+
+}
+
+/**
+ * 创建子线程
+ * @param {string} name 线程名字
+ * @param {any} f 子线程地址
+ * @return {*}
+ */
+worker.createWorker(name, f)
+
+/**
+ * 向子线程发送数据
+ * @param {string} name 线程名字
+ * @param {any}  data 传递的数据
+ * @return {*}
+ */
+worker.postMessage(name,data)
+
+/**
+ * 事件监听
+ * @param {string} name
+ * @param {message} type 主线程监听子线程返回消息
+ * @param {error} type  监听子线程报错
+ * @param {messageerror} type 当 Worker 对象接收到一条无法被反序列化的消息时， messageerror 事件将在该对象上被触发。
+ *  @param {function} cb
+ * @return {*}
+ */
+worker.on(name, type, () => {
+
+})
+
+/**
+ * 关闭子线程
+ * @param {string} name
+ * @return {*}
+ */
+worker.close(name)
+```
+
 #### EventObserver 事件观察者
 
 ```js
@@ -1645,25 +1699,95 @@ _.dispatchEvent("my_click", { a: 1 });
 #### StateObserver 状态观察者
 
 ```js
-const state = new _.StateObserver({ name: "李四", age: 18 });
+const state = new _.StateObserver();
 
-function change(newValue) {
-  console.log("newValue", newValue);
-}
-// 监听状态改变事件
-state.on("age", change);
+// 设置值
+state.set(key, value)
 
-// 移除状态改变事件
-// state.off('age',change);
+// 获取值
+state.get(key)
 
-// 设置状态
-state.setState({ age: 20 });
+// 删除
+state.delete(key)
 
-// 查询状态
-state.getState("age"); // 20
+// 如果键存在，则返回 true
+state.has(key)
 
-state.getState(); // { name: "李四", age: 20 }
+// 返回对象中键的数组
+state.keys()
+
+// 返回对象中值的数组
+state.values()
+
+// 遍历对象
+state.forEach(()=>{})
+
+// 对象长
+state.size()
+
+// 删除 state 中的所有元素
+state.clear()
+
+// 注册key变化事件
+state.on(key,()=>{})
+
+// 移除注册key变化事件
+state.off(key,()=>{})
 ```
+
+##### getState (查询全局状态)
+
+- 参数
+  >1，(string)：要查询的值
+- return (Boolean)
+
+```js
+_.getState(key)
+```
+
+##### setState (设置全局状态)
+
+- 参数
+  >1，(string)：键
+  >2，(any)：设置的值
+- return (Boolean)
+
+```js
+_.setState(key, value)
+```
+
+##### deleteState (删除全局状态)
+
+- 参数
+  >1，(string)：要删除的键
+- return (Boolean)
+
+```js
+_.deleteState(key)
+```
+
+##### addStateListener (注册全局状态监听器)
+
+- 参数
+  >1，(string)：要监听的键
+  >2，(Function)：状态变化的回调
+- return (Boolean)
+
+```js
+_.addStateListener(key,()=>{})
+```
+
+##### removeStateListener (移除全局状态监听器)
+
+- 参数
+  >1，(string)：要移除监听的键
+  >2，(Function)：状态变化的回调
+- return (Boolean)
+
+```js
+_.removeStateListener(key,()=>{})
+```
+
 
 ### Math
 

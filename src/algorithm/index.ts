@@ -1,7 +1,13 @@
 /**
- * @desc: 洗牌算法随机
- * @param {*} T
+ * 洗牌算法随机
+ * @param arr 需要操作的数组
  * @return {*}
+ * 
+ * @example
+ * 示例
+ * ```ts
+ * shuffle([1,2,3,4,5])
+ * ```
  */
 const shuffle = <T>(arr: T[]): T[] => {
     const result = []

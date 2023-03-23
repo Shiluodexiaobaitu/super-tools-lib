@@ -122,7 +122,7 @@ const reg = {
 }
 
 /**
- * @desc: 验证内容
+ * 验证内容
  * @param {string} key 规则
  * @param {string} value 校验的内容
  * @return {*}

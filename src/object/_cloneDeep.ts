@@ -176,7 +176,7 @@ const DEPTH = 1 //克隆深度
 const CACHEMAP = new Map() //克隆次数缓存
 
 /**
- * @desc: 深度克隆
+ * 深度克隆
  * @param {*} data 
  * @return {*}
  * 兼容深度克隆数据格式：Object，Array，RegExp，Date，Map，Set，String，Symbol，Number，Null，Undefined，Boolean，NaN

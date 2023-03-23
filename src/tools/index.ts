@@ -1,7 +1,7 @@
 import { strChineseFirstPY, oMultiDiff } from './_utils'
 
 /**
- * @desc: 生成一个唯一的guid
+ * 生成一个唯一的guid
  * @param {*} string
  * @return {*}
  */
@@ -13,7 +13,7 @@ const guid = (): string => {
 }
 
 /**
- * @desc: 节流
+ * 节流
  * @param {*} func 执行函数
  * @param {*} delay 节流时间,毫秒
 */
@@ -31,7 +31,7 @@ const throttle = function (fn: <T> (...rest: T[]) => void, delay = 200): <T> (..
 }
 
 /**
- * @desc: 防抖
+ * 防抖
  * @param {*} function
  * @param {number} delay
  * @return {*}
@@ -49,36 +49,7 @@ const debounce = function (fn: <T> (...rest: T[]) => void, delay: number): <T> (
 }
 
 /**
- * @desc: 根据url地址下载
- * @param {string} url
- * @return {*}
- */
-const fileDownload = function (url: string): boolean {
-    const isChrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1
-    const isSafari = navigator.userAgent.toLowerCase().indexOf('safari') > -1
-    if (isChrome || isSafari) {
-        const link = document.createElement('a')
-        link.href = url
-        if (link.download !== undefined) {
-            const fileName = url.substring(url.lastIndexOf('/') + 1, url.length)
-            link.download = fileName
-        }
-        if (document.createEvent) {
-            const e = document.createEvent('MouseEvents')
-            e.initEvent('click', true, true)
-            link.dispatchEvent(e)
-            return true
-        }
-    }
-    if (url.indexOf('?') === -1) {
-        url += '?download'
-    }
-    window.open(url, '_self')
-    return true
-}
-
-/**
- * @desc: 模糊查询
+ * 模糊查询
  * @param  {Array}  list     进行查询的数组
  * @param  {String}  key     进行查询的数组的字段
  * @param  {String} keyWord  查询的关键词
@@ -90,7 +61,7 @@ const fuzzyQuery = <T>(list: T[], key: string, keyWord: string): T[] => {
 
 
 /**
- * @desc: RGB颜色转16进制
+ * RGB颜色转16进制
  * @param {string} color
  * @return {*}
  */
@@ -116,7 +87,7 @@ const colorHex = (color: string): string => {
 }
 
 /**
- * @desc: 16进制颜色转RGBA
+ * 16进制颜色转RGBA
  * @param {string} str
  * @param {number} alpa
  * @return {*}
@@ -144,7 +115,7 @@ const hexToRgba = (str: string, alpa: number): string => {
 }
 
 /**
- * @desc: rgba颜色转16进制
+ * rgba颜色转16进制
  * @param {*} color
  * @return {*}
  */
@@ -165,7 +136,7 @@ const rgbaToHex = (color): string => {
 }
 
 /**
- * @desc: 计算vh / vw转px
+ * 计算vh / vw转px
  * @param {string} value
  * @return {*}
  */
@@ -183,39 +154,7 @@ const viewportToPixels = (value: string) => {
 }
 
 /**
- * @desc: 无刷新去除url参数
- * @param {string} ref
- * @return {*}
- */
-const noRefdelUrlParam = (ref: string): string => {
-    const url = window.location.href
-    // 若是不包括此参数
-    if (url.indexOf(ref) === -1) {
-        return url
-    }
-    const arr_url = url.split('?')
-    const base = arr_url[0]
-    const arr_param = arr_url[1].split('&')
-    let index = -1
-    for (let i = 0; i < arr_param.length; i++) {
-        const paired = arr_param[i].split('=')
-        if (paired[0] === ref) {
-            index = i
-            break
-        }
-    }
-    if (index === -1) {
-        return url
-    } else {
-        arr_param.splice(index, 1)
-        // return base + "?" + arr_param.join('&');
-        window.history.pushState({}, '0', base + '?' + arr_param.join('&'))
-        return base + '?' + arr_param.join('&')
-    }
-}
-
-/**
- * @desc: 根据身份证号获取年龄
+ * 根据身份证号获取年龄
  * @param {string} id
  * @return {*}
  */
@@ -243,7 +182,7 @@ const getAge = (id: string) => {
 }
 
 /**
- * @desc: 根据身份证号获取性别
+ * 根据身份证号获取性别
  * @param {string} id
  * @return {*}
  */
@@ -254,7 +193,7 @@ const getSex = (id: string) => {
 }
 
 /**
- * @desc: 数字转化为大写金额
+ * 数字转化为大写金额
  * @param {number} n
  * @return {*}
  */
@@ -289,7 +228,7 @@ const digitUppercase = (n: number): string => {
 }
 
 /**
- * @desc: 动态引入js
+ * 动态引入js
  * @param {string} src
  * @return {*}
  */
@@ -303,7 +242,7 @@ const injectScript = (src: string) => {
 }
 
 /**
- * @desc: 汉字转字母
+ * 汉字转字母
  * @param {string} str
  * @return {*}
  */
@@ -357,7 +296,7 @@ const sinogToLetter = (str: string) => {
 }
 
 /**
- * @desc: 返回设计稿上px在不同屏幕下的适配尺寸
+ * 返回设计稿上px在不同屏幕下的适配尺寸
  * @param {number} px 
  * @param {*} draft 设计稿宽度
  * @return {*}
@@ -368,7 +307,7 @@ const getFitSize = (px: number, draft = 750): number => {
 }
 
 /**
- * @desc: 检测密码强度
+ * 检测密码强度
  * @param {*} str
  * @return {*}  1：密码弱 2：密码中等 3：密码强 4：密码很强
  */
@@ -393,7 +332,7 @@ const checkPassWord = (str: string): number => {
 }
 
 /**
- * @desc: 将华氏温度转换为摄氏温度
+ * 将华氏温度转换为摄氏温度
  * @param {*} fahrenheit 华氏温度
  * @return {*} 摄氏温度
  */
@@ -402,12 +341,61 @@ const fahrenheitToCelsius = (fahrenheit: number): number => {
 }
 
 /**
- * @desc: 将摄氏温度转华氏温度
+ * 将摄氏温度转华氏温度
  * @param {*} celsius 摄氏温度
  * @return {*} 华氏温度
  */
 const celsiusToFahrenheit = (celsius: number): number => {
     return celsius * 9 / 5 + 32
+}
+
+/**
+ * 洗牌算法随机
+ * @param arr 需要操作的数组
+ * @return {*}
+ * ```
+ */
+const shuffle = <T>(arr: T[]): T[] => {
+    const result = []
+    let random
+    while (arr.length > 0) {
+        random = Math.floor(Math.random() * arr.length)
+        result.push(arr[random])
+        arr.splice(random, 1)
+    }
+    return result
+}
+
+/**
+ * 按 ASCII 正序排序
+ * @param {*} data []
+ * @return {*}
+ */
+const sortAscii = (data: string[]) => {
+    return data.sort((a, b) => {
+        return (a + '').localeCompare(b + '')
+    })
+}
+
+/**
+ * 生成sign 按 Key 的 ASCII 正序排序，拼接为字符串返回。
+ * @param {Record} obj
+ * @param {*} unknown
+ * @return {string}
+ */
+const generateSign = (obj: Record<string, unknown>): string => {
+
+    const arr = []
+    let sign = ''
+    for (const key in obj) {
+        arr.push(key)
+    }
+    arr.sort()
+    for (let i = 0; i < arr.length; i++) {
+        sign += `${arr[i]}=${obj[arr[i]]}`
+    }
+
+    return sign.replace(/\=/g, '')
 }
 
 /**
@@ -457,11 +445,9 @@ export {
     guid,
     throttle,
     debounce,
-    fileDownload,
     fuzzyQuery,
     colorHex,
     viewportToPixels,
-    noRefdelUrlParam,
     getAge,
     getSex,
     digitUppercase,
@@ -473,4 +459,7 @@ export {
     checkPassWord,
     fahrenheitToCelsius,
     celsiusToFahrenheit,
+    shuffle,
+    sortAscii,
+    generateSign,
 }

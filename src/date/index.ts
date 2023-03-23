@@ -7,7 +7,7 @@
  */
 
 /**
- * @desc: 格式化时间
+ * 格式化时间
  * @param {string} formater
  * @param {number} time
  * @return {*}
@@ -30,7 +30,7 @@ const dateFormater = (formater: string, time?: number): string => {
 }
 
 /**
- * @desc: 格式化${startTime}距现在的已过时间(距离传入的时间经多了多久)
+ * 格式化${startTime}距现在的已过时间(距离传入的时间经多了多久)
  * @param {*} startTime 以前的时间
  * @return {*}
  */
@@ -51,7 +51,7 @@ const formatPassTime = (startTime: number): string => {
 }
 
 /**
- * @desc: 格式化现在距${endTime}的剩余时间
+ * 格式化现在距${endTime}的剩余时间
  * @param {*} endTime 未来的时间
  * @return {*}
  */
@@ -73,7 +73,7 @@ const formatRemainTime = (endTime: string): string => {
 }
 
 /**
- * @desc: 计算两日期之间相差的天数
+ * 计算两日期之间相差的天数
  * @param {Date} date1
  * @param {Date} date2
  * @return {*} 天数
@@ -83,7 +83,7 @@ const dayDiff = (date1: Date, date2: Date): number => {
 }
 
 /**
- * @desc: 计算两个日期之间的月数
+ * 计算两个日期之间的月数
  * @param {Date} startDate
  * @param {Date} endDate
  * @return {*}
@@ -93,7 +93,7 @@ const monthDiff = (startDate: Date, endDate: Date): number => {
 }
 
 /**
- * @desc: 比较两个日期
+ * 比较两个日期
  * @param {Date} a
  * @param {Date} b
  * @return {*}
@@ -103,7 +103,7 @@ const compareDate = (a: Date, b: Date): boolean => {
 }
 
 /**
- * @desc: 将秒转换为hh:mm:ss格式
+ * 将秒转换为hh:mm:ss格式
  * @param {number} s
  * @return {*}
  */
@@ -112,7 +112,7 @@ const formatSeconds = (s: number): string => {
 }
 
 /**
- * @desc: 获取日期的当前季度
+ * 获取日期的当前季度
  * @param {*} d
  * @return {*}
  */
@@ -121,7 +121,7 @@ const getQuarter = (d = new Date()): number => {
 }
 
 /**
- * @desc: 获取传入的日期当月的最后一个日期
+ * 获取传入的日期当月的最后一个日期
  * @param {*} d
  * @return {*}
  */
@@ -130,7 +130,7 @@ const getLastDate = (d = new Date()): Date => {
 }
 
 /**
- * @desc: 获取传入的日期当月的第一个日期
+ * 获取传入的日期当月的第一个日期
  * @param {*} d
  * @return {*}
  */
@@ -138,7 +138,7 @@ const getFirstDate = (d = new Date()): Date => new Date(d.getFullYear(), d.getMo
 
 
 /**
- * @desc: 获取当前时间戳（秒）
+ * 获取当前时间戳（秒）
  * @param {*} number
  * @return {*}
  */

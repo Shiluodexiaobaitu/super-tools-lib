@@ -1,13 +1,5 @@
-/*
- * @Author: zhangce
- * @Date: 2021-10-08 14:15:34
- * @LastEditors: zhangce
- * @LastEditTime: 2023-01-13 16:55:22
- * @Description: 
- */
-
 /**
- * @desc: 计算经纬度
+ * 计算经纬度
  * @param {number} lat1
  * @param {number} lng1
  * @param {number} lat2
@@ -27,7 +19,7 @@ const calcDistance = (lat1: number, lng1: number, lat2: number, lng2: number) =>
 }
 
 /**
- * @desc: 经纬度转墨卡托
+ * 经纬度转墨卡托
  * @param {object} lonLat
  * @return {*}
  */
@@ -40,7 +32,7 @@ const lonLatToMercator = (lonLat: { lon: number, lat: number }): { x: number, y:
 }
 
 /**
- * @desc: 墨卡托转经纬度
+ * 墨卡托转经纬度
  * @param {object} mercator
  * @return {*}
  */

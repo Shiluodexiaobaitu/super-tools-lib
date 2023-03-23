@@ -1,7 +1,7 @@
 import { throttle } from '../tools'
 
 /**
- * @desc: 获取一个元素距离浏览器左上角的偏移量
+ * 获取一个元素距离浏览器左上角的偏移量
  * @param {HTMLElement} ele
  * @return {*}
  */
@@ -20,7 +20,7 @@ const getOffset = function (ele: HTMLElement): { left: number, top: number } {
 }
 
 /**
- * @desc: 抖动函数
+ * 抖动函数
  * @param {ele} 抖动的dom元素
  * @param {attr} 抖动的方向 left top
  * @param {cb} 抖动的完成回调
@@ -56,7 +56,7 @@ const shaking = ({ ele, attr, cb, rate = 20, time = 50 }: { ele: HTMLElement, at
 }
 
 /**
- * @desc: 阻止冒泡事件
+ * 阻止冒泡事件
  * @param e 
  */
 const stopPropagation = (e: Event) => {
@@ -69,17 +69,17 @@ const stopPropagation = (e: Event) => {
 }
 
 /**
- * @desc: 检测类名
- * @param ele dom
- * @param name 类名
- * @returns {boolean}
+ * 用于判断元素是否包含某个class
+ * @param element 需要判断的元素
+ * @param className class名称
+ * @return 如果包含则返回true，否则返回false
  */
-const hasClass = (ele: HTMLElement, name: string): boolean => {
-    return !!ele.className.match(new RegExp('(\\s|^)' + name + '(\\s|$)'))
+const hasClass = (element: HTMLElement, className: string): boolean => {
+    return element.classList.contains(className)
 }
 
 /**
- * @desc: 添加类名
+ * 添加类名
  * @param {*} ele
  * @param {*} name
  * @return {*}
@@ -89,7 +89,7 @@ const addClass = (ele: HTMLElement, name: string) => {
 }
 
 /**
- * @desc: 删除类名
+ * 删除类名
  * @param {*} ele
  * @param {*} name
  * @return {*}
@@ -102,7 +102,7 @@ const removeClass = (ele: HTMLElement, name: string) => {
 }
 
 /**
- * @desc: 替换类名
+ * 替换类名
  * @param {*} ele
  * @param {*} newName
  * @param {*} oldName
@@ -114,7 +114,7 @@ const replaceClass = (ele: HTMLElement, newName: string, oldName: string) => {
 }
 
 /**
- * @desc: 滚动条是否滚动到底部
+ * 滚动条是否滚动到底部
  * @param {HTMLElement} ele
  * @param {Function} callback
  * @param {number} delay
@@ -136,7 +136,7 @@ const scrollToTheBottom = (ele: HTMLElement, callback: () => void, delay = 200) 
 }
 
 /**
- * @desc: 计算文字是否溢出容器
+ * 计算文字是否溢出容器
  * @param {HTMLElement} dom 承载文字的容器
  * @return {*}
  */
@@ -154,7 +154,7 @@ const textVisibilityChange = (dom: HTMLElement): boolean => {
 }
 
 /**
- * @desc: 获取transform translate中矩阵x，y坐标
+ * 获取transform translate中矩阵x，y坐标
  * @param {string} transform
  * @return {*}
  */
@@ -167,7 +167,7 @@ const getTransformMatrix = (transform: string): { x: number, y: number } => {
 }
 
 /**
- * @desc: 检查某个元素是否是另一个元素的后代
+ * 检查某个元素是否是另一个元素的后代
  * @param {Node} child
  * @param {Node} parent
  * @return {*}
@@ -175,13 +175,13 @@ const getTransformMatrix = (transform: string): { x: number, y: number } => {
 const isDescendant = (child: Node, parent: Node): boolean => parent.contains(child)
 
 /**
- * @desc: 获取鼠标所选文本
+ * 获取鼠标所选文本
  * @return {*}
  */
 const getSelectedText = () => window.getSelection().toString()
 
 /**
- * @desc: 在其他元素之后插入一个元素
+ * 在其他元素之后插入一个元素
  * @param {Element} newEle
  * @param {Element} anotherEle
  * @return {*}
@@ -191,7 +191,7 @@ const insertAfter = (newEle: Element, anotherEle: Element): Element | null => {
 }
 
 /**
- * @desc: 在其他元素之前插入一个元素
+ * 在其他元素之前插入一个元素
  * @param {Element} newEle
  * @param {Element} anotherEle
  * @return {*}
@@ -201,7 +201,7 @@ const insertBefore = (newEle: Element, anotherEle: Element) => {
 }
 
 /**
- * @desc: 在元素后插入给定的HTML
+ * 在元素后插入给定的HTML
  * @param {string} html
  * @param {Element} ele
  * @return {*}
@@ -211,7 +211,7 @@ const insertHtmlAfter = (html: string, ele: Element): void => {
 }
 
 /**
- * @desc: 在元素前插入给定的HTML
+ * 在元素前插入给定的HTML
  * @param {string} html
  * @param {Element} ele
  * @return {*}
@@ -221,13 +221,33 @@ const insertHtmlBefore = (html: string, ele: Element): void => {
 }
 
 /**
- * @desc: 替换dom元素
+ * 替换dom元素
  * @param {Element} oldEle
  * @param {Element} newEle
  * @return {*}
  */
 const eleReplace = (oldEle: Element, newEle: Element): Element | null => {
     return (oldEle.parentNode ? oldEle.parentNode.replaceChild(newEle, oldEle) : null)
+}
+
+/**
+ * 用于获取元素的属性值
+ * @param element 需要获取属性值的元素
+ * @param attrName 属性名称
+ * @return 返回属性值
+ */
+const getAttr = (element: HTMLElement, attrName: string): string => {
+    return element.getAttribute(attrName)
+}
+
+/**
+ * 用于设置元素的属性值
+ * @param element 需要设置属性值的元素
+ * @param attrName 属性名称
+ * @param value 属性值
+ */
+const setAttr = (element: HTMLElement, attrName: string, value: string): void => {
+    element.setAttribute(attrName, value)
 }
 
 export {
@@ -248,4 +268,6 @@ export {
     insertHtmlAfter,
     insertHtmlBefore,
     eleReplace,
+    getAttr,
+    setAttr,
 }

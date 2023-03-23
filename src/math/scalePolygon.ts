@@ -1,7 +1,7 @@
 import { isArray } from '../is'
 
 /**
- * @desc: 缩放多边形坐标
+ * 缩放多边形坐标
  * @param {*} T
  * @return {*}
  */
@@ -69,7 +69,7 @@ const scalePolygon = <T extends { x: number, y: number }>(points: T[], extra: nu
 
 
 /**
- * @desc: 判断坐标数组是否顺时针（默认为false）
+ * 判断坐标数组是否顺时针（默认为false）
  * @param {Point[]} points 点坐标数组 [{x:0,y:0}...]
  * @return {boolean}
  */

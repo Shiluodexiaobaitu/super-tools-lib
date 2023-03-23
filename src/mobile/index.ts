@@ -1,5 +1,5 @@
 /**
- * @desc: 移动端横屏竖屏
+ * 移动端横屏竖屏
  * @param {function} fn
  * @return {*}
  */

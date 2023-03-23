@@ -66,7 +66,7 @@ class GPS {
     }
 
     /**
-     * @desc: 清除定位监听
+     * 清除定位监听
      * @return {*}
      */
     clearWatch() {

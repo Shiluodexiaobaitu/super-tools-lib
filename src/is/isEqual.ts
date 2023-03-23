@@ -10,7 +10,7 @@ import {
 import { forEach } from '../loop'
 
 /**
-* @desc: 深比较来确定两者的值是否相等
+* 深比较来确定两者的值是否相等
 * ** 方法支持比较：array，object，string，boolean，number，null，undefined，symbol
 * @param {*} value
 * @param {*} other

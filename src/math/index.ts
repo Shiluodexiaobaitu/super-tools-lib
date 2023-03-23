@@ -2,7 +2,7 @@ import { isArray } from '../is'
 import { forEach } from '../loop'
 
 /**
- * @desc: 计算两点之间的距离
+ * 计算两点之间的距离
  * @return {*}
  */
 const distance = (p1: {
@@ -16,7 +16,7 @@ const distance = (p1: {
 }
 
 /**
- * @desc: 将度转换为弧度
+ * 将度转换为弧度
  * @param {number} deg
  * @return {*}
  */
@@ -24,7 +24,7 @@ const degsToRads = (deg: number): number => (deg * Math.PI) / 180.0
 
 
 /**
- * @desc: 获取多边形中心点
+ * 获取多边形中心点
  * @param {*} T
  * @return {*}
  */

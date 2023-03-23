@@ -1,5 +1,5 @@
 /**
- * @desc: 二进制文件流，前端通过blob对象实现下载
+ * 二进制文件流，前端通过blob对象实现下载
  * @param {BlobPart} data
  * @param {string} fileName
  * @return {*}
@@ -16,7 +16,7 @@ const downBlob = (data: BlobPart, fileName: string): void => {
 }
 
 /**
- * @desc: 文件的Base64编码，
+ * 文件的Base64编码，
  * @param {则需要FileReader。FileReader类型实现的是一种异步文件读取机制。可以把FileReader想象成XMLHttpRequest，区别只是它读取的是文件系统，而不是远程服务器。}
 */
 const getFileBase64 = (file: File, cb: (base64: ArrayBuffer | string) => void): void => {
@@ -35,7 +35,7 @@ const getFileBase64 = (file: File, cb: (base64: ArrayBuffer | string) => void): 
 }
 
 /**
- * @desc: blob转url
+ * blob转url
  * @param {*} blob
  * @param {*} callback
  * @return {*}
@@ -49,7 +49,7 @@ const blobToDataURL = (blob: Blob, callback: (result: string | ArrayBuffer) => v
 }
 
 /**
- * @desc: 两张图片合并成一张图片
+ * 两张图片合并成一张图片
  * @param {*} bgImgOps
  * @param {*} upImgOps
  * @param {*} ops
@@ -107,7 +107,7 @@ const drawAndShareImage = (bgImgOps: { url: string, width: number, height: numbe
 }
 
 /**
- * @desc: base64转文件
+ * base64转文件
  * @param {*} urlData
  * @param {*} fileName
  * @return {*}
@@ -124,10 +124,40 @@ const base64ToFile = (urlData: string, fileName: string) => {
     return new File([ia], fileName, { type: mime })
 }
 
+/**
+ * 根据url地址下载
+ * @param {string} url
+ * @return {*}
+ */
+const fileDownload = function (url: string): boolean {
+    const isChrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1
+    const isSafari = navigator.userAgent.toLowerCase().indexOf('safari') > -1
+    if (isChrome || isSafari) {
+        const link = document.createElement('a')
+        link.href = url
+        if (link.download !== undefined) {
+            const fileName = url.substring(url.lastIndexOf('/') + 1, url.length)
+            link.download = fileName
+        }
+        if (document.createEvent) {
+            const e = document.createEvent('MouseEvents')
+            e.initEvent('click', true, true)
+            link.dispatchEvent(e)
+            return true
+        }
+    }
+    if (url.indexOf('?') === -1) {
+        url += '?download'
+    }
+    window.open(url, '_self')
+    return true
+}
+
 export {
     downBlob,
     getFileBase64,
     blobToDataURL,
     drawAndShareImage,
     base64ToFile,
+    fileDownload,
 }

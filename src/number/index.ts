@@ -9,7 +9,7 @@ import { accAdd, accSub, accMul, accDiv } from './floatPares'
 
 
 /**
- * @desc: 千分位加逗号
+ * 千分位加逗号
  * @param {*} price 
  * @return {*}
  */
@@ -18,7 +18,7 @@ const formatPrice = (price: string, sign = ','): string => {
 }
 
 /**
- * @desc: 小数取整
+ * 小数取整
  * @param {数字} num
  * @param {第几位小数四舍五入} place
 */
@@ -29,7 +29,7 @@ const smallRounding = (num: number, place: number): number => {
 }
 
 /**
- * @desc: 在给定范围内创建数字数组
+ * 在给定范围内创建数字数组
  * @param {number} min
  * @param {number} max
  * @return {*}
@@ -41,7 +41,7 @@ const range = (min: number, max: number): number[] =>
 
 
 /**
- * @desc: 从数组中查找最接近的数字
+ * 从数组中查找最接近的数字
  * @param {number} arr
  * @param {number} n
  * @return {*}

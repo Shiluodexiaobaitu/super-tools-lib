@@ -10,7 +10,7 @@
  */
 
 /**
- * @desc: 自定义状态观察者
+ * 自定义状态观察者
  * @return {*}
  */
 class StateObserver {

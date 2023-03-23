@@ -12,7 +12,7 @@
 import { isObjectExistsKey } from './is'
 
 /**
- * @desc: 自定义事件观察者
+ * 自定义事件观察者
  * @return {*}
  */
 class EventObserver {
@@ -74,7 +74,7 @@ class EventObserver {
 const _eventPool = new EventObserver()
 
 /**
- * @desc: 注册监听器
+ * 注册监听器
  * @param {string} type
  * @param {function} cb
  * @return {*}
@@ -84,7 +84,7 @@ const addEventListener = (type: string, cb: (...rest: any[]) => void) => {
 }
 
 /**
- * @desc: 移除监听器
+ * 移除监听器
  * @param {string} type
  * @param {function} cb
  * @return {*}
@@ -94,7 +94,7 @@ const removeEventListener = (type: string, cb: (...rest: any[]) => void) => {
 }
 
 /**
- * @desc: 触发监听器
+ * 触发监听器
  * @param {string} type
  * @param {array} rest
  * @return {*}

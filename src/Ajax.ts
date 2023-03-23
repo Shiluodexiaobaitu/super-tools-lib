@@ -1,11 +1,3 @@
-/*
- * @Author: zhangce
- * @Date: 2021-12-30 11:56:59
- * @LastEditors: zhangce
- * @LastEditTime: 2023-01-12 13:44:24
- * @Description: 
- */
-
 class Ajax {
 
     private _options: any = null

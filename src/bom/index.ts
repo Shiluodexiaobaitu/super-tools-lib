@@ -5,9 +5,7 @@ declare global {
 }
 
 /**
- * @desc: 浏览器全屏
- * @param {*} void
- * @return {*}
+ * 浏览器全屏
  */
 const toFullScreen = (): void => {
     const el: any = document.documentElement
@@ -25,9 +23,7 @@ const toFullScreen = (): void => {
 }
 
 /**
- * @desc: 浏览器退出全屏
- * @param {*} void
- * @return {*}
+ * 浏览器退出全屏
  */
 const exitFullscreen = (): void => {
     const el: any = parent.document
@@ -45,9 +41,8 @@ const exitFullscreen = (): void => {
 }
 
 /**
- * @desc: LocalStorage 
+ * LocalStorage 
  * 存储的数据的生命周期是永久，除非主动删除数据，否则永远不会过期
- * @return {*}
  */
 const LocalStorage = {
     get(user: string, name: string): string {
@@ -79,9 +74,8 @@ const LocalStorage = {
 }
 
 /**
- * @desc: SessionStorage 
+ * SessionStorage 
  * 存储的数据的生命周期是一个会话
- * @return {*}
  */
 const SessionStorage = {
     get(user: string, name: string): string {
@@ -113,7 +107,7 @@ const SessionStorage = {
 }
 
 /**
- * @desc: H5 获取地理位置
+ * H5 获取地理位置
  * @return {*}
  */
 const getPosition = (
@@ -151,9 +145,8 @@ const getPosition = (
 
 
 /**
- * @desc:  禁止/开启：右键、选择、复制
+ *  禁止/开启：右键、选择、复制
  * @param {boolean} flag
- * @return {*}
  */
 const winCopy = (flag: boolean) => {
     ['contextmenu', 'selectstart', 'copy'].forEach(function (ev) {
@@ -164,11 +157,10 @@ const winCopy = (flag: boolean) => {
 }
 
 /**
- * @desc: 打印屏幕
+ * 打印屏幕
  * @param {string} printEleId
  * @param {string} rootEleId
  * @param {string} style
- * @return {*}
  */
 const print = (printEleId: string, rootEleId: string, style: string) => {
 
@@ -198,9 +190,8 @@ const print = (printEleId: string, rootEleId: string, style: string) => {
 }
 
 /**
- * @desc: 复制文本
+ * 复制文本
  * @param {string} str
- * @return {*}
  */
 const copy = (str: string): void => {
     const el = document.createElement('textarea')
@@ -224,8 +215,7 @@ const copy = (str: string): void => {
 }
 
 /**
- * @desc: 平滑滚动到页面顶部
- * @return {*}
+ * 平滑滚动到页面顶部
  */
 const scrollToTop = () => {
     const c = document.documentElement.scrollTop || document.body.scrollTop
@@ -236,9 +226,8 @@ const scrollToTop = () => {
 }
 
 /**
- * @desc: 返回当前浏览器是什么类型的浏览器
+ * 返回当前浏览器是什么类型的浏览器
  * @param {*} string
- * @return {*} 
  */
 const userBrowser = (): string => {
     const browserName = navigator.userAgent.toLowerCase()
@@ -258,7 +247,7 @@ const userBrowser = (): string => {
 }
 
 /**
- * @desc: 获取localStorage使用容量
+ * 获取localStorage使用容量
  * @return {*}
  */
 const getLocalStorageSize = (): string => {
@@ -275,7 +264,7 @@ const getLocalStorageSize = (): string => {
 }
 
 /**
- * @desc: 获取url参数 返回一个{}
+ * 获取url参数 返回一个{}
  * @return {*}
  */
 const getUrlParam = function () {
@@ -293,7 +282,7 @@ const getUrlParam = function () {
 }
 
 /**
- * @desc: 封装cookie增删改查的函数
+ * 封装cookie增删改查的函数
  * @return {*}
  */
 const cookie = {
@@ -339,6 +328,38 @@ const cookie = {
     },
 }
 
+/**
+ * 无刷新去除url参数
+ * @param {string} ref
+ * @return {*}
+ */
+const noRefdelUrlParam = (ref: string): string => {
+    const url = window.location.href
+    // 若是不包括此参数
+    if (url.indexOf(ref) === -1) {
+        return url
+    }
+    const arr_url = url.split('?')
+    const base = arr_url[0]
+    const arr_param = arr_url[1].split('&')
+    let index = -1
+    for (let i = 0; i < arr_param.length; i++) {
+        const paired = arr_param[i].split('=')
+        if (paired[0] === ref) {
+            index = i
+            break
+        }
+    }
+    if (index === -1) {
+        return url
+    } else {
+        arr_param.splice(index, 1)
+        // return base + "?" + arr_param.join('&');
+        window.history.pushState({}, '0', base + '?' + arr_param.join('&'))
+        return base + '?' + arr_param.join('&')
+    }
+}
+
 export {
     toFullScreen,
     exitFullscreen,
@@ -353,4 +374,5 @@ export {
     getLocalStorageSize,
     getUrlParam,
     cookie,
+    noRefdelUrlParam,
 }

@@ -2,15 +2,15 @@
  * @Author: zhangce
  * @Date: 2021-08-16 18:09:23
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2023-01-12 13:50:34
- * @LastEditors: zhangce
+ * @LastEditTime: 2023-03-23 17:37:26
+ * @LastEditors: 张策
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 
  *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
  */
 
 /**
- * @desc: 字符串首位是字母转大写
+ * 字符串首位是字母转大写
  * @param {string} gname
  * @return {*}
  */
@@ -26,7 +26,7 @@ const initialToCapitali = (gname: string): string => {
 }
 
 /**
- * @desc: 传入字符串，和重复次数，返回结果字符串
+ * 传入字符串，和重复次数，返回结果字符串
  * @param {string} str
  * @param {number} n
  * @return {*}
@@ -42,7 +42,7 @@ const repeat = (str: string, n: number): string => {
 }
 
 /**
- * @desc: 去除字符串首尾空格
+ * 去除字符串首尾空格
  * @param {string} str
  * @return {*}
  */
@@ -51,12 +51,12 @@ const trim = (str: string): string => {
 }
 
 /**
- * @desc: 计算文字宽度
+ * 计算文字宽度
  * @param {string} text
- * @param {any} font '14px sans-serif' 字号 字体
+ * @param {string} font '14px sans-serif' 字号 字体
  * @return {*}
  */
-const getTextWidth = (text: string, font: any): number => {
+const getTextWidth = (text: string, font: string): number => {
     const canvas = document.createElement('canvas')
     const context = canvas.getContext('2d')
     context.font = font
@@ -65,7 +65,7 @@ const getTextWidth = (text: string, font: any): number => {
 }
 
 /**
- * @desc: 字符替换
+ * 字符替换
  * @param {*} str 表示将要替换的字符串
  * @param {*} oldChar 表示你将要替换的字符
  * @param {*} newChar 表示你想要替换的字符
@@ -78,7 +78,7 @@ const transFormat = (str: string, oldChar: string, newChar: string) => {
 }
 
 /**
- * @desc: 反转字符串
+ * 反转字符串
  * @param {*} str
  * @return {*}
  */
@@ -90,7 +90,7 @@ const strInversion = (str: string) => {
 }
 
 /**
- * @desc: 驼峰转下划线
+ * 驼峰转下划线
  * @param {*} val
  * @param {*} isLowercase 是否转换为小写字母 默认值 true
  * @return {*}
@@ -104,7 +104,7 @@ const toLine = (val: string, isLowercase = true): string => {
 }
 
 /**
- * @desc: 将3位数颜色转换为6位数颜色
+ * 将3位数颜色转换为6位数颜色
  * @param {string} color
  * @return {*}
  */
@@ -116,7 +116,7 @@ const toFullHexColor = (color: string): string => {
 }
 
 /**
- * @desc: 解码JWT令牌
+ * 解码JWT令牌
  * @param {string} token
  * @return {*}
  */
@@ -130,28 +130,28 @@ const decode = (token: string): string => {
 }
 
 /**
- * @desc: 转换字母以关联表情符号
+ * 转换字母以关联表情符号
  * @param {string} c
  * @return {*}
  */
 const letterToEmoji = (c: string): string => String.fromCodePoint(c.toLowerCase().charCodeAt(0) + 127365)
 
 /**
- * @desc: 将字符串转换为PascalCase
+ * 将字符串转换为PascalCase
  * @param {string} str
  * @return {*}
  */
 const toPascalCase = (str: string): string => (str.match(/[a-zA-Z0-9]+/g) || []).map((w) => `${w.charAt(0).toUpperCase()}${w.slice(1)}`).join('')
 
 /**
- * @desc: 删除字符串中的空格
+ * 删除字符串中的空格
  * @param {string} str
  * @return {*}
  */
 const removeSpaces = (str: string): string => str.replace(/\s/g, '')
 
 /**
- * @desc: 替换指定位置字符串内容
+ * 替换指定位置字符串内容
  * @param {string} str 
  * @param {array} range 区间
  * @param {string} mask 替换内容

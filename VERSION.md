@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2023-01-06 16:41:02
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2023-03-15 10:40:50
+ * @LastEditTime: 2023-03-23 17:03:37
  * @LastEditors: 张策
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description:
@@ -22,11 +22,16 @@
 // 3.deleteState, 
 // 4.addStateListener, 
 // 5.removeStateListener,
+// 6.getAttr,
+// 7.setAttr,
 
 // 优化类
 // 1.StateObserver
 // 2.Socket
 
+// 删除
+// 1.performanceAnalysis
+// 2.getPerformanceTiming
 ```
 
 ### 1.56.0

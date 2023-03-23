@@ -1,7 +1,7 @@
 import { isArray, isObject } from '../is'
 
 /**
- * @desc: 封装map方法
+ * 封装map方法
  * @param {Array|Object} data 用来迭代的数据
  * @param {Function} iteratee 每次迭代调用的函数
  * @return {[...]}

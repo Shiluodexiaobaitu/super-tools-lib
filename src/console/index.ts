@@ -1,7 +1,7 @@
 import { viewportToPixels } from '../tools'
 
 /**
- * @desc: 移动端日志查看工具
+ * 移动端日志查看工具
  * @return {*}
  */
 const vConsole = () => {

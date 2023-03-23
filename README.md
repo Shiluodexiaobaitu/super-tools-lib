@@ -790,14 +790,6 @@ mac //校验 mac 地址
 _.validate(key,value) // true | false
 ```
 
-### 性能监控
-
-##### performanceAnalysis (进行性能分析)
-
-```js
-_.performanceAnalysis();
-```
-
 ### DOM 操作方法
 
 ##### getOffset (获取一个元素距离浏览器左上角的偏移量)

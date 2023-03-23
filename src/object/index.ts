@@ -9,7 +9,7 @@
 import { cloneDeep } from './_cloneDeep'
 
 /**
- * @desc:  对象序列化
+ * 对象序列化
  * @param {Record} obj
  * @param {*} pos
  * @return {*}
@@ -35,14 +35,14 @@ const stringfyQueryString = (obj: Record<string, string | number | boolean>) => 
 }
 
 /**
- * @desc: 将对象的value转换成数组
+ * 将对象的value转换成数组
  * @param {*} T
  * @return {*}
  */
 const values = <T>(obj: Record<string, T>): T[] => Object.values<T>(obj)
 
 /**
- * @desc: 将对象的key转换成数组
+ * 将对象的key转换成数组
  * @param {*} T
  * @return {*}
  */

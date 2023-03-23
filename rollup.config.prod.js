@@ -46,6 +46,7 @@ export default [
                 runtimeHelpers: true,       // 使plugin-transform-runtime生效
             }),
             terser(
+                
                 //     {
                 //     compress: {
                 //         passes: 10,

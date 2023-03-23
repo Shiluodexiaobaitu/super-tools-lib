@@ -20,11 +20,9 @@ import {
     guid,
     throttle,
     debounce,
-    fileDownload,
     fuzzyQuery,
     colorHex,
     viewportToPixels,
-    noRefdelUrlParam,
     getAge,
     getSex,
     digitUppercase,
@@ -36,6 +34,9 @@ import {
     checkPassWord,
     fahrenheitToCelsius,
     celsiusToFahrenheit,
+    shuffle,
+    sortAscii,
+    generateSign,
 } from './tools'
 
 import {
@@ -52,14 +53,10 @@ import {
     getLocalStorageSize,
     getUrlParam,
     cookie,
-} from './browser'
+    noRefdelUrlParam,
+} from './bom'
 
 import { IndexedDB } from './IndexedDB'
-
-import {
-    performanceAnalysis,
-    getPerformanceTiming,
-} from './performance'
 
 import {
     calcDistance,
@@ -87,6 +84,8 @@ import {
     insertHtmlAfter,
     eleReplace,
     insertHtmlBefore,
+    getAttr,
+    setAttr,
 } from './dom'
 
 import {
@@ -157,6 +156,7 @@ import {
     blobToDataURL,
     drawAndShareImage,
     base64ToFile,
+    fileDownload,
 } from './file'
 
 import { vConsole } from './console'
@@ -183,8 +183,6 @@ import {
     getFirstDate,
 } from './date'
 
-import { shuffle } from './algorithm'
-
 import {
     accAdd,
     accSub,
@@ -202,11 +200,6 @@ import {
 } from './loop'
 
 import { map } from './loop/map'
-
-import {
-    sortAscii,
-    generateSign,
-} from './encrypt'
 
 import {
     EventObserver,
@@ -342,13 +335,13 @@ export default {
     insertBefore,
     insertHtmlAfter,
     eleReplace,
+    getAttr,
+    setAttr,
     insertHtmlBefore,
     validate,
     calcDistance,
     lonLatToMercator,
     mercatorToLonlat,
-    performanceAnalysis,
-    getPerformanceTiming,
     IndexedDB,
     toFullScreen,
     exitFullscreen,
@@ -515,13 +508,13 @@ export {
     insertBefore,
     insertHtmlAfter,
     eleReplace,
+    getAttr,
+    setAttr,
     insertHtmlBefore,
     validate,
     calcDistance,
     lonLatToMercator,
     mercatorToLonlat,
-    performanceAnalysis,
-    getPerformanceTiming,
     IndexedDB,
     toFullScreen,
     exitFullscreen,

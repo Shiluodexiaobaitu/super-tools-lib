@@ -40,7 +40,7 @@ function _objectFilter(obj, iteratee) {
 }
 
 /**
- * @desc: 封装filter
+ * 封装filter
  * @param {Record<string, T> | T[]} data 用来迭代的数据
  * @param {*} iteratee 每次迭代调用的函数
  * @return {[...]}

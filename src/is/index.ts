@@ -8,7 +8,7 @@
 
 
 /**
- * @desc: base64类型验证
+ * base64类型验证
  * @param {string} base64
  * @return {*}
  */
@@ -17,7 +17,7 @@ const isBase64 = (base64: string): boolean => {
 }
 
 /**
- * @desc: 数组类型验证
+ * 数组类型验证
  * @param {unknown} arr
  * @return {*}
  */
@@ -26,7 +26,7 @@ const isArray = (arr: unknown): boolean => {
 }
 
 /**
- * @desc: 字符串类型验证
+ * 字符串类型验证
  * @param {unknown} str
  * @return {*}
  */
@@ -35,14 +35,14 @@ const isString = (str: unknown): boolean => {
 }
 
 /**
- * @desc: 函数类型验证
+ * 函数类型验证
  * @param {unknown} fn
  * @return {*}
  */
 const isFunction = (fn: unknown): boolean => typeof fn === 'function'
 
 /**
- * @desc: 对象类型验证
+ * 对象类型验证
  * @param {unknown} obj
  * @return {*}
  */
@@ -51,7 +51,7 @@ const isObject = (obj: unknown): boolean => {
 }
 
 /**
- * @desc: 数字类型验证
+ * 数字类型验证
  * @param {any} num
  * @return {*}
  */
@@ -60,7 +60,7 @@ const isNumber = (num: unknown): num is number => {
 }
 
 /**
- * @desc: 判断是否在微信中打开
+ * 判断是否在微信中打开
  * @param {*} boolean
  * @return {*}
  */
@@ -74,7 +74,7 @@ const isWeiXin = (): boolean => {
 }
 
 /**
- * @desc: 检测是否为null
+ * 检测是否为null
  * @param {*} o
  * @return {*}
  */
@@ -83,7 +83,7 @@ const isNull = (o: unknown): boolean => {
 }
 
 /**
- * @desc: 检测是否undefined
+ * 检测是否undefined
  * @param {*} o
  * @return {*}
  */
@@ -92,7 +92,7 @@ const isUndefined = (o: unknown): boolean => {
 }
 
 /**
- * @desc: 是否时间
+ * 是否时间
  * @param {*} o
  * @return {*}
  */
@@ -101,7 +101,7 @@ const isDate = (o: unknown): boolean => {
 }
 
 /**
- * @desc: 是否正则
+ * 是否正则
  * @param {*} o
  * @return {*}
  */
@@ -110,7 +110,7 @@ const isRegExp = (o: unknown): boolean => {
 }
 
 /**
- * @desc: 是否错误对象
+ * 是否错误对象
  * @param {*} o
  * @return {*}
  */
@@ -119,7 +119,7 @@ const isError = (o: unknown): boolean => {
 }
 
 /**
- * @desc: 是否Symbol函数
+ * 是否Symbol函数
  * @param {*} o
  * @return {*}
  */
@@ -128,7 +128,7 @@ const isSymbol = (o: unknown): boolean => {
 }
 
 /**
- * @desc: 是否Promise对象
+ * 是否Promise对象
  * @param {*} o
  * @return {*}
  */
@@ -137,7 +137,7 @@ const isPromise = (o: unknown): boolean => {
 }
 
 /**
- * @desc: 返回类型
+ * 返回类型
  * @param {unknown} o
  * @return {*}
  */
@@ -147,7 +147,7 @@ const returnType = (o: unknown): unknown => {
 }
 
 /**
- * @desc: 判断浏览器是否支持webP格式图片
+ * 判断浏览器是否支持webP格式图片
  * @param {*}
  * @return {*} 
  */
@@ -156,7 +156,7 @@ const isSupportWebP = () => {
 }
 
 /**
- * @desc: 判断是否为移动端
+ * 判断是否为移动端
  * @return {*}
  */
 const isMobile = (): boolean => {
@@ -168,7 +168,7 @@ const isMobile = (): boolean => {
 }
 
 /**
- * @desc: 判断是否安卓移动设备访问
+ * 判断是否安卓移动设备访问
  * @param {*} boolean
  * @return {*}
  */
@@ -177,7 +177,7 @@ const isAndroidMobileDevice = (): boolean => {
 }
 
 /**
- * @desc: 判断是否苹果移动设备访问
+ * 判断是否苹果移动设备访问
  * @param {*} boolean
  * @return {*}
  */
@@ -186,7 +186,7 @@ const isAppleMobileDevice = (): boolean => {
 }
 
 /**
- * @desc: 判断是否是图片链接
+ * 判断是否是图片链接
  * @param {string} path
  * @return {*}
  */
@@ -195,7 +195,7 @@ const isImg = (path: string): boolean => {
 }
 
 /**
- * @desc: 判断是否为url链接
+ * 判断是否为url链接
  * @param {string} path
  * @return {*}
  */
@@ -212,7 +212,7 @@ const isUrl = (path: string): boolean => {
 }
 
 /**
- * @desc: 判断两个对象是否拥有一样的键
+ * 判断两个对象是否拥有一样的键
  * @param {Record} a
  * @param {*} unknown
  * @param {Record} b
@@ -235,7 +235,7 @@ const isObjectKeyEqual = (a: Record<string, unknown>, b: Record<string, unknown>
 }
 
 /**
- * @desc: 判断一个对象内是否包含指定的键
+ * 判断一个对象内是否包含指定的键
  * @param {Record} obj
  * @param {*} unknown
  * @param {string} key
@@ -244,7 +244,7 @@ const isObjectKeyEqual = (a: Record<string, unknown>, b: Record<string, unknown>
 const isObjectExistsKey = (obj: Record<string, unknown>, key: string): boolean => key in obj
 
 /**
- * @desc: 判断a对象是否包含b对象的键
+ * 判断a对象是否包含b对象的键
  * @param {Record} a
  * @param {*} unknown
  * @param {Record} b
@@ -265,7 +265,7 @@ const isObjectIncludeSpecifiedKey = (a: Record<string, unknown>, b: Record<strin
 
 
 /**
- * @desc: 判断对象是否为空
+ * 判断对象是否为空
  * @param {Record} obj
  * @param {*} unknown
  * @return {*}
@@ -277,14 +277,14 @@ const isEmptyObject = (obj: Record<string, unknown>): boolean => {
 }
 
 /**
- * @desc: 检查数组是否为空
+ * 检查数组是否为空
  * @param {*} T
  * @return {*}
  */
 const isEmptyArray = <T>(arr: T[]): boolean => Array.isArray(arr) && !arr.length
 
 /**
- * @desc: 检测暗模式
+ * 检测暗模式
  * @return {*}
  */
 const isDarkMode = () => {
@@ -292,7 +292,7 @@ const isDarkMode = () => {
 }
 
 /**
- * @desc: 判断是否是基本数据类型
+ * 判断是否是基本数据类型
  * @param {unknown} val
  * @return {*}
  */
@@ -310,35 +310,35 @@ const isBasicType = (val: unknown): boolean => {
 }
 
 /**
- * @desc: 检查字符串是否为十六进制颜色
+ * 检查字符串是否为十六进制颜色
  * @param {string} color
  * @return {*}
  */
 const isHexColor = (color: string): boolean => /^#([0-9A-F]{3}|[0-9A-F]{4}|[0-9A-F]{6}|[0-9A-F]{8})$/i.test(color)
 
 /**
- * @desc: 检查是否是Map对象
+ * 检查是否是Map对象
  * @param {*} v
  * @return {*}
  */
 const isMap = (v: unknown) => returnType(v) === 'Map'
 
 /**
- * @desc: 检查是否是Set对象
+ * 检查是否是Set对象
  * @param {unknown} v
  * @return {*}
  */
 const isSet = (v: unknown) => returnType(v) === 'Set'
 
 /**
- * @desc: 检测数字是否为奇数
+ * 检测数字是否为奇数
  * @param {number} v
  * @return {*}
  */
 const isOdd = (v: number) => !!(v & 1)
 
 /**
- * @desc: 检测数字是否为偶数
+ * 检测数字是否为偶数
  * @param {number} v
  * @return {*}
  */

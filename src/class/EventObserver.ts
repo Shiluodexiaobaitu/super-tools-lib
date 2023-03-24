@@ -2,14 +2,14 @@
  * @Author: zhangce
  * @Date: 2022-12-30 11:41:36
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2023-01-06 16:38:20
- * @LastEditors: zhangce
+ * @LastEditTime: 2023-03-24 12:28:48
+ * @LastEditors: 张策
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description: 
  *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
  */
 
-import { isObjectExistsKey } from './is'
+import { isObjectExistsKey } from '../is'
 
 /**
  * 自定义事件观察者

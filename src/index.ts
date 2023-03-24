@@ -56,7 +56,6 @@ import {
     noRefdelUrlParam,
 } from './bom'
 
-import { IndexedDB } from './IndexedDB'
 
 import {
     calcDistance,
@@ -90,8 +89,6 @@ import {
 
 import {
     arrayUnique,
-    arrayNonRepeatfy,
-    aLineUnique,
     bubbleSort,
     last,
     alphabeticSort,
@@ -161,13 +158,7 @@ import {
 
 import { vConsole } from './console'
 
-import { Socket } from './Socket'
-
-import { Ajax } from './Ajax'
-
 import { orient } from './mobile'
-
-import { RunWorker } from './RunWorker'
 
 import {
     dateFormater,
@@ -202,13 +193,18 @@ import {
 import { map } from './loop/map'
 
 import {
+    Ajax,
     EventObserver,
     addEventListener,
     removeEventListener,
     dispatchEvent,
-} from './EventObserver'
+    IndexedDB,
+    RunWorker,
+    Socket,
+    StateObserver,
+    getState, setState, deleteState, addStateListener, removeStateListener,
+} from './class'
 
-import { StateObserver, getState, setState, deleteState, addStateListener, removeStateListener } from './StateObserver'
 
 import {
     distance,
@@ -308,8 +304,6 @@ export default {
     values,
     keys,
     arrayUnique,
-    arrayNonRepeatfy,
-    aLineUnique,
     bubbleSort,
     last,
     alphabeticSort,
@@ -481,8 +475,6 @@ export {
     values,
     keys,
     arrayUnique,
-    arrayNonRepeatfy,
-    aLineUnique,
     bubbleSort,
     last,
     alphabeticSort,

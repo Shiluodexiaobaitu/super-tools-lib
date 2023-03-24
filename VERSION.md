@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2023-01-06 16:41:02
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2023-03-23 17:03:37
+ * @LastEditTime: 2023-03-24 14:43:00
  * @LastEditors: 张策
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description:
@@ -10,6 +10,13 @@
 -->
 
 - node/14.18.0
+
+### 1.62.0
+```js
+// 删除方法
+// 1.arrayNonRepeatfy
+// 2.aLineUnique
+```
 
 ### 1.60.0
 ```js

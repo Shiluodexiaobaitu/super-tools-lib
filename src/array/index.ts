@@ -33,27 +33,9 @@ const bubbleSort = (arr: number[]): number[] => {
 /**
  * 数组去重
  * @param {T[]} arr - 数组
- * @param {string | number} field - 对比字段
  * @returns {T[]} 去重后的数组
  */
-const arrayUnique = <T>(arr: T[], field: string | number): T[] => {
-
-    const _newKeys = {}
-    arr.forEach(item => {
-        if (!_newKeys[item[field]]) {
-            _newKeys[item[field]] = item
-        }
-    })
-
-    return Object.values(_newKeys)
-}
-
-/**
- * 数组去重
- * @param {T[]} arr - 数组
- * @returns {T[]} 去重后的数组
- */
-const arrayNonRepeatfy = <T>(arr: T[]): T[] => {
+const arrayUnique = <T>(arr: T[]): T[] => {
     const map = new Map()
     const array = []  // 数组用于返回结果
     for (let i = 0; i < arr.length; i++) {
@@ -68,15 +50,6 @@ const arrayNonRepeatfy = <T>(arr: T[]): T[] => {
 }
 
 /**
- * 数组去重
- * @param {T[]} arr - 数组
- * @returns {T[]} 去重后的数组
- */
-const aLineUnique = <T>(arr: T[]): T[] => {
-    return [...new Set(arr)]
-}
-
-/**
  * 返回数组中最后一项
  * @param {T[]} array - 数组
  * @returns {T} 数组中最后一项
@@ -88,17 +61,17 @@ const last = <T>(array: T[]): T => {
 
 /**
  * 按字母排序
- * @param {T[]} _data - 待排序数组
+ * @param {T[]} data - 待排序数组
  * @param {string} keyword - 排序关键字
  * @param {boolean} [ascen=true] - 是否升序，默认为true
  * @return {T[]} 排序后的数组
  */
-const alphabeticSort = <T>(_data: T[], keyword: string, ascen = true): T[] => {
-    const data = [..._data]
+const alphabeticSort = <T>(data: T[], keyword: string, ascen = true): T[] => {
+    const _data = [...data]
     if (ascen) {
-        return data.sort((a, b) => a[keyword] < b[keyword] ? -1 : a[keyword] > b[keyword] ? 1 : 0)
+        return _data.sort((a, b) => a[keyword] < b[keyword] ? -1 : a[keyword] > b[keyword] ? 1 : 0)
     } else {
-        return data.sort((a, b) => a[keyword] > b[keyword] ? -1 : a[keyword] < b[keyword] ? 1 : 0)
+        return _data.sort((a, b) => a[keyword] > b[keyword] ? -1 : a[keyword] < b[keyword] ? 1 : 0)
     }
 
 }
@@ -160,8 +133,6 @@ const contains = <T>(arr: T[], criteria: (a: T) => boolean): boolean => {
 
 export {
     arrayUnique,
-    arrayNonRepeatfy,
-    aLineUnique,
     bubbleSort,
     last,
     alphabeticSort,

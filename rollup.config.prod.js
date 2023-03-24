@@ -13,21 +13,21 @@ export default [
         external: ['ms'],
         output: [
             {
-                file: './lib/super-tools-lib.js',
-                name: 'superToolsLib',
-                format: 'umd',
+                file: './lib/super-tools-lib.cjs.js',
+                format: 'cjs',
                 exports: 'named',
             },
-            // {
-            //     file: './lib/esm/super-tools-lib.js',
-            //     name: 'superToolsLib',
-            //     format: 'esm',
-            // },
-            // {
-            //     file: './lib/cjs/super-tools-lib.js',
-            //     name: 'superToolsLib',
-            //     format: 'cjs',
-            // },
+            {
+                file: './lib/super-tools-lib.esm.js',
+                format: 'esm',
+                exports: 'named',
+            },
+            {
+                file: './lib/super-tools-lib.min.js',
+                format: 'iife',
+                name: 'superToolsLib',
+                exports: 'named',
+            },
         ],
         plugins: [
             typescript(),
@@ -46,7 +46,7 @@ export default [
                 runtimeHelpers: true,       // 使plugin-transform-runtime生效
             }),
             terser(
-                
+
                 //     {
                 //     compress: {
                 //         passes: 10,

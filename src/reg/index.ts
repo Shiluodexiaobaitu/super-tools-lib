@@ -122,10 +122,43 @@ const reg = {
 }
 
 /**
- * @desc: 验证内容
- * @param {string} key 规则
- * @param {string} value 校验的内容
- * @return {*}
+ * 验证内容
+ * - 规则key集合 
+ * - mobile 手机号
+ * - chinese_and_english 匹配：汉字，a-z，A-Z
+ * - chinese10 匹配：中文 1～10个中文
+ * - website 网址
+ * - email 邮箱
+ * - character 字符0~254
+ * - intNumber 正整数
+ * - positiveInt5 正整数 1～5
+ * - positiveInt3_decimal2 正整数最多输入3位，小数最多输入2位
+ * - negativeInteger 负整数
+ * - isNotNegativeFloatNum 匹配非负浮点数
+ * - cP 身份证
+ * - cPattern 车牌号
+ * - number 数字0～30
+ * - numeric_letters 数字，字母，数字或字母，字母或数字组合
+ * - chinese_numeric_letters 数字，字母，汉字，任意组合
+ * - strong_password 密码强度正则，最少6位，包括至少1个大写字母，1个小写字母，1个数字，1个特殊字符
+ * - cname 校验中文姓名
+ * - ename 校验英文名 每一个单词首字母都是大写
+ * - ip 校验IP地址
+ * - ipv4 校验ipv4
+ * - color16Reg 16进制颜色校验
+ * - mac 校验mac地址是否正确
+ * 
+ * @since 1.62.0
+ * @param {string} key - 规则
+ * @param {string} value - 校验的内容
+ * @return {boolean} 返回是否符合规则 true | false
+ * @example
+ * 
+ * ```ts
+ * import { validate } from 'super-tools-lib'
+ * 
+ * validate('cname', 1) // false
+ * ```
  */
 const validate = (key: keyof typeof reg, value: string): boolean => {
     return new RegExp(reg[`${key}`]).test(value)

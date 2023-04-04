@@ -1,8 +1,8 @@
 /*
  * @Author: zhangce
  * @Date: 2021-10-08 14:15:34
- * @LastEditors: zhangce
- * @LastEditTime: 2022-10-26 11:16:07
+ * @LastEditors: 张策
+ * @LastEditTime: 2023-03-23 17:59:08
  * @Description: 
  */
 
@@ -25,9 +25,9 @@ export default [
         external: ['ms'],
         output: {
             file: './lib/super-tools-lib.js',
+            format: 'iife',
             name: 'superToolsLib',
-            format: 'umd',
-            exports: 'default',
+            exports: 'named',
             // sourcemap: true, // 生成源码映射文件
         },
         // watch: {

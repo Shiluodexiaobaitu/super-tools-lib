@@ -1,13 +1,3 @@
-/*
- * @Author: zhangce
- * @Date: 2022-07-05 13:47:24
- * @Email: zhangce@fengmap.com
- * @LastEditTime: 2022-10-26 12:15:01
- * @LastEditors: zhangce
- * @LastEditorsEmail: zhangce@fengmap.com
- * @Description: 
- *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
- */
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import babel from 'rollup-plugin-babel'
@@ -23,10 +13,20 @@ export default [
         external: ['ms'],
         output: [
             {
-                file: './lib/super-tools-lib.js',
+                file: './lib/super-tools-lib.cjs.js',
+                format: 'cjs',
+                exports: 'named',
+            },
+            {
+                file: './lib/super-tools-lib.esm.js',
+                format: 'esm',
+                exports: 'named',
+            },
+            {
+                file: './lib/super-tools-lib.min.js',
+                format: 'iife',
                 name: 'superToolsLib',
-                format: 'umd',
-                exports: 'default',
+                exports: 'named',
             },
         ],
         plugins: [
@@ -34,25 +34,28 @@ export default [
             json(),
             resolve({ browser: true }),  // 这样 Rollup 能找到 `ms`
             commonjs(), // 这样 Rollup 能转换 `ms` 为一个ES模块
+            filesize(),
             eslint({
                 throwOnError: true,
                 throwOnWarning: true,
                 include: ['src/**'],
                 exclude: ['node_modules/**'],
             }),
-            filesize(),
             babel({
                 exclude: 'node_modules/**', // 防止打包node_modules下的文件
                 runtimeHelpers: true,       // 使plugin-transform-runtime生效
             }),
-            terser({
-                compress: {
-                    passes: 10,
-                    // compress options 
-                    // drop_console: true //去除log
-                },
-                keep_classnames: false,
-            }), // 压缩代码
+            terser(
+
+                //     {
+                //     compress: {
+                //         passes: 10,
+                //         // compress options 
+                //         // drop_console: true //去除log
+                //     },
+                //     keep_classnames: false,
+                // }
+            ), // 压缩代码
         ],
     },
 ]

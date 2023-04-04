@@ -2,12 +2,90 @@
  * @Author: zhangce
  * @Date: 2023-01-06 16:41:02
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2023-01-29 10:22:08
- * @LastEditors: zhangce
+ * @LastEditTime: 2023-03-29 17:07:11
+ * @LastEditors: 张策
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description:
  *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
 -->
+
+- node/14.18.0
+
+### 1.62.0
+```js
+// 删除方法
+// 1.arrayNonRepeatfy
+// 2.aLineUnique
+// 3.alphabeticSort
+// 4.winCopy
+// 5.copy
+
+// 删除类
+// 1.Ajax
+
+// 新增
+// 1.FastMap
+// 2.flattenArray
+// 3.sortArray
+// 4.Dom
+// 5.$
+// 6.disableContext
+// 7.copyText
+```
+
+### 1.60.0
+```js
+// 新增类
+// 1.RunWorker
+
+// 新增方法
+// 1.getState, 
+// 2.setState, 
+// 3.deleteState, 
+// 4.addStateListener, 
+// 5.removeStateListener,
+// 6.getAttr,
+// 7.setAttr,
+
+// 优化类
+// 1.StateObserver
+// 2.Socket
+
+// 删除
+// 1.performanceAnalysis
+// 2.getPerformanceTiming
+```
+
+### 1.56.0
+```js
+// 新增方法
+
+// 优化方法
+// 1.values
+// 2.keys
+```
+
+### 1.55.0
+```js
+// 新增方法
+// 1.isOdd,
+// 2.isEven
+// 2.SessionStorage
+
+// 优化方法
+// 1.isNull
+// 2.isUndefined
+// 3.isNumber
+// 4.isObjectExistsKey
+// 5.LocalStorage
+```
+
+### 1.54.0
+
+```js
+// 新增方法
+// 1.base64ToFile
+```
 
 ### 1.53.0
 

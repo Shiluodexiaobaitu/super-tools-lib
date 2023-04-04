@@ -1,8 +1,8 @@
 import { viewportToPixels } from '../tools'
 
 /**
- * @desc: 移动端日志查看工具
- * @return {*}
+ * 移动端日志查看工具
+ * @hidden
  */
 const vConsole = () => {
     const btn = document.createElement('div')

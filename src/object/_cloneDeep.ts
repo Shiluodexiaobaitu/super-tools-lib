@@ -1,14 +1,3 @@
-/*
- * @Author: zhangce
- * @Date: 2022-03-03 14:50:41
- * @Email: zhangce@fengmap.com
- * @LastEditTime: 2023-01-12 14:21:39
- * @LastEditors: zhangce
- * @LastEditorsEmail: zhangce@fengmap.com
- * @Description: 
- *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
- */
-
 import { returnType } from '../is'
 
 const _isBasicType = (opts: any): boolean => {
@@ -19,7 +8,7 @@ const _isBasicType = (opts: any): boolean => {
     return false
 }
 
-//拷贝原型链
+// 拷贝原型链
 const _initCloneObject = obj => {
     // 处理基于 Object.create(null) 或 Object.create(Object.prototype.__proto__) 的实例对象
     // 其中 Object.prototype.__proto__ 就是站在原型顶端的男人
@@ -176,10 +165,22 @@ const DEPTH = 1 //克隆深度
 const CACHEMAP = new Map() //克隆次数缓存
 
 /**
- * @desc: 深度克隆
- * @param {*} data 
- * @return {*}
- * 兼容深度克隆数据格式：Object，Array，RegExp，Date，Map，Set，String，Symbol，Number，Null，Undefined，Boolean，NaN
+ * 深拷贝
+ * - 兼容深度克隆数据类型：Object，Array，RegExp，Date，Map，Set，String，Symbol，Number，Null，Undefined，Boolean，NaN
+ * 
+ * @since 1.62.0
+ * @param {T} data - 数据
+ * @return {T} 返回克隆后的数据
+ * @example
+ * 
+ * ```ts
+ * import { cloneDeep } from 'super-tools-lib'
+ * 
+ * const obj = {a:{a:{a:1}}, s: obj}
+ * const newObj = cloneDeep(obj)
+ * obj === newObj  // false
+ * obj.s === newObj.s  // false
+ * ```
  */
 export const cloneDeep = <T>(data: T): T => {
 

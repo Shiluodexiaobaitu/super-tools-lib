@@ -2,6 +2,8 @@
 # 忽略根目录dist文件夹
 /dist
 
+/docs
+
 /node_modules
 
 /coverage

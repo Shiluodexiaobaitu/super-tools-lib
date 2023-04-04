@@ -1,0 +1,25 @@
+{
+  "includeVersion": true,
+  "disableSources": true,
+  "entryPoints": [
+    "./src/array",
+    "./src/bom",
+    "./src/class",
+    "./src/date",
+    "./src/dom",
+    "./src/file",
+    "./src/is",
+    "./src/loop",
+    "./src/math",
+    "./src/number",
+    "./src/object",
+    "./src/reg",
+    "./src/string",
+    "./src/tools",
+  ],
+  "out": "./docs",
+  "htmlLang": "zh",
+  "tsconfig": "./tsconfig.json",
+  "plugin": ["typedoc-plugin-markdown"],
+  "hideGenerator": true
+}

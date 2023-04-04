@@ -1,50 +1,19 @@
-import { isArray } from '../is'
-import { forEach } from '../loop'
+// 经纬度坐标转墨卡托坐标
+export { lonLatToMercator } from './_lonLatToMercator'
 
-/**
- * 计算两点之间的距离
- * @return {*}
- */
-const distance = (p1: {
-    x: number;
-    y: number;
-}, p2: {
-    x: number;
-    y: number;
-}): number => {
-    return Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2))
-}
+// 墨卡托坐标转经纬度坐标
+export { mercatorToLonlat } from './_mercatorToLonlat'
 
-/**
- * 将度转换为弧度
- * @param {number} deg
- * @return {*}
- */
-const degsToRads = (deg: number): number => (deg * Math.PI) / 180.0
+// 计算墨卡托两点之间的距离
+export { disMercator } from './_disMercator'
 
+// 计算两个经纬度坐标的距离
+export { disLonlat } from './_disLonlat'
 
-/**
- * 获取多边形中心点
- * @param {*} T
- * @return {*}
- */
-const getPolygonCenter = <T extends { x: number, y: number }>(points: T[]) => {
+// 将角度转换为弧度
+export { degsToRads } from './_degsToRads'
 
-    const result = { x: 0, y: 0 }
-    if (!isArray(points) || points.length < 3) {
-        return result
-    }
-    forEach(points, (p) => {
-        result.x += p.x
-        result.y += p.y
-    })
-    result.x /= points.length
-    result.y /= points.length
-    return result
-}
+// 获取多边形中心点
+export { getPolygonCenter } from './_getPolygonCenter'
 
-export {
-    distance,
-    degsToRads,
-    getPolygonCenter,
-}
+export { scalePolygon } from './_scalePolygon'

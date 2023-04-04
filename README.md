@@ -1,4 +1,4 @@
-## 封装 150+ javascript 方法
+## 封装 170+ javascript 方法
 
 ### 安装
 
@@ -8,7 +8,7 @@ of
 yarn add super-tools-lib
 ```
 
-### 引用
+### 使用
 
 ```
 import _ from 'super-tools-lib';

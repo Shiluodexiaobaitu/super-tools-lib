@@ -2,7 +2,7 @@ import { viewportToPixels } from '../tools'
 
 /**
  * 移动端日志查看工具
- * @return {*}
+ * @hidden
  */
 const vConsole = () => {
     const btn = document.createElement('div')

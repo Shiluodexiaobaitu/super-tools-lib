@@ -1,8 +1,8 @@
 <!--
  * @Author: zhangce
  * @Date: 2021-10-08 14:15:34
- * @LastEditors: zhangce
- * @LastEditTime: 2023-03-13 18:11:43
+ * @LastEditors: 张策
+ * @LastEditTime: 2023-03-27 16:48:39
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -12,10 +12,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>super-tools-lib</title>
+    <link rel="stylesheet" href="./style.css">
     <style>
         * {
             padding: 0;
             margin: 0;
+        }
+
+        #root {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .cord {
+            background: #48b1ff;
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -40px 0 0 -40px;
         }
     </style>
 </head>
@@ -26,7 +43,7 @@
         <h1>super-tools-lib</h1>
         <button id="postMessage1">发送消息</button>
         <button id="remove">remove add</button>
-        <div>222</div>
+        <div class="cord"></div>
     </div>
 
 
@@ -37,14 +54,14 @@
             self.onmessage = (e) => {
                 console.log('son', e)
                 postMessage('执行完成1')
-                setTimeout(()=>{
+                setTimeout(() => {
                     postMessage('执行完成2')
                     self.close()
-                },5000)
+                }, 5000)
             }
-            
+
         }
-        
+
         const _worker = new RunWorker(son);
 
         _worker.on('message', (evt) => {

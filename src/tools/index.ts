@@ -1,405 +1,46 @@
-import { strChineseFirstPY, oMultiDiff } from './_utils'
 
-/**
- * 生成一个唯一的guid
- * @param {*} string
- * @return {*}
- */
-const guid = (): string => {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c): string => {
-        const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8)
-        return v.toString(16)
-    })
-}
+export { guid } from './_guid'
 
-/**
- * 节流
- * @param {*} func 执行函数
- * @param {*} delay 节流时间,毫秒
-*/
-const throttle = function (fn: <T> (...rest: T[]) => void, delay = 200): <T> (...rest: T[]) => void {
-    let timer: any = null
-    return function (...rest) {
-        if (!timer) {
-            timer = setTimeout(() => {
-                // 或者直接 func()
-                fn(...rest)
-                timer = null
-            }, delay)
-        }
-    }
-}
+export { throttle } from './_throttle'
 
-/**
- * 防抖
- * @param {*} function
- * @param {number} delay
- * @return {*}
- */
-const debounce = function (fn: <T> (...rest: T[]) => void, delay: number): <T> (...rest: T[]) => void {
-    let timeout: any = null
-    return function (...rest) {
-        if (timeout !== null) clearTimeout(timeout)// 如果多次触发将上次记录延迟清除掉
-        timeout = setTimeout(() => {
-            // 或者直接 fn()
-            fn(...rest)
-            timeout = null
-        }, delay)
-    }
-}
+export { debounce } from './_debounce'
 
-/**
- * 模糊查询
- * @param  {Array}  list     进行查询的数组
- * @param  {String}  key     进行查询的数组的字段
- * @param  {String} keyWord  查询的关键词
- * @return {Array}           查询的结果
-*/
-const fuzzyQuery = <T>(list: T[], key: string, keyWord: string): T[] => {
-    return list.filter(item => item[key].match(keyWord) !== null)
-}
+export { fuzzyQuery } from './_fuzzyQuery'
 
+export { colorHex } from './_colorHex' 
 
-/**
- * RGB颜色转16进制
- * @param {string} color
- * @return {*}
- */
-const colorHex = (color: string): string => {
-    const that = color
-    const aColor = color
-        .replace(/rgb?\(/, '')
-        .replace(/\)/, '')
-        .replace(/[\s+]/g, '')
-        .split(',')
-    let strHex = '#'
-    for (let i = 0; i < aColor.length; i++) {
-        let hex = Number(aColor[i]).toString(16)
-        if (hex.length < 2) {
-            hex = '0' + hex
-        }
-        strHex += hex
-    }
-    if (strHex.length !== 7) {
-        strHex = that
-    }
-    return strHex
-}
+export { hexToRgba } from './_hexToRgba'
 
-/**
- * 16进制颜色转RGBA
- * @param {string} str
- * @param {number} alpa
- * @return {*}
- */
-const hexToRgba = (str: string, alpa: number): string => {
-    alpa = alpa === undefined ? 1 : alpa
-    if (!str) return
-    let color = str.toLowerCase()
-    const pattern = /^#([0-9|a-f]{3}|[0-9|a-f]{6})$/
-    if (color && pattern.test(color)) {
-        if (color.length === 4) {
-            // 将三位转换为六位
-            color = '#' + color[1] + color[1] + color[2] + color[2] + color[3] + color[3]
-        }
-        //处理六位的颜色值
-        const colorNew = []
-        for (let i = 1; i < 7; i += 2) {
-            colorNew.push(parseInt('0x' + color.slice(i, i + 2)))
-        }
-        colorNew.push(alpa)
+export { rgbaToHex } from './_rgbaToHex'
 
-        return 'rgba(' + colorNew.join(',') + ')'
-    }
-    return color
-}
+export { viewportToPixels } from './_viewportToPixels'
 
-/**
- * rgba颜色转16进制
- * @param {*} color
- * @return {*}
- */
-const rgbaToHex = (color): string => {
-    const values = color
-        .replace(/rgba?\(/, '')
-        .replace(/\)/, '')
-        .replace(/[\s+]/g, '')
-        .split(',')
-    const a = parseFloat(values[3] || 1),
-        r = Math.floor(a * parseInt(values[0]) + (1 - a) * 255),
-        g = Math.floor(a * parseInt(values[1]) + (1 - a) * 255),
-        b = Math.floor(a * parseInt(values[2]) + (1 - a) * 255)
-    return '#' +
-        ('0' + r.toString(16)).slice(-2) +
-        ('0' + g.toString(16)).slice(-2) +
-        ('0' + b.toString(16)).slice(-2)
-}
+export { getAge } from './_getAge'
 
-/**
- * 计算vh / vw转px
- * @param {string} value
- * @return {*}
- */
-const viewportToPixels = (value: string) => {
-    const parts: any = value.match(/([0-9\.]+)(vh|vw)/)
-    const q = Number(parts[1])
-    let side = 0
-    if (parts[2] === 'vw') {
-        side = window.innerWidth
-    } else {
-        side = window.innerHeight
-    }
-    // side = window[['innerHeight', 'innerWidth'][['vh', 'vw'].indexOf(parts[2])]]
-    return side * (q / 100)
-}
+export { getSex } from './_getSex'
 
-/**
- * 根据身份证号获取年龄
- * @param {string} id
- * @return {*}
- */
-const getAge = (id: string) => {
-    // 1、先判断身份证号的正确性
-    // 2、判断是否在世
-    const year = id.substr(6, 4)
-    const month = id.substr(10, 2)
-    const day = id.substr(12, 2)
+export { digitUppercase } from './_digitUppercase'
 
-    const timeBrth = new Date(`${year}/${month}/${day}`).getTime()
-    const timeNow = new Date().getTime()
-    const longTime = timeNow - timeBrth
-    const days = longTime / (1 * 24 * 60 * 60 * 1000)
+export { injectScript } from './_injectScript'
 
-    let result = ''
-    if (days < 31) {
-        result = parseInt(`${days}`) + '天'
-    } else if (days < 365) {
-        result = `${parseInt(`${days / 30}`)}月${parseInt(`${days % 30}`)}天`
-    } else {
-        result = `${parseInt(`${days / 365}`)}岁${parseInt(`${days % 365 / 30}`)}月${parseInt(`${days % 365 % 30}`)}天`
-    }
-    return result
-}
+export { sinogToLetter } from './_sinogToLetter' 
 
-/**
- * 根据身份证号获取性别
- * @param {string} id
- * @return {*}
- */
-const getSex = (id: string) => {
-    // 1、先判断身份证号的正确性
-    const sex = Number(id.substr(16, 1))
-    return sex % 2 ? '男' : '女'
-}
+export { getFitSize } from './_getFitSize'
 
-/**
- * 数字转化为大写金额
- * @param {number} n
- * @return {*}
- */
-const digitUppercase = (n: number): string => {
-    const fraction = ['角', '分']
-    const digit = [
-        '零', '壹', '贰', '叁', '肆',
-        '伍', '陆', '柒', '捌', '玖',
-    ]
-    const unit = [
-        ['元', '万', '亿'],
-        ['', '拾', '佰', '仟'],
-    ]
-    n = Math.abs(n)
-    let s = ''
-    for (let i = 0; i < fraction.length; i++) {
-        s += (digit[Math.floor(n * 10 * Math.pow(10, i)) % 10] + fraction[i]).replace(/零./, '')
-    }
-    s = s || '整'
-    n = Math.floor(n)
-    for (let i = 0; i < unit[0].length && n > 0; i++) {
-        let p = ''
-        for (let j = 0; j < unit[1].length && n > 0; j++) {
-            p = digit[n % 10] + unit[1][j] + p
-            n = Math.floor(n / 10)
-        }
-        s = p.replace(/(零.)*零$/, '').replace(/^$/, '零') + unit[0][i] + s
-    }
-    return s.replace(/(零.)*零元/, '元')
-        .replace(/(零.)+/g, '零')
-        .replace(/^整$/, '零元整')
-}
+export { checkPassWord } from './_checkPassWord'
 
-/**
- * 动态引入js
- * @param {string} src
- * @return {*}
- */
-const injectScript = (src: string) => {
-    const s = document.createElement('script')
-    s.type = 'text/javascript'
-    s.async = true
-    s.src = src
-    const t = document.getElementsByTagName('script')[0]
-    t.parentNode.insertBefore(s, t)
-}
+export { fahrenheitToCelsius } from './_fahrenheitToCelsius'
 
-/**
- * 汉字转字母
- * @param {string} str
- * @return {*}
- */
-const sinogToLetter = (str: string) => {
+export { celsiusToFahrenheit } from './_celsiusToFahrenheit'
 
-    function checkCh(ch) {
-        const uni = ch.charCodeAt(0)
-        //如果不在汉字处理范围之内,返回原字符,也可以调用自己的处理函数    
-        if (uni > 40869 || uni < 19968)
-            return ch //dealWithOthers(ch);    
-        //检查是否是多音字,是按多音字处理,不是就直接在strChineseFirstPY字符串中找对应的首字母    
-        return (oMultiDiff[uni] ? oMultiDiff[uni] : (strChineseFirstPY.charAt(uni - 19968)))
-    }
+export { generateSign } from './_generateSign'
 
-    function mkRslt(arr: Array<any>) {
-        let arrRslt = ['']
-        for (let i = 0, len = arr.length; i < len; i++) {
-            const str = arr[i]
-            const strlen = str.length
-            if (strlen === 1) {
-                for (let k = 0; k < arrRslt.length; k++) {
-                    arrRslt[k] += str
-                }
-            } else {
-                const tmpArr = arrRslt.slice(0)
-                arrRslt = []
-                for (let k = 0; k < strlen; k++) {
-                    //复制一个相同的arrRslt    
-                    const tmp = tmpArr.slice(0)
-                    //把当前字符str[k]添加到每个元素末尾    
-                    for (let j = 0; j < tmp.length; j++) {
-                        tmp[j] += str.charAt(k)
-                    }
-                    //把复制并修改后的数组连接到arrRslt上    
-                    arrRslt = arrRslt.concat(tmp)
-                }
-            }
-        }
-        return arrRslt.join()
-    }
-
-    if (typeof (str) !== 'string')
-        throw new Error('函数makePy需要字符串类型参数!')
-    const arrResult = []
-    //将字符串转码后转为数组  
-    for (let i = 0, len = str.length; i < len; i++) {
-        const ch = str.charAt(i)
-        arrResult.push(checkCh(ch))
-    }
-    return mkRslt(arrResult)
-}
-
-/**
- * 返回设计稿上px在不同屏幕下的适配尺寸
- * @param {number} px 
- * @param {*} draft 设计稿宽度
- * @return {*}
- */
-const getFitSize = (px: number, draft = 750): number => {
-    const scale = document.body.clientWidth / draft
-    return Math.floor((scale * px))
-}
-
-/**
- * 检测密码强度
- * @param {*} str
- * @return {*}  1：密码弱 2：密码中等 3：密码强 4：密码很强
- */
-const checkPassWord = (str: string): number => {
-    let level = 0
-    if (str.length < 6) {
-        return level
-    }
-    if (/[0-9]/.test(str)) {
-        level++
-    }
-    if (/[a-z]/.test(str)) {
-        level++
-    }
-    if (/[A-Z]/.test(str)) {
-        level++
-    }
-    if (/\W/.test(str)) {
-        level++
-    }
-    return level
-}
-
-/**
- * 将华氏温度转换为摄氏温度
- * @param {*} fahrenheit 华氏温度
- * @return {*} 摄氏温度
- */
-const fahrenheitToCelsius = (fahrenheit: number): number => {
-    return (fahrenheit - 32) * 5 / 9
-}
-
-/**
- * 将摄氏温度转华氏温度
- * @param {*} celsius 摄氏温度
- * @return {*} 华氏温度
- */
-const celsiusToFahrenheit = (celsius: number): number => {
-    return celsius * 9 / 5 + 32
-}
-
-/**
- * 洗牌算法随机
- * @param arr 需要操作的数组
- * @return {*}
- * ```
- */
-const shuffle = <T>(arr: T[]): T[] => {
-    const result = []
-    let random
-    while (arr.length > 0) {
-        random = Math.floor(Math.random() * arr.length)
-        result.push(arr[random])
-        arr.splice(random, 1)
-    }
-    return result
-}
-
-/**
- * 按 ASCII 正序排序
- * @param {*} data []
- * @return {*}
- */
-const sortAscii = (data: string[]) => {
-    return data.sort((a, b) => {
-        return (a + '').localeCompare(b + '')
-    })
-}
-
-/**
- * 生成sign 按 Key 的 ASCII 正序排序，拼接为字符串返回。
- * @param {Record} obj
- * @param {*} unknown
- * @return {string}
- */
-const generateSign = (obj: Record<string, unknown>): string => {
-
-    const arr = []
-    let sign = ''
-    for (const key in obj) {
-        arr.push(key)
-    }
-    arr.sort()
-    for (let i = 0; i < arr.length; i++) {
-        sign += `${arr[i]}=${obj[arr[i]]}`
-    }
-
-    return sign.replace(/\=/g, '')
-}
+export { sortAscii } from './_sortAscii'
 
 /**
  * @desc dom转img
+ * 
+ * @since 1.62.0
  * @param {*} id domID
  * @param {*} name 图片名
  * @param {*} cb 成功回调
@@ -440,26 +81,3 @@ const generateSign = (obj: Record<string, unknown>): string => {
 // 		}
 // 	})
 // }
-
-export {
-    guid,
-    throttle,
-    debounce,
-    fuzzyQuery,
-    colorHex,
-    viewportToPixels,
-    getAge,
-    getSex,
-    digitUppercase,
-    hexToRgba,
-    rgbaToHex,
-    injectScript,
-    sinogToLetter,
-    getFitSize,
-    checkPassWord,
-    fahrenheitToCelsius,
-    celsiusToFahrenheit,
-    shuffle,
-    sortAscii,
-    generateSign,
-}

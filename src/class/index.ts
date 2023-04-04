@@ -1,18 +1,18 @@
-import { Ajax } from './Ajax'
 import {
     EventObserver,
     addEventListener,
     removeEventListener,
     dispatchEvent,
-} from './EventObserver'
-import { GPS } from './GPS'
-import { IndexedDB } from './IndexedDB'
-import { RunWorker } from './RunWorker'
-import { Socket } from './Socket'
-import { StateObserver, getState, setState, deleteState, addStateListener, removeStateListener } from './StateObserver'
+} from './_EventObserver'
+import { GPS } from './_GPS'
+import { IndexedDB } from './_IndexedDB'
+import { RunWorker } from './_RunWorker'
+import { Socket } from './_Socket'
+import { StateObserver, getState, setState, deleteState, addStateListener, removeStateListener } from './_StateObserver'
+import { FastMap } from './_FastMap'
+import { Dom, $ } from './_Dom'
 
 export {
-    Ajax,
     EventObserver,
     addEventListener,
     removeEventListener,
@@ -23,4 +23,7 @@ export {
     Socket,
     StateObserver,
     getState, setState, deleteState, addStateListener, removeStateListener,
+    FastMap,
+    Dom,
+    $,
 }

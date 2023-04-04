@@ -34,7 +34,6 @@ import {
     checkPassWord,
     fahrenheitToCelsius,
     celsiusToFahrenheit,
-    shuffle,
     sortAscii,
     generateSign,
 } from './tools'
@@ -45,9 +44,9 @@ import {
     LocalStorage,
     SessionStorage,
     getPosition,
-    winCopy,
+    disableContext,
     print,
-    copy,
+    copyText,
     scrollToTop,
     userBrowser,
     getLocalStorageSize,
@@ -57,11 +56,6 @@ import {
 } from './bom'
 
 
-import {
-    calcDistance,
-    lonLatToMercator,
-    mercatorToLonlat,
-} from './map'
 
 import { validate } from './reg'
 
@@ -76,7 +70,6 @@ import {
     scrollToTheBottom,
     textVisibilityChange,
     getTransformMatrix,
-    isDescendant,
     getSelectedText,
     insertAfter,
     insertBefore,
@@ -91,18 +84,21 @@ import {
     arrayUnique,
     bubbleSort,
     last,
-    alphabeticSort,
     arrToObject,
     toNumbers,
     countBy,
     indexOfMax,
     indexOfMin,
     contains,
+    flattenArray,
+    sortArray,
+    shuffle,
 } from './array'
 
 import {
     cloneDeep,
-    stringfyQueryString,
+    objToOrder,
+    orderToObj,
     values,
     keys,
 } from './object'
@@ -141,11 +137,12 @@ import {
     isMap,
     isOdd,
     isEven,
+    isDescendant,
 } from './is'
 
-import { isEqual } from './is/isEqual'
+import { isEqual } from './is/_isEqual'
 
-import { isContain } from './is/isContain'
+import { isContain } from './is/_isContain'
 
 import {
     downBlob,
@@ -158,8 +155,6 @@ import {
 
 import { vConsole } from './console'
 
-import { orient } from './mobile'
-
 import {
     dateFormater,
     formatPassTime,
@@ -170,7 +165,7 @@ import {
     formatSeconds,
     getQuarter,
     getLastDate,
-    getCurrentSecond,
+    getSecond,
     getFirstDate,
 } from './date'
 
@@ -193,7 +188,6 @@ import {
 import { map } from './loop/map'
 
 import {
-    Ajax,
     EventObserver,
     addEventListener,
     removeEventListener,
@@ -203,24 +197,36 @@ import {
     Socket,
     StateObserver,
     getState, setState, deleteState, addStateListener, removeStateListener,
+    FastMap,
+    Dom,
+    $,
 } from './class'
 
 
 import {
-    distance,
+    disMercator,
+    disLonlat,
     degsToRads,
     getPolygonCenter,
+    lonLatToMercator,
+    mercatorToLonlat,
+    scalePolygon,
 } from './math'
 
-import { scalePolygon } from './math/scalePolygon'
+
+import { sendRequest } from './request'
 
 
 export default {
     scalePolygon,
-    distance,
+    disMercator,
+    disLonlat,
     degsToRads,
     getPolygonCenter,
     StateObserver,
+    FastMap,
+    Dom,
+    $,
     getState,
     setState,
     deleteState,
@@ -253,10 +259,8 @@ export default {
     formatSeconds,
     getQuarter,
     getLastDate,
-    getCurrentSecond,
+    getSecond,
     getFirstDate,
-    orient,
-    Ajax,
     Socket,
     vConsole,
     downBlob,
@@ -300,19 +304,21 @@ export default {
     isOdd,
     isEven,
     cloneDeep,
-    stringfyQueryString,
+    objToOrder,
+    orderToObj,
     values,
     keys,
     arrayUnique,
     bubbleSort,
     last,
-    alphabeticSort,
     arrToObject,
     toNumbers,
     countBy,
     indexOfMax,
     indexOfMin,
     contains,
+    flattenArray,
+    sortArray,
     getOffset,
     shaking,
     stopPropagation,
@@ -333,7 +339,6 @@ export default {
     setAttr,
     insertHtmlBefore,
     validate,
-    calcDistance,
     lonLatToMercator,
     mercatorToLonlat,
     IndexedDB,
@@ -342,9 +347,9 @@ export default {
     LocalStorage,
     SessionStorage,
     getPosition,
-    winCopy,
+    disableContext,
     print,
-    copy,
+    copyText,
     scrollToTop,
     userBrowser,
     getLocalStorageSize,
@@ -384,15 +389,20 @@ export default {
     replaceText,
     version,
     RunWorker,
+    sendRequest,
 }
 
 export {
     scalePolygon,
-    distance,
+    disMercator,
+    disLonlat,
     degsToRads,
     getPolygonCenter,
     StateObserver,
     getState,
+    FastMap,
+    Dom,
+    $,
     setState,
     deleteState,
     addStateListener,
@@ -424,10 +434,8 @@ export {
     formatSeconds,
     getQuarter,
     getLastDate,
-    getCurrentSecond,
+    getSecond,
     getFirstDate,
-    orient,
-    Ajax,
     Socket,
     vConsole,
     downBlob,
@@ -471,19 +479,21 @@ export {
     isOdd,
     isEven,
     cloneDeep,
-    stringfyQueryString,
+    objToOrder,
+    orderToObj,
     values,
     keys,
     arrayUnique,
     bubbleSort,
     last,
-    alphabeticSort,
     arrToObject,
     toNumbers,
     countBy,
     indexOfMax,
     indexOfMin,
     contains,
+    flattenArray,
+    sortArray,
     getOffset,
     shaking,
     stopPropagation,
@@ -504,7 +514,6 @@ export {
     setAttr,
     insertHtmlBefore,
     validate,
-    calcDistance,
     lonLatToMercator,
     mercatorToLonlat,
     IndexedDB,
@@ -513,9 +522,9 @@ export {
     LocalStorage,
     SessionStorage,
     getPosition,
-    winCopy,
+    disableContext,
     print,
-    copy,
+    copyText,
     scrollToTop,
     userBrowser,
     getLocalStorageSize,
@@ -555,4 +564,5 @@ export {
     replaceText,
     version,
     RunWorker,
+    sendRequest,
 }

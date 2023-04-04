@@ -2,7 +2,7 @@
  * @Author: zhangce
  * @Date: 2023-01-06 16:41:02
  * @Email: zhangce@fengmap.com
- * @LastEditTime: 2023-03-24 14:43:00
+ * @LastEditTime: 2023-03-29 17:07:11
  * @LastEditors: 张策
  * @LastEditorsEmail: zhangce@fengmap.com
  * @Description:
@@ -16,6 +16,21 @@
 // 删除方法
 // 1.arrayNonRepeatfy
 // 2.aLineUnique
+// 3.alphabeticSort
+// 4.winCopy
+// 5.copy
+
+// 删除类
+// 1.Ajax
+
+// 新增
+// 1.FastMap
+// 2.flattenArray
+// 3.sortArray
+// 4.Dom
+// 5.$
+// 6.disableContext
+// 7.copyText
 ```
 
 ### 1.60.0

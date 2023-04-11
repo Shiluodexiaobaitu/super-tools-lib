@@ -93,6 +93,7 @@ import {
     flattenArray,
     sortArray,
     shuffle,
+    reduce,
 } from './array'
 
 import {
@@ -250,6 +251,7 @@ export default {
     range,
     closest,
     shuffle,
+    reduce,
     dateFormater,
     formatPassTime,
     formatRemainTime,
@@ -425,6 +427,7 @@ export {
     range,
     closest,
     shuffle,
+    reduce,
     dateFormater,
     formatPassTime,
     formatRemainTime,

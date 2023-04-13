@@ -1,4 +1,4 @@
-const reg = {
+export const reg = {
     /**
      * 手机号
     */
@@ -119,6 +119,11 @@ const reg = {
      * 校验mac地址是否正确
     */
     mac: /^[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}:[A-Fa-f\d]{2}$/,
+
+    /**
+     * 校验路径中是否存在数组，[]
+     */    
+    arr: /\[(\d*?)\]/gim,
 }
 
 /**
@@ -147,6 +152,7 @@ const reg = {
  * - ipv4 校验ipv4
  * - color16Reg 16进制颜色校验
  * - mac 校验mac地址是否正确
+ * - arr 校验路径中是否存在数组，[]
  * 
  * @since 1.62.0
  * @param {string} key - 规则

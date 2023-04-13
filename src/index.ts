@@ -78,6 +78,7 @@ import {
     insertHtmlBefore,
     getAttr,
     setAttr,
+    getDomBound,
 } from './dom'
 
 import {
@@ -102,6 +103,9 @@ import {
     orderToObj,
     values,
     keys,
+    get,
+    has,
+    set,
 } from './object'
 
 import {
@@ -310,6 +314,9 @@ export default {
     orderToObj,
     values,
     keys,
+    get,
+    has,
+    set,
     arrayUnique,
     bubbleSort,
     last,
@@ -339,6 +346,7 @@ export default {
     eleReplace,
     getAttr,
     setAttr,
+    getDomBound,
     insertHtmlBefore,
     validate,
     lonLatToMercator,
@@ -486,6 +494,9 @@ export {
     orderToObj,
     values,
     keys,
+    get,
+    has,
+    set,
     arrayUnique,
     bubbleSort,
     last,
@@ -515,6 +526,7 @@ export {
     eleReplace,
     getAttr,
     setAttr,
+    getDomBound,
     insertHtmlBefore,
     validate,
     lonLatToMercator,

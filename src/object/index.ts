@@ -13,3 +13,9 @@ export { values } from './_values'
 
 // 将对象的key转换成数组
 export { keys } from './_keys'
+
+export { get } from './_get'
+
+export { has } from './_has'
+
+export { set } from './_set'

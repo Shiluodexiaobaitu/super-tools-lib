@@ -51,3 +51,6 @@ export { getAttr } from './_getAttr'
 
 // 用于设置元素的属性值
 export { setAttr } from './_setAttr'
+
+// 获取dom四个角的坐标 返回数组[{x,y}]格式
+export { getDomBound } from './_getDomBound'

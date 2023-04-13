@@ -33,3 +33,5 @@ export { flattenArray } from './_flattenArray'
 
 // 随机打乱数组顺序
 export { shuffle } from './_shuffle'
+
+export { reduce } from './_reduce'

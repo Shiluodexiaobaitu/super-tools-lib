@@ -1,5 +1,7 @@
 ## 封装 170+ javascript 方法
 
+[中文文档](https://shiluodexiaobaitu.github.io/io/super-tools-lib/)
+
 ### 安装
 
 ```

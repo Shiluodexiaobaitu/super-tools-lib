@@ -1,7 +1,5 @@
 import { _besePath } from '../private'
 
-
-// path支持数组字符串格式 例如：'a.b[0].c'
 /**
  * 根据对象的path路径设置值
  * 

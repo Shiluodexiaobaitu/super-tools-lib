@@ -1,14 +1,10 @@
-
-// 原声 fetch 的封装
-// method: get、post、put、delete
-
 /**
  * fetch
  * 
  * @since 1.63.0
  * @param {string} url - 请求地址
  * @param {any} options - 请求参数
- * @return {*} {Promise<any>}
+ * @return {*} 返回promise
  * @example
  * 
  * ```ts

@@ -22,3 +22,6 @@ export { range } from './_range'
 // 从数组中查找最接近的数字
 export { closest } from './_closest'
 
+// 小数点后保留几位
+export { toFixed } from './_toFixed'
+

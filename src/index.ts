@@ -110,6 +110,9 @@ import {
     get,
     has,
     set,
+    pick,
+    omit,
+    parse,
 } from './object'
 
 import {
@@ -188,6 +191,7 @@ import {
     smallRounding,
     range,
     closest,
+    toFixed,
 } from './number'
 
 import {
@@ -268,6 +272,7 @@ export default {
     smallRounding,
     range,
     closest,
+    toFixed,
     shuffle,
     reduce,
     depthTraversal,
@@ -332,6 +337,9 @@ export default {
     get,
     has,
     set,
+    pick,
+    omit,
+    parse,
     arrayUnique,
     bubbleSort,
     last,
@@ -456,6 +464,7 @@ export {
     smallRounding,
     range,
     closest,
+    toFixed,
     shuffle,
     reduce,
     depthTraversal,
@@ -520,6 +529,9 @@ export {
     get,
     has,
     set,
+    pick,
+    omit,
+    parse,
     arrayUnique,
     bubbleSort,
     last,

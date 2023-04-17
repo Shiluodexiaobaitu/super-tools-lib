@@ -34,4 +34,8 @@ export { flattenArray } from './_flattenArray'
 // 随机打乱数组顺序
 export { shuffle } from './_shuffle'
 
+// reduce
 export { reduce } from './_reduce'
+
+// 深度优先遍历
+export { depthTraversal } from './_depthTraversal'

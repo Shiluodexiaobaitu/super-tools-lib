@@ -32,8 +32,8 @@ export default [
         plugins: [
             typescript(),
             json(),
-            resolve({ browser: true }),  // 这样 Rollup 能找到 `ms`
-            commonjs(), // 这样 Rollup 能转换 `ms` 为一个ES模块
+            resolve({ browser: true }),
+            commonjs(),
             filesize(),
             eslint({
                 throwOnError: true,
@@ -42,20 +42,10 @@ export default [
                 exclude: ['node_modules/**'],
             }),
             babel({
-                exclude: 'node_modules/**', // 防止打包node_modules下的文件
-                runtimeHelpers: true,       // 使plugin-transform-runtime生效
+                exclude: 'node_modules/**',
+                runtimeHelpers: true,
             }),
-            terser(
-
-                //     {
-                //     compress: {
-                //         passes: 10,
-                //         // compress options 
-                //         // drop_console: true //去除log
-                //     },
-                //     keep_classnames: false,
-                // }
-            ), // 压缩代码
+            terser(),
         ],
     },
 ]

@@ -55,3 +55,9 @@ export { generateSign } from './_generateSign'
 
 // 按 ASCII 正序排序
 export { sortAscii } from './_sortAscii'
+
+// 将color颜色变浅level倍
+export { lighten } from './_lighten'
+
+// 将color颜色变深level倍
+export { darken } from './_darken'

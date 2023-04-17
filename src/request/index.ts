@@ -1,2 +1,6 @@
-// 发送网络请求
-export { sendRequest } from './_sendRequest'
+
+// 网络请求
+export { ajax } from './_ajax'
+
+// fetch
+export { fetch } from './_fetch'

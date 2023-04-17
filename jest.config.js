@@ -21,4 +21,4 @@ module.exports = {
     },
     testEnvironment: 'jest-environment-jsdom', // js
     testRegex: './test/index.test.ts', // 要进行test的文件正则
-};
+}

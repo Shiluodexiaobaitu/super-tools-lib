@@ -17,7 +17,6 @@ export default [
             format: 'iife',
             name: 'superToolsLib',
             exports: 'named',
-            // sourcemap: true, // 生成源码映射文件
         },
         plugins: [
             typescript(),
@@ -41,6 +40,5 @@ export default [
                 contentBase: '',
             }),
         ],
-        // external: [/lodash-es\/[a-z]+/, 'better-xlsx', 'file-saver']
     },
 ]

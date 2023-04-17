@@ -4,8 +4,8 @@
  * - 支持get、post、put、delete
  * 
  * @since 1.63.0
- * @example
  * @returns {object} 返回一个对象，包含get、post、put、delete方法
+ * @example
  * 
  * ```ts
  * import { ajax } from 'super-tools-lib'

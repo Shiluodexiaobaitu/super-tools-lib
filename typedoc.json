@@ -16,6 +16,7 @@
     "./src/reg",
     "./src/string",
     "./src/tools",
+    "./src/request",
   ],
   "out": "./docs",
   "htmlLang": "zh",

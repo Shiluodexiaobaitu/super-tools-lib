@@ -1,13 +1,3 @@
-/*
- * @Author: zhangce
- * @Date: 2022-07-05 13:47:24
- * @Email: zhangce@fengmap.com
- * @LastEditTime: 2022-12-30 15:42:41
- * @LastEditors: zhangce
- * @LastEditorsEmail: zhangce@fengmap.com
- * @Description: 
- *  Copyright: Copyright 2014 - 2022, FengMap, Ltd. All rights reserved.
- */
 module.exports = {
     'env': {
         'browser': true,

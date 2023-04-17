@@ -15,3 +15,6 @@ export { base64ToFile } from './_base64ToFile'
 
 // 根据url地址下载
 export { fileDownload } from './_fileDownload'
+
+// 图片增加水印
+export { watermark } from './_watermark'

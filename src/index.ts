@@ -35,6 +35,8 @@ import {
     fahrenheitToCelsius,
     celsiusToFahrenheit,
     sortAscii,
+    lighten,
+    darken,
     generateSign,
 } from './tools'
 
@@ -79,6 +81,7 @@ import {
     getAttr,
     setAttr,
     getDomBound,
+    classnames,
 } from './dom'
 
 import {
@@ -95,6 +98,7 @@ import {
     sortArray,
     shuffle,
     reduce,
+    depthTraversal,
 } from './array'
 
 import {
@@ -156,6 +160,7 @@ import {
     drawAndShareImage,
     base64ToFile,
     fileDownload,
+    watermark,
 } from './file'
 
 import { vConsole } from './console'
@@ -219,10 +224,17 @@ import {
 } from './math'
 
 
-import { sendRequest } from './request'
+import { ajax, fetch } from './request'
+
+import {
+    _besePath,
+    _toPath,
+} from './private'
 
 
 export default {
+    _besePath,
+    _toPath,
     scalePolygon,
     disMercator,
     disLonlat,
@@ -242,6 +254,8 @@ export default {
     removeEventListener,
     dispatchEvent,
     sortAscii,
+    lighten,
+    darken,
     generateSign,
     forEach,
     filter,
@@ -256,6 +270,7 @@ export default {
     closest,
     shuffle,
     reduce,
+    depthTraversal,
     dateFormater,
     formatPassTime,
     formatRemainTime,
@@ -347,6 +362,7 @@ export default {
     getAttr,
     setAttr,
     getDomBound,
+    classnames,
     insertHtmlBefore,
     validate,
     lonLatToMercator,
@@ -369,6 +385,7 @@ export default {
     throttle,
     debounce,
     fileDownload,
+    watermark,
     fuzzyQuery,
     colorHex,
     viewportToPixels,
@@ -399,10 +416,13 @@ export default {
     replaceText,
     version,
     RunWorker,
-    sendRequest,
+    ajax,
+    fetch,
 }
 
 export {
+    _besePath,
+    _toPath,
     scalePolygon,
     disMercator,
     disLonlat,
@@ -422,6 +442,8 @@ export {
     removeEventListener,
     dispatchEvent,
     sortAscii,
+    lighten,
+    darken,
     generateSign,
     forEach,
     filter,
@@ -436,6 +458,7 @@ export {
     closest,
     shuffle,
     reduce,
+    depthTraversal,
     dateFormater,
     formatPassTime,
     formatRemainTime,
@@ -527,6 +550,7 @@ export {
     getAttr,
     setAttr,
     getDomBound,
+    classnames,
     insertHtmlBefore,
     validate,
     lonLatToMercator,
@@ -549,6 +573,7 @@ export {
     throttle,
     debounce,
     fileDownload,
+    watermark,
     fuzzyQuery,
     colorHex,
     viewportToPixels,
@@ -579,5 +604,6 @@ export {
     replaceText,
     version,
     RunWorker,
-    sendRequest,
+    ajax,
+    fetch,
 }

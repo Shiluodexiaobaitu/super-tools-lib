@@ -54,3 +54,6 @@ export { setAttr } from './_setAttr'
 
 // 获取dom四个角的坐标 返回数组[{x,y}]格式
 export { getDomBound } from './_getDomBound'
+
+// 返回一个字符串，其中包含所有非空参数的类名，这些参数可以是字符串或对象
+export { classnames } from './_classnames'

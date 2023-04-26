@@ -1,10 +1,3 @@
-<!--
- * @Author: zhangce
- * @Date: 2021-10-08 14:15:34
- * @LastEditors: 张策
- * @LastEditTime: 2023-03-27 16:48:39
- * @Description: 
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,41 +34,8 @@
     <script src='./lib/super-tools-lib.js'></script>
     <div id="root">
         <h1>super-tools-lib</h1>
-        <button id="postMessage1">发送消息</button>
-        <button id="remove">remove add</button>
-        <div class="cord"></div>
     </div>
 
-
-    <script>
-        const RunWorker = superToolsLib.RunWorker
-
-        const son = () => {
-            self.onmessage = (e) => {
-                console.log('son', e)
-                postMessage('执行完成1')
-                setTimeout(() => {
-                    postMessage('执行完成2')
-                    self.close()
-                }, 5000)
-            }
-
-        }
-
-        const _worker = new RunWorker(son);
-
-        _worker.on('message', (evt) => {
-            console.log('_worker evt', evt)
-        })
-
-        postMessage1.onclick = () => {
-            console.log('111111')
-            _worker.postMessage('122222')
-            console.log('2222222222')
-
-        }
-
-    </script>
 </body>
 
 </html>

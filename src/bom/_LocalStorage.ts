@@ -34,9 +34,16 @@ export const LocalStorage = {
      * @param {string} container - 容器
      * @param {string} key - 键
      * @return {*} 返回对应键的存储值
-     */    
+     */
     get(container: string, key: string): string {
         const mapStorage = JSON.parse(localStorage.getItem(container)) || {}
+        if(mapStorage[`__${key}__date`]){
+            const date = mapStorage[`__${key}__date`]
+            if(date < new Date().getTime()){
+                this.remove(container, key)
+                return ''
+            }
+        }
         return mapStorage[key] || ''
     },
 
@@ -47,11 +54,15 @@ export const LocalStorage = {
      * @param {string} container - 容器
      * @param {string} key - 键
      * @param {any} value - 值
-     */    
-    set(container: string, key: string, value: any): void {
+     * @param {Date | string | number} date - 过期时间
+     */
+    set(container: string, key: string, value: any, date?: Date | string | number): void {
         if (!key) return
         const mapStorage = JSON.parse(localStorage.getItem(container)) || {}
         mapStorage[key] = value
+        if (date) {
+            mapStorage[`__${key}__date`] = new Date(date).getTime()
+        }
         localStorage.setItem(container, JSON.stringify(mapStorage))
     },
 
@@ -61,7 +72,7 @@ export const LocalStorage = {
      * @since 1.0.0
      * @param {string} container - 容器
      * @param {string} key - 键
-     */    
+     */
     remove(container: string, key: string): void {
         const mapStorage = JSON.parse(localStorage.getItem(container)) || {}
         mapStorage[key] && delete mapStorage[key]
@@ -72,7 +83,7 @@ export const LocalStorage = {
      * 清空全部本地存储
      * 
      * @since 1.0.0
-     */    
+     */
     clear(): void {
         localStorage.clear()
     },
@@ -82,7 +93,7 @@ export const LocalStorage = {
      * 
      * @since 1.57.0
      * @param {function} iteratee - 每次迭代调用的函数
-     */    
+     */
     forEach(iteratee: (value: any, key: string) => void) {
         for (const key in localStorage) {
             if (localStorage.hasOwnProperty(key)) {

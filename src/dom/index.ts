@@ -16,7 +16,7 @@ export { addClass } from './_addClass'
 // 替换类名
 export { replaceClass } from './_replaceClass'
 
-// 删除类名
+// 删除类名 
 export { removeClass } from './_removeClass'
 
 // 监听滚动条滚动到底部

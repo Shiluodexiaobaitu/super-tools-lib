@@ -43,3 +43,9 @@ export { cookie } from './_cookie'
 
 // 无刷新去除url参数
 export { noRefdelUrlParam } from './_noRefdelUrlParam'
+
+// 获取窗口四个角的坐标
+export { getWindowCorners } from './_getWindowCorners'
+
+// 获取窗口中心点
+export { getWindowCenter } from './_getWindowCenter'

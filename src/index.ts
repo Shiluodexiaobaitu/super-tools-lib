@@ -55,6 +55,8 @@ import {
     getUrlParam,
     cookie,
     noRefdelUrlParam,
+    getWindowCorners,
+    getWindowCenter,
 } from './bom'
 
 
@@ -398,6 +400,8 @@ export default {
     colorHex,
     viewportToPixels,
     noRefdelUrlParam,
+    getWindowCorners,
+    getWindowCenter,
     getAge,
     getSex,
     digitUppercase,
@@ -590,6 +594,8 @@ export {
     colorHex,
     viewportToPixels,
     noRefdelUrlParam,
+    getWindowCorners,
+    getWindowCenter,
     getAge,
     getSex,
     digitUppercase,

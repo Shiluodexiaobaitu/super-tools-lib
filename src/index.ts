@@ -230,7 +230,7 @@ import {
 } from './math'
 
 
-import { ajax, fetch } from './request'
+import { ajax, fetch, interceptResponse, interceptRequest } from './request'
 
 import {
     _besePath,
@@ -430,6 +430,8 @@ export default {
     RunWorker,
     ajax,
     fetch,
+    interceptResponse,
+    interceptRequest,
 }
 
 export {
@@ -624,4 +626,6 @@ export {
     RunWorker,
     ajax,
     fetch,
+    interceptResponse,
+    interceptRequest,
 }

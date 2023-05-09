@@ -18,3 +18,6 @@ export { fileDownload } from './_fileDownload'
 
 // 图片增加水印
 export { watermark } from './_watermark'
+
+// 下载dxf文件
+export { dowDxfFile } from './_dowDxfFile'

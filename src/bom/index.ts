@@ -49,3 +49,6 @@ export { getWindowCorners } from './_getWindowCorners'
 
 // 获取窗口中心点
 export { getWindowCenter } from './_getWindowCenter'
+
+// 打开一个新的窗口
+export { newWin } from './_newWin'

@@ -99,3 +99,6 @@ export { isOdd } from './_isOdd'
 
 // 检测数字是否为偶数
 export { isEven } from './_isEven'
+
+// 检查浏览器是否打开了控制台
+export { isConsole } from './_isConsole'

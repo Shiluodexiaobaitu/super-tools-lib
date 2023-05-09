@@ -57,6 +57,7 @@ import {
     noRefdelUrlParam,
     getWindowCorners,
     getWindowCenter,
+    newWin,
 } from './bom'
 
 
@@ -151,6 +152,7 @@ import {
     isMap,
     isOdd,
     isEven,
+    isConsole,
     isDescendant,
 } from './is'
 
@@ -166,6 +168,7 @@ import {
     base64ToFile,
     fileDownload,
     watermark,
+    dowDxfFile,
 } from './file'
 
 import { vConsole } from './console'
@@ -331,6 +334,7 @@ export default {
     isMap,
     isOdd,
     isEven,
+    isConsole,
     cloneDeep,
     objToOrder,
     orderToObj,
@@ -396,12 +400,14 @@ export default {
     debounce,
     fileDownload,
     watermark,
+    dowDxfFile,
     fuzzyQuery,
     colorHex,
     viewportToPixels,
     noRefdelUrlParam,
     getWindowCorners,
     getWindowCenter,
+    newWin,
     getAge,
     getSex,
     digitUppercase,
@@ -527,6 +533,7 @@ export {
     isMap,
     isOdd,
     isEven,
+    isConsole,
     cloneDeep,
     objToOrder,
     orderToObj,
@@ -592,12 +599,14 @@ export {
     debounce,
     fileDownload,
     watermark,
+    dowDxfFile,
     fuzzyQuery,
     colorHex,
     viewportToPixels,
     noRefdelUrlParam,
     getWindowCorners,
     getWindowCenter,
+    newWin,
     getAge,
     getSex,
     digitUppercase,

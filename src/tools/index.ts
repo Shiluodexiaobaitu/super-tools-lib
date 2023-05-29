@@ -61,3 +61,6 @@ export { lighten } from './_lighten'
 
 // 将color颜色变深level倍
 export { darken } from './_darken'
+
+// 处理promise的错误
+export { awaitTo } from './_awaitTo'

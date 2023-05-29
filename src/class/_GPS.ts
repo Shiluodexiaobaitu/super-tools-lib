@@ -21,7 +21,7 @@ import { EventObserver } from './_EventObserver'
  */
 class GPS {
 
-    private _timeId: NodeJS.Timer
+    private _timeId: number
     private _time: number
     private _timOptions: {
         timeout: number,

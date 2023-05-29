@@ -38,6 +38,7 @@ import {
     lighten,
     darken,
     generateSign,
+    awaitTo,
 } from './tools'
 
 import {
@@ -169,6 +170,8 @@ import {
     fileDownload,
     watermark,
     dowDxfFile,
+    addTextToImage,
+    loadImages,
 } from './file'
 
 import { vConsole } from './console'
@@ -216,7 +219,6 @@ import {
     Socket,
     StateObserver,
     getState, setState, deleteState, addStateListener, removeStateListener,
-    FastMap,
     Dom,
     $,
 } from './class'
@@ -240,8 +242,11 @@ import {
     _toPath,
 } from './private'
 
+import { DoublyLinkedList, FastMap } from './structure'
+
 
 export default {
+    DoublyLinkedList,
     _besePath,
     _toPath,
     scalePolygon,
@@ -265,6 +270,7 @@ export default {
     sortAscii,
     lighten,
     darken,
+    awaitTo,
     generateSign,
     forEach,
     filter,
@@ -401,6 +407,8 @@ export default {
     fileDownload,
     watermark,
     dowDxfFile,
+    addTextToImage,
+    loadImages,
     fuzzyQuery,
     colorHex,
     viewportToPixels,
@@ -441,6 +449,7 @@ export default {
 }
 
 export {
+    DoublyLinkedList,
     _besePath,
     _toPath,
     scalePolygon,
@@ -464,6 +473,7 @@ export {
     sortAscii,
     lighten,
     darken,
+    awaitTo,
     generateSign,
     forEach,
     filter,
@@ -600,6 +610,8 @@ export {
     fileDownload,
     watermark,
     dowDxfFile,
+    addTextToImage,
+    loadImages,
     fuzzyQuery,
     colorHex,
     viewportToPixels,

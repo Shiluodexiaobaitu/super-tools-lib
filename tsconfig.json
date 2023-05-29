@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "typeRoots": ["./typings"],
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "allowUnreachableCode": true,

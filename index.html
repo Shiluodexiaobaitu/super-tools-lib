@@ -26,6 +26,20 @@
             top: 50%;
             margin: -40px 0 0 -40px;
         }
+
+        .ul {
+            width: 200px;
+            height: 400px;
+            border: 1px solid #511b1b;
+            overflow: hidden;
+            overflow-y: auto;
+        }
+
+        .ul li {
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
     </style>
 </head>
 
@@ -33,7 +47,34 @@
     <script src='./lib/super-tools-lib.js'></script>
     <div id="root">
         <h1>super-tools-lib</h1>
+
+        <ul class="ul">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li id="myElement">10</li>
+        </ul>
     </div>
+
+    <script>
+        const myObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    console.log(`${entry.target.id} is now visible`);
+                    // observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        const myElement = document.getElementById("myElement");
+        myObserver.observe(myElement);
+    </script>
 
 </body>
 

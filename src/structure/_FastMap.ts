@@ -7,6 +7,7 @@ import { _objectEach } from '../loop'
  * - 注意为了提速FastMap 的key值不支持引用数据类型
  * 
  * @since 1.62.0
+ * @class
  * @example
  * 
  * ```ts

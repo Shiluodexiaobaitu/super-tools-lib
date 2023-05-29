@@ -21,3 +21,9 @@ export { watermark } from './_watermark'
 
 // 下载dxf文件
 export { dowDxfFile } from './_dowDxfFile'
+
+// 给图片添加文字
+export { addTextToImage } from './_addTextToImage'
+
+// 预加载图片
+export { loadImages } from './_loadImages'

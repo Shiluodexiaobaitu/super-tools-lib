@@ -19,14 +19,26 @@ export const interceptResponse = (resolve) => {
     const originalXhrSend = window.XMLHttpRequest.prototype.send
     window.XMLHttpRequest.prototype.send = function () {
         this.addEventListener('load', function () {
-            // url
             const responseURL = this.responseURL
             // 响应内容
             const responseText = JSON.parse(this.responseText)
-            resolve({ responseURL, responseText }, this)
+            resolve({ responseURL, responseText, __TYPE__: 'xhr' })
 
         })
         // eslint-disable-next-line prefer-rest-params
         return originalXhrSend.apply(this, arguments)
+    }
+
+    const originalFetch = window.fetch
+    window.fetch = function () {
+        // eslint-disable-next-line prefer-rest-params
+        return originalFetch.apply(this, arguments).then((response) => {
+            console.log('response', response)
+            response.clone().json().then((responseText) => {
+                resolve({ responseURL: response.url, responseText, __TYPE__: 'fetch' })
+            })
+
+            return response
+        })
     }
 }

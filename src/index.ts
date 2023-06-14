@@ -59,6 +59,7 @@ import {
     getWindowCorners,
     getWindowCenter,
     newWin,
+    titleTex,
 } from './bom'
 
 
@@ -103,6 +104,7 @@ import {
     shuffle,
     reduce,
     depthTraversal,
+    fastFilter,
 } from './array'
 
 import {
@@ -117,6 +119,7 @@ import {
     pick,
     omit,
     parse,
+    watch,
 } from './object'
 
 import {
@@ -287,6 +290,7 @@ export default {
     shuffle,
     reduce,
     depthTraversal,
+    fastFilter,
     dateFormater,
     formatPassTime,
     formatRemainTime,
@@ -352,6 +356,7 @@ export default {
     pick,
     omit,
     parse,
+    watch,
     arrayUnique,
     bubbleSort,
     last,
@@ -416,6 +421,7 @@ export default {
     getWindowCorners,
     getWindowCenter,
     newWin,
+    titleTex,
     getAge,
     getSex,
     digitUppercase,
@@ -490,6 +496,7 @@ export {
     shuffle,
     reduce,
     depthTraversal,
+    fastFilter,
     dateFormater,
     formatPassTime,
     formatRemainTime,
@@ -555,6 +562,7 @@ export {
     pick,
     omit,
     parse,
+    watch,
     arrayUnique,
     bubbleSort,
     last,
@@ -619,6 +627,7 @@ export {
     getWindowCorners,
     getWindowCenter,
     newWin,
+    titleTex,
     getAge,
     getSex,
     digitUppercase,

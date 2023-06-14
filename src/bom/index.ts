@@ -52,3 +52,6 @@ export { getWindowCenter } from './_getWindowCenter'
 
 // 打开一个新的窗口
 export { newWin } from './_newWin'
+
+// 滚动页面title
+export { titleTex } from './_titleTex'

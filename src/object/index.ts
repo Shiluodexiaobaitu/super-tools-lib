@@ -31,3 +31,5 @@ export { omit } from './_omit'
 
 // JSON.parse
 export { parse } from './_parse'
+
+export { watch } from './_watch'

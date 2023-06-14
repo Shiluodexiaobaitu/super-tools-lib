@@ -39,3 +39,6 @@ export { reduce } from './_reduce'
 
 // 深度优先遍历
 export { depthTraversal } from './_depthTraversal'
+
+// 快速过滤，过滤数组中符合条件的元素
+export { fastFilter } from './_fastFilter'

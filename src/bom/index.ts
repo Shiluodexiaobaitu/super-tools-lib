@@ -55,3 +55,6 @@ export { newWin } from './_newWin'
 
 // 滚动页面title
 export { titleTex } from './_titleTex'
+
+// 创建或加入某个频道
+export { mBroadcastChannel } from './_mBroadcastChannel'

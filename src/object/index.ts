@@ -32,4 +32,5 @@ export { omit } from './_omit'
 // JSON.parse
 export { parse } from './_parse'
 
+// 监听对象值的变化
 export { watch } from './_watch'

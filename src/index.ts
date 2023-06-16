@@ -60,6 +60,7 @@ import {
     getWindowCenter,
     newWin,
     titleTex,
+    mBroadcastChannel,
 } from './bom'
 
 
@@ -422,6 +423,7 @@ export default {
     getWindowCenter,
     newWin,
     titleTex,
+    mBroadcastChannel,
     getAge,
     getSex,
     digitUppercase,
@@ -628,6 +630,7 @@ export {
     getWindowCenter,
     newWin,
     titleTex,
+    mBroadcastChannel,
     getAge,
     getSex,
     digitUppercase,

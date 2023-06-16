@@ -15,7 +15,8 @@
     "test:c": "jest --coverage",
     "pretest": "npm run build",
     "lint": "eslint --fix --ext .ts src",
-    "doc": "typedoc --options typedoc.json"
+    "doc": "typedoc --options typedoc.json",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -44,6 +45,8 @@
     "@babel/plugin-transform-runtime": "^7.14.5",
     "@babel/preset-env": "^7.14.8",
     "@babel/preset-typescript": "^7.15.0",
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
     "@rollup/plugin-commonjs": "^21.0.0",
     "@rollup/plugin-eslint": "^9.0.1",
     "@rollup/plugin-json": "^4.1.0",
@@ -54,8 +57,10 @@
     "@typescript-eslint/parser": "^5.54.1",
     "better-xlsx": "^0.7.6",
     "core-js": "2.6.10",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.32.0",
     "file-saver": "^2.0.5",
+    "husky": "^8.0.3",
     "jest": "^27.0.6",
     "path": "^0.12.7",
     "rollup-plugin-babel": "^4.4.0",
@@ -76,5 +81,10 @@
   },
   "engines": {
     "node": ">=14.18.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
   }
 }

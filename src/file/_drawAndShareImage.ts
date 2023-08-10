@@ -21,7 +21,7 @@
  * ```ts
  * import { drawAndShareImage } from 'super-tools-lib'
  * 
- * drawAndShareImage({url: url1, width: 1000, height: 1000}, {url: url2, width: 200, height: 20}, {download: true, imgName: '1.png'})
+ * // drawAndShareImage({url: url1, width: 1000, height: 1000}, {url: url2, width: 200, height: 20}, {download: true, imgName: '1.png'})
  * ```
  */
 export const drawAndShareImage = (bgImgOps: { url: string, width: number, height: number }, upImgOps: { url: string, width: number, height: number, x: number, y: number }, ops = { download: false, imgName: '1.png', success: (base64) => base64 }) => {

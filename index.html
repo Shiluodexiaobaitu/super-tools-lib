@@ -2,79 +2,126 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>super-tools-lib</title>
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>super-tools-lib</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
 
-        #root {
-            width: 100vw;
-            height: 100vh;
-        }
+    #root {
+      width: 100vw;
+      height: 100vh;
+    }
 
-        .cord {
-            background: #48b1ff;
-            width: 80px;
-            height: 80px;
-            border-radius: 5px;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            margin: -40px 0 0 -40px;
-        }
+    .cord {
+      background: #48b1ff;
+      width: 80px;
+      height: 80px;
+      border-radius: 5px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -40px 0 0 -40px;
+    }
 
-        .ul {
-            width: 200px;
-            height: 400px;
-            border: 1px solid #511b1b;
-            overflow: hidden;
-            overflow-y: auto;
-        }
+    .ul {
+      width: 200px;
+      height: 400px;
+      border: 1px solid #511b1b;
+      overflow: hidden;
+      overflow-y: auto;
+    }
 
-        .ul li {
-            height: 50px;
-            display: flex;
-            align-items: center;
-        }
-    </style>
+    .ul li {
+      height: 50px;
+      display: flex;
+      align-items: center;
+    }
+
+    #video {
+      width: 300px;
+      height: 400px;
+    }
+  </style>
 </head>
 
 <body>
-    <script src='./lib/super-tools-lib.js'></script>
-    <div id="root">
-        <h1>super-tools-lib</h1>
+  <script src='./lib/super-tools-lib.js'></script>
+  <div id="root">
+    <h1>super-tools-lib</h1>
 
-        <ul class="ul">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            <li>7</li>
-            <li>8</li>
-            <li>9</li>
-            <li id="myElement">10</li>
-        </ul>
-    </div>
+    <video id="video"></video>
+  </div>
 
-    <script>
-        const myObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    console.log(`${entry.target.id} is now visible`);
-                    // observer.unobserve(entry.target);
-                }
-            });
-        });
+  <script>
+    var tran
+    // 获取摄像头视频流
+    const getUserMedia = async () => {
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        try {
+          // https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia#examples
+          const stream = await navigator.mediaDevices.getUserMedia({
+            audio: false,
+            video: true,
+            video: {
+              facingMode: "user", // 前置摄像头
+              // facingMode: { exact: "environment" }，// 后置摄像头
+              // width: { min: 1280, max: 1920 },
+              // height: { min: 720, max: 1080 },
+              // width: this.width,
+              // height: this.height,
+            },
+          });
+          console.log('stream', stream)
+          video.srcObject = stream;
 
-        const myElement = document.getElementById("myElement");
-        myObserver.observe(myElement);
-    </script>
+          video.onloadedmetadata = async () => {
+            video.play();
+          }
+
+          tran = transcribe(stream)
+          tran.start()
+        } catch (error) {
+          console.log('error', error)
+          return error
+        }
+      }
+
+      // const errorMessage =
+      //   "This browser does not support video capture, or this device does not have a camera";
+      // alert(errorMessage);
+    };
+
+    function transcribe(stream) {
+      const mediaRecorder = new MediaRecorder(stream);
+      let chunks = [];
+
+      mediaRecorder.ondataavailable = function (e) {
+        chunks.push(e.data);
+      };
+
+      mediaRecorder.onstop = function () {
+        const blob = new Blob(chunks, { type: 'video/webm' });
+        console.log('blob', blob)
+        // 将blob对象保存到服务器或本地
+      };
+
+      // 开始录制
+      // mediaRecorder.start();
+
+      // // 停止录制
+      // mediaRecorder.stop();
+      return {
+        start: mediaRecorder.start,
+        stop: mediaRecorder.stop,
+      }
+    }
+
+    // getUserMedia()
+  </script>
 
 </body>
 

@@ -9,7 +9,7 @@
  * ```ts
  * import { blobToDataURL } from 'super-tools-lib'
  * 
- * blobToDataURL(blob, (url) => {})
+ * // blobToDataURL(blob, (url) => {})
  * ```
  */
 export const blobToDataURL = (blob: Blob, callback: (result: string | ArrayBuffer) => void) => {

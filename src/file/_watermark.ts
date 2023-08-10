@@ -12,7 +12,7 @@
  * ```ts
  * import { watermark } from 'super-tools-lib'
  * 
- * watermark(img, '水印文字', {
+ * watermark('imgUrl', '水印文字', {
  *  fontSize: 20,
  *  color: '#000',
  *  alpha: 0.5,

@@ -10,7 +10,7 @@
  * ```ts
  * import { base64ToFile } from 'super-tools-lib'
  * 
- * base64ToFile(base64, 'name')
+ * base64ToFile('base64', 'name')
  * ```
  */
 export const base64ToFile = (urlData: string, fileName: string) => {

@@ -9,7 +9,7 @@
  * ```ts
  * import { downBlob } from 'super-tools-lib'
  * 
- * // downBlob(data, '1.xslx')
+ * // downBlob('data', '1.xslx')
  * ```
  */
 export const downBlob = (data: BlobPart, fileName: string): void => {

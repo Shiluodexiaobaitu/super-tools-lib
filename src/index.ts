@@ -121,6 +121,7 @@ import {
     omit,
     parse,
     watch,
+    compareObjects,
 } from './object'
 
 import {
@@ -358,6 +359,7 @@ export default {
     omit,
     parse,
     watch,
+    compareObjects,
     arrayUnique,
     bubbleSort,
     last,
@@ -565,6 +567,7 @@ export {
     omit,
     parse,
     watch,
+    compareObjects,
     arrayUnique,
     bubbleSort,
     last,

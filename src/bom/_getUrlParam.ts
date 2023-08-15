@@ -2,7 +2,7 @@
  * 获取url?后参数
  * 
  * @since 1.62.0
- * @return {{}} 返回?后的参数 {xxx: xxxx}
+ * @return {} 返回?后的参数 // {xxx: xxxx}
  * @example
  * 
  * ```ts

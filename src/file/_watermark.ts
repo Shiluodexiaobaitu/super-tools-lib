@@ -21,6 +21,7 @@
  * }).then(res=>{
  * 
  * })
+ * ```
  */
 export const watermark = (img: HTMLImageElement, text: string, options: any = {}) => {
     const { fontSize = 20, color = '#000', alpha = 0.5, x = 0, y = 0 } = options

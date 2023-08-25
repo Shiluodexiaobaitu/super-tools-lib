@@ -61,6 +61,7 @@ import {
     newWin,
     titleTex,
     mBroadcastChannel,
+    onVisibilityChange,
 } from './bom'
 
 
@@ -106,6 +107,7 @@ import {
     reduce,
     depthTraversal,
     fastFilter,
+    deduplicateArray,
 } from './array'
 
 import {
@@ -159,6 +161,11 @@ import {
     isOdd,
     isEven,
     isConsole,
+    isObjectHasKeysIsValue,
+    isValue,
+    isNaN,
+    isObjectAbsentKeys,
+    isPointInPolygon,
     isDescendant,
 } from './is'
 
@@ -179,7 +186,7 @@ import {
     loadImages,
 } from './file'
 
-import { vConsole } from './console'
+import { log } from './console'
 
 import {
     dateFormater,
@@ -293,6 +300,7 @@ export default {
     reduce,
     depthTraversal,
     fastFilter,
+    deduplicateArray,
     dateFormater,
     formatPassTime,
     formatRemainTime,
@@ -305,7 +313,6 @@ export default {
     getSecond,
     getFirstDate,
     Socket,
-    vConsole,
     downBlob,
     getFileBase64,
     blobToDataURL,
@@ -347,6 +354,11 @@ export default {
     isOdd,
     isEven,
     isConsole,
+    isObjectHasKeysIsValue,
+    isValue,
+    isNaN,
+    isObjectAbsentKeys,
+    isPointInPolygon,
     cloneDeep,
     objToOrder,
     orderToObj,
@@ -417,6 +429,7 @@ export default {
     dowDxfFile,
     addTextToImage,
     loadImages,
+    log,
     fuzzyQuery,
     colorHex,
     viewportToPixels,
@@ -426,6 +439,7 @@ export default {
     newWin,
     titleTex,
     mBroadcastChannel,
+    onVisibilityChange,
     getAge,
     getSex,
     digitUppercase,
@@ -501,6 +515,7 @@ export {
     reduce,
     depthTraversal,
     fastFilter,
+    deduplicateArray,
     dateFormater,
     formatPassTime,
     formatRemainTime,
@@ -513,7 +528,6 @@ export {
     getSecond,
     getFirstDate,
     Socket,
-    vConsole,
     downBlob,
     getFileBase64,
     blobToDataURL,
@@ -555,6 +569,11 @@ export {
     isOdd,
     isEven,
     isConsole,
+    isObjectHasKeysIsValue,
+    isValue,
+    isNaN,
+    isObjectAbsentKeys,
+    isPointInPolygon,
     cloneDeep,
     objToOrder,
     orderToObj,
@@ -625,6 +644,7 @@ export {
     dowDxfFile,
     addTextToImage,
     loadImages,
+    log,
     fuzzyQuery,
     colorHex,
     viewportToPixels,
@@ -634,6 +654,7 @@ export {
     newWin,
     titleTex,
     mBroadcastChannel,
+    onVisibilityChange,
     getAge,
     getSex,
     digitUppercase,

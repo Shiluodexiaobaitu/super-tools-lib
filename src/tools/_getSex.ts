@@ -12,8 +12,7 @@
  * getSex("xxxxxxxxxxxxxxxxx"); // '男'
  * ```
  */
-export const getSex = (id: string) => {
-    // 1、先判断身份证号的正确性
-    const sex = Number(id.substr(16, 1))
-    return sex % 2 ? '男' : '女'
+export const getSex = (id: string): '男' | '女' => {
+    const sex = Number(id.charAt(16)) % 2
+    return sex ? '男' : '女'
 }

@@ -13,7 +13,7 @@
  * // => {x: 960, y: 540}
  * ```
  */
-export const getWindowCenter = () => {
+export const getWindowCenter = (): { x: number; y: number } => {
     const { innerWidth, innerHeight } = window
     return { x: innerWidth / 2, y: innerHeight / 2 }
 }

@@ -57,70 +57,16 @@
   </div>
 
   <script>
-    var tran
-    // 获取摄像头视频流
-    const getUserMedia = async () => {
-      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        try {
-          // https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia#examples
-          const stream = await navigator.mediaDevices.getUserMedia({
-            audio: false,
-            video: true,
-            video: {
-              facingMode: "user", // 前置摄像头
-              // facingMode: { exact: "environment" }，// 后置摄像头
-              // width: { min: 1280, max: 1920 },
-              // height: { min: 720, max: 1080 },
-              // width: this.width,
-              // height: this.height,
-            },
-          });
-          console.log('stream', stream)
-          video.srcObject = stream;
-
-          video.onloadedmetadata = async () => {
-            video.play();
-          }
-
-          tran = transcribe(stream)
-          tran.start()
-        } catch (error) {
-          console.log('error', error)
-          return error
-        }
+    superToolsLib.onVisibilityChange((flag) => {
+      if (flag) {
+        document.title = '欢迎回来😄'
+        setTimeout(()=> {
+          document.title = 'super-tools-lib'
+        }, 1000)
+      } else {
+        document.title = '不要走开😭'
       }
-
-      // const errorMessage =
-      //   "This browser does not support video capture, or this device does not have a camera";
-      // alert(errorMessage);
-    };
-
-    function transcribe(stream) {
-      const mediaRecorder = new MediaRecorder(stream);
-      let chunks = [];
-
-      mediaRecorder.ondataavailable = function (e) {
-        chunks.push(e.data);
-      };
-
-      mediaRecorder.onstop = function () {
-        const blob = new Blob(chunks, { type: 'video/webm' });
-        console.log('blob', blob)
-        // 将blob对象保存到服务器或本地
-      };
-
-      // 开始录制
-      // mediaRecorder.start();
-
-      // // 停止录制
-      // mediaRecorder.stop();
-      return {
-        start: mediaRecorder.start,
-        stop: mediaRecorder.stop,
-      }
-    }
-
-    // getUserMedia()
+    })
   </script>
 
 </body>

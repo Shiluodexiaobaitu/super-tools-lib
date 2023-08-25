@@ -29,9 +29,9 @@ import { isBasicType, isEmptyObject, isObject } from '../is'
  * console.log(res) // { b: 3 }
  * ```
  */
-export const compareObjects = (
-    newObj: Record<string, unknown> | unknown,
-    oldObj: Record<string, unknown> | unknown,
+export const compareObjects = <T, K>(
+    newObj: Record<string, T> | T,
+    oldObj: Record<string, K> | K,
 ): Record<string, any> => {
     if (!isObject(oldObj) || !isObject(newObj)) {
         return {}

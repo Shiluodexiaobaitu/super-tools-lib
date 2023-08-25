@@ -1,6 +1,6 @@
 {
   "name": "super-tools-lib",
-  "version": "1.71.0",
+  "version": "1.74.0",
   "description": "常用工具函数",
   "main": "lib/super-tools-lib.cjs.js",
   "browser": "lib/super-tools-lib.esm.js",
@@ -15,7 +15,7 @@
     "test:c": "jest --coverage",
     "pretest": "npm run build",
     "lint": "eslint --fix --ext .ts src",
-    "doc": "typedoc --options typedoc.json",
+    "build:doc": "typedoc --options typedoc.json",
     "prepare": "husky install"
   },
   "repository": {

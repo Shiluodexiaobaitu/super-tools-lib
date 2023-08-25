@@ -42,3 +42,6 @@ export { depthTraversal } from './_depthTraversal'
 
 // 快速过滤，过滤数组中符合条件的元素
 export { fastFilter } from './_fastFilter'
+
+// 数组去重
+export { deduplicateArray } from './_deduplicateArray'

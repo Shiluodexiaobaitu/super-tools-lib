@@ -9,7 +9,7 @@
  * ```ts
  * import { getFileBase64 } from 'super-tools-lib'
  * 
- * getFileBase64(file, (base64) => {})
+ * // getFileBase64(file, (base64) => {})
  * ```
 */
 export const getFileBase64 = (file: File, cb: (base64: ArrayBuffer | string) => void): void => {

@@ -59,6 +59,9 @@ import {
     getWindowCorners,
     getWindowCenter,
     newWin,
+    titleTex,
+    mBroadcastChannel,
+    onVisibilityChange,
 } from './bom'
 
 
@@ -103,6 +106,8 @@ import {
     shuffle,
     reduce,
     depthTraversal,
+    fastFilter,
+    deduplicateArray,
 } from './array'
 
 import {
@@ -117,6 +122,8 @@ import {
     pick,
     omit,
     parse,
+    watch,
+    compareObjects,
 } from './object'
 
 import {
@@ -154,6 +161,11 @@ import {
     isOdd,
     isEven,
     isConsole,
+    isObjectHasKeysIsValue,
+    isValue,
+    isNaN,
+    isObjectAbsentKeys,
+    isPointInPolygon,
     isDescendant,
 } from './is'
 
@@ -174,7 +186,7 @@ import {
     loadImages,
 } from './file'
 
-import { vConsole } from './console'
+import { log } from './console'
 
 import {
     dateFormater,
@@ -287,6 +299,8 @@ export default {
     shuffle,
     reduce,
     depthTraversal,
+    fastFilter,
+    deduplicateArray,
     dateFormater,
     formatPassTime,
     formatRemainTime,
@@ -299,7 +313,6 @@ export default {
     getSecond,
     getFirstDate,
     Socket,
-    vConsole,
     downBlob,
     getFileBase64,
     blobToDataURL,
@@ -341,6 +354,11 @@ export default {
     isOdd,
     isEven,
     isConsole,
+    isObjectHasKeysIsValue,
+    isValue,
+    isNaN,
+    isObjectAbsentKeys,
+    isPointInPolygon,
     cloneDeep,
     objToOrder,
     orderToObj,
@@ -352,6 +370,8 @@ export default {
     pick,
     omit,
     parse,
+    watch,
+    compareObjects,
     arrayUnique,
     bubbleSort,
     last,
@@ -409,6 +429,7 @@ export default {
     dowDxfFile,
     addTextToImage,
     loadImages,
+    log,
     fuzzyQuery,
     colorHex,
     viewportToPixels,
@@ -416,6 +437,9 @@ export default {
     getWindowCorners,
     getWindowCenter,
     newWin,
+    titleTex,
+    mBroadcastChannel,
+    onVisibilityChange,
     getAge,
     getSex,
     digitUppercase,
@@ -490,6 +514,8 @@ export {
     shuffle,
     reduce,
     depthTraversal,
+    fastFilter,
+    deduplicateArray,
     dateFormater,
     formatPassTime,
     formatRemainTime,
@@ -502,7 +528,6 @@ export {
     getSecond,
     getFirstDate,
     Socket,
-    vConsole,
     downBlob,
     getFileBase64,
     blobToDataURL,
@@ -544,6 +569,11 @@ export {
     isOdd,
     isEven,
     isConsole,
+    isObjectHasKeysIsValue,
+    isValue,
+    isNaN,
+    isObjectAbsentKeys,
+    isPointInPolygon,
     cloneDeep,
     objToOrder,
     orderToObj,
@@ -555,6 +585,8 @@ export {
     pick,
     omit,
     parse,
+    watch,
+    compareObjects,
     arrayUnique,
     bubbleSort,
     last,
@@ -612,6 +644,7 @@ export {
     dowDxfFile,
     addTextToImage,
     loadImages,
+    log,
     fuzzyQuery,
     colorHex,
     viewportToPixels,
@@ -619,6 +652,9 @@ export {
     getWindowCorners,
     getWindowCenter,
     newWin,
+    titleTex,
+    mBroadcastChannel,
+    onVisibilityChange,
     getAge,
     getSex,
     digitUppercase,

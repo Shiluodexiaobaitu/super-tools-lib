@@ -10,7 +10,7 @@
  * ```ts
  * import { dowDxfFile } from 'super-tools-lib'
  * 
- * dowDxfFile(data, '1.dxf')
+ * // dowDxfFile('data', '1.dxf')
  * ```
  * 
  * @see

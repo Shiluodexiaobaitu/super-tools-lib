@@ -5,6 +5,7 @@ import { _arrayEach } from "../loop"
  * 
  * @since 1.66.0
  * @param urls - 图片地址数组
+ * @return {Promise<unknown>} - 返回一个Promise对象
  * @example
  * 
  * ```ts

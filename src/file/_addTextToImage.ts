@@ -5,8 +5,8 @@
  * @since 1.66.0
  * @param {*} url - 图片地址
  * @param {*} text - 文字内容
- * @param {CanvasRenderingContext2D} textStyle - 文字样式，参考{@link https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D 
- * @param {function} cb - 回调函数，返回文字的坐标
+ * @param {CanvasRenderingContext2D} textStyle - 文字样式，参考{@link https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D}
+ * @param {Function} cb - 回调函数，返回文字的坐标
  * @return {Promise<string>} - 返回一个Promise对象，resolve后返回一个base64的图片地址
  * @example
  * 

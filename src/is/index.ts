@@ -102,3 +102,18 @@ export { isEven } from './_isEven'
 
 // 检查浏览器是否打开了控制台
 export { isConsole } from './_isConsole'
+
+// 检查对象是否有指定的key
+export { isObjectHasKeysIsValue } from './_isObjectHasKeysIsValue'
+
+// 检查 value 不是 null / undefined / NaN / Infinity / -Infinity / ''
+export { isValue } from './_isValue'
+
+// 检查 value 是否为NaN
+export { isNaN } from './_isNaN'
+
+// 检查对象是否缺少指定的键
+export { isObjectAbsentKeys } from './_isObjectAbsentKeys'
+
+// 检查点是否在多边形内
+export { isPointInPolygon } from './_isPointInPolygon'

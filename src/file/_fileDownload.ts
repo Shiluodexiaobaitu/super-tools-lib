@@ -9,7 +9,7 @@
  * ```ts
  * import { fileDownload } from 'super-tools-lib'
  * 
- * fileDownload(url)
+ * // fileDownload(url)
  * ```
  */
 export const fileDownload = function (url: string): boolean {

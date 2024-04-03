@@ -43,7 +43,6 @@ import {
 
 import {
     toFullScreen,
-    exitFullscreen,
     LocalStorage,
     SessionStorage,
     getPosition,
@@ -61,6 +60,8 @@ import {
     newWin,
     titleTex,
     mBroadcastChannel,
+    removeUrlParam,
+    onFullscreenchange,
     onVisibilityChange,
 } from './bom'
 
@@ -89,6 +90,9 @@ import {
     setAttr,
     getDomBound,
     classnames,
+    requestFullscreen,
+    exitFullscreen,
+    observeContainerChange,
 } from './dom'
 
 import {
@@ -403,6 +407,8 @@ export default {
     setAttr,
     getDomBound,
     classnames,
+    requestFullscreen,
+    observeContainerChange,
     insertHtmlBefore,
     validate,
     lonLatToMercator,
@@ -439,6 +445,8 @@ export default {
     newWin,
     titleTex,
     mBroadcastChannel,
+    removeUrlParam,
+    onFullscreenchange,
     onVisibilityChange,
     getAge,
     getSex,
@@ -618,6 +626,8 @@ export {
     setAttr,
     getDomBound,
     classnames,
+    requestFullscreen,
+    observeContainerChange,
     insertHtmlBefore,
     validate,
     lonLatToMercator,
@@ -654,6 +664,8 @@ export {
     newWin,
     titleTex,
     mBroadcastChannel,
+    removeUrlParam,
+    onFullscreenchange,
     onVisibilityChange,
     getAge,
     getSex,

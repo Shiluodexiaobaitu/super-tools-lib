@@ -5,9 +5,6 @@ declare global {
 // 浏览器全屏
 export { toFullScreen } from './_toFullScreen'
 
-// 浏览器退出全屏
-export { exitFullscreen } from './_exitFullscreen'
-
 // LocalStorage
 export { LocalStorage } from './_LocalStorage'
 
@@ -60,3 +57,9 @@ export { titleTex } from './_titleTex'
 export { mBroadcastChannel } from './_mBroadcastChannel'
 
 export { onVisibilityChange } from './_onVisibilityChange'
+
+// 无刷新删除url？后的参数
+export { removeUrlParam } from './_removeUrlParam'
+
+// 监听浏览器全屏状态
+export { onFullscreenchange } from './_onFullscreenchange'

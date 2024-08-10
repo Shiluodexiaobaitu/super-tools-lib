@@ -4,6 +4,7 @@
  * 
  * @since 1.72.0
  * @param {function} callback - 回调函数  true: 可见  false: 不可见
+ * @return {function} stop - 停止监听函数 
  * @example
  * 
  * ```ts
@@ -29,4 +30,8 @@ export const onVisibilityChange = (callback: (flag: boolean)=> void) => {
         }
     }
     handleVisibilityChange()
+
+    return () => {
+        document.removeEventListener('visibilitychange', handleVisibilityChange)
+    }
 }

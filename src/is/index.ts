@@ -117,3 +117,6 @@ export { isObjectAbsentKeys } from './_isObjectAbsentKeys'
 
 // 检查点是否在多边形内
 export { isPointInPolygon } from './_isPointInPolygon'
+
+// 检查是否是dom元素
+export { isDom } from './_isDom'

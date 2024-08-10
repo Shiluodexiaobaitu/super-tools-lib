@@ -8,6 +8,7 @@ import { throttle } from '../tools'
  * @param {Function} callback - 事件回调
  * @param {number} dis - 距离滚动条底部多远触发事件 默认0
  * @param {number} delay - 截流函数时间 默认200毫秒
+ * @return {{remove}} - remove: 移除监听
  * @example
  * 
  * ```ts
@@ -29,6 +30,12 @@ export const scrollToTheBottom = (ele: HTMLElement, callback: () => void, dis = 
         }
     }
 
-    ele.addEventListener('scroll', throttle(scrollFn, delay))
+    const th = throttle(scrollFn, delay)
 
+    ele.addEventListener('scroll', th)
+    return {
+        remove: () => {
+            ele.removeEventListener('scroll', th)
+        },
+    }
 }

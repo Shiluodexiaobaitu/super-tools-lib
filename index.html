@@ -60,13 +60,18 @@
     superToolsLib.onVisibilityChange((flag) => {
       if (flag) {
         document.title = '欢迎回来😄'
-        setTimeout(()=> {
+        setTimeout(() => {
           document.title = 'super-tools-lib'
         }, 1000)
       } else {
         document.title = '不要走开😭'
       }
     })
+
+    var channel = superToolsLib.mBroadcastChannel('ssss')
+    channel.onmessage = (message) => {
+      console.log('message', message)
+    }
   </script>
 
 </body>

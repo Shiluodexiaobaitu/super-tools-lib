@@ -57,3 +57,9 @@ export { getDomBound } from './_getDomBound'
 
 // 返回一个字符串，其中包含所有非空参数的类名，这些参数可以是字符串或对象
 export { classnames } from './_classnames'
+
+export { observeContainerChange } from './_observeContainerChange'
+
+export { requestFullscreen } from './_requestFullscreen'
+
+export { exitFullscreen } from './_exitFullscreen'

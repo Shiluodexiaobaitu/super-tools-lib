@@ -62,6 +62,7 @@ import {
     mBroadcastChannel,
     removeUrlParam,
     onFullscreenchange,
+    pasteText,
     onVisibilityChange,
 } from './bom'
 
@@ -92,6 +93,7 @@ import {
     classnames,
     requestFullscreen,
     exitFullscreen,
+    scrollToTheRight,
     observeContainerChange,
 } from './dom'
 
@@ -416,6 +418,7 @@ export default {
     IndexedDB,
     toFullScreen,
     exitFullscreen,
+    scrollToTheRight,
     LocalStorage,
     SessionStorage,
     getPosition,
@@ -447,6 +450,7 @@ export default {
     mBroadcastChannel,
     removeUrlParam,
     onFullscreenchange,
+    pasteText,
     onVisibilityChange,
     getAge,
     getSex,
@@ -626,6 +630,7 @@ export {
     setAttr,
     getDomBound,
     classnames,
+    scrollToTheRight,
     requestFullscreen,
     observeContainerChange,
     insertHtmlBefore,
@@ -666,6 +671,7 @@ export {
     mBroadcastChannel,
     removeUrlParam,
     onFullscreenchange,
+    pasteText,
     onVisibilityChange,
     getAge,
     getSex,

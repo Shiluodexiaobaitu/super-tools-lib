@@ -1,6 +1,6 @@
 {
   "name": "super-tools-lib",
-  "version": "1.75.0",
+  "version": "1.76.0",
   "description": "常用工具函数",
   "main": "lib/super-tools-lib.cjs.js",
   "browser": "lib/super-tools-lib.esm.js",

@@ -63,3 +63,6 @@ export { removeUrlParam } from './_removeUrlParam'
 
 // 监听浏览器全屏状态
 export { onFullscreenchange } from './_onFullscreenchange'
+
+// 获取粘贴板内容
+export { pasteText } from './_pasteText'

@@ -63,3 +63,6 @@ export { observeContainerChange } from './_observeContainerChange'
 export { requestFullscreen } from './_requestFullscreen'
 
 export { exitFullscreen } from './_exitFullscreen'
+
+// 监听x轴滚动条滚动到底部
+export { scrollToTheRight } from './_scrollToTheRight'

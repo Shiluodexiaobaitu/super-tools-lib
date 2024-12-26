@@ -54,9 +54,17 @@
     <h1>super-tools-lib</h1>
 
     <video id="video"></video>
+
+    <button id="fn">执行</button>
   </div>
 
   <script>
+
+    fn.onclick = superToolsLib.throttle(() => {
+      console.log('111')
+    }, 1000)
+
+
     superToolsLib.onVisibilityChange((flag) => {
       if (flag) {
         document.title = '欢迎回来😄'

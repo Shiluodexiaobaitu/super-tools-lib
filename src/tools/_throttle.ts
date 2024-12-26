@@ -26,9 +26,8 @@ export const throttle = function (fn: <T> (...rest: T[]) => void, delay = 200): 
     let timer: any = null
     return function (...rest) {
         if (!timer) {
+            fn(...rest)
             timer = setTimeout(() => {
-                // 或者直接 func()
-                fn(...rest)
                 timer = null
             }, delay)
         }
